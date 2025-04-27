@@ -1,0 +1,95 @@
+paths:
+  /api/v3/exchangeInfo:
+    get:
+      tags:
+        - BinanceGeneral
+      summary: Exchange information
+      description: Current exchange trading rules and symbol information
+      parameters:
+        - in: query
+          name: symbol
+          schema:
+            type: string
+            example: BNBBTC
+          required: false
+          description: Single symbol, e.g. BNBBTC
+        - in: query
+          name: symbols
+          schema:
+            type: array
+            items:
+              type: string
+            example: ["BNBBTC", "BTCUSDT"]
+          style: form
+          explode: false
+          required: false
+          description: Array of symbols, e.g. ["BNBBTC","BTCUSDT"]
+        - in: query
+          name: permissions
+          schema:
+            type: array
+            items:
+              type: string
+            example: ["SPOT", "MARGIN"]
+          style: form
+          explode: false
+          required: false
+          description: Array of permissions, e.g. ["SPOT","MARGIN"]
+        - in: query
+          name: showPermissionSets
+          schema:
+            type: boolean
+            example: true
+          required: false
+          description: Controls whether the content of the permissionSets field is populated or not. Defaults to true
+        - in: query
+          name: symbolStatus
+          schema:
+            type: string
+            enum: [TRADING, HALT, BREAK]
+            example: TRADING
+          required: false
+          description: Filters symbols that have this tradingStatus
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: './schemas/ExchangeInfoResponse.yaml#/ExchangeInfoResponse'
+              example:
+                timezone: "UTC"
+                serverTime: 1565246363776
+                rateLimits: [ ]
+                exchangeFilters: [ ]
+                symbols:
+                  - symbol: ETHBTC
+                    status: TRADING
+                    baseAsset: ETH
+                    baseAssetPrecision: 8
+                    quoteAsset: BTC
+                    quotePrecision: 8
+                    quoteAssetPrecision: 8
+                    baseCommissionPrecision: 8
+                    quoteCommissionPrecision: 8
+                    orderTypes: [LIMIT, LIMIT_MAKER, MARKET, STOP_LOSS, STOP_LOSS_LIMIT, TAKE_PROFIT, TAKE_PROFIT_LIMIT]
+                    icebergAllowed: true
+                    ocoAllowed: true
+                    otoAllowed: true
+                    quoteOrderQtyMarketAllowed: true
+                    allowTrailingStop: false
+                    cancelReplaceAllowed: false
+                    allowAmend: false
+                    isSpotTradingAllowed: true
+                    isMarginTradingAllowed: true
+                    filters: [ ]
+                    permissions: [ ]
+                    permissionSets:
+                      - [SPOT, MARGIN]
+                    defaultSelfTradePreventionMode: NONE
+                    allowedSelfTradePreventionModes: [NONE]
+                sors:
+                  - baseAsset: BTC
+                    symbols: [BTCUSDT, BTCUSDC]
+components:
+  schemas:

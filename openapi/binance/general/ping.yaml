@@ -1,0 +1,15 @@
+paths:
+  /api/v3/ping:
+    get:
+      tags:
+        - BinanceGeneral
+      summary: Test connectivity
+      description: Test connectivity to the Rest API.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: './schemas/PingResponse.yaml#/PingResponse'
+              example: {}

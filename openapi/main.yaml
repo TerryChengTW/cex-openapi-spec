@@ -1,0 +1,24 @@
+openapi: 3.0.0
+info:
+  title: VibeTrading CEX API
+  version: 1.0.0
+tags:
+  - name: BinanceGeneral
+    description: >
+      General endpoints for Binance, including ping, server time, and exchange information. These endpoints provide public connectivity and exchange metadata.
+paths:
+  # === binance/general ===
+  /api/v3/ping:
+    $ref: './binance/general/ping.yaml#/paths/~1api~1v3~1ping'
+  /api/v3/time:
+    $ref: './binance/general/time.yaml#/paths/~1api~1v3~1time'
+  /api/v3/exchangeInfo:
+    $ref: './binance/general/exchangeInfo.yaml#/paths/~1api~1v3~1exchangeInfo'
+
+  # === binance/account ===
+  # /api/v3/account:
+  #   $ref: './binance/account.yaml#/paths/~1api~1v3~1account'
+
+  # === binance/order ===
+  # /api/v3/order:
+  #   $ref: './binance/order.yaml#/paths/~1api~1v3~1order'
