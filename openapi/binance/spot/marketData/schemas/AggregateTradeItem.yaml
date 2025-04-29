@@ -1,0 +1,35 @@
+type: object
+properties:
+  a:
+    type: integer
+    description: Aggregate tradeId
+  p:
+    type: string
+    description: Price
+  q:
+    type: string
+    description: Quantity
+  f:
+    type: integer
+    description: First tradeId
+  l:
+    type: integer
+    description: Last tradeId
+  T:
+    type: integer
+    description: Timestamp
+  m:
+    type: boolean
+    description: Was the buyer the maker?
+  M:
+    type: boolean
+    description: Was the trade the best price match?
+required:
+  - a
+  - p
+  - q
+  - f
+  - l
+  - T
+  - m
+  - M

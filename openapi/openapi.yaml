@@ -3,17 +3,38 @@ info:
   title: VibeTrading CEX API
   version: 1.0.0
 tags:
-  - name: BinanceGeneral
+  - name: BinanceSpotGeneral
     description: >
-      General endpoints for Binance, including ping, server time, and exchange information. These endpoints provide public connectivity and exchange metadata.
+      General endpoints for Binance Spot, including ping, server time, and exchange information.
+  - name: BinanceSpotMarketData
+    description: >
+      Market data endpoints for Binance Spot, including order book, trades, klines, and ticker statistics.
 paths:
-  # === binance/general ===
+  # === binance/spot/general ===
   /api/v3/ping:
-    $ref: './binance/general/ping.yaml#/paths/~1api~1v3~1ping'
+    $ref: './binance/spot/general/ping.yaml#/paths/~1api~1v3~1ping'
   /api/v3/time:
-    $ref: './binance/general/time.yaml#/paths/~1api~1v3~1time'
+    $ref: './binance/spot/general/time.yaml#/paths/~1api~1v3~1time'
   /api/v3/exchangeInfo:
-    $ref: './binance/general/exchangeInfo.yaml#/paths/~1api~1v3~1exchangeInfo'
+    $ref: './binance/spot/general/exchangeInfo.yaml#/paths/~1api~1v3~1exchangeInfo'
+
+  # === binance/spot/marketData ===
+  /api/v3/depth:
+    $ref: './binance/spot/marketData/depth.yaml#/paths/~1api~1v3~1depth'
+  /api/v3/trades:
+    $ref: './binance/spot/marketData/trades.yaml#/paths/~1api~1v3~1trades'
+  /api/v3/historicalTrades:
+    $ref: './binance/spot/marketData/historicalTrades.yaml#/paths/~1api~1v3~1historicalTrades'
+  /api/v3/aggTrades:
+    $ref: './binance/spot/marketData/aggTrades.yaml#/paths/~1api~1v3~1aggTrades'
+  /api/v3/klines:
+    $ref: './binance/spot/marketData/klines.yaml#/paths/~1api~1v3~1klines'
+  /api/v3/uiKlines:
+    $ref: './binance/spot/marketData/uiKlines.yaml#/paths/~1api~1v3~1uiKlines'
+  /api/v3/avgPrice:
+    $ref: './binance/spot/marketData/avgPrice.yaml#/paths/~1api~1v3~1avgPrice'
+  /api/v3/ticker/24hr:
+    $ref: './binance/spot/marketData/ticker_24hr.yaml#/paths/~1api~1v3~1ticker~124hr'
 
   # === binance/account ===
   # /api/v3/account:

@@ -1,0 +1,54 @@
+paths:
+  /api/v3/aggTrades:
+    get:
+      tags:
+        - BinanceSpotMarketData
+      summary: Get compressed, aggregate trades
+      description: Get compressed, aggregate trades for a symbol.
+      operationId: getAggregateTrades
+      parameters:
+        - name: symbol
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: fromId
+          in: query
+          required: false
+          schema:
+            type: integer
+        - name: startTime
+          in: query
+          required: false
+          schema:
+            type: integer
+        - name: endTime
+          in: query
+          required: false
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 500
+            maximum: 1000
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: './schemas/AggregateTradeItem.yaml'
+              example:
+                - a: 26129
+                  p: "0.01633102"
+                  q: "4.70443515"
+                  f: 27781
+                  l: 27781
+                  T: 1498793709153
+                  m: true
+                  M: true

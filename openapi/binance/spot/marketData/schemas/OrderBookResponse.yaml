@@ -1,0 +1,27 @@
+type: object
+properties:
+  lastUpdateId:
+    type: integer
+    description: Last update ID
+  bids:
+    type: array
+    description: Bids to be filled [price, qty]
+    items:
+      type: array
+      items:
+        type: string
+      minItems: 2
+      maxItems: 2
+  asks:
+    type: array
+    description: Asks to be filled [price, qty]
+    items:
+      type: array
+      items:
+        type: string
+      minItems: 2
+      maxItems: 2
+required:
+  - lastUpdateId
+  - bids
+  - asks

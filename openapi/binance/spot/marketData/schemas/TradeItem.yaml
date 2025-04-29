@@ -1,0 +1,24 @@
+type: object
+properties:
+  id:
+    type: integer
+  price:
+    type: string
+  qty:
+    type: string
+  quoteQty:
+    type: string
+  time:
+    type: integer
+  isBuyerMaker:
+    type: boolean
+  isBestMatch:
+    type: boolean
+required:
+  - id
+  - price
+  - qty
+  - quoteQty
+  - time
+  - isBuyerMaker
+  - isBestMatch

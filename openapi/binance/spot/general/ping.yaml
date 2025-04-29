@@ -2,7 +2,7 @@ paths:
   /api/v3/ping:
     get:
       tags:
-        - BinanceGeneral
+        - BinanceSpotGeneral
       summary: Test connectivity
       description: Test connectivity to the Rest API.
       responses:

@@ -1,0 +1,25 @@
+paths:
+  /api/v3/avgPrice:
+    get:
+      tags:
+        - BinanceSpotMarketData
+      summary: Get current average price for a symbol
+      description: Get current average price for a symbol.
+      operationId: getAvgPrice
+      parameters:
+        - name: symbol
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: './schemas/AvgPriceResponse.yaml'
+              example:
+                mins: 5
+                price: "9.35751834"
+                closeTime: 1694061154503

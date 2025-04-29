@@ -1,0 +1,51 @@
+paths:
+  /api/v3/uiKlines:
+    get:
+      tags:
+        - BinanceSpotMarketData
+      summary: Get UIKlines (candlestick data for UI)
+      description: Get modified kline data, optimized for presentation of candlestick charts.
+      operationId: getUiKlines
+      parameters:
+        - name: symbol
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: interval
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: startTime
+          in: query
+          required: false
+          schema:
+            type: integer
+        - name: endTime
+          in: query
+          required: false
+          schema:
+            type: integer
+        - name: timeZone
+          in: query
+          required: false
+          schema:
+            type: string
+            default: '0'
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 500
+            maximum: 1000
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: './schemas/KlineItem.yaml'

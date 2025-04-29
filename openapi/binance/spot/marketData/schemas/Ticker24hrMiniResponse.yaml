@@ -1,0 +1,51 @@
+type: object
+properties:
+  symbol:
+    type: string
+    description: Symbol Name
+  openPrice:
+    type: string
+    description: Opening price of the Interval
+  highPrice:
+    type: string
+    description: Highest price in the interval
+  lowPrice:
+    type: string
+    description: Lowest price in the interval
+  lastPrice:
+    type: string
+    description: Closing price of the interval
+  volume:
+    type: string
+    description: Total trade volume (in base asset)
+  quoteVolume:
+    type: string
+    description: Total trade volume (in quote asset)
+  openTime:
+    type: integer
+    description: Start of the ticker interval
+  closeTime:
+    type: integer
+    description: End of the ticker interval
+  firstId:
+    type: integer
+    description: First tradeId considered
+  lastId:
+    type: integer
+    description: Last tradeId considered
+  count:
+    type: integer
+    description: Total trade count
+required:
+  - symbol
+  - openPrice
+  - highPrice
+  - lowPrice
+  - lastPrice
+  - volume
+  - quoteVolume
+  - openTime
+  - closeTime
+  - firstId
+  - lastId
+  - count
