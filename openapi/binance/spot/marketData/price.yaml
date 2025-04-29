@@ -1,0 +1,36 @@
+paths:
+  /api/v3/ticker/price:
+    get:
+      tags:
+        - BinanceSpotMarketData
+      summary: Latest price for a symbol or symbols
+      description: |
+        Latest price for a symbol or symbols.
+        Weight: symbol=1, no symbol=4, symbols(any)=4.
+      operationId: getSymbolPriceTicker
+      parameters:
+        - name: symbol
+          in: query
+          required: false
+          schema:
+            type: string
+          description: |
+            Parameter symbol and symbols cannot be used in combination.
+            If neither parameter is sent, prices for all symbols will be returned in an array.
+        - name: symbols
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Accepts a JSON array of symbol names. E.g. ["BTCUSDT","BNBUSDT"]
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: './schemas/SymbolPriceTickerResponse.yaml'
+                  - type: array
+                    items:
+                      $ref: './schemas/SymbolPriceTickerResponse.yaml'

@@ -1,0 +1,53 @@
+paths:
+  /api/v3/ticker:
+    get:
+      tags:
+        - BinanceSpotMarketData
+      summary: Rolling window price change statistics
+      description: |
+        Rolling window price change statistics. The window used to compute statistics will be no more than 59999ms from the requested windowSize.
+        openTime always starts on a minute, closeTime is the current time of the request.
+        Weight: 4 for each requested symbol regardless of windowSize. The weight for this request will cap at 200 once the number of symbols in the request is more than 50.
+      operationId: getRollingWindowTicker
+      parameters:
+        - name: symbol
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Either symbol or symbols must be provided. The maximum number of symbols allowed in a request is 100.
+        - name: symbols
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Accepts a JSON array of symbol names. E.g. ["BTCUSDT","BNBUSDT"]
+        - name: windowSize
+          in: query
+          required: false
+          schema:
+            type: string
+          description: |
+            Defaults to 1d if no parameter provided. Supported values: 1m,2m....59m for minutes; 1h,2h...23h for hours; 1d...7d for days. Units cannot be combined (e.g. 1d2h is not allowed).
+        - name: type
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [FULL, MINI]
+          description: "Supported values: FULL or MINI. If none provided, the default is FULL."
+      responses:
+        '200':
+          description: Successful response (FULL or MINI)
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: './schemas/TickerRollingWindowFullResponse.yaml'
+                  - type: array
+                    items:
+                      $ref: './schemas/TickerRollingWindowFullResponse.yaml'
+                  - $ref: './schemas/TickerRollingWindowMiniResponse.yaml'
+                  - type: array
+                    items:
+                      $ref: './schemas/TickerRollingWindowMiniResponse.yaml'

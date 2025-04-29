@@ -1,0 +1,9 @@
+type: object
+properties:
+  symbol:
+    type: string
+  price:
+    type: string
+required:
+  - symbol
+  - price

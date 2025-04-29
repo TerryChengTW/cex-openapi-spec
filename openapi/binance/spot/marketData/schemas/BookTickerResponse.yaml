@@ -1,0 +1,18 @@
+type: object
+properties:
+  symbol:
+    type: string
+  bidPrice:
+    type: string
+  bidQty:
+    type: string
+  askPrice:
+    type: string
+  askQty:
+    type: string
+required:
+  - symbol
+  - bidPrice
+  - bidQty
+  - askPrice
+  - askQty

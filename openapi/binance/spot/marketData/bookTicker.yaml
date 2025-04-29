@@ -1,0 +1,36 @@
+paths:
+  /api/v3/ticker/bookTicker:
+    get:
+      tags:
+        - BinanceSpotMarketData
+      summary: Best price/qty on the order book for a symbol or symbols
+      description: |
+        Best price/qty on the order book for a symbol or symbols.
+        Weight: symbol=1, no symbol=4, symbols(any)=4.
+      operationId: getBookTicker
+      parameters:
+        - name: symbol
+          in: query
+          required: false
+          schema:
+            type: string
+          description: |
+            Parameter symbol and symbols cannot be used in combination.
+            If neither parameter is sent, bookTickers for all symbols will be returned in an array.
+        - name: symbols
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Accepts a JSON array of symbol names. E.g. ["BTCUSDT","BNBUSDT"]
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: './schemas/BookTickerResponse.yaml'
+                  - type: array
+                    items:
+                      $ref: './schemas/BookTickerResponse.yaml'
