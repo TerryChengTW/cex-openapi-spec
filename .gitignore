@@ -1,2 +1,3 @@
 generated/
 generate_python_client.bat
+generate_binance_python_client.bat
