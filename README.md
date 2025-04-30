@@ -33,3 +33,11 @@ A unified, modular, and AI-friendly OpenAPI specification for multiple centraliz
 - Generate unified SDKs/clients for multiple CEXs.
 - Build cross-exchange trading bots and analytics tools.
 - Power AI agents with standardized, machine-readable API specs.
+
+### Third-Party Licenses
+
+This project includes parts of the Binance API documentation (spot_api.yaml), retrieved from:
+
+- <https://github.com/binance/binance-api-swagger>
+
+The Binance OpenAPI specification is licensed under the [MIT License](https://opensource.org/license/MIT).
