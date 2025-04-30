@@ -36,11 +36,11 @@ paths:
   /api/v3/ticker/24hr:
     $ref: './binance/spot/marketData/ticker_24hr.yaml#/paths/~1api~1v3~1ticker~124hr'
   /api/v3/ticker/tradingDay:
-    $ref: './binance/spot/marketData/tradingDay.yaml#/paths/~1api~1v3~1tradingDay'
+    $ref: './binance/spot/marketData/tradingDay.yaml#/paths/~1api~1v3~1ticker~1tradingDay'
   /api/v3/ticker/price:
-    $ref: './binance/spot/marketData/price.yaml#/paths/~1api~1v3~1price'
+    $ref: './binance/spot/marketData/price.yaml#/paths/~1api~1v3~1ticker~1price'
   /api/v3/ticker/bookTicker:
-    $ref: './binance/spot/marketData/bookTicker.yaml#/paths/~1api~1v3~1bookTicker'
+    $ref: './binance/spot/marketData/bookTicker.yaml#/paths/~1api~1v3~1ticker~1bookTicker'
   /api/v3/ticker:
     $ref: './binance/spot/marketData/ticker.yaml#/paths/~1api~1v3~1ticker'
 
