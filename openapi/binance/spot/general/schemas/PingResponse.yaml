@@ -1,4 +1,0 @@
-PingResponse:
-  type: object
-  description: Empty response for ping endpoint
-  example: {}

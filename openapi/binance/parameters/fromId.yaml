@@ -1,0 +1,6 @@
+name: fromId
+in: query
+description: Trade id to fetch from. Default gets most recent trades.
+schema:
+  type: integer
+  format: int64

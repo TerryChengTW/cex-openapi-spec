@@ -1,0 +1,50 @@
+description: Leverage info
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          assetNames:
+            type: array
+            items:
+              type: string
+              example: BTC
+          rank:
+            type: integer
+            example: 1
+          brackets:
+            type: array
+            items:
+              type: object
+              properties:
+                leverage:
+                  type: integer
+                  example: 10
+                maxDebt:
+                  type: number
+                  format: double
+                  example: 1000000.0
+                maintenanceMarginRate:
+                  type: number
+                  format: double
+                  example: 0.02
+                initialMarginRate:
+                  type: number
+                  format: double
+                  example: 0.1112
+                fastNum:
+                  type: number
+                  format: double
+                  example: 60000.0
+            required:
+            - leverage
+            - maxDebt
+            - maintenanceMarginRate
+            - initialMarginRate
+            - fastNum
+        required:
+        - assetNames
+        - rank
+        - brackets

@@ -1,0 +1,34 @@
+description: Asset detail
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        CTR:
+          type: object
+          properties:
+            minWithdrawAmount:
+              type: string
+              example: '70.00000000'
+            depositStatus:
+              type: boolean
+              example: false
+              description: deposit status (false if ALL of networks' are false)
+            withdrawFee:
+              type: integer
+              format: int64
+              example: 35
+            withdrawStatus:
+              type: boolean
+              description: withdrawStatus status (false if ALL of networks' are false)
+            depositTip:
+              type: string
+              example: Delisted, Deposit Suspended
+          required:
+          - minWithdrawAmount
+          - depositStatus
+          - withdrawFee
+          - withdrawStatus
+          - depositTip
+      required:
+      - CTR

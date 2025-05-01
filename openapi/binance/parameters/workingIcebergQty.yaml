@@ -1,0 +1,7 @@
+name: workingIcebergQty
+in: query
+required: true
+description: This can only be used if workingTimeInForce is GTC.
+schema:
+  type: number
+  format: double

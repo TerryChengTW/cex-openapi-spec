@@ -1,0 +1,6 @@
+name: strategyType
+in: query
+description: The value cannot be less than 1000000.
+schema:
+  type: integer
+  format: int64

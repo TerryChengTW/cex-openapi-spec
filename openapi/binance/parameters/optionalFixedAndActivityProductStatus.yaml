@@ -1,0 +1,9 @@
+name: status
+in: query
+description: Default `ALL`
+schema:
+  type: string
+  enum:
+  - ALL
+  - SUBSCRIBABLE
+  - UNSUBSCRIBABLE

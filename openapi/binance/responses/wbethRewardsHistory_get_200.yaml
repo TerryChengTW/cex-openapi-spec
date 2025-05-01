@@ -1,0 +1,46 @@
+description: WBETH rewards history
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        estRewardsInETH:
+          type: string
+          example: '1.23230920'
+        rows:
+          type: array
+          items:
+            type: object
+            properties:
+              time:
+                type: integer
+                format: int64
+                example: 1575018510000
+              amountInETH:
+                type: string
+                example: '0.23223'
+                description: Estimated rewards accrued within WBETH
+              holding:
+                type: string
+                example: '2.3223'
+                description: WBETH holding balance
+              holdingInETH:
+                type: string
+                example: '2.4231'
+              annualPercentageRate:
+                type: string
+                example: '0.5'
+            required:
+            - time
+            - amountInETH
+            - holding
+            - holdingInETH
+            - annualPercentageRate
+        total:
+          type: integer
+          format: int64
+          example: 1
+      required:
+      - estRewardsInETH
+      - rows
+      - total

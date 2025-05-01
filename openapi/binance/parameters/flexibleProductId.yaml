@@ -1,0 +1,5 @@
+name: productId
+in: query
+required: true
+schema:
+  type: string

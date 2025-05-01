@@ -1,0 +1,39 @@
+paths:
+  /sapi/v2/loan/flexible/adjust/ltv:
+    post:
+      summary: Adjust LTV - Flexible Loan Adjust LTV (TRADE)
+      description: '- API Key needs Spot & Margin Trading permission for this endpoint
+
+
+        Weight(UID): 6000'
+      tags:
+      - Crypto Loans
+      parameters:
+      - $ref: ..\..\parameters/loanCoin.yaml
+      - $ref: ..\..\parameters/collateralCoin.yaml
+      - name: adjustmentAmount
+        in: query
+        required: true
+        schema:
+          type: number
+          format: float
+      - name: direction
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - ADDITIONAL
+          - REDUCED
+      - $ref: ..\..\parameters/recvWindow.yaml
+      - $ref: ..\..\parameters/timestamp.yaml
+      - $ref: ..\..\parameters/signature.yaml
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/ltv_post_200.yaml
+        '400':
+          $ref: ..\..\responses/ltv_post_400.yaml
+        '401':
+          $ref: ..\..\responses/ltv_post_401.yaml

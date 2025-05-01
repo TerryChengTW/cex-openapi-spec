@@ -1,0 +1,68 @@
+paths:
+  /sapi/v1/capital/withdraw/apply:
+    post:
+      summary: Withdraw (USER_DATA)
+      description: 'Submit a withdraw request.
+
+
+        - If `network` not send, return with default network of the coin.
+
+        - You can get `network` and `isDefault` in `networkList` of a coin in the
+        response of `Get /sapi/v1/capital/config/getall (HMAC SHA256)`.
+
+
+        Weight(IP): 1'
+      tags:
+      - Wallet
+      parameters:
+      - $ref: ..\..\parameters/coin.yaml
+      - name: withdrawOrderId
+        in: query
+        description: Client id for withdraw
+        schema:
+          type: string
+      - $ref: ..\..\parameters/network.yaml
+      - name: address
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: addressTag
+        in: query
+        description: Secondary address identifier for coins like XRP,XMR etc.
+        schema:
+          type: string
+      - $ref: ..\..\parameters/amount.yaml
+      - name: transactionFeeFlag
+        in: query
+        description: 'When making internal transfer
+
+          - `true` ->  returning the fee to the destination account;
+
+          - `false` -> returning the fee back to the departure account.'
+        schema:
+          type: boolean
+          default: false
+      - name: name
+        in: query
+        schema:
+          type: string
+      - name: walletType
+        in: query
+        description: "The wallet type for withdraw\uFF0C0-Spot wallet, 1- Funding\
+          \ wallet. Default is Spot wallet"
+        schema:
+          type: integer
+          format: int32
+      - $ref: ..\..\parameters/recvWindow.yaml
+      - $ref: ..\..\parameters/timestamp.yaml
+      - $ref: ..\..\parameters/signature.yaml
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/apply_post_200.yaml
+        '400':
+          $ref: ..\..\responses/apply_post_400.yaml
+        '401':
+          $ref: ..\..\responses/apply_post_401.yaml

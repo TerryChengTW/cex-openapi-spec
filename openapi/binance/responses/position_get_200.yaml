@@ -1,0 +1,158 @@
+description: Locked Product Position
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        rows:
+          type: array
+          items:
+            type: object
+            properties:
+              positionId:
+                type: string
+                example: '123123'
+              parentPositionId:
+                type: string
+                example: '123122'
+              projectId:
+                type: string
+                example: Axs*90
+              asset:
+                type: string
+                example: AXS
+              amount:
+                type: string
+                example: '122.09202928'
+              purchaseTime:
+                type: string
+                example: '1646182276000'
+              duration:
+                type: string
+                example: '60'
+              accrualDays:
+                type: string
+                example: '4'
+              rewardAsset:
+                type: string
+                example: AXS
+              APY:
+                type: string
+                example: '0.23'
+              rewardAmt:
+                type: string
+                description: Earned amount
+                example: '5.17181528'
+              extraRewardAsset:
+                type: string
+                description: Rewards assets of extra staking type
+                example: BNB
+              extraRewardAPR:
+                type: string
+                description: APR of extra staking type
+                example: '0.0203'
+              estExtraRewardAmt:
+                type: string
+                description: Rewards of extra staking type, distribute when order
+                  expires
+                example: '5.17181528'
+              nextPay:
+                type: string
+                description: Next estimated rewards payment
+                example: '1.29295383'
+              nextPayDate:
+                type: string
+                description: Next rewards payment date
+                example: '1646697600000'
+              payPeriod:
+                type: string
+                description: Payment cycle
+                example: '1'
+              redeemAmountEarly:
+                type: string
+                description: Early redemption amount
+                example: '2802.24068892'
+              rewardsEndDate:
+                type: string
+                description: Rewards accrual end date
+                example: '1651449600000'
+              deliverDate:
+                type: string
+                description: Redemption arrival time
+                example: '1651536000000'
+              redeemPeriod:
+                type: string
+                description: Redemption interval
+                example: '1'
+              redeemingAmt:
+                type: string
+                description: Amount under redemption
+                example: '232.2323'
+              redeemTo:
+                type: string
+                description: Redeem to Flexible product or Spot wallet
+                example: FLEXIBLE
+              partialAmtDeliverDate:
+                type: string
+                description: Arrival time of partial redemption amount of order
+                example: '1651536000000'
+              canRedeemEarly:
+                type: boolean
+                description: When it is true, early redemption can be operated
+                example: true
+              canFastRedemption:
+                type: boolean
+                description: When it is true, fast redemption can be operated
+                example: true
+              autoSubscribe:
+                type: boolean
+                description: When it is true, auto staking can be operated
+                example: true
+              type:
+                type: string
+                description: Order type is auto subscribe or normal
+                example: AUTO
+              status:
+                type: string
+                example: HOLDING
+              canReStake:
+                type: boolean
+                example: true
+            required:
+            - positionId
+            - parentPositionId
+            - projectId
+            - asset
+            - amount
+            - purchaseTime
+            - duration
+            - accrualDays
+            - rewardAsset
+            - APY
+            - rewardAmt
+            - extraRewardAsset
+            - extraRewardAPR
+            - estExtraRewardAmt
+            - nextPay
+            - nextPayDate
+            - payPeriod
+            - redeemAmountEarly
+            - rewardsEndDate
+            - deliverDate
+            - redeemPeriod
+            - redeemingAmt
+            - redeemTo
+            - partialAmtDeliverDate
+            - canRedeemEarly
+            - canFastRedemption
+            - autoSubscribe
+            - type
+            - status
+            - canReStake
+        total:
+          type: integer
+          format: int64
+          example: 1
+      required:
+      - rows
+      - total

@@ -1,0 +1,39 @@
+description: Delegation History
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        total:
+          type: integer
+          example: 3316
+        rows:
+          type: array
+          items:
+            type: object
+            properties:
+              clientTranId:
+                type: string
+                example: '293915932290879488'
+              transferType:
+                type: string
+                example: Undelegate
+              asset:
+                type: string
+                example: ETH
+              amount:
+                type: string
+                example: '1'
+              time:
+                type: integer
+                format: int64
+                example: 1695205406000
+            required:
+            - clientTranId
+            - transferType
+            - asset
+            - amount
+            - time
+      required:
+      - total
+      - rows

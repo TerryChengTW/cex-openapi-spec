@@ -1,0 +1,7 @@
+name: loanAmount
+in: query
+description: Loan amount
+schema:
+  type: number
+  format: float
+  example: 100.1

@@ -1,0 +1,66 @@
+description: Dual Investment product subscription response
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        positionId:
+          type: integer
+          format: int64
+          example: 10208824
+        investCoin:
+          type: string
+          example: BNB
+        exercisedCoin:
+          type: string
+          example: USDT
+        subscriptionAmount:
+          type: string
+          example: '0.002'
+        duration:
+          type: integer
+          format: int32
+          example: 4
+        autoCompoundPlan:
+          type: string
+          description: STANDARD, ADVANCED, this field won't display when autocompound
+            is set to None
+          example: STANDARD
+        strikePrice:
+          type: string
+          example: '380'
+        settleDate:
+          type: integer
+          format: int64
+          example: 1709020800000
+        purchaseStatus:
+          type: string
+          example: PURCHASE_SUCCESS
+        apr:
+          type: string
+          example: '0.7397'
+        orderId:
+          type: integer
+          format: int64
+          example: 8259117597
+        purchaseTime:
+          type: integer
+          format: int64
+          example: 1708677583874
+        optionType":
+          type: string
+          example: CALL
+      required:
+      - positionId
+      - investCoin
+      - exercisedCoin
+      - subscriptionAmount
+      - duration
+      - autoCompoundPlan
+      - strikePrice
+      - settleDate
+      - purchaseStatus
+      - apr
+      - orderId
+      - purchaseTime
+      - optionType

@@ -1,0 +1,30 @@
+description: Loan History
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          asset:
+            type: string
+            example: BUSD
+          type:
+            type: string
+            example: borrowIn
+          amount:
+            type: string
+            example: '100'
+          timestamp:
+            type: integer
+            format: int64
+            example: 1633771139847
+          tranId:
+            type: string
+            example: '80423589583'
+        required:
+        - asset
+        - type
+        - amount
+        - timestamp
+        - tranId

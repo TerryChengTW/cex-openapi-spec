@@ -1,0 +1,56 @@
+type: object
+properties:
+  code:
+    type: integer
+    format: int64
+    example: 200
+  msg:
+    type: string
+    example: ''
+  snapshotVos:
+    type: array
+    items:
+      type: object
+      properties:
+        data:
+          type: object
+          properties:
+            balances:
+              type: array
+              items:
+                type: object
+                properties:
+                  asset:
+                    type: string
+                    example: BTC
+                  free:
+                    type: string
+                    example: '0.2'
+                  locked:
+                    type: string
+                    example: '0.001'
+                required:
+                - asset
+                - free
+                - locked
+            totalAssetOfBtc:
+              type: string
+              example: '0.09905021'
+          required:
+          - balances
+          - totalAssetOfBtc
+        type:
+          type: string
+          example: spot
+        updateTime:
+          type: integer
+          format: int64
+          example: 1576281599000
+      required:
+      - data
+      - type
+      - updateTime
+required:
+- code
+- msg
+- snapshotVos

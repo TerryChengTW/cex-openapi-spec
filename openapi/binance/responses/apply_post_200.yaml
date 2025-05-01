@@ -1,0 +1,11 @@
+description: Transafer Id
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        id:
+          type: string
+          example: 7213fea8e94b4a5593d507237e5a555b
+      required:
+      - id

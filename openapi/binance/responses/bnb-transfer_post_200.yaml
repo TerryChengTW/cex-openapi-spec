@@ -1,0 +1,12 @@
+description: Result
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        tranId:
+          type: integer
+          format: int64
+          example: 100000001
+      required:
+      - tranId

@@ -1,0 +1,6 @@
+name: toSymbol
+in: query
+description: Must be sent when type are MARGIN_ISOLATEDMARGIN and ISOLATEDMARGIN_ISOLATEDMARGIN
+schema:
+  type: string
+  example: BNBUSDT

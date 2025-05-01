@@ -1,0 +1,31 @@
+paths:
+  /sapi/v1/eth-staking/wbeth/wrap:
+    post:
+      summary: Wrap BETH(TRADE)
+      description: '- You need to open Enable Spot & Margin Trading permission for
+        the API Key which requests this endpoint.
+
+
+        Weight(IP): 150'
+      tags:
+      - Staking
+      parameters:
+      - name: amount
+        in: query
+        required: true
+        description: Amount in BETH, limit 4 decimals
+        schema:
+          type: number
+          format: double
+      - $ref: ..\..\parameters/recvWindow.yaml
+      - $ref: ..\..\parameters/timestamp.yaml
+      - $ref: ..\..\parameters/signature.yaml
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/wrap_post_200.yaml
+        '400':
+          $ref: ..\..\responses/wrap_post_400.yaml
+        '401':
+          $ref: ..\..\responses/wrap_post_401.yaml

@@ -1,0 +1,41 @@
+paths:
+  /api/v3/myAllocations:
+    get:
+      summary: Query Allocations (USER_DATA)
+      description: "Retrieves allocations resulting from SOR order placement.\n\n\
+        Weight: 20\n\nSupported parameter combinations:\nParameters \t           \
+        \               Response\nsymbol \t                              allocations\
+        \ from oldest to newest\nsymbol + startTime \t                  oldest allocations\
+        \ since startTime\nsymbol + endTime \t                    newest allocations\
+        \ until endTime\nsymbol + startTime + endTime \t        allocations within\
+        \ the time range\nsymbol + fromAllocationId \t          allocations by allocation\
+        \ ID\nsymbol + orderId \t                    allocations related to an order\
+        \ starting with oldest\nsymbol + orderId + fromAllocationId \tallocations\
+        \ related to an order by allocation ID\n\nNote: The time between startTime\
+        \ and endTime can't be longer than 24 hours."
+      tags:
+      - Trade
+      parameters:
+      - $ref: ..\..\parameters/symbol.yaml
+      - $ref: ..\..\parameters/startTime.yaml
+      - $ref: ..\..\parameters/endTime.yaml
+      - name: fromAllocationId
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - $ref: ..\..\parameters/limit.yaml
+      - $ref: ..\..\parameters/orderId.yaml
+      - $ref: ..\..\parameters/recvWindow.yaml
+      - $ref: ..\..\parameters/timestamp.yaml
+      - $ref: ..\..\parameters/signature.yaml
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/myAllocations_get_200.yaml
+        '400':
+          $ref: ..\..\responses/myAllocations_get_400.yaml
+        '401':
+          $ref: ..\..\responses/myAllocations_get_401.yaml

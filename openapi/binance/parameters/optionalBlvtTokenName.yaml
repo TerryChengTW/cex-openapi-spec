@@ -1,0 +1,5 @@
+name: tokenName
+in: query
+description: BTCDOWN, BTCUP
+schema:
+  type: string

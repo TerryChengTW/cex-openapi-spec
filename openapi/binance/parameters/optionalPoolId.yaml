@@ -1,0 +1,5 @@
+name: poolId
+in: query
+schema:
+  type: integer
+  format: int64

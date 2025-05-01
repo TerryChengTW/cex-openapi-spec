@@ -1,0 +1,39 @@
+description: Loan asset data
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        rows:
+          type: array
+          items:
+            type: object
+            properties:
+              collateralCoin:
+                type: string
+                example: BNB
+              initialLTV:
+                type: string
+                example: '0.01'
+              marginCallLTV:
+                type: string
+                example: '0.7'
+              liquidationLTV:
+                type: string
+                example: '0.8'
+              maxLimit:
+                type: string
+                example: '1000000'
+            required:
+            - collateralCoin
+            - initialLTV
+            - marginCallLTV
+            - liquidationLTV
+            - maxLimit
+        total:
+          type: integer
+          format: int32
+          example: 1
+      required:
+      - rows
+      - total

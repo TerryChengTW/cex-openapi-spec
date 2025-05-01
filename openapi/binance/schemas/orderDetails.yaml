@@ -1,0 +1,94 @@
+type: object
+properties:
+  symbol:
+    type: string
+    example: LTCBTC
+  orderId:
+    type: integer
+    format: int64
+    example: 1
+  orderListId:
+    type: integer
+    format: int64
+    description: Unless OCO, value will be -1
+    example: -1
+  clientOrderId:
+    type: string
+    example: myOrder1
+  price:
+    type: string
+    example: '0.1'
+  origQty:
+    type: string
+    example: '1.0'
+  executedQty:
+    type: string
+    example: '0.0'
+  cummulativeQuoteQty:
+    type: string
+    example: '0.0'
+  status:
+    type: string
+    example: NEW
+  timeInForce:
+    type: string
+    example: GTC
+  type:
+    type: string
+    example: LIMIT
+  side:
+    type: string
+    example: BUY
+  stopPrice:
+    type: string
+    example: '0.0'
+  icebergQty:
+    type: string
+    example: '0.0'
+  time:
+    type: integer
+    format: int64
+    example: 1499827319559
+  updateTime:
+    type: integer
+    format: int64
+    example: 1499827319559
+  isWorking:
+    type: boolean
+  workingTime:
+    type: integer
+    format: int64
+    example: 1499827319559
+  origQuoteOrderQty:
+    type: string
+    example: '0.00000000'
+  selfTradePreventionMode:
+    type: string
+    example: NONE
+  preventedMatchId:
+    type: integer
+    example: 0
+  preventedQuantity:
+    type: string
+    example: '1.200000'
+required:
+- symbol
+- orderId
+- orderListId
+- clientOrderId
+- price
+- origQty
+- executedQty
+- cummulativeQuoteQty
+- status
+- timeInForce
+- type
+- side
+- stopPrice
+- icebergQty
+- time
+- updateTime
+- isWorking
+- workingTime
+- origQuoteOrderQty
+- selfTradePreventionMode

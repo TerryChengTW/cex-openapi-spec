@@ -1,0 +1,23 @@
+paths:
+  /sapi/v1/margin/isolated/accountLimit:
+    get:
+      summary: Query Enabled Isolated Margin Account Limit (USER_DATA)
+      description: 'Query enabled isolated margin account limit.
+
+
+        Weight(IP): 1'
+      tags:
+      - Margin
+      parameters:
+      - $ref: ..\..\parameters/recvWindow.yaml
+      - $ref: ..\..\parameters/timestamp.yaml
+      - $ref: ..\..\parameters/signature.yaml
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/accountLimit_get_200.yaml
+        '400':
+          $ref: ..\..\responses/accountLimit_get_400.yaml
+        '401':
+          $ref: ..\..\responses/accountLimit_get_401.yaml

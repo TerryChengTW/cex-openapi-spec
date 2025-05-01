@@ -1,0 +1,7 @@
+description: Order book ticker
+content:
+  application/json:
+    schema:
+      oneOf:
+      - $ref: '#/components/schemas/bookTicker'
+      - $ref: '#/components/schemas/bookTickerList'

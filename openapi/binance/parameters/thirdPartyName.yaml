@@ -1,0 +1,6 @@
+name: thirdPartyName
+in: query
+required: false
+description: third party IP list name
+schema:
+  type: string

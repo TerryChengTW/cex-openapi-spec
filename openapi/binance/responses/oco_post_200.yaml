@@ -1,0 +1,155 @@
+description: New Margin OCO details
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        orderListId:
+          type: integer
+          format: int64
+          example: 0
+        contingencyType:
+          type: string
+          example: OCO
+        listStatusType:
+          type: string
+          example: EXEC_STARTED
+        listOrderStatus:
+          type: string
+          example: EXECUTING
+        listClientOrderId:
+          type: string
+          example: JYVpp3F0f5CAG15DhtrqLp
+        transactionTime:
+          type: integer
+          format: int64
+          example: 1563417480525
+        symbol:
+          type: string
+          example: LTCBTC
+        marginBuyBorrowAmount:
+          type: string
+          example: '5'
+          description: will not return if no margin trade happens
+        marginBuyBorrowAsset:
+          type: string
+          example: BTC
+          description: will not return if no margin trade happens
+        isIsolated:
+          type: boolean
+          example: false
+        orders:
+          type: array
+          items:
+            type: object
+            properties:
+              symbol:
+                type: string
+              orderId:
+                type: integer
+                format: int64
+              clientOrderId:
+                type: string
+            required:
+            - symbol
+            - orderId
+            - clientOrderId
+          example:
+          - symbol: LTCBTC
+            orderId: 2
+            clientOrderId: Kk7sqHb9J6mJWTMDVW7Vos
+          - symbol: LTCBTC
+            orderId: 3
+            clientOrderId: xTXKaGYd4bluPVp78IVRvl
+        orderReports:
+          type: array
+          items:
+            type: object
+            properties:
+              symbol:
+                type: string
+              orderId:
+                type: integer
+                format: int64
+              orderListId:
+                type: integer
+                format: int64
+              clientOrderId:
+                type: string
+              transactTime:
+                type: integer
+                format: int64
+              price:
+                type: string
+              origQty:
+                type: string
+              executedQty:
+                type: string
+              cummulativeQuoteQty:
+                type: string
+              status:
+                type: string
+              timeInForce:
+                type: string
+              type:
+                type: string
+              side:
+                type: string
+              stopPrice:
+                type: string
+            required:
+            - symbol
+            - orderId
+            - orderListId
+            - clientOrderId
+            - transactTime
+            - price
+            - origQty
+            - executedQty
+            - cummulativeQuoteQty
+            - status
+            - timeInForce
+            - type
+            - side
+            - stopPrice
+          example:
+          - symbol: LTCBTC
+            orderId: 2
+            orderListId: 0
+            clientOrderId: Kk7sqHb9J6mJWTMDVW7Vos
+            transactTime: 1563417480525
+            price: '0.000000'
+            origQty: '0.624363'
+            executedQty: '0.000000'
+            cummulativeQuoteQty: '0.000000'
+            status: NEW
+            timeInForce: GTC
+            type: STOP_LOSS
+            side: BUY
+            stopPrice: '0.960664'
+          - symbol: LTCBTC
+            orderId: 3
+            orderListId: 0
+            clientOrderId: xTXKaGYd4bluPVp78IVRvl
+            transactTime: 1563417480525
+            price: '0.036435'
+            origQty: '0.624363'
+            executedQty: '0.000000'
+            cummulativeQuoteQty: '0.000000'
+            status: NEW
+            timeInForce: GTC
+            type: LIMIT_MAKER
+            side: BUY
+      required:
+      - orderListId
+      - contingencyType
+      - listStatusType
+      - listOrderStatus
+      - listClientOrderId
+      - transactionTime
+      - symbol
+      - marginBuyBorrowAmount
+      - marginBuyBorrowAsset
+      - isIsolated
+      - orders
+      - orderReports

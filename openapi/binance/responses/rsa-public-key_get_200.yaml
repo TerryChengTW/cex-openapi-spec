@@ -1,0 +1,23 @@
+description: RSA Public Key.
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        code:
+          type: string
+          example: '000000'
+        message:
+          type: string
+          example: success
+        data:
+          type: string
+          example: MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCXBBVKLAc1GQ5FsIFFqOHrPTox5noBONIKr+IAedTR9FkVxq6e65updEbfdhRNkMOeYIO2i0UylrjGC0X8YSoIszmrVHeV0l06Zh1oJuZos1+7N+WLuz9JvlPaawof3GUakTxYWWCa9+8KIbLKsoKMdfS96VT+8iOXO3quMGKUmQIDAQAB
+        success:
+          type: boolean
+          example: true
+      required:
+      - code
+      - message
+      - data
+      - success

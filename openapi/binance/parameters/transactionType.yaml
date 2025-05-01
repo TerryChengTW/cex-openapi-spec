@@ -1,0 +1,11 @@
+name: transactionType
+in: query
+required: true
+description: '* `0` - deposit
+
+  * `1` - withdraw'
+schema:
+  type: integer
+  format: int32
+  minimum: 0
+  maximum: 1

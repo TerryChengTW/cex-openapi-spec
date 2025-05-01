@@ -1,0 +1,9 @@
+name: sideEffectType
+in: query
+description: Default `NO_SIDE_EFFECT`
+schema:
+  type: string
+  enum:
+  - NO_SIDE_EFFECT
+  - MARGIN_BUY
+  - AUTO_REPAY

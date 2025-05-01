@@ -1,0 +1,23 @@
+paths:
+  /sapi/v1/account/apiTradingStatus:
+    get:
+      summary: Account API Trading Status (USER_DATA)
+      description: 'Fetch account API trading status with details.
+
+
+        Weight(IP): 1'
+      tags:
+      - Wallet
+      parameters:
+      - $ref: ..\..\parameters/recvWindow.yaml
+      - $ref: ..\..\parameters/timestamp.yaml
+      - $ref: ..\..\parameters/signature.yaml
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/apiTradingStatus_get_200.yaml
+        '400':
+          $ref: ..\..\responses/apiTradingStatus_get_400.yaml
+        '401':
+          $ref: ..\..\responses/apiTradingStatus_get_401.yaml

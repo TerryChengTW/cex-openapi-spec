@@ -1,0 +1,30 @@
+paths:
+  /sapi/v1/convert/exchangeInfo:
+    get:
+      summary: List All Convert Pairs
+      description: "Query for all convertible token pairs and the tokens\u2019 respective\
+        \ upper/lower limits\n\nWeight(IP): 3000"
+      tags:
+      - Convert
+      parameters:
+      - name: fromAsset
+        in: query
+        required: false
+        description: User spends coin
+        schema:
+          type: string
+          example: BTC
+      - name: toAsset
+        in: query
+        required: false
+        description: User receives coin
+        schema:
+          type: string
+          example: USDT
+      responses:
+        '200':
+          $ref: ..\..\responses/exchangeInfo_get_200.yaml
+        '400':
+          $ref: ..\..\responses/exchangeInfo_get_400.yaml
+        '401':
+          $ref: ..\..\responses/exchangeInfo_get_401.yaml

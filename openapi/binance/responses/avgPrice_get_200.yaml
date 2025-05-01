@@ -1,0 +1,24 @@
+description: Average price
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        mins:
+          type: integer
+          format: int64
+          example: 5
+          description: Average price interval (in minutes)
+        price:
+          type: string
+          example: '9.35751834'
+          description: Average price
+        closeTime:
+          type: integer
+          format: int64
+          example: 1694061154503
+          description: Last trade time
+      required:
+      - mins
+      - price
+      - closeTime

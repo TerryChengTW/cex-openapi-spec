@@ -1,0 +1,27 @@
+paths:
+  /sapi/v2/loan/flexible/borrow:
+    post:
+      summary: Borrow - Flexible Loan Borrow (TRADE)
+      description: '- Only available for master account
+
+
+        Weight(UID): 6000'
+      tags:
+      - Crypto Loans
+      parameters:
+      - $ref: ..\..\parameters/loanCoin.yaml
+      - $ref: ..\..\parameters/loanAmount.yaml
+      - $ref: ..\..\parameters/collateralCoin.yaml
+      - $ref: ..\..\parameters/collateralAmount.yaml
+      - $ref: ..\..\parameters/recvWindow.yaml
+      - $ref: ..\..\parameters/timestamp.yaml
+      - $ref: ..\..\parameters/signature.yaml
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/borrow_post_200.yaml
+        '400':
+          $ref: ..\..\responses/borrow_post_400.yaml
+        '401':
+          $ref: ..\..\responses/borrow_post_401.yaml

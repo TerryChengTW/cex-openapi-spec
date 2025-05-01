@@ -1,0 +1,9 @@
+name: newOrderRespType
+in: query
+description: Set the response JSON.
+schema:
+  type: string
+  enum:
+  - ACK
+  - RESULT
+  - FULL

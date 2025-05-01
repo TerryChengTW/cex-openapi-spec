@@ -1,0 +1,6 @@
+name: fromEmail
+in: query
+required: true
+schema:
+  type: string
+description: Sender email

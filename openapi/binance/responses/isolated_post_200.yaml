@@ -1,0 +1,11 @@
+description: Isolated margin listen key
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        listenKey:
+          type: string
+          example: T3ee22BIYuWqmvne0HNq2A2WsFlEtLhvWCtItw6ffhhdmjifQ2tRbuKkTHhr
+      required:
+      - listenKey

@@ -1,0 +1,8 @@
+description: Margin order info
+content:
+  application/json:
+    schema:
+      oneOf:
+      - $ref: '#/components/schemas/marginOrderResponseAck'
+      - $ref: '#/components/schemas/marginOrderResponseResult'
+      - $ref: '#/components/schemas/marginOrderResponseFull'

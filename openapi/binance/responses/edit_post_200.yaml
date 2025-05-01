@@ -1,0 +1,16 @@
+description: Plan result
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        planId:
+          type: integer
+          example: 12345
+        nextExecutionDateTime:
+          type: integer
+          format: int64
+          example: 1648378800000
+      required:
+      - planId
+      - nextExecutionDateTime

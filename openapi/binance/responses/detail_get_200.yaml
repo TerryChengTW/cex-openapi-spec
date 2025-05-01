@@ -1,0 +1,55 @@
+description: List of workers' hashrates'
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int64
+          example: 0
+        msg:
+          type: string
+          example: ''
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              workerName:
+                type: string
+                example: bhdc1.16A10404B
+                description: Mining Account name
+              type:
+                type: string
+                example: H_hashrate
+                description: Type of hourly hashrate
+              hashrateDatas:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    time:
+                      type: integer
+                      format: int64
+                      example: 1587902400000
+                    hashrate:
+                      type: string
+                      example: '0'
+                    reject:
+                      type: integer
+                      format: int64
+                      example: 0
+                      description: Rejection Rate
+                  required:
+                  - time
+                  - hashrate
+                  - reject
+            required:
+            - workerName
+            - type
+            - hashrateDatas
+      required:
+      - code
+      - msg
+      - data

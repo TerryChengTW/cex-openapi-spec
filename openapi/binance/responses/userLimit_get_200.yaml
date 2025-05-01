@@ -1,0 +1,23 @@
+description: List of token limits
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          tokenName:
+            type: string
+            example: LINKUP
+          userDailyTotalPurchaseLimit:
+            type: string
+            example: '1000'
+            description: USDT
+          userDailyTotalRedeemLimit:
+            type: string
+            example: '1000'
+            description: USDT
+        required:
+        - tokenName
+        - userDailyTotalPurchaseLimit
+        - userDailyTotalRedeemLimit

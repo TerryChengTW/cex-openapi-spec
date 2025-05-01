@@ -1,0 +1,15 @@
+type: object
+properties:
+  loanCoin:
+    type: string
+    example: BUSD
+  collateralCoin:
+    type: string
+    example: BNB
+  repayStatus:
+    type: string
+    example: Repaying
+required:
+- loanCoin
+- collateralCoin
+- repayStatus

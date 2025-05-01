@@ -1,0 +1,33 @@
+paths:
+  /api/v3/depth:
+    get:
+      summary: Order Book
+      description: '| Limit               | Weight(IP)  |
+
+        |---------------------|-------------|
+
+        | 1-100               | 5           |
+
+        | 101-500             | 25          |
+
+        | 501-1000            | 50          |
+
+        | 1001-5000           | 250         |'
+      tags:
+      - Market
+      parameters:
+      - $ref: ..\..\parameters/symbol.yaml
+      - name: limit
+        in: query
+        description: If limit > 5000, then the response will truncate to 5000
+        schema:
+          type: integer
+          format: int32
+          default: 100
+          maximum: 5000
+          example: 100
+      responses:
+        '200':
+          $ref: ..\..\responses/depth_get_200.yaml
+        '400':
+          $ref: ..\..\responses/depth_get_400.yaml

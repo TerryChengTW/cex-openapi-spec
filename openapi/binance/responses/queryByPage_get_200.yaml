@@ -1,0 +1,46 @@
+description: Cloud Mining Payment and Refund History
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        total:
+          type: integer
+          format: int32
+          example: 1
+        rows:
+          type: array
+          items:
+            type: object
+            properties:
+              createTime:
+                type: integer
+                format: int64
+                example: 1667880112000
+              tranId:
+                type: integer
+                format: int64
+                example: 121230610120
+              type:
+                type: integer
+                format: int64
+                example: 248
+              asset:
+                type: string
+                example: USDT
+              amount:
+                type: string
+                example: '1'
+              status:
+                type: string
+                example: S
+            required:
+            - createTime
+            - tranId
+            - type
+            - asset
+            - amount
+            - status
+      required:
+      - total
+      - rows

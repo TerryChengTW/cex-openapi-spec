@@ -1,0 +1,67 @@
+paths:
+  /sapi/v1/convert/getQuote:
+    post:
+      summary: Send quote request (USER_DATA)
+      description: 'Request a quote for the requested token pairs
+
+
+        Weight(UID): 200'
+      tags:
+      - Convert
+      parameters:
+      - name: fromAsset
+        in: query
+        required: true
+        schema:
+          type: string
+          example: BTC
+      - name: toAsset
+        in: query
+        required: true
+        schema:
+          type: string
+          example: USDT
+      - name: fromAmount
+        in: query
+        required: false
+        description: When specified, it is the amount you will be debited after the
+          conversion
+        schema:
+          type: number
+          format: float
+          example: 1.0
+      - name: toAmount
+        in: query
+        required: false
+        description: When specified, it is the amount you will be debited after the
+          conversion
+        schema:
+          type: number
+          format: float
+          example: 1.0
+      - name: validTime
+        in: query
+        required: false
+        description: 10s, 30s, 1m, 2m, default 10s
+        schema:
+          type: string
+          example: 10s
+      - name: walletType
+        in: query
+        required: false
+        description: SPOT or FUNDING. Default is SPOT
+        schema:
+          type: string
+          example: SPOT
+      - $ref: ..\..\parameters/recvWindow.yaml
+      - $ref: ..\..\parameters/timestamp.yaml
+      - $ref: ..\..\parameters/signature.yaml
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/getQuote_post_200.yaml
+        '400':
+          $ref: ..\..\responses/getQuote_post_400.yaml
+        '401':
+          $ref: ..\..\responses/getQuote_post_401.yaml

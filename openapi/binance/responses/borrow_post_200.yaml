@@ -1,0 +1,26 @@
+description: Collateral Assets Data
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        loanCoin:
+          type: string
+          example: BUSD
+        loanAmount:
+          type: string
+          example: '100.5'
+        collateralCoin:
+          type: string
+          example: BNB
+        collateralAmount:
+          type: string
+          example: '50.5'
+        status:
+          type: string
+          example: Succeeds
+      required:
+      - loanCoin
+      - loanAmount
+      - collateralAmount
+      - status

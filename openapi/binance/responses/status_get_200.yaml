@@ -1,0 +1,16 @@
+description: transaction result
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        transactionId:
+          type: integer
+          format: int64
+          example: 12345
+        status:
+          type: string
+          example: SUCCESS
+      required:
+      - transactionId
+      - status

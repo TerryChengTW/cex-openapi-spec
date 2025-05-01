@@ -1,0 +1,7 @@
+name: quantity
+in: query
+required: true
+schema:
+  type: number
+  format: double
+  example: 1.0

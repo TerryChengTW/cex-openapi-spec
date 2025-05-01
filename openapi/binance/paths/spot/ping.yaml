@@ -1,0 +1,13 @@
+paths:
+  /api/v3/ping:
+    get:
+      summary: Test Connectivity
+      description: 'Test connectivity to the Rest API.
+
+
+        Weight(IP): 1'
+      tags:
+      - Market
+      responses:
+        '200':
+          $ref: ..\..\responses/ping_get_200.yaml

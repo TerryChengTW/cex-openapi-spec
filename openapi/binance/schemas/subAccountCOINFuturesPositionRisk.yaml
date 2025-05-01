@@ -1,0 +1,54 @@
+type: object
+properties:
+  deliveryPositionRiskVos:
+    type: array
+    items:
+      type: object
+      properties:
+        entryPrice:
+          type: string
+          example: '9975.12000'
+        markPrice:
+          type: string
+          example: '9973.50770517'
+        leverage:
+          type: string
+          example: '20'
+        isolated:
+          type: string
+          example: false
+        isolatedWallet:
+          type: string
+          example: '9973.50770517'
+        isolatedMargin:
+          type: string
+          example: '0.00000000'
+        isAutoAddMargin:
+          type: string
+          example: 'false'
+        positionSide:
+          type: string
+          example: BOTH
+        positionAmount:
+          type: string
+          example: '1.230'
+        symbol:
+          type: string
+          example: BTCUSD_201225
+        unrealizedProfit:
+          type: string
+          example: '-0.01612295'
+      required:
+      - entryPrice
+      - markPrice
+      - leverage
+      - isolated
+      - isolatedWallet
+      - isolatedMargin
+      - isAutoAddMargin
+      - positionSide
+      - positionAmount
+      - symbol
+      - unrealizedProfit
+required:
+- deliveryPositionRiskVos

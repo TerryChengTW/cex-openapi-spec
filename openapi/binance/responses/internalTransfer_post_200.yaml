@@ -1,0 +1,14 @@
+description: Futures Asset Transfer Info
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        success:
+          type: boolean
+        txnId:
+          type: string
+          example: '2934662589'
+      required:
+      - success
+      - txnId

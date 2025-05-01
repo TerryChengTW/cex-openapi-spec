@@ -1,0 +1,6 @@
+name: coin
+in: query
+description: Coin name
+schema:
+  type: string
+  example: BNB

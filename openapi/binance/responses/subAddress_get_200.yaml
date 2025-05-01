@@ -1,0 +1,23 @@
+description: Deposit address info
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        address:
+          type: string
+          example: TDunhSa7jkTNuKrusUTU1MUHtqXoBPKETV
+        coin:
+          type: string
+          example: USDT
+        tag:
+          type: string
+          example: ''
+        url:
+          type: string
+          example: https://tronscan.org/#/address/TDunhSa7jkTNuKrusUTU1MUHtqXoBPKETV
+      required:
+      - address
+      - coin
+      - tag
+      - url

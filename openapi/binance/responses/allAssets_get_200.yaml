@@ -1,0 +1,31 @@
+description: Assets details
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          assetFullName:
+            type: string
+            example: Binance coin
+          assetName:
+            type: string
+            example: BNB
+          isBorrowable:
+            type: boolean
+          isMortgageable:
+            type: boolean
+          userMinBorrow:
+            type: string
+            example: '0.00000000'
+          userMinRepay:
+            type: string
+            example: '0.00000000'
+        required:
+        - assetFullName
+        - assetName
+        - isBorrowable
+        - isMortgageable
+        - userMinBorrow
+        - userMinRepay

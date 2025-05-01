@@ -1,0 +1,88 @@
+description: Locked Redemption Record
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        rows:
+          type: array
+          items:
+            type: object
+            properties:
+              positionId:
+                type: string
+                example: '123123'
+              redeemId:
+                type: integer
+                format: int64
+                example: 40607
+              time:
+                type: integer
+                format: int64
+                example: 1575018510000
+              asset:
+                type: string
+                example: BNB
+              lockPeriod:
+                type: string
+                example: '30'
+              amount:
+                type: string
+                example: '21312.23223'
+              originalAmount:
+                type: string
+                example: '21312.23223'
+              type:
+                type: string
+                example: MATURE
+                description: MATURE for redeem to Spot Wallet, NEW_TRANSFERRED for
+                  redeem to Flexible product, AHEAD for early redemption
+              deliverDate:
+                type: string
+                example: '1575018510000'
+              lossAmount:
+                type: string
+                description: Loss of profit on early redemption
+                example: '0.00001232'
+              isComplete:
+                type: boolean
+                example: true,
+              rewardAsset:
+                type: string
+                example: AXS
+              rewardAmt:
+                type: string
+                example: '5.17181528'
+              extraRewardAsset:
+                type: string
+                example: BNB
+              estExtraRewardAmt:
+                type: string
+                example: '5.17181528'
+              status:
+                type: string
+                example: PAID
+            required:
+            - positionId
+            - redeemId
+            - time
+            - asset
+            - lockPeriod
+            - amount
+            - originalAmount
+            - type
+            - deliverDate
+            - lossAmount
+            - isComplete
+            - rewardAsset
+            - rewardAmt
+            - extraRewardAsset
+            - estExtraRewardAmt
+            - status
+        total:
+          type: integer
+          format: int64
+          example: 1
+      required:
+      - rows
+      - total

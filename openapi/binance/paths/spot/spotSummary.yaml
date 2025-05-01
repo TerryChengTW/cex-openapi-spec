@@ -1,0 +1,31 @@
+paths:
+  /sapi/v1/sub-account/spotSummary:
+    get:
+      summary: Sub-account Spot Assets Summary (For Master Account)
+      description: 'Get BTC valued asset summary of subaccounts.
+
+
+        Weight(IP): 1'
+      tags:
+      - Sub-Account
+      parameters:
+      - $ref: ..\..\parameters/optionalSubAccountEmail.yaml
+      - $ref: ..\..\parameters/page.yaml
+      - name: size
+        in: query
+        description: Default:10 Max:20
+        schema:
+          type: integer
+          format: int32
+      - $ref: ..\..\parameters/recvWindow.yaml
+      - $ref: ..\..\parameters/timestamp.yaml
+      - $ref: ..\..\parameters/signature.yaml
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/spotSummary_get_200.yaml
+        '400':
+          $ref: ..\..\responses/spotSummary_get_400.yaml
+        '401':
+          $ref: ..\..\responses/spotSummary_get_401.yaml

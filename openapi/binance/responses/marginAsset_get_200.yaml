@@ -1,0 +1,54 @@
+description: Sub account margin assset details
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        marginLevel:
+          type: string
+          example: '999'
+        totalAssetOfBtc:
+          type: string
+          example: '0'
+        totalLiabilityOfBtc:
+          type: string
+          example: '0'
+        totalNetAssetOfBtc:
+          type: string
+          example: '0'
+        userAssets:
+          type: array
+          items:
+            type: object
+            properties:
+              asset:
+                type: string
+                example: BTC
+              borrowed:
+                type: string
+                example: '0'
+              free:
+                type: string
+                example: '0'
+              interest:
+                type: string
+                example: '0'
+              locked:
+                type: string
+                example: '0'
+              netAsset:
+                type: string
+                example: '0'
+            required:
+            - asset
+            - borrowed
+            - free
+            - interest
+            - locked
+            - netAsset
+      required:
+      - marginLevel
+      - totalAssetOfBtc
+      - totalLiabilityOfBtc
+      - totalNetAssetOfBtc
+      - userAssets

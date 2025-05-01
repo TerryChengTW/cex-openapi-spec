@@ -1,0 +1,39 @@
+description: Redeemed Information
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        code:
+          type: string
+          example: '000000'
+        message:
+          type: string
+          example: success
+        data:
+          type: object
+          properties:
+            token:
+              type: string
+              example: BNB
+            amount:
+              type: string
+              example: '10'
+            referenceNo:
+              type: string
+              example: 0033002327977405
+            identityNo:
+              type: string
+              example: '10316281761814589440'
+          required:
+          - token
+          - amount
+          - referenceNo
+          - identityNo
+        success:
+          type: boolean
+      required:
+      - code
+      - message
+      - data
+      - success

@@ -1,0 +1,10 @@
+name: pendingAboveType
+in: query
+required: true
+description: 'Supported values: LIMIT_MAKER, STOP_LOSS, and STOP_LOSS_LIMIT'
+schema:
+  type: string
+  enum:
+  - LIMIT_MAKER
+  - STOP_LOSS
+  - STOP_LOSS_LIMIT

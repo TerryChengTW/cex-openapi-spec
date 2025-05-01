@@ -1,0 +1,7 @@
+name: symbol
+in: query
+required: true
+description: Trading symbol, e.g. BNBUSDT
+schema:
+  type: string
+  example: BNBUSDT

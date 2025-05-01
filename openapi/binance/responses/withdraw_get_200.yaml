@@ -1,0 +1,48 @@
+description: NFT Withdraw History
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        total:
+          type: integer
+          format: int32
+          example: 178
+        list:
+          type: array
+          items:
+            type: object
+            properties:
+              network:
+                type: string
+                example: ETH
+              txID:
+                type: string
+                example: '0x2be5eed31d787fdb4880bc631c8e76bdfb6150e137f5cf1732e0416ea206f57f'
+              contractAdrress:
+                type: string
+                example: '0xe507c961ee127d4439977a61af39c34eafee0dc6'
+              tokenId:
+                type: string
+                example: '1000001247'
+              timestamp:
+                type: integer
+                format: int64
+                example: 1633674433000
+              fee:
+                type: number
+                example: 0.1
+              feeAsset:
+                type: string
+                example: ETH
+            required:
+            - network
+            - txID
+            - contractAdrress
+            - tokenId
+            - timestamp
+            - fee
+            - feeAsset
+      required:
+      - total
+      - list

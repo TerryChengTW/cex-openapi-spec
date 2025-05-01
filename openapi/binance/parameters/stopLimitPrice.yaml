@@ -1,0 +1,6 @@
+name: stopLimitPrice
+in: query
+description: If provided, stopLimitTimeInForce is required.
+schema:
+  type: number
+  format: double

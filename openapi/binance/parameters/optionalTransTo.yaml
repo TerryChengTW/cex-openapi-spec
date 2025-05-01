@@ -1,0 +1,8 @@
+name: transTo
+in: query
+schema:
+  type: string
+  enum:
+  - SPOT
+  - ISOLATED_MARGIN
+  example: ISOLATED_MARGIN

@@ -1,0 +1,69 @@
+description: Sub account transaction statistics
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        recent30BtcTotal:
+          type: string
+          example: '0'
+        recent30BtcFuturesTotal:
+          type: string
+          example: '0'
+        recent30BtcMarginTotal:
+          type: string
+          example: '0'
+        recent30BusdTotal:
+          type: string
+          example: '0'
+        recent30BusdFuturesTotal:
+          type: string
+          example: '0'
+        recent30BusdMarginTotal:
+          type: string
+          example: '0'
+        tradeInfoVos:
+          type: array
+          items:
+            type: object
+            properties:
+              userId:
+                type: integer
+                format: int64
+                example: 1000138138384
+              btc:
+                type: number
+                format: float
+                example: 0
+              btcFutures:
+                type: number
+                format: float
+                example: 0
+              btcMargin:
+                type: number
+                format: float
+                example: 0
+              busd:
+                type: number
+                format: float
+                example: 0
+              busdFutures:
+                type: number
+                format: float
+                example: 0
+              busdMargin:
+                type: number
+                format: float
+                example: 0
+              date:
+                type: integer
+                format: int64
+                example: 1676851200000
+      required:
+      - recent30BtcTotal
+      - recent30BtcFuturesTotal
+      - recent30BtcMarginTotal
+      - recent30BusdTotal
+      - recent30BusdFuturesTotal
+      - recent30BusdMarginTotal
+      - tradeInfoVos

@@ -1,0 +1,6 @@
+name: pendingIcebergQty
+in: query
+description: This can only be used if pendingTimeInForce is GTC.
+schema:
+  type: number
+  format: double

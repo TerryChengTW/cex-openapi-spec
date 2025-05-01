@@ -1,0 +1,49 @@
+description: Collateral Record
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        rows:
+          type: array
+          items:
+            type: object
+            properties:
+              amount:
+                type: string
+                example: '100.00000000'
+              productId:
+                type: string
+                example: BUSD001
+              asset:
+                type: string
+                example: USDT
+              createTime:
+                type: integer
+                format: int64
+                example: 1575018510000
+              type:
+                type: string
+                example: REPAY
+              productName:
+                type: string
+                example: USDT
+              orderId:
+                type: integer
+                format: int64
+                example: 26055
+            required:
+            - amount
+            - productId
+            - asset
+            - createTime
+            - type
+            - productName
+            - orderId
+        total:
+          type: integer
+          format: int64
+          example: 1
+      required:
+      - rows
+      - total

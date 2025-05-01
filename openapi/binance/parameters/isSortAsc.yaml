@@ -1,0 +1,5 @@
+name: isSortAsc
+in: query
+description: default "true"
+schema:
+  type: boolean

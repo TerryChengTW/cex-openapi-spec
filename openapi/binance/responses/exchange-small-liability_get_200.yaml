@@ -1,0 +1,30 @@
+description: coin list
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          asset:
+            type: string
+            example: ETH
+          interest:
+            type: string
+            example: '0.00083334'
+          principal:
+            type: string
+            example: '0.001'
+          liabilityAsset:
+            type: string
+            example: USDT
+          liabilityQty:
+            type: number
+            format: float
+            example: 0.3552
+        required:
+        - asset
+        - interest
+        - principal
+        - liabilityAsset
+        - liabilityQty

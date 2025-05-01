@@ -1,0 +1,84 @@
+description: Sub account futures assset details
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+          example: 200
+        message:
+          type: string
+          example: OK
+        snapshotVos:
+          type: array
+          items:
+            type: object
+            properties:
+              type:
+                type: string
+                example: FUTURES
+              updateTime:
+                type: integer
+                format: int64
+                example: 1626400907000
+              data:
+                type: object
+                properties:
+                  assets:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        asset:
+                          type: string
+                          example: USDT
+                        marginBalance:
+                          type: number
+                          format: float
+                          example: 100
+                        walletBalance:
+                          type: number
+                          format: float
+                          example: 100
+                      required:
+                      - asset
+                      - marginBalance
+                      - walletBalance
+                  position:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        symbol:
+                          type: string
+                          example: BTCUSDT
+                        entryPrice:
+                          type: number
+                          format: float
+                          example: 17000
+                        markPrice:
+                          type: number
+                          format: float
+                          example: 17000
+                        positionAmt:
+                          type: number
+                          format: float
+                          example: 0.1
+                      required:
+                      - symbol
+                      - entryPrice
+                      - markPrice
+                      - positionAmt
+                required:
+                - assets
+                - position
+            required:
+            - type
+            - updateTime
+            - data
+      required:
+      - code
+      - message
+      - snapshotVos

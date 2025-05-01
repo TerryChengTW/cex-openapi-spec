@@ -1,0 +1,5 @@
+name: listClientOrderId
+in: query
+description: A unique Id for the entire orderList
+schema:
+  type: string

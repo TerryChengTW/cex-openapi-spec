@@ -1,0 +1,27 @@
+description: Margin Interest Rate History
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          asset:
+            type: string
+            example: BTC
+          dailyInterestRate:
+            type: string
+            example: '0.00025000'
+          timestamp:
+            type: integer
+            format: int64
+            example: 1611544731000
+          vipLevel:
+            type: integer
+            format: int32
+            example: 1
+        required:
+        - asset
+        - dailyInterestRate
+        - timestamp
+        - vipLevel

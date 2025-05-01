@@ -1,0 +1,5 @@
+name: permissions
+in: query
+schema:
+  type: string
+  example: '''SPOT'' or [''MARGIN'',''LEVERAGED'']'

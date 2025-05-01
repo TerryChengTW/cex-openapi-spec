@@ -1,0 +1,33 @@
+description: User's auto-conversion settings i
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        convertEnabled:
+          type: boolean
+        coins:
+          type: array
+          items:
+            type: string
+            example: USDC
+        exchangeRates:
+          type: object
+          properties:
+            USDC:
+              type: string
+              example: '1'
+            TUSD:
+              type: string
+              example: '1'
+            USDP:
+              type: string
+              example: '1'
+          required:
+          - USDC
+          - TUSD
+          - USDP
+      required:
+      - convertEnabled
+      - coins
+      - exchangeRates

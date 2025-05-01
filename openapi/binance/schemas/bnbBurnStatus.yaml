@@ -1,0 +1,10 @@
+type: object
+properties:
+  spotBNBBurn:
+    type: boolean
+  interestBNBBurn:
+    type: boolean
+    example: false
+required:
+- spotBNBBurn
+- interestBNBBurn

@@ -1,8 +1,0 @@
-ServerTimeResponse:
-  type: object
-  properties:
-    serverTime:
-      type: integer
-      example: 1499827319559
-  example:
-    serverTime: 1499827319559

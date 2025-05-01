@@ -1,0 +1,6 @@
+name: pendingBelowClientOrderId
+in: query
+description: Arbitrary unique ID among open orders for the pending below order. Automatically
+  generated if not sent.
+schema:
+  type: string

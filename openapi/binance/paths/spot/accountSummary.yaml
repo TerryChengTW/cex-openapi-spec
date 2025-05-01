@@ -1,0 +1,37 @@
+paths:
+  /sapi/v2/sub-account/futures/accountSummary:
+    get:
+      summary: Summary of Sub-account's Futures Account V2 (For Master Account)
+      description: 'Weight(IP): 10'
+      tags:
+      - Sub-Account
+      parameters:
+      - name: futuresType
+        in: query
+        description: '* `1` - USDT Margined Futures
+
+          * `2` - COIN Margined Futures'
+        required: true
+        schema:
+          type: integer
+          format: int32
+          example: 1
+      - $ref: ..\..\parameters/page.yaml
+      - name: limit
+        in: query
+        description: Default 10, Max 20
+        schema:
+          type: integer
+          format: int32
+      - $ref: ..\..\parameters/recvWindow.yaml
+      - $ref: ..\..\parameters/timestamp.yaml
+      - $ref: ..\..\parameters/signature.yaml
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/accountSummary_get_200.yaml
+        '400':
+          $ref: ..\..\responses/accountSummary_get_400.yaml
+        '401':
+          $ref: ..\..\responses/accountSummary_get_401.yaml

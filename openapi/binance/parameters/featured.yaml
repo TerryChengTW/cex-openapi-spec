@@ -1,0 +1,8 @@
+name: featured
+in: query
+description: Default `ALL`
+schema:
+  type: string
+  enum:
+  - ALL
+  - 'TRUE'

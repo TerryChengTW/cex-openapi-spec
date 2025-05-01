@@ -1,0 +1,143 @@
+description: All coins details information
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          coin:
+            type: string
+            example: BTC
+          depositAllEnable:
+            type: boolean
+          free:
+            type: string
+            example: '0.00000000'
+          freeze:
+            type: string
+            example: '0.00000000'
+          ipoable:
+            type: string
+            example: '0.00000000'
+          ipoing:
+            type: string
+            example: '0.00000000'
+          isLegalMoney:
+            type: boolean
+            example: false
+          locked:
+            type: string
+            example: '0.00000000'
+          name:
+            type: string
+            example: Bitcoin
+          networkList:
+            type: array
+            items:
+              type: object
+              properties:
+                addressRegex:
+                  type: string
+                  example: ^(bnb1)[0-9a-z]{38}$
+                coin:
+                  type: string
+                  example: BTC
+                depositDesc:
+                  type: string
+                  example: Wallet Maintenance, Deposit Suspended
+                  description: shown only when "depositEnable" is false.
+                depositEnable:
+                  type: boolean
+                  example: false
+                isDefault:
+                  type: boolean
+                  example: false
+                memoRegex:
+                  type: string
+                  example: ^[0-9A-Za-z\-_]{1,120}$
+                minConfirm:
+                  type: integer
+                  format: int64
+                  example: 1
+                  description: min number for balance confirmation.
+                name:
+                  type: string
+                  example: BEP2
+                network:
+                  type: string
+                  example: ETH
+                specialTips:
+                  type: string
+                  example: Both a MEMO and an Address are required to successfully
+                    deposit your BEP2-BTCB tokens to Binance.
+                unLockConfirm:
+                  type: integer
+                  format: int64
+                  example: 0
+                  description: confirmation number for balance unlock.
+                withdrawDesc:
+                  type: string
+                  example: Wallet Maintenance, Withdrawal Suspended
+                  description: shown only when "withdrawEnable" is false
+                withdrawEnable:
+                  type: boolean
+                  example: false
+                withdrawFee:
+                  type: string
+                  example: '0.00000220'
+                withdrawIntegerMultiple:
+                  type: string
+                  example: '0.00000001'
+                withdrawMax:
+                  type: string
+                  example: '9999999999.99999999'
+                withdrawMin:
+                  type: string
+                  example: '0.00000440'
+                sameAddress:
+                  type: boolean
+              required:
+              - addressRegex
+              - coin
+              - depositDesc
+              - depositEnable
+              - isDefault
+              - memoRegex
+              - minConfirm
+              - name
+              - network
+              - specialTips
+              - unLockConfirm
+              - withdrawDesc
+              - withdrawEnable
+              - withdrawFee
+              - withdrawIntegerMultiple
+              - withdrawMax
+              - withdrawMin
+              - sameAddress
+          storage:
+            type: string
+            example: '0.00000000'
+          trading:
+            type: boolean
+          withdrawAllEnable:
+            type: boolean
+          withdrawing:
+            type: string
+            example: '0.00000000'
+        required:
+        - coin
+        - depositAllEnable
+        - free
+        - freeze
+        - ipoable
+        - ipoing
+        - isLegalMoney
+        - locked
+        - name
+        - networkList
+        - storage
+        - trading
+        - withdrawAllEnable
+        - withdrawing

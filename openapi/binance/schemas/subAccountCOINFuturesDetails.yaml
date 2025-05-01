@@ -1,0 +1,69 @@
+type: object
+properties:
+  email:
+    type: string
+    example: abc@test.com
+  assets:
+    type: array
+    items:
+      type: object
+      properties:
+        asset:
+          type: string
+          example: BTC
+        initialMargin:
+          type: string
+          example: '0.00000000'
+        maintenanceMargin:
+          type: string
+          example: '0.00000000'
+        marginBalance:
+          type: string
+          example: '0.88308000'
+        maxWithdrawAmount:
+          type: string
+          example: '0.88308000'
+        openOrderInitialMargin:
+          type: string
+          example: '0.00000000'
+        positionInitialMargin:
+          type: string
+          example: '0.00000000'
+        unrealizedProfit:
+          type: string
+          example: '0.00000000'
+        walletBalance:
+          type: string
+          example: '0.88308000'
+      required:
+      - asset
+      - initialMargin
+      - maintenanceMargin
+      - marginBalance
+      - maxWithdrawAmount
+      - openOrderInitialMargin
+      - positionInitialMargin
+      - unrealizedProfit
+      - walletBalance
+  canDeposit:
+    type: boolean
+  canTrade:
+    type: boolean
+  canWithdraw:
+    type: boolean
+  feeTier:
+    type: integer
+    format: int64
+    example: 2
+  updateTime:
+    type: integer
+    format: int64
+    example: 1598959682001
+required:
+- email
+- assets
+- canDeposit
+- canTrade
+- canWithdraw
+- feeTier
+- updateTime

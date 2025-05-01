@@ -1,0 +1,63 @@
+type: object
+properties:
+  symbol:
+    type: string
+    example: BNBBTC
+  id:
+    type: integer
+    format: int64
+    description: Trade id
+    example: 28457
+  orderId:
+    type: integer
+    format: int64
+    example: 100234
+  orderListId:
+    type: integer
+    format: int64
+    example: -1
+  price:
+    type: string
+    description: Price
+    example: '4.00000100'
+  qty:
+    type: string
+    description: Amount of base asset
+    example: '12.00000000'
+  quoteQty:
+    type: string
+    description: Amount of quote asset
+    example: '48.000012'
+  commission:
+    type: string
+    example: '10.10000000'
+  commissionAsset:
+    type: string
+    example: BNB
+  time:
+    type: integer
+    format: int64
+    description: Trade timestamp
+    example: 1499865549590
+  isBuyer:
+    type: boolean
+    example: false
+  isMaker:
+    type: boolean
+    example: false
+  isBestMatch:
+    type: boolean
+required:
+- symbol
+- id
+- orderId
+- orderListId
+- price
+- qty
+- quoteQty
+- commission
+- commissionAsset
+- time
+- isBuyer
+- isMaker
+- isBestMatch

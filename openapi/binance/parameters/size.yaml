@@ -1,0 +1,7 @@
+name: size
+in: query
+description: Default:10 Max:100
+schema:
+  type: integer
+  format: int32
+  example: 100

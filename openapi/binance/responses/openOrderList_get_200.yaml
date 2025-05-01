@@ -1,0 +1,67 @@
+description: List of Open Margin OCO orders
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          orderListId:
+            type: integer
+            format: int64
+            example: 31
+          contingencyType:
+            type: string
+            example: OCO
+          listStatusType:
+            type: string
+            example: EXEC_STARTED
+          listOrderStatus:
+            type: string
+            example: EXECUTING
+          listClientOrderId:
+            type: string
+            example: wuB13fmulKj3YjdqWEcsnp
+          transactionTime:
+            type: integer
+            format: int64
+            example: 1565246080644
+          symbol:
+            type: string
+            example: LTCBTC
+          isIsolated:
+            type: boolean
+            example: false
+          orders:
+            type: array
+            items:
+              type: object
+              properties:
+                symbol:
+                  type: string
+                orderId:
+                  type: integer
+                  format: int64
+                clientOrderId:
+                  type: string
+              required:
+              - symbol
+              - orderId
+              - clientOrderId
+              example:
+              - symbol: LTCBTC
+                orderId: 4
+                clientOrderId: r3EH2N76dHfLoSZWIUw1bT
+              - symbol: LTCBTC
+                orderId: 5
+                clientOrderId: Cv1SnyPD3qhqpbjpYEHbd2
+        required:
+        - orderListId
+        - contingencyType
+        - listStatusType
+        - listOrderStatus
+        - listClientOrderId
+        - transactionTime
+        - symbol
+        - isIsolated
+        - orders

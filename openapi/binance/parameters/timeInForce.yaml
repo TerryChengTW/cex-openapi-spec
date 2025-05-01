@@ -1,0 +1,10 @@
+name: timeInForce
+in: query
+description: Order time in force
+schema:
+  type: string
+  enum:
+  - GTC
+  - IOC
+  - FOK
+  example: GTC

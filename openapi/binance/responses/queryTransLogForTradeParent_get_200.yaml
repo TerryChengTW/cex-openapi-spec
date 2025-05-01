@@ -1,0 +1,61 @@
+description: Managed sub account transfer logs (for trading team)
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        count:
+          type: integer
+          format: int32
+          example: 2
+        managerSubTransferHistoryVos:
+          type: array
+          items:
+            type: object
+            properties:
+              fromEmail:
+                type: string
+                example: test_0_virtual@kq3kno9imanagedsub.com
+              fromAccountType:
+                type: string
+                example: SPOT
+              toEmail:
+                type: string
+                example: wdywl0lddakh@test.com
+              toAccountType:
+                type: string
+                example: SPOT
+              asset:
+                type: string
+                example: BNB
+              amount:
+                type: string
+                example: '0.01'
+              scheduledData:
+                type: integer
+                format: int64
+                example: 1626144956000
+              createTime:
+                type: integer
+                format: int64
+                example: 1626144956000
+              status:
+                type: string
+                example: SUCCESS
+              tranId:
+                type: integer
+                example: 91077779
+            required:
+            - fromEmail
+            - fromAccountType
+            - toEmail
+            - toAccountType
+            - asset
+            - amount
+            - scheduledData
+            - createTime
+            - status
+            - tranId
+      required:
+      - count
+      - managerSubTransferHistoryVos

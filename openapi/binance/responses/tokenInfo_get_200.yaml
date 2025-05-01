@@ -1,0 +1,85 @@
+description: List of token information
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          tokenName:
+            type: string
+            example: BTCDOWN
+          description:
+            type: string
+            example: 3X Short Bitcoin Token
+          underlying:
+            type: string
+            example: BTC
+          tokenIssued:
+            type: string
+            example: '717953.95'
+          basket:
+            type: string
+            example: -821.474 BTCUSDT Futures
+          currentBaskets:
+            type: array
+            items:
+              type: object
+              properties:
+                symbol:
+                  type: string
+                  example: BTCUSDT
+                amount:
+                  type: string
+                  example: '-1183.984'
+                notionalValue:
+                  type: string
+                  example: '-22871089.96704'
+              required:
+              - symbol
+              - amount
+              - notionalValue
+          nav:
+            type: string
+            example: '4.79'
+          realLeverage:
+            type: string
+            example: '-2.316'
+          fundingRate:
+            type: string
+            example: '0.001020'
+          dailyManagementFee:
+            type: string
+            example: '0.0001'
+          purchaseFeePct:
+            type: string
+            example: '0.0010'
+          dailyPurchaseLimit:
+            type: string
+            example: '100000.00'
+          redeemFeePct:
+            type: string
+            example: '0.0010'
+          dailyRedeemLimit:
+            type: string
+            example: '1000000.00'
+          timestamp:
+            type: integer
+            format: int64
+            example: 1583127900000
+        required:
+        - tokenName
+        - description
+        - underlying
+        - tokenIssued
+        - basket
+        - currentBaskets
+        - nav
+        - realLeverage
+        - fundingRate
+        - dailyManagementFee
+        - purchaseFeePct
+        - dailyPurchaseLimit
+        - redeemFeePct
+        - dailyRedeemLimit
+        - timestamp

@@ -1,0 +1,17 @@
+description: Dual Investment accounts
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        totalAmountInBTC:
+          type: string
+          description: Total BTC amounts in Dual Investment
+          example: '0.01067982'
+        totalAmountInUSDT:
+          type: string
+          description: Total USDT equivalents in BTC in Dual Investment
+          example: '77.13289230'
+      required:
+      - totalAmountInBTC
+      - totalAmountInUSDT

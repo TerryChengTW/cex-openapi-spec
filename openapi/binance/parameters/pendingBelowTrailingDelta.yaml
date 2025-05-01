@@ -1,0 +1,5 @@
+name: pendingBelowTrailingDelta
+in: query
+schema:
+  type: number
+  format: double

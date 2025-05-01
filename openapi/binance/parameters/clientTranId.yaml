@@ -1,0 +1,4 @@
+name: clientTranId
+in: query
+schema:
+  type: string

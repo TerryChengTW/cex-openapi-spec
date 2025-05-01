@@ -1,0 +1,7 @@
+name: hashRate
+in: query
+required: true
+description: Resale hashrate h/s must be transferred (BTC is greater than 500000000000
+  ETH is greater than 500000)
+schema:
+  type: string

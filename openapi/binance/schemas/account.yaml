@@ -1,0 +1,104 @@
+type: object
+properties:
+  makerCommission:
+    type: integer
+    format: int64
+    example: 15
+  takerCommission:
+    type: integer
+    format: int64
+    example: 15
+  buyerCommission:
+    type: integer
+    format: int64
+    example: 0
+  sellerCommission:
+    type: integer
+    format: int64
+    example: 0
+  commissionRates:
+    type: object
+    properties:
+      maker:
+        type: string
+        example: '0.00150000'
+      taker:
+        type: string
+        example: '0.00150000'
+      buyer:
+        type: string
+        example: '0.00000000'
+      seller:
+        type: string
+        example: '0.00000000'
+    required:
+    - maker
+    - taker
+    - buyer
+    - seller
+  canTrade:
+    type: boolean
+  canWithdraw:
+    type: boolean
+  canDeposit:
+    type: boolean
+  brokered:
+    type: boolean
+    example: false
+  requireSelfTradePrevention:
+    type: boolean
+    example: false
+  preventSor:
+    type: boolean
+    example: false
+  updateTime:
+    type: integer
+    format: int64
+    example: 123456789
+  accountType:
+    type: string
+    example: SPOT
+  balances:
+    type: array
+    items:
+      type: object
+      properties:
+        asset:
+          type: string
+          example: BTC
+        free:
+          type: string
+          example: '4723846.89208129'
+        locked:
+          type: string
+          example: '0.00000000'
+      required:
+      - asset
+      - free
+      - locked
+  permissions:
+    type: array
+    items:
+      type: string
+      example: SPOT
+  uid:
+    type: integer
+    format: int64
+    example: 354937868
+required:
+- makerCommission
+- takerCommission
+- buyerCommission
+- sellerCommission
+- commissionRates
+- canTrade
+- canWithdraw
+- canDeposit
+- brokered
+- requireSelfTradePrevention
+- preventSor
+- updateTime
+- accountType
+- balances
+- permissions
+- uid

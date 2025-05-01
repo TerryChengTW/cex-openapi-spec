@@ -1,0 +1,61 @@
+description: All existing limit orders
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        list:
+          type: array
+          items:
+            type: object
+            properties:
+              quoteId:
+                type: string
+                example: 18sdf87kh9df
+              orderId:
+                type: integer
+                format: int64
+                example: '1603680255057330400'
+              orderStatus:
+                type: string
+                example: SUCCESS
+              fromAsset:
+                type: string
+                example: BNB
+              fromAmount:
+                type: string
+                example: '10'
+              toAsset:
+                type: string
+                example: USDT
+              toAmount:
+                type: string
+                example: '2317.89'
+              ratio:
+                type: string
+                example: '231.789'
+              inverseRatio:
+                type: string
+                example: '0.00431427'
+              createTime:
+                type: integer
+                format: int64
+                example: 1614089498000
+              expiredTimestamp:
+                type: integer
+                format: int64
+                example: 1614099498000
+            required:
+            - quoteId
+            - orderId
+            - orderStatus
+            - fromAsset
+            - fromAmount
+            - toAsset
+            - toAmount
+            - ratio
+            - inverseRatio
+            - createTime
+            - expiredTimestamp
+      required:
+      - list

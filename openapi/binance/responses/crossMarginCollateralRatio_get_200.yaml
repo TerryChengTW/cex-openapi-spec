@@ -1,0 +1,34 @@
+description: Margin collateral ratio
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          collaterals:
+            type: array
+            items:
+              type: object
+              properties:
+                minUsdValue:
+                  type: string
+                  example: '0'
+                maxUsdValue:
+                  type: string
+                  example: '13000000'
+                discountRate:
+                  type: string
+                  example: '1'
+              required:
+              - minUsdValue
+              - maxUsdValue
+              - discountRate
+          assetNames:
+            type: array
+            items:
+              type: string
+              example: BNX
+        required:
+        - collaterals
+        - assetNames

@@ -1,0 +1,7 @@
+name: timestamp
+in: query
+required: true
+description: UTC timestamp in ms
+schema:
+  type: integer
+  format: int64

@@ -1,0 +1,6 @@
+name: algo
+in: query
+required: true
+description: Algorithm(sha256)
+schema:
+  type: string

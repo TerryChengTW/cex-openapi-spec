@@ -1,0 +1,29 @@
+paths:
+  /sapi/v1/lending/auto-invest/index/user-summary:
+    get:
+      summary: Query Index Linked Plan Position Details(USER_DATA)
+      description: 'Details on users Index-Linked plan position details
+
+
+        Weight(IP): 1'
+      tags:
+      - Auto-Invest
+      parameters:
+      - name: indexId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - $ref: ..\..\parameters/recvWindow.yaml
+      - $ref: ..\..\parameters/timestamp.yaml
+      - $ref: ..\..\parameters/signature.yaml
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/user-summary_get_200.yaml
+        '400':
+          $ref: ..\..\responses/user-summary_get_400.yaml
+        '401':
+          $ref: ..\..\responses/user-summary_get_401.yaml

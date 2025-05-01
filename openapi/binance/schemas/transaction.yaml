@@ -1,0 +1,9 @@
+type: object
+properties:
+  tranId:
+    type: integer
+    format: int64
+    description: transaction id
+    example: 345196462
+required:
+- tranId

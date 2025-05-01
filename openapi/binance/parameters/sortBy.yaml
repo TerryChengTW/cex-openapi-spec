@@ -1,0 +1,10 @@
+name: sortBy
+in: query
+description: Default `START_TIME`
+schema:
+  type: string
+  enum:
+  - START_TIME
+  - LOT_SIZE
+  - INTEREST_RATE
+  - DURATION

@@ -1,0 +1,53 @@
+description: Transfer id
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          counterParty:
+            type: string
+            example: master
+          email:
+            type: string
+            example: master@test.com
+          type:
+            type: integer
+            format: int32
+            example: 1
+            description: 1 for transfer in, 2 for transfer out
+          asset:
+            type: string
+            example: BTC
+          qty:
+            type: string
+            example: '1'
+          fromAccountType:
+            type: string
+            example: SPOT
+          toAccountType:
+            type: string
+            example: SPOT
+          status:
+            type: string
+            example: SUCCESS
+          tranId:
+            type: integer
+            format: int64
+            example: 11798835829
+          time:
+            type: integer
+            format: int64
+            example: 1544433325000
+        required:
+        - counterParty
+        - email
+        - type
+        - asset
+        - qty
+        - fromAccountType
+        - toAccountType
+        - status
+        - tranId
+        - time

@@ -1,0 +1,40 @@
+paths:
+  /sapi/v1/asset/dust:
+    post:
+      summary: Dust Transfer (USER_DATA)
+      description: 'Convert dust assets to BNB.
+
+
+        Weight(UID): 10'
+      tags:
+      - Wallet
+      parameters:
+      - name: asset
+        in: query
+        required: true
+        description: The asset being converted. For example, asset=BTC&asset=USDT
+        schema:
+          type: array
+          items:
+            type: string
+      - name: accountType
+        in: query
+        required: false
+        description: SPOT or MARGIN, default SPOT
+        schema:
+          type: string
+          enum:
+          - SPOT
+          - MARGIN
+      - $ref: ..\..\parameters/recvWindow.yaml
+      - $ref: ..\..\parameters/timestamp.yaml
+      - $ref: ..\..\parameters/signature.yaml
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/dust_post_200.yaml
+        '400':
+          $ref: ..\..\responses/dust_post_400.yaml
+        '401':
+          $ref: ..\..\responses/dust_post_401.yaml

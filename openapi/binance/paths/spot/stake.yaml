@@ -1,0 +1,34 @@
+paths:
+  /sapi/v2/eth-staking/eth/stake:
+    post:
+      summary: Subscribe ETH Staking V2(TRADE)
+      description: 'Stake ETH to get WBETH
+
+
+        - You need to open Enable Spot & Margin Trading permission for the API Key
+        which requests this endpoint.
+
+
+        Weight(IP): 150'
+      tags:
+      - Staking
+      parameters:
+      - name: amount
+        in: query
+        required: true
+        description: Amount in ETH, limit 4 decimals
+        schema:
+          type: number
+          format: double
+      - $ref: ..\..\parameters/recvWindow.yaml
+      - $ref: ..\..\parameters/timestamp.yaml
+      - $ref: ..\..\parameters/signature.yaml
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/stake_post_200.yaml
+        '400':
+          $ref: ..\..\responses/stake_post_400.yaml
+        '401':
+          $ref: ..\..\responses/stake_post_401.yaml

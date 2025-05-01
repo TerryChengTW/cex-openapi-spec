@@ -1,0 +1,5 @@
+name: isolatedSymbol
+in: query
+description: Isolated symbol
+schema:
+  type: string

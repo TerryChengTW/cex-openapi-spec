@@ -1,0 +1,56 @@
+type: object
+properties:
+  symbol:
+    type: string
+    example: BTCUSDT
+  orderId:
+    type: integer
+    format: int64
+    example: 28
+  clientOrderId:
+    type: string
+    example: 6gCrw2kRUAF9CvJDGP16IP
+  transactTime:
+    type: integer
+    format: int64
+    example: 1507725176595
+  price:
+    type: string
+    example: '1.00000000'
+  origQty:
+    type: string
+    example: '10.00000000'
+  executedQty:
+    type: string
+    example: '10.00000000'
+  cummulativeQuoteQty:
+    type: string
+    example: '10.00000000'
+  status:
+    type: string
+    example: FILLED
+  timeInForce:
+    type: string
+    example: GTC
+  type:
+    type: string
+    example: MARKET
+  isIsolated:
+    type: boolean
+  side:
+    type: string
+    example: SELL
+required:
+- symbol
+- orderId
+- clientOrderId
+- transactTime
+- price
+- origQty
+- executedQty
+- cummulativeQuoteQty
+- status
+- timeInForce
+- type
+- isIsolated
+- side

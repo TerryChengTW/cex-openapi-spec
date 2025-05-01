@@ -1,0 +1,58 @@
+paths:
+  /sapi/v1/futures/transfer:
+    post:
+      summary: New Future Account Transfer (USER_DATA)
+      description: 'Execute transfer between spot account and futures account.
+
+
+        Weight(IP): 1'
+      tags:
+      - Futures
+      parameters:
+      - $ref: ..\..\parameters/asset.yaml
+      - $ref: ..\..\parameters/amount.yaml
+      - name: type
+        in: query
+        required: true
+        description: "1: transfer from spot account to USDT-\u24C2 futures account.\
+          \ 2: transfer from USDT-\u24C2 futures account to spot account. 3: transfer\
+          \ from spot account to COIN-\u24C2 futures account. 4: transfer from COIN-\u24C2\
+          \ futures account to spot account."
+        schema:
+          type: integer
+          format: int64
+      - $ref: ..\..\parameters/recvWindow.yaml
+      - $ref: ..\..\parameters/timestamp.yaml
+      - $ref: ..\..\parameters/signature.yaml
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/transfer_post_200.yaml
+        '400':
+          $ref: ..\..\responses/transfer_post_400.yaml
+        '401':
+          $ref: ..\..\responses/transfer_post_401.yaml
+    get:
+      summary: Get Future Account Transaction History List (USER_DATA)
+      description: 'Weight(IP): 10'
+      tags:
+      - Futures
+      parameters:
+      - $ref: ..\..\parameters/asset.yaml
+      - $ref: ..\..\parameters/startTimeReq.yaml
+      - $ref: ..\..\parameters/endTime.yaml
+      - $ref: ..\..\parameters/current.yaml
+      - $ref: ..\..\parameters/size.yaml
+      - $ref: ..\..\parameters/recvWindow.yaml
+      - $ref: ..\..\parameters/timestamp.yaml
+      - $ref: ..\..\parameters/signature.yaml
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/transfer_get_200.yaml
+        '400':
+          $ref: ..\..\responses/transfer_get_400.yaml
+        '401':
+          $ref: ..\..\responses/transfer_get_401.yaml

@@ -1,0 +1,52 @@
+type: object
+properties:
+  symbol:
+    type: string
+    example: LTCBTC
+  orderId:
+    type: integer
+    format: int64
+    example: 28
+  origClientOrderId:
+    type: string
+    example: msXkySR3u5uYwpvRMFsi3u
+  clientOrderId:
+    type: string
+    example: 6gCrw2kRUAF9CvJDGP16IP
+  price:
+    type: string
+    example: '1.00000000'
+  origQty:
+    type: string
+    example: '10.00000000'
+  executedQty:
+    type: string
+    example: '8.00000000'
+  cummulativeQuoteQty:
+    type: string
+    example: '8.00000000'
+  status:
+    type: string
+    example: CANCELED
+  timeInForce:
+    type: string
+    example: GTC
+  type:
+    type: string
+    example: LIMIT
+  side:
+    type: string
+    example: SELL
+required:
+- symbol
+- orderId
+- origClientOrderId
+- clientOrderId
+- price
+- origQty
+- executedQty
+- cummulativeQuoteQty
+- status
+- timeInForce
+- type
+- side

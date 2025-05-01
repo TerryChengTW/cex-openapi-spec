@@ -1,0 +1,65 @@
+paths:
+  /sapi/v1/margin/orderList:
+    get:
+      summary: Query Margin Account's OCO (USER_DATA)
+      description: 'Retrieves a specific OCO based on provided optional parameters
+
+
+        - Either `orderListId` or `origClientOrderId` must be provided
+
+
+        Weight(IP): 10'
+      tags:
+      - Margin
+      parameters:
+      - $ref: ..\..\parameters/isIsolatedMargin.yaml
+      - name: symbol
+        in: query
+        description: Mandatory for isolated margin, not supported for cross margin
+        schema:
+          type: string
+      - $ref: ..\..\parameters/orderListId.yaml
+      - $ref: ..\..\parameters/origClientOrderId.yaml
+      - $ref: ..\..\parameters/recvWindow.yaml
+      - $ref: ..\..\parameters/timestamp.yaml
+      - $ref: ..\..\parameters/signature.yaml
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/orderList_get_200.yaml
+        '400':
+          $ref: ..\..\responses/orderList_get_400.yaml
+        '401':
+          $ref: ..\..\responses/orderList_get_401.yaml
+    delete:
+      summary: Margin Account Cancel OCO (TRADE)
+      description: 'Cancel an entire Order List for a margin account
+
+
+        - Canceling an individual leg will cancel the entire OCO
+
+        - Either `orderListId` or `listClientOrderId` must be provided
+
+
+        Weight(UID): 1'
+      tags:
+      - Margin
+      parameters:
+      - $ref: ..\..\parameters/symbol.yaml
+      - $ref: ..\..\parameters/isIsolatedMargin.yaml
+      - $ref: ..\..\parameters/orderListId.yaml
+      - $ref: ..\..\parameters/listClientOrderId.yaml
+      - $ref: ..\..\parameters/newClientOrderId.yaml
+      - $ref: ..\..\parameters/recvWindow.yaml
+      - $ref: ..\..\parameters/timestamp.yaml
+      - $ref: ..\..\parameters/signature.yaml
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/orderList_delete_200.yaml
+        '400':
+          $ref: ..\..\responses/orderList_delete_400.yaml
+        '401':
+          $ref: ..\..\responses/orderList_delete_401.yaml

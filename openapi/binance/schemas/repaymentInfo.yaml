@@ -1,0 +1,31 @@
+type: object
+properties:
+  loanCoin:
+    type: string
+    example: BUSD
+  remainingPrincipal:
+    type: string
+    example: '100.5'
+  remainingInterest:
+    type: string
+    example: '0'
+  collateralCoin:
+    type: string
+    example: BNB
+  remainingCollateral:
+    type: string
+    example: '5.253'
+  currentLTV:
+    type: string
+    example: '0.25'
+  repayStatus:
+    type: string
+    example: Repaying
+required:
+- loanCoin
+- remainingPrincipal
+- remainingInterest
+- collateralCoin
+- remainingCollateral
+- currentLTV
+- repayStatus

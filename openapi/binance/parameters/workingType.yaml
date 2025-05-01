@@ -1,0 +1,9 @@
+name: workingType
+in: query
+required: true
+description: 'Supported values: LIMIT,LIMIT_MAKER'
+schema:
+  type: string
+  enum:
+  - LIMIT
+  - LIMIT_MAKER

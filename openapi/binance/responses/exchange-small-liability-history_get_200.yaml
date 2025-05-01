@@ -1,0 +1,43 @@
+description: coin list
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        total:
+          type: integer
+          example: 1
+        rows:
+          type: array
+          items:
+            type: object
+            properties:
+              asset:
+                type: string
+                example: ETH
+              amount:
+                type: string
+                example: '0.00083434'
+              targetAsset:
+                type: string
+                example: BUSD
+              targetAmount:
+                type: string
+                example: '1.37576819'
+              bizType:
+                type: string
+                example: EXCHANGE_SMALL_LIABILITY
+              timestamp:
+                type: integer
+                format: int64
+                example: 1672801339253
+            required:
+            - asset
+            - amount
+            - targetAsset
+            - targetAmount
+            - bizType
+            - timestamp
+      required:
+      - total
+      - rows

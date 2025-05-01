@@ -1,0 +1,36 @@
+description: Loan repay
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        loanCoin:
+          type: string
+          example: BUSD
+        collateralCoin:
+          type: string
+          example: BNB
+        remainingDebt:
+          type: string
+          example: '50.5'
+        remainingCollateral:
+          type: string
+          example: '50.5'
+        fullRepayment:
+          type: boolean
+          example: false
+        currentLTV:
+          type: string
+          example: '50.5'
+        repayStatus:
+          type: string
+          description: Repaid, Repaying, Failed
+          example: Repaid
+      required:
+      - loanCoin
+      - collateralCoin
+      - remainingDebt
+      - remainingCollateral
+      - fullRepayment
+      - currentLTV
+      - repayStatus

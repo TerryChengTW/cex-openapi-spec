@@ -1,0 +1,50 @@
+description: WBETH wrap history
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        rows:
+          type: array
+          items:
+            type: object
+            properties:
+              time:
+                type: integer
+                format: int64
+                example: 1575018510000
+              fromAsset:
+                type: string
+                example: BETH
+              fromAmount:
+                type: string
+                example: '21312.23223'
+              toAsset:
+                type: string
+                example: WBETH
+              toAmount:
+                type: string
+                example: '21312.23223'
+              exchangeRate:
+                type: string
+                example: '1.01243253'
+                description: BETH amount per 1 WBETH
+              status:
+                type: string
+                example: SUCCESS
+                description: PENDING, SUCCESS, FAILED
+            required:
+            - time
+            - fromAsset
+            - fromAmount
+            - toAsset
+            - toAmount
+            - exchangeRate
+            - status
+        total:
+          type: integer
+          format: int64
+          example: 1
+      required:
+      - rows
+      - total

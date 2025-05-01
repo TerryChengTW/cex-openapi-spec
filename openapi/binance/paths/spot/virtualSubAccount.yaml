@@ -1,0 +1,33 @@
+paths:
+  /sapi/v1/sub-account/virtualSubAccount:
+    post:
+      summary: Create a Virtual Sub-account(For Master Account)
+      description: '- This request will generate a virtual sub account under your
+        master account.
+
+        - You need to enable "trade" option for the api key which requests this endpoint.
+
+
+        Weight(IP): 1'
+      tags:
+      - Sub-Account
+      parameters:
+      - name: subAccountString
+        in: query
+        description: Please input a string. We will create a virtual email using that
+          string for you to register
+        required: true
+        schema:
+          type: string
+      - $ref: ..\..\parameters/recvWindow.yaml
+      - $ref: ..\..\parameters/timestamp.yaml
+      - $ref: ..\..\parameters/signature.yaml
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/virtualSubAccount_post_200.yaml
+        '400':
+          $ref: ..\..\responses/virtualSubAccount_post_400.yaml
+        '401':
+          $ref: ..\..\responses/virtualSubAccount_post_401.yaml

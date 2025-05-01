@@ -1,0 +1,7 @@
+name: pendingQuantity
+in: query
+required: true
+description: Sets the quantity for the pending order.
+schema:
+  type: number
+  format: double

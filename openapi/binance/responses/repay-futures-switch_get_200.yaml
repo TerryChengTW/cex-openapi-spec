@@ -1,0 +1,11 @@
+description: Result
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        autoRepay:
+          type: boolean
+          example: true
+      required:
+      - autoRepay

@@ -1,0 +1,49 @@
+paths:
+  /sapi/v1/giftcard/createCode:
+    post:
+      summary: Create a Binance Code (USER_DATA)
+      description: 'This API is for creating a Binance Code. To get started with,
+        please make sure:
+
+
+        - You have a Binance account
+
+        - You have passed kyc
+
+        - You have a sufficient balance in your Binance funding wallet
+
+        - You need Enable Withdrawals for the API Key which requests this endpoint.
+
+
+        Daily creation volume: 2 BTC / 24H Daily creation times: 200 Codes / 24H
+
+
+        Weight(IP): 1'
+      tags:
+      - Gift Card
+      parameters:
+      - name: token
+        in: query
+        description: The coin type contained in the Binance Code
+        required: true
+        schema:
+          type: string
+      - name: amount
+        in: query
+        required: true
+        description: The amount of the coin
+        schema:
+          type: number
+          format: double
+      - $ref: ..\..\parameters/recvWindow.yaml
+      - $ref: ..\..\parameters/timestamp.yaml
+      - $ref: ..\..\parameters/signature.yaml
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/createCode_post_200.yaml
+        '400':
+          $ref: ..\..\responses/createCode_post_400.yaml
+        '401':
+          $ref: ..\..\responses/createCode_post_401.yaml

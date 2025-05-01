@@ -1,0 +1,88 @@
+description: Account API trading status
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        data:
+          type: object
+          properties:
+            isLocked:
+              type: boolean
+              example: false
+              description: API trading function is locked or not
+            plannedRecoverTime:
+              type: integer
+              format: int64
+              example: 0
+              description: If API trading function is locked, this is the planned
+                recover time
+            triggerCondition:
+              type: object
+              properties:
+                GCR:
+                  type: integer
+                  format: int64
+                  example: 150
+                  description: Number of GTC orders
+                IFER:
+                  type: integer
+                  format: int64
+                  example: 150
+                  description: Number of FOK/IOC orders
+                UFR:
+                  type: integer
+                  format: int64
+                  example: 300
+                  description: Number of orders
+              required:
+              - GCR
+              - IFER
+              - UFR
+            indicators:
+              description: The indicators updated every 30 seconds
+              type: object
+              properties:
+                BTCUSDT:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      i:
+                        type: string
+                        example: UFR
+                        description: Unfilled Ratio (UFR)
+                      c:
+                        type: integer
+                        format: int64
+                        example: 20
+                        description: Count of all orders
+                      v:
+                        type: number
+                        format: float
+                        example: 0.05
+                        description: Current UFR value
+                      t:
+                        type: number
+                        format: float
+                        example: 0.99
+                        description: Trigger UFR value
+                    required:
+                    - i
+                    - c
+                    - v
+                    - t
+              required:
+              - BTCUSDT
+            updateTime:
+              type: integer
+              format: int64
+              example: 1547630471725
+          required:
+          - isLocked
+          - plannedRecoverTime
+          - triggerCondition
+          - indicators
+          - updateTime
+      required:
+      - data

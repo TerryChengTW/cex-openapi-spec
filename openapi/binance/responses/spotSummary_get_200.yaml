@@ -1,0 +1,31 @@
+description: Summary of Sub-account Spot Assets
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        totalCount:
+          type: integer
+          format: int64
+          example: 1
+        masterAccountTotalAsset:
+          type: string
+          example: '0.23231201'
+        spotSubUserAssetBtcVoList:
+          type: array
+          items:
+            type: object
+            properties:
+              email:
+                type: string
+                example: sub123@test.com
+              totalAsset:
+                type: string
+                example: '9999.00000000'
+            required:
+            - email
+            - totalAsset
+      required:
+      - totalCount
+      - masterAccountTotalAsset
+      - spotSubUserAssetBtcVoList

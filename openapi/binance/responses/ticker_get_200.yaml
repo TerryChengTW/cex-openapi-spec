@@ -1,0 +1,72 @@
+description: Rolling price ticker
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        symbol:
+          type: string
+          example: BNBBTC
+        priceChange:
+          type: string
+          example: '-8.00000000'
+        priceChangePercent:
+          type: string
+          example: '-88.889'
+        weightedAvgPrice:
+          type: string
+          example: '2.60427807'
+        openPrice:
+          type: string
+          example: '9.00000000'
+        highPrice:
+          type: string
+          example: '9.00000000'
+        lowPrice:
+          type: string
+          example: '1.00000000'
+        lastPrice:
+          type: string
+          example: '1.00000000'
+        volume:
+          type: string
+          example: '187.00000000'
+        quoteVolume:
+          type: string
+          example: '487.00000000'
+        openTime:
+          type: integer
+          format: int64
+          example: 1641859200000
+        closeTime:
+          type: integer
+          format: int64
+          example: 1642031999999
+        firstId:
+          type: integer
+          format: int64
+          example: 0
+        lastId:
+          type: integer
+          format: int64
+          example: 60
+        count:
+          type: integer
+          format: int64
+          example: 61
+      required:
+      - symbol
+      - priceChange
+      - priceChangePercent
+      - weightedAvgPrice
+      - openPrice
+      - highPrice
+      - lowPrice
+      - lastPrice
+      - volume
+      - quoteVolume
+      - openTime
+      - closeTime
+      - firstId
+      - lastId
+      - count

@@ -1,0 +1,47 @@
+description: BETH rewards distribution history
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        rows:
+          type: array
+          items:
+            type: object
+            properties:
+              time:
+                type: integer
+                format: int64
+                example: 1575018510000
+              asset:
+                type: string
+                example: ETH
+              holding:
+                type: string
+                example: '2.3223'
+                description: BETH holding balance
+              amount:
+                type: string
+                example: '0.23223'
+                description: Distributed rewards
+              annualPercentageRate:
+                type: string
+                example: '0.5'
+                description: 0.5 means 50% here
+              status:
+                type: string
+                example: SUCCESS
+            required:
+            - time
+            - asset
+            - holding
+            - amount
+            - annualPercentageRate
+            - status
+        total:
+          type: integer
+          format: int64
+          example: 1
+      required:
+      - rows
+      - total

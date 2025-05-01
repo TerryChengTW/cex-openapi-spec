@@ -1,0 +1,34 @@
+description: Code Verification
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        code:
+          type: string
+          example: '000000'
+        message:
+          type: string
+          example: success
+        data:
+          type: object
+          properties:
+            valid:
+              type: boolean
+            token:
+              type: string
+              example: BNB
+            amount:
+              type: string
+              example: '0.00000001'
+          required:
+          - valid
+          - token
+          - amount
+        success:
+          type: boolean
+      required:
+      - code
+      - message
+      - data
+      - success

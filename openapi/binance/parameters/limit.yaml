@@ -1,0 +1,7 @@
+name: limit
+in: query
+description: Default 500; max 1000.
+schema:
+  type: integer
+  format: int32
+  example: 5

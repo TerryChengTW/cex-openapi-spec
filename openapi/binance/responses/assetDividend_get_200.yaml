@@ -1,0 +1,46 @@
+description: Records of asset devidend
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        rows:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+                format: int64
+                example: 242006910
+              amount:
+                type: string
+                example: '10.00000000'
+              asset:
+                type: string
+                example: BHFT
+              divTime:
+                type: integer
+                format: int64
+                example: 1563189166000
+              enInfo:
+                type: string
+                example: BHFT distribution
+              tranId:
+                type: integer
+                format: int64
+                example: 2968885920
+            required:
+            - id
+            - amount
+            - asset
+            - divTime
+            - enInfo
+            - tranId
+        total:
+          type: integer
+          format: int32
+          example: 1
+      required:
+      - rows
+      - total

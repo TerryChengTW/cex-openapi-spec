@@ -1,0 +1,7 @@
+name: limit
+in: query
+description: Default 50, Max 50
+schema:
+  type: integer
+  format: int32
+  example: 50

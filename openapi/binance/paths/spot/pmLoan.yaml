@@ -1,0 +1,23 @@
+paths:
+  /sapi/v1/portfolio/pmLoan:
+    get:
+      summary: Portfolio Margin Bankruptcy Loan Amount (USER_DATA)
+      description: 'Query Portfolio Margin Bankruptcy Loan Amount.
+
+
+        Weight(UID): 500'
+      tags:
+      - Portfolio Margin
+      parameters:
+      - $ref: ..\..\parameters/recvWindow.yaml
+      - $ref: ..\..\parameters/timestamp.yaml
+      - $ref: ..\..\parameters/signature.yaml
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/pmLoan_get_200.yaml
+        '400':
+          $ref: ..\..\responses/pmLoan_get_400.yaml
+        '401':
+          $ref: ..\..\responses/pmLoan_get_401.yaml

@@ -1,0 +1,29 @@
+paths:
+  /sapi/v1/simple-earn/flexible/history/rateHistory:
+    get:
+      summary: Get Rate History (USER_DATA)
+      description: 'Weight(IP): 150'
+      tags:
+      - Simple Earn
+      parameters:
+      - name: productId
+        in: query
+        required: true
+        schema:
+          type: string
+      - $ref: ..\..\parameters/startTime.yaml
+      - $ref: ..\..\parameters/endTime.yaml
+      - $ref: ..\..\parameters/current.yaml
+      - $ref: ..\..\parameters/size.yaml
+      - $ref: ..\..\parameters/recvWindow.yaml
+      - $ref: ..\..\parameters/timestamp.yaml
+      - $ref: ..\..\parameters/signature.yaml
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/rateHistory_get_200.yaml
+        '400':
+          $ref: ..\..\responses/rateHistory_get_400.yaml
+        '401':
+          $ref: ..\..\responses/rateHistory_get_401.yaml

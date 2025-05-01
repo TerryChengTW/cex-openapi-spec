@@ -1,0 +1,15 @@
+name: type
+in: query
+required: true
+description: Order type
+schema:
+  type: string
+  enum:
+  - LIMIT
+  - MARKET
+  - STOP_LOSS
+  - STOP_LOSS_LIMIT
+  - TAKE_PROFIT
+  - TAKE_PROFIT_LIMIT
+  - LIMIT_MAKER
+  example: LIMIT

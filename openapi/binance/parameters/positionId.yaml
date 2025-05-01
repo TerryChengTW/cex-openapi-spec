@@ -1,0 +1,5 @@
+name: positionId
+in: query
+required: true
+schema:
+  type: string

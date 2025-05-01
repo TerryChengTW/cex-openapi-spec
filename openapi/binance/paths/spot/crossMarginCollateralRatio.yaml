@@ -1,0 +1,16 @@
+paths:
+  /sapi/v1/margin/crossMarginCollateralRatio:
+    get:
+      summary: Cross margin collateral ratio (MARKET_DATA)
+      description: '
+
+        Weight(IP): 100'
+      tags:
+      - Margin
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/crossMarginCollateralRatio_get_200.yaml
+        '400':
+          $ref: ..\..\responses/crossMarginCollateralRatio_get_400.yaml

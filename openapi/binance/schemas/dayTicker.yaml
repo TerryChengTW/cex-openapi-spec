@@ -1,0 +1,76 @@
+type: object
+properties:
+  symbol:
+    type: string
+    example: BTCUSDT
+  priceChange:
+    type: string
+    example: '-83.13000000'
+    description: Absolute price change
+  priceChangePercent:
+    type: string
+    example: '-0.317'
+    description: Relative price change in percent
+  weightedAvgPrice:
+    type: string
+    example: '26234.58803036'
+    description: quoteVolume / volume
+  openPrice:
+    type: string
+    example: '26304.80000000'
+  highPrice:
+    type: string
+    example: '26397.46000000'
+  lowPrice:
+    type: string
+    example: '26088.34000000'
+  lastPrice:
+    type: string
+    example: '26221.67000000'
+  volume:
+    type: string
+    description: Volume in base asset
+    example: '18495.35066000'
+  quoteVolume:
+    type: string
+    example: '485217905.04210480'
+    description: Volume in quote asset
+  openTime:
+    type: integer
+    format: int64
+    example: 1695686400000
+  closeTime:
+    type: integer
+    format: int64
+    example: 1695772799999
+  firstId:
+    type: integer
+    format: int64
+    example: 3220151555
+    description: Trade ID of the first trade in the interval
+  lastId:
+    type: integer
+    format: int64
+    example: 3220849281
+    description: Trade ID of the last trade in the interval
+  count:
+    type: integer
+    format: int64
+    example: 697727
+    description: Number of trades in the interval
+required:
+- symbol
+- priceChange
+- priceChangePercent
+- weightedAvgPrice
+- openPrice
+- highPrice
+- lowPrice
+- lastPrice
+- volume
+- quoteVolume
+- openTime
+- closeTime
+- firstId
+- lastId
+- count

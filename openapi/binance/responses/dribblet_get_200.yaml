@@ -1,0 +1,73 @@
+description: Dust log records
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        total:
+          description: Total counts of exchange
+          type: integer
+          format: int64
+          example: 8
+        userAssetDribblets:
+          type: array
+          items:
+            type: object
+            properties:
+              operateTime:
+                type: integer
+                format: int64
+                example: 1615985535000
+              totalTransferedAmount:
+                type: string
+                example: '0.00132256'
+                description: Total transfered BNB amount for this exchange.
+              totalServiceChargeAmount:
+                type: string
+                example: '0.00002699'
+                description: Total service charge amount for this exchange.
+              transId:
+                type: integer
+                format: int64
+                example: 45178372831
+              userAssetDribbletDetails:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    transId:
+                      type: integer
+                      format: int64
+                      example: 4359321
+                    serviceChargeAmount:
+                      type: string
+                      example: '0.000009'
+                    amount:
+                      type: string
+                      example: '0.0009'
+                    operateTime:
+                      type: integer
+                      format: int64
+                      example: 1615985535000
+                    transferedAmount:
+                      type: string
+                      example: '0.000441'
+                    fromAsset:
+                      type: string
+                      example: USDT
+                  required:
+                  - transId
+                  - serviceChargeAmount
+                  - amount
+                  - operateTime
+                  - transferedAmount
+                  - fromAsset
+            required:
+            - operateTime
+            - totalTransferedAmount
+            - totalServiceChargeAmount
+            - transId
+            - userAssetDribbletDetails
+      required:
+      - total
+      - userAssetDribblets

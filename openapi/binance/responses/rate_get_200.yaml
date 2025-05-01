@@ -1,0 +1,24 @@
+description: Collateral Assets Data
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        loanCoin:
+          type: string
+          example: BUSD
+        collateralCoin:
+          type: string
+          example: BUSD
+        repayAmount:
+          type: string
+          example: '1000'
+        rate:
+          type: string
+          description: rate of collateral coin/loan coin
+          example: '300.36781234'
+      required:
+      - loanCoin
+      - collateralCoin
+      - repayAmount
+      - rate

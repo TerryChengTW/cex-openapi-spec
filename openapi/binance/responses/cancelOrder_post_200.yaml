@@ -1,0 +1,16 @@
+description: Cancel Order
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        orderId:
+          type: integer
+          format: int64
+          example: 1603680255057330400
+        status:
+          type: string
+          example: CANCELED
+      required:
+      - orderId
+      - status

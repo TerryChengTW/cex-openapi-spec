@@ -1,0 +1,79 @@
+type: object
+properties:
+  code:
+    type: integer
+    format: int64
+    example: 200
+  msg:
+    type: string
+    example: ''
+  snapshotVos:
+    type: array
+    items:
+      type: object
+      properties:
+        data:
+          type: object
+          properties:
+            assets:
+              type: array
+              items:
+                type: object
+                properties:
+                  asset:
+                    type: string
+                    example: USDT
+                  marginBalance:
+                    type: string
+                    example: '118.99782335'
+                  walletBalance:
+                    type: string
+                    example: '120.23811389'
+                required:
+                - asset
+                - marginBalance
+                - walletBalance
+            position:
+              type: array
+              items:
+                type: object
+                properties:
+                  entryPrice:
+                    type: string
+                    example: '7130.41000000'
+                  markPrice:
+                    type: string
+                    example: '7257.66239673'
+                  positionAmt:
+                    type: string
+                    example: '0.01000000'
+                  symbol:
+                    type: string
+                    example: BTCUSDT
+                  unRealizedProfit:
+                    type: string
+                    example: '1.24029054'
+                required:
+                - entryPrice
+                - markPrice
+                - positionAmt
+                - symbol
+                - unRealizedProfit
+          required:
+          - assets
+          - position
+        type:
+          type: string
+          example: futures
+        updateTime:
+          type: integer
+          format: int64
+          example: 1576281599000
+      required:
+      - data
+      - type
+      - updateTime
+required:
+- code
+- msg
+- snapshotVos

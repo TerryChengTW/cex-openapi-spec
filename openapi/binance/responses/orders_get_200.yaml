@@ -1,0 +1,39 @@
+description: Collateral Assets Data
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        total:
+          type: integer
+          format: int32
+          example: 1
+        rows:
+          type: array
+          items:
+            type: object
+            properties:
+              loanCoin:
+                type: string
+                example: BUSD
+              totalDebt:
+                type: string
+                example: '10000'
+              collateralCoin:
+                type: string
+                example: BNB
+              collateralAmount:
+                type: string
+                example: '49.27565492'
+              currentLTV:
+                type: string
+                example: '0.57'
+            required:
+            - loanCoin
+            - totalDebt
+            - collateralCoin
+            - collateralAmount
+            - currentLTV
+      required:
+      - total
+      - rows

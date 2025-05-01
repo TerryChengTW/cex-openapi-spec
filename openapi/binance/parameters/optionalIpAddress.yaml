@@ -1,0 +1,5 @@
+name: ipAddress
+in: query
+description: Can be added in batches, separated by commas
+schema:
+  type: string

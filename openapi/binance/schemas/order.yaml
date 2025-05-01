@@ -1,0 +1,67 @@
+type: object
+properties:
+  symbol:
+    type: string
+    example: BNBBTC
+  origClientOrderId:
+    type: string
+    example: msXkySR3u5uYwpvRMFsi3u
+  orderId:
+    type: integer
+    format: int64
+    example: 28
+  orderListId:
+    type: integer
+    format: int64
+    description: Unless OCO, value will be -1
+    example: -1
+  clientOrderId:
+    type: string
+    example: 6gCrw2kRUAF9CvJDGP16IP
+  transactTime:
+    type: integer
+    format: int64
+    example: 1507725176595
+  price:
+    type: string
+    example: '1.00000000'
+  origQty:
+    type: string
+    example: '10.00000000'
+  executedQty:
+    type: string
+    example: '10.00000000'
+  cummulativeQuoteQty:
+    type: string
+    example: '10.00000000'
+  status:
+    type: string
+    example: FILLED
+  timeInForce:
+    type: string
+    example: GTC
+  type:
+    type: string
+    example: LIMIT
+  side:
+    type: string
+    example: SELL
+  selfTradePreventionMode:
+    type: string
+    example: NONE
+required:
+- symbol
+- origClientOrderId
+- orderId
+- orderListId
+- clientOrderId
+- price
+- origQty
+- executedQty
+- cummulativeQuoteQty
+- status
+- timeInForce
+- type
+- side
+- selfTradePreventionMode
+- transactTime

@@ -1,0 +1,58 @@
+description: Margin account borrow/repay
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        rows:
+          type: array
+          items:
+            type: object
+            properties:
+              isolatedSymbol:
+                type: string
+                description: Isolated symbol, will not be returned for crossed margin
+              amount:
+                type: string
+                description: Total amount borrowed/repaid
+              asset:
+                type: string
+              interest:
+                type: string
+                description: Interest repaid
+              principal:
+                type: string
+                description: Principal repaid
+              status:
+                type: string
+                description: one of PENDING (pending execution), CONFIRMED (successfully
+                  execution), FAILED (execution failed, nothing happened to your account)
+              timestamp:
+                type: integer
+                format: int64
+              txId:
+                type: integer
+                format: int64
+            required:
+            - asset
+            - principal
+            - status
+            - timestamp
+            - txId
+        total:
+          type: integer
+          format: int32
+      required:
+      - rows
+      - total
+      example:
+        rows:
+        - isolatedSymbol: BNBUSDT
+          amount: '14.00000000'
+          asset: BNB
+          interest: '0.01866667'
+          principal: '13.98133333'
+          status: CONFIRMED
+          timestamp: 1563438204000
+          txId: 2970933056
+        total: 1

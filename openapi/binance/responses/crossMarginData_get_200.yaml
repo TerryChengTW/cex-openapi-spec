@@ -1,0 +1,46 @@
+description: Cross Margin Fee Data
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          vipLevel:
+            type: integer
+            format: int32
+            example: 0
+          coin:
+            type: string
+            example: BTC
+          transferIn:
+            type: boolean
+          borrowable:
+            type: boolean
+          dailyInterest:
+            type: string
+            example: '0.00026125'
+          yearlyInterest:
+            type: string
+            example: '0.0953'
+          borrowLimit:
+            type: string
+            example: '180'
+          marginablePairs:
+            type: array
+            items:
+              type: string
+            example:
+            - BNBBTC
+            - TRXBTC
+            - ETHBTC
+            - BTCUSDT
+        required:
+        - vipLevel
+        - coin
+        - transferIn
+        - borrowable
+        - dailyInterest
+        - yearlyInterest
+        - borrowLimit
+        - marginablePairs

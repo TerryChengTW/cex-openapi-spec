@@ -1,0 +1,20 @@
+description: Purchase information
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        dailyPurchaseId:
+          type: integer
+          format: int64
+          example: 862290
+        success:
+          type: boolean
+        time:
+          type: integer
+          format: int64
+          example: 1577233578000
+      required:
+      - dailyPurchaseId
+      - success
+      - time

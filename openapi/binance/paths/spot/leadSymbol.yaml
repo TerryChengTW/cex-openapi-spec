@@ -1,0 +1,23 @@
+paths:
+  /sapi/v1/copyTrading/futures/leadSymbol:
+    get:
+      summary: Get Futures Lead Trading Symbol Whitelist(USER_DATA)
+      description: 'Get Futures Lead Trading Symbol Whitelist
+
+
+        Weight(IP): 20'
+      tags:
+      - Copy Trading
+      parameters:
+      - $ref: ..\..\parameters/recvWindow.yaml
+      - $ref: ..\..\parameters/timestamp.yaml
+      - $ref: ..\..\parameters/signature.yaml
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/leadSymbol_get_200.yaml
+        '400':
+          $ref: ..\..\responses/leadSymbol_get_400.yaml
+        '401':
+          $ref: ..\..\responses/leadSymbol_get_401.yaml

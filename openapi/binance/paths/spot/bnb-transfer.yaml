@@ -1,0 +1,33 @@
+paths:
+  /sapi/v1/portfolio/bnb-transfer:
+    post:
+      summary: BNB Transfer (USER_DATA)
+      description: 'BNB transfer can be between Margin Account and USDM Account
+
+
+        Weight(IP): 1500'
+      tags:
+      - Portfolio Margin
+      parameters:
+      - name: transferSide
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - TO_UM
+          - FROM_UM
+          example: TO_UM
+      - $ref: ..\..\parameters/amount.yaml
+      - $ref: ..\..\parameters/recvWindow.yaml
+      - $ref: ..\..\parameters/timestamp.yaml
+      - $ref: ..\..\parameters/signature.yaml
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/bnb-transfer_post_200.yaml
+        '400':
+          $ref: ..\..\responses/bnb-transfer_post_400.yaml
+        '401':
+          $ref: ..\..\responses/bnb-transfer_post_401.yaml

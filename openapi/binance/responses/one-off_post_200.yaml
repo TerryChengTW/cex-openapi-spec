@@ -1,0 +1,17 @@
+description: transaction result
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        transactionId:
+          type: integer
+          format: int64
+          example: 12345
+        waitSecond:
+          type: integer
+          format: int32
+          example: 5
+      required:
+      - transactionId
+      - waitSecond

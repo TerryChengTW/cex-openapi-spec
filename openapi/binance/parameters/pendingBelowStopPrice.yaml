@@ -1,0 +1,5 @@
+name: pendingBelowStopPrice
+in: query
+schema:
+  type: number
+  format: double

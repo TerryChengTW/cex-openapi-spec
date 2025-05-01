@@ -1,0 +1,9 @@
+name: pendingTimeInForce
+in: query
+description: GTC, IOC, FOK
+schema:
+  type: string
+  enum:
+  - GTC
+  - IOC
+  - FOK

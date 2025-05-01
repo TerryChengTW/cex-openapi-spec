@@ -1,0 +1,15 @@
+description: Sub account EOptions status
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        email:
+          type: string
+          example: alice@test.com
+        isEOptionsEnabled:
+          type: boolean
+          example: true
+      required:
+      - email
+      - isEOptionsEnabled

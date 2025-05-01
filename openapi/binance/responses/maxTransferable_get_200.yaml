@@ -1,0 +1,19 @@
+description: Details on max transferable amount
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        amount:
+          type: string
+          description: Account's currently max borrowable amount with sufficient system
+            availability
+        borrowLimit:
+          type: string
+          description: Max borrowable amount limited by the account level
+      example:
+        amount: '1.69248805'
+        borrowLimit: '60'
+      required:
+      - amount
+      - borrowLimit

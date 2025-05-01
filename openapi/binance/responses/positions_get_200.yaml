@@ -1,0 +1,75 @@
+description: Dual Investment product list
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        total:
+          type: integer
+          format: int64
+          example: 1
+        list:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                example: '741590'
+              investCoin:
+                type: string
+                example: USDT
+              exercisedCoin:
+                type: string
+                example: BNB
+              subscriptionAmount:
+                type: string
+                example: '0.5'
+              strikePrice:
+                type: string
+                example: '380'
+              duration:
+                type: integer
+                format: int32
+                example: 4
+              settleDate:
+                type: integer
+                format: int64
+                example: 1709020800000
+              purchaseStatus:
+                type: string
+                example: PURCHASE_SUCCESS
+              apr:
+                type: string
+                example: '0.0365'
+              orderId:
+                type: integer
+                format: int64
+                example: 7973677530
+              purchaseEndTime:
+                type: integer
+                format: int64
+                example: 1708329600000
+              optionType:
+                type: string
+                example: PUT
+              autoCompoundPlan:
+                type: string
+                example: STANDARD
+            required:
+            - id
+            - investCoin
+            - exercisedCoin
+            - subscriptionAmount
+            - strikePrice
+            - duration
+            - settleDate
+            - purchaseStatus
+            - apr
+            - orderId
+            - purchaseEndTime
+            - optionType
+            - autoCompoundPlan
+      required:
+      - total
+      - list

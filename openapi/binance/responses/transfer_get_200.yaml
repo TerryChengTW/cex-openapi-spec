@@ -1,0 +1,48 @@
+description: Futures Transfer Query
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        rows:
+          type: array
+          items:
+            type: object
+            properties:
+              asset:
+                type: string
+                example: USDT
+              tranId:
+                type: integer
+                format: int64
+                example: 100000001
+              amount:
+                type: string
+                example: '40.84624400'
+              type:
+                type: string
+                example: '1'
+              timestamp:
+                type: integer
+                format: int64
+                example: 1555056425000
+              status:
+                type: string
+                description: one of PENDING (pending to execution), CONFIRMED (successfully
+                  transfered), FAILED (execution failed, nothing happened to your
+                  account);
+                example: CONFIRMED
+            required:
+            - asset
+            - tranId
+            - amount
+            - type
+            - timestamp
+            - status
+        total:
+          type: integer
+          format: int32
+          example: 1
+      required:
+      - rows
+      - total

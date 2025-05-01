@@ -1,0 +1,14 @@
+description: Isolated Margin Account status
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        success:
+          type: boolean
+        symbol:
+          type: string
+          example: BTCUSDT
+      required:
+      - success
+      - symbol

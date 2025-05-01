@@ -1,0 +1,31 @@
+description: Asset Information
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        total:
+          type: integer
+          format: int32
+          example: 347
+        list:
+          type: array
+          items:
+            type: object
+            properties:
+              network:
+                type: string
+                example: BSC
+              contractAddress:
+                type: string
+                example: REGULAR11234567891779
+              tokenId:
+                type: string
+                example: '100900000017'
+            required:
+            - network
+            - contractAddress
+            - tokenId
+      required:
+      - total
+      - list

@@ -1,0 +1,30 @@
+description: All Isolated Margin Symbols
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          symbol:
+            type: string
+            example: BTCUSDT
+          base:
+            type: string
+            example: BTC
+          quote:
+            type: string
+            example: USDT
+          isMarginTrade:
+            type: boolean
+          isBuyAllowed:
+            type: boolean
+          isSellAllowed:
+            type: boolean
+        required:
+        - symbol
+        - base
+        - quote
+        - isMarginTrade
+        - isBuyAllowed
+        - isSellAllowed

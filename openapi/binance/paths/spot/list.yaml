@@ -1,0 +1,54 @@
+paths:
+  /sapi/v1/dci/product/list:
+    get:
+      summary: Get Dual Investment product list(USER_DATA)
+      description: 'Get Dual Investment product list
+
+
+        Weight(IP): 1'
+      tags:
+      - Dual Investment
+      parameters:
+      - name: optionType
+        in: query
+        required: true
+        description: Input CALL or PUT
+        schema:
+          type: string
+          enum:
+          - CALL
+          - PUT
+      - name: exercisedCoin
+        in: query
+        required: true
+        description: "Target exercised asset, e.g.:\nif you subscribe to a high sell\
+          \ product (call option), you should input:\n  - optionType: CALL,\n  - exercisedCoin:\
+          \ USDT,\n  - investCoin: BNB;\n\nif you subscribe to a low buy product (put\
+          \ option), you should input:\n  - optionType: PUT,\n  - exercisedCoin: BNB,\n\
+          \  - investCoin: USDT;"
+        schema:
+          type: string
+      - name: investCoin
+        in: query
+        required: true
+        description: "Asset used for subscribing, e.g.:\nif you subscribe to a high\
+          \ sell product (call option), you should input:\n  - optionType: CALL,\n\
+          \  - exercisedCoin: USDT,\n  - investCoin: BNB;\n\nif you subscribe to a\
+          \ low buy product (put option), you should input:\n  - optionType: PUT,\n\
+          \  - exercisedCoin: BNB,\n  - investCoin: USDT;"
+        schema:
+          type: string
+      - $ref: ..\..\parameters/smallPageSize.yaml
+      - $ref: ..\..\parameters/pageIndex.yaml
+      - $ref: ..\..\parameters/recvWindow.yaml
+      - $ref: ..\..\parameters/timestamp.yaml
+      - $ref: ..\..\parameters/signature.yaml
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/list_get_200.yaml
+        '400':
+          $ref: ..\..\responses/list_get_400.yaml
+        '401':
+          $ref: ..\..\responses/list_get_401.yaml

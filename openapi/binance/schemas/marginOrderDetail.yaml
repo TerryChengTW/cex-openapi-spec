@@ -1,0 +1,76 @@
+type: object
+properties:
+  clientOrderId:
+    type: string
+    example: ZwfQzuDIGpceVhKW5DvCmO
+  cummulativeQuoteQty:
+    type: string
+    example: '0.00000000'
+  executedQty:
+    type: string
+    example: '0.00000000'
+  icebergQty:
+    type: string
+    example: '0.00000000'
+  isWorking:
+    type: boolean
+  orderId:
+    type: integer
+    format: int64
+    example: 213205622
+  origQty:
+    type: string
+    example: '0.30000000'
+  price:
+    type: string
+    example: '0.00493630'
+  side:
+    type: string
+    example: SELL
+  status:
+    type: string
+    example: NEW
+  stopPrice:
+    type: string
+    example: '0.00000000'
+  symbol:
+    type: string
+    example: BNBBTC
+  isIsolated:
+    type: boolean
+  time:
+    type: integer
+    format: int64
+    example: 1562133008725
+  timeInForce:
+    type: string
+    example: GTC
+  type:
+    type: string
+    example: LIMIT
+  updateTime:
+    type: integer
+    format: int64
+    example: 1562133008725
+  selfTradePreventionMode:
+    type: string
+    example: NONE
+required:
+- clientOrderId
+- cummulativeQuoteQty
+- executedQty
+- icebergQty
+- isWorking
+- orderId
+- origQty
+- price
+- side
+- status
+- stopPrice
+- symbol
+- isIsolated
+- time
+- timeInForce
+- type
+- updateTime
+- selfTradePreventionMode

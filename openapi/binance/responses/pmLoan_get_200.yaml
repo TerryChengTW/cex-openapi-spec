@@ -1,0 +1,15 @@
+description: Portfolio Margin Bankruptcy Loan Amount.
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        asset:
+          type: string
+          example: BUSD
+        amount:
+          type: string
+          example: '579.45'
+      required:
+      - asset
+      - amount

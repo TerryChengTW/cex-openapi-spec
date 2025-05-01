@@ -1,0 +1,36 @@
+type: object
+properties:
+  id:
+    type: integer
+    format: int64
+    description: trade id
+    example: 345196462
+  price:
+    type: string
+    description: price
+    example: '9638.99000000'
+  qty:
+    type: string
+    description: amount of base asset
+    example: '0.02077200'
+  quoteQty:
+    type: string
+    description: amount of quote asset
+    example: '0.02077200'
+  time:
+    type: integer
+    format: int64
+    description: Trade executed timestamp, as same as `T` in the stream
+    example: 1592887772684
+  isBuyerMaker:
+    type: boolean
+  isBestMatch:
+    type: boolean
+required:
+- id
+- price
+- qty
+- quoteQty
+- time
+- isBuyerMaker
+- isBestMatch

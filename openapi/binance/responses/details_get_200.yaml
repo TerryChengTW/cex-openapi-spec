@@ -1,0 +1,75 @@
+description: List of hashrate resale details
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int64
+          example: 0
+        msg:
+          type: string
+          example: ''
+        data:
+          type: object
+          properties:
+            profitTransferDetails:
+              type: array
+              items:
+                type: object
+                properties:
+                  poolUsername:
+                    type: string
+                    example: test4001
+                    description: Transfer out of sub-account
+                  toPoolUsername:
+                    type: string
+                    example: pop
+                    description: Transfer into subaccount
+                  algoName:
+                    type: string
+                    example: sha256
+                    description: Transfer algorithm
+                  hashRate:
+                    type: integer
+                    format: int64
+                    example: 200000000000
+                    description: Transferred Hashrate quantity
+                  day:
+                    type: integer
+                    format: int64
+                    example: 20201213
+                    description: Transfer date
+                  amount:
+                    type: number
+                    format: double
+                    example: 0.2256872
+                    description: Transfer income
+                  coinName:
+                    type: string
+                    example: BTC
+                required:
+                - poolUsername
+                - toPoolUsername
+                - algoName
+                - hashRate
+                - day
+                - amount
+                - coinName
+            totalNum:
+              type: integer
+              format: int64
+              example: 8
+            pageSize:
+              type: integer
+              format: int64
+              example: 200
+          required:
+          - profitTransferDetails
+          - totalNum
+          - pageSize
+      required:
+      - code
+      - msg
+      - data

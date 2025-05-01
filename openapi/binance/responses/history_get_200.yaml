@@ -1,0 +1,59 @@
+description: Rebalance Details
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          indexId:
+            type: integer
+            format: int64
+            example: 1
+          indexName:
+            type: string
+            example: BINANCE TOP 10 EW
+          rebalanceId:
+            type: integer
+            format: int64
+            example: 11
+          status:
+            type: string
+            example: SUCCESS
+          rebalanceFee:
+            type: string
+            example: '10'
+          rebalanceFeeUnit:
+            type: string
+            example: USDT
+          transactionDetails:
+            type: array
+            items:
+              type: object
+              properties:
+                asset:
+                  type: string
+                  example: BTC
+                transactionDateTime:
+                  type: integer
+                  format: int64
+                  example: 1648378800000
+                rebalanceDirection:
+                  type: string
+                  example: BUY
+                rebalanceAmount:
+                  type: string
+                  example: '0.005'
+              required:
+              - asset
+              - transactionDateTime
+              - rebalanceDirection
+              - rebalanceAmount
+        required:
+        - indexId
+        - indexName
+        - rebalanceId
+        - status
+        - rebalanceFee
+        - rebalanceFeeUnit
+        - transactionDetails

@@ -1,0 +1,27 @@
+paths:
+  /sapi/v1/margin/exchange-small-liability-history:
+    get:
+      summary: Get Small Liability Exchange History (USER_DATA)
+      description: 'Get Small liability Exchange History
+
+
+        Weight(UID): 100'
+      tags:
+      - Margin
+      parameters:
+      - $ref: ..\..\parameters/current.yaml
+      - $ref: ..\..\parameters/size.yaml
+      - $ref: ..\..\parameters/startTime.yaml
+      - $ref: ..\..\parameters/endTime.yaml
+      - $ref: ..\..\parameters/recvWindow.yaml
+      - $ref: ..\..\parameters/timestamp.yaml
+      - $ref: ..\..\parameters/signature.yaml
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/exchange-small-liability-history_get_200.yaml
+        '400':
+          $ref: ..\..\responses/exchange-small-liability-history_get_400.yaml
+        '401':
+          $ref: ..\..\responses/exchange-small-liability-history_get_401.yaml

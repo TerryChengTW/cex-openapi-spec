@@ -1,0 +1,33 @@
+description: Margin available Inventory
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        assets:
+          type: object
+          properties:
+            MATIC:
+              type: string
+              example: '100000000'
+            STPT:
+              type: string
+              example: '100000000'
+            TVK:
+              type: string
+              example: '100000000'
+            SHIB:
+              type: string
+              example: '97409653'
+          required:
+          - MATIC
+          - STPT
+          - TVK
+          - SHIB
+        updateTime:
+          type: integer
+          format: int64
+          example: 1699272487
+      required:
+      - assets
+      - updateTime

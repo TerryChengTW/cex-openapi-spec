@@ -1,0 +1,6 @@
+name: toPoolUser
+in: query
+required: true
+description: Mining Account
+schema:
+  type: string

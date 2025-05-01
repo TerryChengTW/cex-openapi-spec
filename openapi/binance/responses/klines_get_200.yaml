@@ -1,0 +1,27 @@
+description: Kline data
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        type: array
+        items:
+          oneOf:
+          - type: integer
+            format: int64
+          - type: string
+          minItems: 12
+          maxItems: 12
+        example:
+        - 1499040000000
+        - '0.01634790'
+        - '0.80000000'
+        - '0.01575800'
+        - '0.01577100'
+        - '148976.11427815'
+        - 1499644799999
+        - '2434.19055334'
+        - 308
+        - '1756.87402397'
+        - '28.46694368'
+        - '17928899.62484339'

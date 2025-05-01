@@ -1,0 +1,22 @@
+description: Symbols delist schedule
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          delistTime:
+            type: integer
+            format: int64
+            example: 1686161202000
+          symbol:
+            type: array
+            items:
+              type: string
+            example:
+            - ADAUSDT
+            - BNBUSDT
+        required:
+        - delistTime
+        - symbol

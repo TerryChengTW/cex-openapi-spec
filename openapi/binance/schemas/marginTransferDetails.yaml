@@ -1,0 +1,48 @@
+type: object
+properties:
+  rows:
+    type: array
+    items:
+      type: object
+      properties:
+        amount:
+          type: string
+          example: '0.10000000'
+        asset:
+          type: string
+          example: BNB
+        status:
+          type: string
+          example: CONFIRMED
+        timestamp:
+          type: integer
+          format: int64
+          example: 1566898617000
+        txId:
+          type: integer
+          format: int64
+          example: 5240372201
+        type:
+          type: string
+          example: ROLL_IN
+        transFrom:
+          type: string
+          example: SPOT
+        transTo:
+          type: string
+          example: ISOLATED_MARGIN
+      required:
+      - amount
+      - asset
+      - status
+      - timestamp
+      - txId
+      - transFrom
+      - transTo
+  total:
+    type: integer
+    format: int32
+    example: 1
+required:
+- rows
+- total

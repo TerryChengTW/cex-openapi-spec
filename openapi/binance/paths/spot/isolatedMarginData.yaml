@@ -1,0 +1,27 @@
+paths:
+  /sapi/v1/margin/isolatedMarginData:
+    get:
+      summary: Query Isolated Margin Fee Data (USER_DATA)
+      description: 'Get isolated margin fee data collection with any vip level or
+        user''s current specific data as https://www.binance.com/en/margin-fee
+
+
+        Weight(IP): 1 when a single is specified; 10 when the symbol parameter is
+        omitted'
+      tags:
+      - Margin
+      parameters:
+      - $ref: ..\..\parameters/vipLevel.yaml
+      - $ref: ..\..\parameters/optionalSymbol.yaml
+      - $ref: ..\..\parameters/recvWindow.yaml
+      - $ref: ..\..\parameters/timestamp.yaml
+      - $ref: ..\..\parameters/signature.yaml
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/isolatedMarginData_get_200.yaml
+        '400':
+          $ref: ..\..\responses/isolatedMarginData_get_400.yaml
+        '401':
+          $ref: ..\..\responses/isolatedMarginData_get_401.yaml

@@ -1,0 +1,5 @@
+name: pageSize
+in: query
+description: MIN 1, MAX 100; Default 100
+schema:
+  type: string

@@ -1,0 +1,117 @@
+paths:
+  /sapi/v1/lending/auto-invest/plan/add:
+    post:
+      summary: Investment plan creation (USER_DATA)
+      description: 'Post an investment plan creation
+
+
+        Weight(IP): 1'
+      tags:
+      - Auto-Invest
+      parameters:
+      - name: sourceType
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - MAIN_SITE
+          - TR
+          example: MAIN_SITE
+      - name: requestId
+        in: query
+        schema:
+          type: string
+      - name: planType
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - SINGLE
+          - PORTFOLIO
+          - INDEX
+          example: SINGLE
+      - name: IndexId
+        in: query
+        schema:
+          type: integer
+          format: int64
+      - name: subscriptionAmount
+        in: query
+        required: true
+        schema:
+          type: number
+          format: float
+      - name: subscriptionCycle
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - H1
+          - H4
+          - H8
+          - H12
+          - WEEKLY
+          - DAILY
+          - MONTHLY
+          - BI_WEEKLY
+      - name: subscriptionStartDay
+        in: query
+        schema:
+          type: integer
+      - name: subscriptionStartWeekday
+        in: query
+        schema:
+          type: string
+          enum:
+          - MON
+          - TUE
+          - WED
+          - THU
+          - FRI
+          - SAT
+          - SUN
+      - name: subscriptionStartTime
+        in: query
+        required: true
+        schema:
+          type: integer
+      - name: sourceAsset
+        in: query
+        required: true
+        schema:
+          type: string
+          example: USDT
+      - name: flexibleAllowedToUse
+        in: query
+        schema:
+          type: boolean
+          example: true
+      - name: details
+        in: query
+        required: true
+        schema:
+          type: array
+          items:
+            type: object
+            properties:
+              targetAsset:
+                type: string
+                example: BTC
+              percentage:
+                type: integer
+                format: int64
+      - $ref: ..\..\parameters/recvWindow.yaml
+      - $ref: ..\..\parameters/timestamp.yaml
+      - $ref: ..\..\parameters/signature.yaml
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/add_post_200.yaml
+        '400':
+          $ref: ..\..\responses/add_post_400.yaml
+        '401':
+          $ref: ..\..\responses/add_post_401.yaml

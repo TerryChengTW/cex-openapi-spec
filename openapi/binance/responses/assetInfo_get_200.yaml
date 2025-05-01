@@ -1,0 +1,18 @@
+description: Asset Precision Information
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          asset:
+            type: string
+            example: BTC
+          fraction:
+            type: integer
+            format: int32
+            example: 8
+        required:
+        - asset
+        - fraction

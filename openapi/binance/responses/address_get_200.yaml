@@ -1,0 +1,22 @@
+description: Managed sub deposit address
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        coin:
+          type: string
+          example: USDT
+        address:
+          type: string
+          example: '0x206c22d833bb0bb2102da6b7c7d4c3eb14bcf73d'
+        tag:
+          type: string
+        url:
+          type: string
+          example: https://etherscan.io/address/0x206c22d833bb0bb2102da6b7c7d4c3eb14bcf73d
+      required:
+      - coin
+      - address
+      - tag
+      - url

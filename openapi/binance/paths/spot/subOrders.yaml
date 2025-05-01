@@ -1,0 +1,31 @@
+paths:
+  /sapi/v1/algo/spot/subOrders:
+    get:
+      summary: Query Sub Orders
+      description: 'Get respective sub orders for a specified algoId
+
+
+        Weight(IP): 1'
+      tags:
+      - Spot Algo
+      parameters:
+      - name: algoId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - $ref: ..\..\parameters/page.yaml
+      - $ref: ..\..\parameters/smallPageSize.yaml
+      - $ref: ..\..\parameters/recvWindow.yaml
+      - $ref: ..\..\parameters/timestamp.yaml
+      - $ref: ..\..\parameters/signature.yaml
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/subOrders_get_200.yaml
+        '400':
+          $ref: ..\..\responses/subOrders_get_400.yaml
+        '401':
+          $ref: ..\..\responses/subOrders_get_401.yaml

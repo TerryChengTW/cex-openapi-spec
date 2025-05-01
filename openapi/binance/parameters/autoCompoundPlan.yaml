@@ -1,0 +1,14 @@
+name: autoCompoundPlan
+in: query
+description: 'NONE: switch off the plan,
+
+  STANDARD: standard plan,
+
+  ADVANCED: advanced plan;'
+required: true
+schema:
+  type: string
+  enum:
+  - NONE
+  - STANDARD
+  - ADVANCE

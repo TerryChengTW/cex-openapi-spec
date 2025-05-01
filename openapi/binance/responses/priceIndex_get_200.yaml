@@ -1,0 +1,20 @@
+description: Price index
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        calcTime:
+          type: integer
+          format: int64
+          example: 1562046418000
+        price:
+          type: string
+          example: '0.00333930'
+        symbol:
+          type: string
+          example: BNBBTC
+      required:
+      - calcTime
+      - price
+      - symbol

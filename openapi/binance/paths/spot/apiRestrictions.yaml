@@ -1,0 +1,20 @@
+paths:
+  /sapi/v1/account/apiRestrictions:
+    get:
+      summary: Get API Key Permission (USER_DATA)
+      description: 'Weight(IP): 1'
+      tags:
+      - Wallet
+      parameters:
+      - $ref: ..\..\parameters/recvWindow.yaml
+      - $ref: ..\..\parameters/timestamp.yaml
+      - $ref: ..\..\parameters/signature.yaml
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/apiRestrictions_get_200.yaml
+        '400':
+          $ref: ..\..\responses/apiRestrictions_get_400.yaml
+        '401':
+          $ref: ..\..\responses/apiRestrictions_get_401.yaml

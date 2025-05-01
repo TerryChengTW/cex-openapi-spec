@@ -1,0 +1,146 @@
+description: Plan result
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        planValueInUSD:
+          type: string
+          example: '123'
+        planValueInBTC:
+          type: string
+          example: '0.1'
+        pnlInUSD:
+          type: string
+          example: '120'
+        roi:
+          type: string
+          example: '2.3'
+        plan:
+          type: array
+          items:
+            type: object
+            properties:
+              planId:
+                type: integer
+                example: 12345
+              planType:
+                type: string
+                example: SINGLE
+              editAllowed:
+                type: string
+                example: 'true'
+              flexibleAllowedToUse:
+                type: string
+                example: 'false'
+              creationDateTime:
+                type: integer
+                format: int64
+                example: 1648378800000
+              firstExecutionDateTime:
+                type: integer
+                format: int64
+                example: 1648378800000
+              nextExecutionDateTime:
+                type: integer
+                format: int64
+                example: 1648378800000
+              status:
+                type: string
+                example: ONGOING
+              targetAsset:
+                type: string
+                example: BTC
+              sourceAsset:
+                type: string
+                example: BUSD
+              totalInvestedInUSD:
+                type: string
+                example: '4.555'
+              planValueInUSD:
+                type: string
+                example: '101.2'
+              pnlInUSD:
+                type: string
+                example: '101.2'
+              roi:
+                type: string
+                example: '1.02'
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    targetAsset:
+                      type: string
+                      example: ADA
+                    averagePriceInUSD:
+                      type: string
+                      example: '3.4'
+                    totalInvestedInUSD:
+                      type: string
+                      example: '222.21'
+                    purchasedAmount:
+                      type: string
+                      example: '122.12345678'
+                    purchasedAmountUnit:
+                      type: string
+                      example: ADA
+                    pnlInUSD:
+                      type: string
+                      example: '109.2'
+                    roi:
+                      type: string
+                      example: '0.1'
+                    percentage:
+                      type: string
+                      example: '50'
+                    assetStatus:
+                      type: string
+                      example: ACTIVE
+                    availableAmount:
+                      type: string
+                      example: '122.12345678'
+                    availableAmountUnit:
+                      type: string
+                      example: ADA
+                    redeemedAmout:
+                      type: string
+                      example: '122.12345678'
+                    redeemedAmoutUnit:
+                      type: string
+                      example: ADA
+                    assetValueInUSD:
+                      type: string
+                      example: '101.2'
+                  required:
+                  - targetAsset
+                  - averagePriceInUSD
+                  - totalInvestedInUSD
+                  - purchasedAmount
+                  - purchasedAmountUnit
+                  - pnlInUSD
+                  - roi
+                  - percentage
+                  - assetStatus
+                  - availableAmount
+                  - availableAmountUnit
+                  - redeemedAmout
+                  - redeemedAmoutUnit
+                  - assetValueInUSD
+            required:
+            - planId
+            - planType
+            - editAllowed
+            - flexibleAllowedToUse
+            - creationDateTime
+            - firstExecutionDateTime
+            - nextExecutionDateTime
+            - status
+            - targetAsset
+            - sourceAsset
+            - totalInvestedInUSD
+            - planValueInUSD
+            - pnlInUSD
+            - roi
+            - details

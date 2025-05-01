@@ -1,0 +1,19 @@
+description: Wrap BETH
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        success:
+          type: boolean
+          example: true
+        wbethAmount:
+          type: string
+          example: '0.22330928'
+        exchangeRate:
+          type: string
+          example: '1.001212343432'
+      required:
+      - success
+      - wbethAmount
+      - exchangeRate

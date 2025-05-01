@@ -1,0 +1,36 @@
+description: Code creation
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        code:
+          type: string
+          example: '000000'
+        message:
+          type: string
+          example: success
+        data:
+          type: object
+          properties:
+            referenceNo:
+              type: string
+              example: 0033002327977405
+            code:
+              type: string
+              example: AOGANK3NB4GIT3C6
+            expiredTime:
+              type: integer
+              format: int64
+              example: 1727417154000
+          required:
+          - referenceNo
+          - code
+          - expiredTime
+        success:
+          type: boolean
+      required:
+      - code
+      - message
+      - data
+      - success

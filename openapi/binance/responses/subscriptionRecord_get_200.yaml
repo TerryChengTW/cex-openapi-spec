@@ -1,0 +1,76 @@
+description: Locked Subscription Record
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        rows:
+          type: array
+          items:
+            type: object
+            properties:
+              positionId:
+                type: string
+                example: '123123'
+              purchaseId:
+                type: integer
+                format: int64
+                example: 26055
+              projectId:
+                type: string
+                example: Axs*90
+              time:
+                type: integer
+                format: int64
+                example: 1575018510000
+              asset:
+                type: string
+                example: BNB
+              amount:
+                type: string
+                example: '21312.23223'
+              lockPeriod:
+                type: string
+                example: '30'
+              type:
+                type: string
+                example: AUTO
+                description: NORMAL for normal subscription, AUTO for auto-subscription
+                  order, ACTIVITY for activity order, TRIAL for trial fund order,
+                  RESTAKE for restake order
+              sourceAccount:
+                type: string
+                example: SPOT
+                description: SPOT, FUNDING, SPOTANDFUNDING
+              amtFromSpot:
+                type: string
+                example: '30'
+                description: 'Display if sourceAccount is SPOTANDFUNDING '
+              amtFromFunding:
+                type: string
+                example: '70'
+                description: Display if sourceAccount is SPOTANDFUNDING
+              status:
+                type: string
+                example: SUCCESS
+                description: PURCHASING/SUCCESS/FAILED
+            required:
+            - positionId
+            - purchaseId
+            - projectId
+            - time
+            - asset
+            - amount
+            - lockPeriod
+            - type
+            - sourceAccount
+            - amtFromSpot
+            - amtFromFunding
+            - status
+        total:
+          type: integer
+          format: int64
+          example: 1
+      required:
+      - rows
+      - total

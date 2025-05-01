@@ -1,0 +1,6 @@
+name: quoteOrderQty
+in: query
+description: Quote quantity
+schema:
+  type: number
+  format: double

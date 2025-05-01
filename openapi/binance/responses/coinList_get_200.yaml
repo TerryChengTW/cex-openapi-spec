@@ -1,0 +1,46 @@
+description: Coin information
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int64
+          example: 0
+        msg:
+          type: string
+          example: ''
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              coinName:
+                type: string
+                example: BTC
+              coinId:
+                type: integer
+                format: int64
+                example: 1
+              poolIndex:
+                type: integer
+                format: int64
+                example: 0
+              algoId:
+                type: integer
+                format: int64
+                example: 1
+              algoName:
+                type: string
+                example: sha256
+            required:
+            - coinName
+            - coinId
+            - poolIndex
+            - algoId
+            - algoName
+      required:
+      - code
+      - msg
+      - data

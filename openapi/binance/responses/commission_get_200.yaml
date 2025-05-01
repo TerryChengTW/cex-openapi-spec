@@ -1,0 +1,74 @@
+description: Current account commission rates.
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        symbol:
+          type: string
+          example: BTCUSDT
+        standardCommission:
+          type: object
+          description: Standard commission rates on trades from the order.
+          properties:
+            maker:
+              type: string
+              example: '0.00000010'
+            taker:
+              type: string
+              example: '0.00000020'
+            buyer:
+              type: string
+              example: '0.00000030'
+            seller:
+              type: string
+              example: '0.00000040'
+          required:
+          - maker
+          - taker
+          - buyer
+          - seller
+        taxCommission:
+          type: object
+          description: Tax commission rates for trades from the order.
+          properties:
+            maker:
+              type: string
+              example: '0.00000112'
+            taker:
+              type: string
+              example: '0.00000114'
+            buyer:
+              type: string
+              example: '0.00000118'
+            seller:
+              type: string
+              example: '0.00000116'
+          required:
+          - maker
+          - taker
+          - buyer
+          - seller
+        discount:
+          type: object
+          description: Discount commission when paying in BNB.
+          properties:
+            enabledForAccount:
+              type: boolean
+              example: true
+            enabledForSymbol:
+              type: boolean
+              example: true
+            discountAsset:
+              type: string
+              example: BNB
+            discount:
+              type: string
+              description: Standard commission is reduced by this rate when paying
+                commission in BNB.
+              example: '0.25000000'
+      required:
+      - symbol
+      - standardCommission
+      - taxCommission
+      - discount

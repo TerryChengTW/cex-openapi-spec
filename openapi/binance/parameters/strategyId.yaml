@@ -1,0 +1,5 @@
+name: strategyId
+in: query
+schema:
+  type: integer
+  format: int64

@@ -1,0 +1,7 @@
+name: workingQuantity
+in: query
+required: true
+description: Sets the quantity for the working order.
+schema:
+  type: number
+  format: double

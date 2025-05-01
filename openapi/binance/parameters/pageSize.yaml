@@ -1,0 +1,5 @@
+name: pageSize
+in: query
+description: Number of pages, minimum 10, maximum 200
+schema:
+  type: string

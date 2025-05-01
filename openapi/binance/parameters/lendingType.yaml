@@ -1,0 +1,14 @@
+name: lendingType
+in: query
+required: true
+description: '* `DAILY` - for flexible
+
+  * `ACTIVITY` - for activity
+
+  * `CUSTOMIZED_FIXED` for fixed'
+schema:
+  type: string
+  enum:
+  - DAILY
+  - ACTIVITY
+  - CUSTOMIZED_FIXED

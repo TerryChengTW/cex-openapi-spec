@@ -1,0 +1,17 @@
+description: Number of enabled Isolated Margin Account and its limit
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        enabledAccount:
+          type: integer
+          format: int64
+          example: 5
+        maxAccount:
+          type: integer
+          format: int64
+          example: 20
+      required:
+      - enabledAccount
+      - maxAccount

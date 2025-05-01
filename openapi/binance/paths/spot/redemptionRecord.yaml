@@ -1,0 +1,36 @@
+paths:
+  /sapi/v1/simple-earn/locked/history/redemptionRecord:
+    get:
+      summary: Get Locked Redemption Record (USER_DATA)
+      description: 'Weight(IP): 150'
+      tags:
+      - Simple Earn
+      parameters:
+      - name: positionId
+        in: query
+        schema:
+          type: string
+      - name: redeemId
+        in: query
+        schema:
+          type: string
+      - name: asset
+        in: query
+        schema:
+          type: string
+      - $ref: ..\..\parameters/startTime.yaml
+      - $ref: ..\..\parameters/endTime.yaml
+      - $ref: ..\..\parameters/current.yaml
+      - $ref: ..\..\parameters/size.yaml
+      - $ref: ..\..\parameters/recvWindow.yaml
+      - $ref: ..\..\parameters/timestamp.yaml
+      - $ref: ..\..\parameters/signature.yaml
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/redemptionRecord_get_200.yaml
+        '400':
+          $ref: ..\..\responses/redemptionRecord_get_400.yaml
+        '401':
+          $ref: ..\..\responses/redemptionRecord_get_401.yaml

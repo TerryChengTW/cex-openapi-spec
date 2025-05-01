@@ -1,0 +1,50 @@
+description: Order list that were expired due to STP
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          symbol:
+            type: string
+            example: BTCUSDT
+          preventedMatchId:
+            type: integer
+            format: int64
+            example: 1
+          takerOrderId:
+            type: integer
+            format: int64
+            example: 5
+          makerOrderId:
+            type: integer
+            format: int64
+            example: 3
+          tradeGroupId:
+            type: integer
+            format: int64
+            example: 1
+          selfTradePreventionMode:
+            type: string
+            example: EXPIRE_MAKER
+          price:
+            type: string
+            example: '1.100000'
+          makerPreventedQuantity:
+            type: string
+            example: '1.300000'
+          transactTime:
+            type: integer
+            format: int64
+            example: 1669101687094
+        required:
+        - symbol
+        - preventedMatchId
+        - takerOrderId
+        - makerOrderId
+        - tradeGroupId
+        - selfTradePreventionMode
+        - price
+        - makerPreventedQuantity
+        - transactTime

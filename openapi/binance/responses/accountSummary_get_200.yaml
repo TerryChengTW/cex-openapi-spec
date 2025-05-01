@@ -1,0 +1,7 @@
+description: USDT or COIN Margined Futures Summary
+content:
+  application/json:
+    schema:
+      oneOf:
+      - $ref: '#/components/schemas/subAccountUSDTFuturesSummary'
+      - $ref: '#/components/schemas/subAccountCOINFuturesSummary'

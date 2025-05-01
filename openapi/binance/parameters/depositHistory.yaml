@@ -1,0 +1,10 @@
+name: status
+in: query
+description: '* `0` - pending
+
+  * `6` - credited but cannot withdraw
+
+  * `1` - success'
+schema:
+  type: integer
+  format: int32

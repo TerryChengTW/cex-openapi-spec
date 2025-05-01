@@ -1,0 +1,30 @@
+description: Balance interest history
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          asset:
+            type: string
+            example: USDT
+          interest:
+            type: string
+            example: '24.4440'
+          interestAccruedTime:
+            type: integer
+            format: int64
+            example: 1672801339253
+          interestRate:
+            type: string
+            example: '0.0001164'
+          principal:
+            type: string
+            example: '210000'
+        required:
+        - asset
+        - interest
+        - interestAccruedTime
+        - interestRate
+        - principal

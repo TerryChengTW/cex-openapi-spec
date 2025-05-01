@@ -1,0 +1,31 @@
+description: Account Information
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        totalAmountInBTC:
+          type: string
+          example: '0.01067982'
+        totalAmountInUSDT:
+          type: string
+          example: '77.13289230'
+        totalFlexibleAmountInBTC:
+          type: string
+          example: '0.00000000'
+        totalFlexibleAmountInUSDT:
+          type: string
+          example: '0.00000000'
+        totalLockedInBTC:
+          type: string
+          example: '0.01067982'
+        totalLockedInUSDT:
+          type: string
+          example: '77.13289230'
+      required:
+      - totalAmountInBTC
+      - totalAmountInUSDT
+      - totalFlexibleAmountInBTC
+      - totalFlexibleAmountInUSDT
+      - totalLockedInBTC
+      - totalLockedInUSDT

@@ -1,0 +1,7 @@
+name: isFreeze
+in: query
+schema:
+  type: string
+  enum:
+  - 'true'
+  - 'false'

@@ -1,0 +1,41 @@
+description: NFT Deposit History
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        total:
+          type: integer
+          format: int32
+          example: 1
+        list:
+          type: array
+          items:
+            type: object
+            properties:
+              network:
+                type: string
+                example: ETH
+              txID:
+                type: integer
+                nullable: true
+                example: null
+              contractAdrress:
+                type: string
+                example: '0xe507c961ee127d4439977a61af39c34eafee0dc6'
+              tokenId:
+                type: string
+                example: '10014'
+              timestamp:
+                type: integer
+                format: int64
+                example: 1629986047000
+            required:
+            - network
+            - txID
+            - contractAdrress
+            - tokenId
+            - timestamp
+      required:
+      - total
+      - list

@@ -1,0 +1,32 @@
+description: Portfolio Margin Collateral Rate.
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          asset:
+            type: string
+            example: BNB
+          collateralInfo:
+            type: array
+            items:
+              type: object
+              properties:
+                tierFloor:
+                  type: string
+                  example: '0.0000'
+                tierCap:
+                  type: string
+                  example: '1000.0000'
+                collateralRate:
+                  type: string
+                  example: '1.0000'
+              required:
+              - tierFloor
+              - tierCap
+              - collateralRate
+        required:
+        - asset
+        - collateralInfo

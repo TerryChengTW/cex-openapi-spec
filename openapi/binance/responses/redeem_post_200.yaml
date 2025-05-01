@@ -1,0 +1,16 @@
+description: Redeem Locked Product
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        redeemId:
+          type: integer
+          format: int64
+          example: 40607
+        success:
+          type: boolean
+          example: true
+      required:
+      - redeemId
+      - success

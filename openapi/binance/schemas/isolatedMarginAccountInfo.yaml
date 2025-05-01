@@ -1,0 +1,147 @@
+type: object
+properties:
+  assets:
+    type: array
+    items:
+      type: object
+      properties:
+        baseAsset:
+          type: object
+          properties:
+            asset:
+              type: string
+              example: BTC
+            borrowEnabled:
+              type: boolean
+            borrowed:
+              type: string
+              example: '0.00000000'
+            free:
+              type: string
+              example: '0.00000000'
+            interest:
+              type: string
+              example: '0.00000000'
+            locked:
+              type: string
+              example: '0.00000000'
+            netAsset:
+              type: string
+              example: '0.00000000'
+            netAssetOfBtc:
+              type: string
+              example: '0.00000000'
+            repayEnabled:
+              type: boolean
+            totalAsset:
+              type: string
+              example: '0.00000000'
+          required:
+          - asset
+          - borrowEnabled
+          - borrowed
+          - free
+          - interest
+          - locked
+          - netAsset
+          - netAssetOfBtc
+          - repayEnabled
+          - totalAsset
+        quoteAsset:
+          type: object
+          properties:
+            asset:
+              type: string
+              example: USDT
+            borrowEnabled:
+              type: boolean
+            borrowed:
+              type: string
+              example: '0.00000000'
+            free:
+              type: string
+              example: '0.00000000'
+            interest:
+              type: string
+              example: '0.00000000'
+            locked:
+              type: string
+              example: '0.00000000'
+            netAsset:
+              type: string
+              example: '0.00000000'
+            netAssetOfBtc:
+              type: string
+              example: '0.00000000'
+            repayEnabled:
+              type: boolean
+            totalAsset:
+              type: string
+              example: '0.00000000'
+          required:
+          - asset
+          - borrowEnabled
+          - borrowed
+          - free
+          - interest
+          - locked
+          - netAsset
+          - netAssetOfBtc
+          - repayEnabled
+          - totalAsset
+        symbol:
+          type: string
+          example: BTCUSDT
+        isolatedCreated:
+          type: boolean
+        enabled:
+          type: boolean
+          description: true-enabled, false-disabled
+        marginLevel:
+          type: string
+          example: '0.00000000'
+        marginLevelStatus:
+          type: string
+          example: EXCESSIVE
+          description: '"EXCESSIVE", "NORMAL", "MARGIN_CALL", "PRE_LIQUIDATION", "FORCE_LIQUIDATION"'
+        marginRatio:
+          type: string
+          example: '0.00000000'
+        indexPrice:
+          type: string
+          example: '10000.00000000'
+        liquidatePrice:
+          type: string
+          example: '1000.00000000'
+        liquidateRate:
+          type: string
+          example: '1.00000000'
+        tradeEnabled:
+          type: boolean
+      required:
+      - baseAsset
+      - quoteAsset
+      - symbol
+      - isolatedCreated
+      - enabled
+      - marginLevel
+      - marginLevelStatus
+      - marginRatio
+      - indexPrice
+      - liquidatePrice
+      - liquidateRate
+      - tradeEnabled
+  totalAssetOfBtc:
+    type: string
+    example: '0.00000000'
+  totalLiabilityOfBtc:
+    type: string
+    example: '0.00000000'
+  totalNetAssetOfBtc:
+    type: string
+    example: '0.00000000'
+required:
+- assets
+- totalAssetOfBtc
+- totalLiabilityOfBtc
+- totalNetAssetOfBtc

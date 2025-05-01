@@ -1,0 +1,28 @@
+paths:
+  /sapi/v1/margin/forceLiquidationRec:
+    get:
+      summary: Get Force Liquidation Record (USER_DATA)
+      description: '- Response in descending order
+
+
+        Weight(IP): 1'
+      tags:
+      - Margin
+      parameters:
+      - $ref: ..\..\parameters/startTime.yaml
+      - $ref: ..\..\parameters/endTime.yaml
+      - $ref: ..\..\parameters/isolatedSymbol.yaml
+      - $ref: ..\..\parameters/current.yaml
+      - $ref: ..\..\parameters/size.yaml
+      - $ref: ..\..\parameters/recvWindow.yaml
+      - $ref: ..\..\parameters/timestamp.yaml
+      - $ref: ..\..\parameters/signature.yaml
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/forceLiquidationRec_get_200.yaml
+        '400':
+          $ref: ..\..\responses/forceLiquidationRec_get_400.yaml
+        '401':
+          $ref: ..\..\responses/forceLiquidationRec_get_401.yaml

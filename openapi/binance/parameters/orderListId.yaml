@@ -1,0 +1,6 @@
+name: orderListId
+in: query
+description: Order list id
+schema:
+  type: integer
+  format: int64

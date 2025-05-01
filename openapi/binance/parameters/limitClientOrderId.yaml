@@ -1,0 +1,5 @@
+name: limitClientOrderId
+in: query
+description: A unique Id for the limit order
+schema:
+  type: string

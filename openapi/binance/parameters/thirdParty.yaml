@@ -1,0 +1,6 @@
+name: thirdParty
+in: query
+required: false
+description: true or false
+schema:
+  type: boolean

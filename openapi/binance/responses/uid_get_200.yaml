@@ -1,0 +1,68 @@
+description: Mining account earnings
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+          example: 0
+        msg:
+          type: string
+          example: ''
+        data:
+          type: object
+          properties:
+            accountProfits:
+              type: array
+              items:
+                type: object
+                properties:
+                  time:
+                    type: integer
+                    format: int64
+                    example: 1607443200000
+                  coinName:
+                    type: string
+                    example: BTC
+                  type:
+                    type: integer
+                    format: int32
+                    description: 0:Referral 1:Refund 2:Rebate
+                    example: 2
+                  puid:
+                    type: integer
+                    format: int32
+                    description: puid
+                    example: 59985472
+                  subName:
+                    type: string
+                    description: Mining account
+                    example: vdvaghani
+                  amount:
+                    type: number
+                    example: 0.09186957
+                required:
+                - time
+                - coinName
+                - type
+                - puid
+                - subName
+                - amount
+            totalNum:
+              type: integer
+              format: int32
+              example: 3
+            pageSize:
+              type: integer
+              format: int32
+              example: 20
+          required:
+          - accountProfits
+          - totalNum
+          - pageSize
+      required:
+      - code
+      - msg
+      - data

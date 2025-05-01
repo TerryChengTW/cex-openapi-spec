@@ -1,0 +1,17 @@
+paths:
+  /sapi/v1/margin/leverageBracket:
+    get:
+      summary: Query Liability Coin Leverage Bracket in Cross Margin Pro Mode (MARKET_DATA)
+      description: 'Liability Coin Leverage Bracket in Cross Margin Pro Mode
+
+
+        Weight(IP): 1'
+      tags:
+      - Margin
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/leverageBracket_get_200.yaml
+        '400':
+          $ref: ..\..\responses/leverageBracket_get_400.yaml

@@ -1,0 +1,7 @@
+name: endTime
+in: query
+description: UTC timestamp in ms
+required: true
+schema:
+  type: integer
+  format: int64

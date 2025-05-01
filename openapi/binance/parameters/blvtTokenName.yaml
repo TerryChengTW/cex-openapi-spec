@@ -1,0 +1,6 @@
+name: tokenName
+in: query
+required: true
+description: BTCDOWN, BTCUP
+schema:
+  type: string

@@ -1,0 +1,20 @@
+description: Accept Quote
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        orderId:
+          type: string
+          example: '933256278426274426'
+        createTime:
+          type: integer
+          format: int64
+          example: 1623381330472
+        orderStatus:
+          type: string
+          example: PROCESS
+      required:
+      - orderId
+      - createTime
+      - orderStatus

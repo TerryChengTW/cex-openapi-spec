@@ -1,0 +1,5 @@
+name: startDate
+in: query
+description: Search date, millisecond timestamp, while empty query all
+schema:
+  type: string

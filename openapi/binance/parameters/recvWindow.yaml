@@ -1,0 +1,7 @@
+name: recvWindow
+in: query
+description: The value cannot be greater than 60000
+schema:
+  type: integer
+  format: int64
+  example: 5000

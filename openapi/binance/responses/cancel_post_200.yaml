@@ -1,0 +1,19 @@
+description: Success flag
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int64
+          example: 0
+        msg:
+          type: string
+          example: ''
+        data:
+          type: boolean
+      required:
+      - code
+      - msg
+      - data

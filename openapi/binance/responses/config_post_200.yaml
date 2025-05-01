@@ -1,0 +1,22 @@
+description: Mining Account Id
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int64
+          example: 0
+        msg:
+          type: string
+          example: ''
+        data:
+          type: integer
+          format: int64
+          example: 171
+          description: Mining Account
+      required:
+      - code
+      - msg
+      - data

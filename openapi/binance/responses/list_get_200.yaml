@@ -1,0 +1,97 @@
+description: Dual Investment product list
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        total:
+          type: integer
+          format: int64
+          example: 1
+        list:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                example: '741590'
+              investCoin:
+                type: string
+                example: USDT
+              exercisedCoin:
+                type: string
+                example: BNB
+              strikePrice:
+                type: string
+                example: '380'
+              duration:
+                type: integer
+                format: int32
+                example: 4
+              settleDate:
+                type: integer
+                format: int64
+                example: 1709020800000
+              purchaseDecimal:
+                type: integer
+                format: int32
+                example: 8
+              purchaseEndTime:
+                type: integer
+                format: int64
+                example: 1708934400000
+              canPurchase:
+                type: boolean
+                example: true
+              apr:
+                type: string
+                example: '0.6076'
+              orderId:
+                type: integer
+                format: int64
+                example: 8257205859
+              minAmount:
+                type: string
+                example: '0.1'
+              maxAmount:
+                type: string
+                example: '25265.7'
+              createTimestamp:
+                type: integer
+                format: int64
+                example: 1708560084000
+              optionType:
+                type: string
+                example: PUT
+              isAutoCompoundEnable:
+                type: boolean
+                example: true
+              autoCompoundPlanList:
+                type: array
+                items:
+                  type: string
+                example:
+                - STANDARD
+                - ADVANCE
+            required:
+            - id
+            - investCoin
+            - exercisedCoin
+            - strikePrice
+            - duration
+            - settleDate
+            - purchaseDecimal
+            - purchaseEndTime
+            - canPurchase
+            - apr
+            - orderId
+            - minAmount
+            - maxAmount
+            - createTimestamp
+            - optionType
+            - isAutoCompoundEnable
+            - autoCompoundPlanList
+      required:
+      - total
+      - list

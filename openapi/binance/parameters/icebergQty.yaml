@@ -1,0 +1,7 @@
+name: icebergQty
+in: query
+description: Used with LIMIT, STOP_LOSS_LIMIT, and TAKE_PROFIT_LIMIT to create an
+  iceberg order.
+schema:
+  type: number
+  format: double

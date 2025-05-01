@@ -1,0 +1,34 @@
+paths:
+  /sapi/v1/simple-earn/locked/position:
+    get:
+      summary: Get Locked Product Position (USER_DATA)
+      description: 'Weight(IP): 150'
+      tags:
+      - Simple Earn
+      parameters:
+      - name: asset
+        in: query
+        schema:
+          type: string
+      - name: positionId
+        in: query
+        schema:
+          type: string
+      - name: projectId
+        in: query
+        schema:
+          type: string
+      - $ref: ..\..\parameters/current.yaml
+      - $ref: ..\..\parameters/size.yaml
+      - $ref: ..\..\parameters/recvWindow.yaml
+      - $ref: ..\..\parameters/timestamp.yaml
+      - $ref: ..\..\parameters/signature.yaml
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/position_get_200.yaml
+        '400':
+          $ref: ..\..\responses/position_get_400.yaml
+        '401':
+          $ref: ..\..\responses/position_get_401.yaml

@@ -1,0 +1,10 @@
+name: type
+in: query
+description: '* `1` - transfer from main account to margin account
+
+  * `2` - transfer from margin account to main account'
+schema:
+  type: integer
+  format: int32
+  minimum: 1
+  maximum: 2

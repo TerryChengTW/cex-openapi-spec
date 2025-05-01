@@ -1,0 +1,28 @@
+paths:
+  /api/v3/ticker/24hr:
+    get:
+      summary: 24hr Ticker Price Change Statistics
+      description: '24 hour rolling window price change statistics. Careful when accessing
+        this with no symbol.
+
+
+        - If the symbol is not sent, tickers for all symbols will be returned in an
+        array.
+
+
+        Weight(IP):
+
+        - `2` for a single symbol;
+
+        - `80` when the symbol parameter is omitted;'
+      tags:
+      - Market
+      parameters:
+      - $ref: ..\..\parameters/optionalSymbol.yaml
+      - $ref: ..\..\parameters/arraySymbols.yaml
+      - $ref: ..\..\parameters/tickerType.yaml
+      responses:
+        '200':
+          $ref: ..\..\responses/24hr_get_200.yaml
+        '400':
+          $ref: ..\..\responses/24hr_get_400.yaml

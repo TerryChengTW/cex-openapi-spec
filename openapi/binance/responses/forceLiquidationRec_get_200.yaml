@@ -1,0 +1,64 @@
+description: Force Liquidation History, response in descending order
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        rows:
+          type: array
+          items:
+            type: object
+            properties:
+              avgPrice:
+                type: string
+              executedQty:
+                type: string
+              orderId:
+                type: integer
+                format: int64
+              price:
+                type: string
+              qty:
+                type: string
+              side:
+                type: string
+              symbol:
+                type: string
+              timeInForce:
+                type: string
+              isIsolated:
+                type: boolean
+              updatedTime:
+                type: integer
+                format: int64
+            required:
+            - avgPrice
+            - executedQty
+            - orderId
+            - price
+            - qty
+            - side
+            - symbol
+            - timeInForce
+            - isIsolated
+            - updatedTime
+        total:
+          type: integer
+          format: int32
+          example: 1
+      required:
+      - rows
+      - total
+      example:
+        rows:
+        - avgPrice: '0.00388359'
+          executedQty: '31.39000000'
+          orderId: 180015097
+          price: '0.00388110'
+          qty: '31.39000000'
+          side: SELL
+          symbol: BNBBTC
+          timeInForce: GTC
+          isIsolated: true
+          updatedTime: 1558941374745
+        total: 1

@@ -1,0 +1,8 @@
+name: transFrom
+in: query
+schema:
+  type: string
+  enum:
+  - SPOT
+  - ISOLATED_MARGIN
+  example: SPOT

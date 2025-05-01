@@ -1,0 +1,45 @@
+description: Order Status
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        orderId:
+          type: integer
+          format: int64
+          example: 933256278426274426
+        orderStatus:
+          type: string
+          example: SUCCESS
+        fromAsset:
+          type: string
+          example: BTC
+        fromAmount:
+          type: string
+          example: '0.00054414'
+        toAsset:
+          type: string
+          example: USDT
+        toAmount:
+          type: string
+          example: '20'
+        ratio:
+          type: string
+          example: '36755'
+        inverseRatio:
+          type: string
+          example: '0.00002721'
+        createTime:
+          type: integer
+          format: int64
+          example: 1623381330472
+      required:
+      - orderId
+      - orderStatus
+      - fromAsset
+      - fromAmount
+      - toAsset
+      - toAmount
+      - ratio
+      - inverseRatio
+      - createTime

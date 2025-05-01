@@ -1,0 +1,8 @@
+name: stopPrice
+in: query
+description: Used with STOP_LOSS, STOP_LOSS_LIMIT, TAKE_PROFIT, and TAKE_PROFIT_LIMIT
+  orders.
+schema:
+  type: number
+  format: double
+  example: 221.01

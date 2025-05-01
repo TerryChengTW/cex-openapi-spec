@@ -1,0 +1,33 @@
+description: List Convert Pairs
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          fromAsset:
+            type: string
+            example: BTC
+          toAsset:
+            type: string
+            example: USDT
+          fromAssetMinAmount:
+            type: string
+            example: '0.0004'
+          fromAssetMaxAmount:
+            type: string
+            example: '50'
+          toAssetMinAmount:
+            type: string
+            example: '20'
+          toAssetMaxAmount:
+            type: string
+            example: '2500000'
+        required:
+        - fromAsset
+        - toAsset
+        - fromAssetMinAmount
+        - fromAssetMaxAmount
+        - toAssetMinAmount
+        - toAssetMaxAmount

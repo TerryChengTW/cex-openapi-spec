@@ -1,0 +1,23 @@
+description: deposit result
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        code:
+          type: string
+          example: '000000'
+        message:
+          type: string
+          example: success
+        data:
+          type: boolean
+          example: true
+        success:
+          type: boolean
+          example: true
+      required:
+      - code
+      - message
+      - data
+      - success

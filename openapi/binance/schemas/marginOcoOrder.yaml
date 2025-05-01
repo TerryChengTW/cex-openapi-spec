@@ -1,0 +1,140 @@
+type: object
+properties:
+  orderListId:
+    type: integer
+    format: int64
+    example: 0
+  contingencyType:
+    type: string
+    example: OCO
+  listStatusType:
+    type: string
+    example: ALL_DONE
+  listOrderStatus:
+    type: string
+    example: ALL_DONE
+  listClientOrderId:
+    type: string
+    example: C3wyj4WVEktd7u9aVBRXcN
+  transactionTime:
+    type: integer
+    format: int64
+    example: 1574040868128
+  symbol:
+    type: string
+    example: BNBUSDT
+  isIsolated:
+    type: boolean
+    example: false
+  orders:
+    type: array
+    items:
+      type: object
+      properties:
+        symbol:
+          type: string
+        orderId:
+          type: integer
+          format: int64
+        clientOrderId:
+          type: string
+      required:
+      - symbol
+      - orderId
+      - clientOrderId
+      example:
+      - symbol: BNBUSDT
+        orderId: 2
+        clientOrderId: pO9ufTiFGg3nw2fOdgeOXa
+      - symbol: BNBUSDT
+        orderId: 3
+        clientOrderId: TXOvglzXuaubXAaENpaRCB
+  orderReports:
+    type: array
+    items:
+      type: object
+      properties:
+        symbol:
+          type: string
+        origClientOrderId:
+          type: string
+        orderId:
+          type: integer
+          format: int64
+        orderListId:
+          type: integer
+          format: int64
+        clientOrderId:
+          type: string
+        price:
+          type: string
+        origQty:
+          type: string
+        executedQty:
+          type: string
+        cummulativeQuoteQty:
+          type: string
+        status:
+          type: string
+        timeInForce:
+          type: string
+        type:
+          type: string
+        side:
+          type: string
+        stopPrice:
+          type: string
+      required:
+      - symbol
+      - origClientOrderId
+      - orderId
+      - orderListId
+      - clientOrderId
+      - price
+      - origQty
+      - executedQty
+      - cummulativeQuoteQty
+      - status
+      - timeInForce
+      - type
+      - side
+      - stopPrice
+      example:
+      - symbol: BNBUSDT
+        origClientOrderId: pO9ufTiFGg3nw2fOdgeOXa
+        orderId: 2
+        orderListId: 0
+        clientOrderId: unfWT8ig8i0uj6lPuYLez6
+        price: '1.00000000'
+        origQty: '10.00000000'
+        executedQty: '0.00000000'
+        cummulativeQuoteQty: '0.00000000'
+        status: CANCELED
+        timeInForce: GTC
+        type: STOP_LOSS_LIMIT
+        side: SELL
+        stopPrice: '1.00000000'
+      - symbol: BNBUSDT
+        origClientOrderId: TXOvglzXuaubXAaENpaRCB
+        orderId: 3
+        orderListId: 0
+        clientOrderId: unfWT8ig8i0uj6lPuYLez6
+        price: '3.00000000'
+        origQty: '10.00000000'
+        executedQty: '0.00000000'
+        cummulativeQuoteQty: '0.00000000'
+        status: CANCELED
+        timeInForce: GTC
+        type: LIMIT_MAKER
+        side: SELL
+required:
+- orderListId
+- contingencyType
+- listStatusType
+- listOrderStatus
+- listClientOrderId
+- transactionTime
+- symbol
+- isIsolated
+- orders
+- orderReports

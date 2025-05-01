@@ -1,0 +1,44 @@
+type: object
+properties:
+  futurePositionRiskVos:
+    type: array
+    items:
+      type: object
+      properties:
+        entryPrice:
+          type: string
+          example: '9975.12000'
+        leverage:
+          type: string
+          example: '50'
+          description: current initial leverage
+        maxNotional:
+          type: string
+          example: '1000000'
+          description: notional value limit of current initial leverage
+        liquidationPrice:
+          type: string
+          example: '7963.54'
+        markPrice:
+          type: string
+          example: '9973.50770517'
+        positionAmount:
+          type: string
+          example: '0.010'
+        symbol:
+          type: string
+          example: BTCUSDT
+        unrealizedProfit:
+          type: string
+          example: '-0.01612295'
+      required:
+      - entryPrice
+      - leverage
+      - maxNotional
+      - liquidationPrice
+      - markPrice
+      - positionAmount
+      - symbol
+      - unrealizedProfit
+required:
+- futurePositionRiskVos

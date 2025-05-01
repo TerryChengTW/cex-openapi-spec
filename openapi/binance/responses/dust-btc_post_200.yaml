@@ -1,0 +1,60 @@
+description: Account assets available to be converted to BNB
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        details:
+          type: array
+          items:
+            type: object
+            properties:
+              asset:
+                type: string
+                example: ADA
+              assetFullName:
+                type: string
+                example: ADA
+              amountFree:
+                type: string
+                example: '6.21'
+                description: Convertible amount
+              toBTC:
+                type: string
+                example: '0.00016848'
+                description: BTC amount
+              toBNB:
+                type: string
+                example: '0.01777302'
+                description: BNB amount(Not deducted commission fee
+              toBNBOffExchange:
+                type: string
+                example: '0.01741756'
+                description: BNB amount(Deducted commission fee
+              exchange:
+                type: string
+                example: '0.00035546'
+                description: Commission fee
+            required:
+            - asset
+            - assetFullName
+            - amountFree
+            - toBTC
+            - toBNB
+            - toBNBOffExchange
+            - exchange
+        totalTransferBtc:
+          type: string
+          example: '0.00016848'
+        totalTransferBNB:
+          type: string
+          example: '0.01777302'
+        dribbletPercentage:
+          type: string
+          example: '0.02'
+          description: Commission fee
+      required:
+      - details
+      - totalTransferBtc
+      - totalTransferBNB
+      - dribbletPercentage

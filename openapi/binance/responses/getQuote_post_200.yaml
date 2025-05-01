@@ -1,0 +1,32 @@
+description: Quote Request
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        quoteId:
+          type: string
+          example: '12415572564'
+        ratio:
+          type: string
+          example: '38163.7'
+        inverseRatio:
+          type: string
+          example: '0.0000262'
+        validTimestamp:
+          type: integer
+          format: int64
+          example: 1623319461670
+        toAmount:
+          type: string
+          example: '3816.37'
+        fromAmount:
+          type: string
+          example: '0.1'
+      required:
+      - quoteId
+      - ratio
+      - inverseRatio
+      - validTimestamp
+      - toAmount
+      - fromAmount

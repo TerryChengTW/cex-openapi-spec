@@ -1,0 +1,23 @@
+paths:
+  /sapi/v1/managed-subaccount/marginAsset:
+    get:
+      summary: Query Managed Sub-account Margin Asset Details (For Investor Master
+        Account)
+      description: Investor can use this api to query managed sub account margin asset
+        details
+      tags:
+      - Sub-Account
+      parameters:
+      - $ref: ..\..\parameters/email.yaml
+      - $ref: ..\..\parameters/recvWindow.yaml
+      - $ref: ..\..\parameters/timestamp.yaml
+      - $ref: ..\..\parameters/signature.yaml
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/marginAsset_get_200.yaml
+        '400':
+          $ref: ..\..\responses/marginAsset_get_400.yaml
+        '401':
+          $ref: ..\..\responses/marginAsset_get_401.yaml

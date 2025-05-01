@@ -1,0 +1,28 @@
+description: IP Restriction information
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        ipRestrict:
+          type: string
+          example: 'true'
+        ipList:
+          type: array
+          items:
+            type: string
+          example:
+          - 69.210.67.14
+          - 8.34.21.10
+        updateTime:
+          type: integer
+          format: int64
+          example: 1636369557189
+        apiKey:
+          type: string
+          example: k5V49ldtn4tszj6W3hystegdfvmGbqDzjmkCtpTvC0G74WhK7yd4rfCTo4lShf
+      required:
+      - ipRestrict
+      - ipList
+      - updateTime
+      - apiKey

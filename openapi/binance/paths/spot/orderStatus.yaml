@@ -1,0 +1,35 @@
+paths:
+  /sapi/v1/convert/orderStatus:
+    get:
+      summary: Order status (USER_DATA)
+      description: 'Query order status by order ID.
+
+
+        Weight(UID): 100'
+      tags:
+      - Convert
+      parameters:
+      - name: orderId
+        in: query
+        required: false
+        schema:
+          type: string
+          example: 1000
+      - name: quoteId
+        in: query
+        required: false
+        schema:
+          type: string
+          example: 1000
+      - $ref: ..\..\parameters/recvWindow.yaml
+      - $ref: ..\..\parameters/timestamp.yaml
+      - $ref: ..\..\parameters/signature.yaml
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/orderStatus_get_200.yaml
+        '400':
+          $ref: ..\..\responses/orderStatus_get_400.yaml
+        '401':
+          $ref: ..\..\responses/orderStatus_get_401.yaml

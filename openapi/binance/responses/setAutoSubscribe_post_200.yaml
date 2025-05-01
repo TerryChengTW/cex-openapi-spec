@@ -1,0 +1,11 @@
+description: Locked Auto Subscribe
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        success:
+          type: boolean
+          example: true
+      required:
+      - success

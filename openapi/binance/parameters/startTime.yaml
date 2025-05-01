@@ -1,0 +1,6 @@
+name: startTime
+in: query
+description: UTC timestamp in ms
+schema:
+  type: integer
+  format: int64

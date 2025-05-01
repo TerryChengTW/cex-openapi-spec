@@ -1,0 +1,16 @@
+paths:
+  /sapi/v1/margin/allAssets:
+    get:
+      summary: Get All Margin Assets (MARKET_DATA)
+      description: 'Weight(IP): 1'
+      tags:
+      - Margin
+      parameters:
+      - $ref: ..\..\parameters/asset.yaml
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/allAssets_get_200.yaml
+        '400':
+          $ref: ..\..\responses/allAssets_get_400.yaml

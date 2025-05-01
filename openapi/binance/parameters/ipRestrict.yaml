@@ -1,0 +1,6 @@
+name: ipRestrict
+in: query
+required: true
+description: true or false
+schema:
+  type: boolean

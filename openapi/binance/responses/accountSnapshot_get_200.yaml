@@ -1,0 +1,60 @@
+description: Sub-account spot snapshot
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+          example: 200
+        msg:
+          type: string
+          example: ''
+        snapshotVos:
+          type: array
+          items:
+            type: object
+            properties:
+              data:
+                type: object
+                properties:
+                  balances:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        asset:
+                          type: string
+                          example: BTC
+                        free:
+                          type: string
+                          example: '0.09905021'
+                        locked:
+                          type: string
+                          example: '0.00000000'
+                      required:
+                      - asset
+                      - free
+                      - locked
+                  totalAssetOfBtc:
+                    type: string
+                    example: '0.09942700'
+                required:
+                - balances
+                - totalAssetOfBtc
+              type:
+                type: string
+                example: spot
+              updateTime:
+                type: integer
+                format: int64
+                example: 1576281599000
+            required:
+            - data
+            - type
+            - updateTime
+      required:
+      - code
+      - msg
+      - snapshotVos

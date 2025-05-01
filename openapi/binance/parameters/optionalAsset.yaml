@@ -1,0 +1,5 @@
+name: asset
+in: query
+schema:
+  type: string
+  example: BNB

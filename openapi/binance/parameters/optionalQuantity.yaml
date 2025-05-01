@@ -1,0 +1,7 @@
+name: quantity
+in: query
+description: Order quantity
+schema:
+  type: number
+  format: double
+  example: 1

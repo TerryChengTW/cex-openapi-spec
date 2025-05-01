@@ -1,0 +1,32 @@
+description: Usage.
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          rateLimitType:
+            type: string
+            example: ORDERS
+          interval:
+            type: string
+            example: SECOND
+          intervalNum:
+            type: integer
+            format: int64
+            example: 10
+          limit:
+            type: integer
+            format: int64
+            example: 10000
+          count:
+            type: integer
+            format: int64
+            example: 0
+        required:
+        - rateLimitType
+        - interval
+        - intervalNum
+        - limit
+        - count

@@ -1,0 +1,7 @@
+description: 24hr ticker
+content:
+  application/json:
+    schema:
+      oneOf:
+      - $ref: '#/components/schemas/ticker'
+      - $ref: '#/components/schemas/tickerList'

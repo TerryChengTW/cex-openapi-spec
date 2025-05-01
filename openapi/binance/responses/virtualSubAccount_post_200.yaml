@@ -1,0 +1,11 @@
+description: Return the created virtual email
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        email:
+          type: string
+          example: addsdd_virtual@aasaixwqnoemail.com
+      required:
+      - email

@@ -1,0 +1,37 @@
+paths:
+  /sapi/v1/futures/histDataLink:
+    get:
+      summary: Get Future TickLevel Orderbook Historical Data Download Link (USER_DATA)
+      description: 'Weight(IP): 1'
+      tags:
+      - Futures
+      parameters:
+      - name: symbol
+        in: query
+        required: true
+        schema:
+          type: string
+          example: BTCUSDT
+      - name: dataType
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - T_DEPTH
+          - S_DEPTH
+          example: T_DEPTH
+      - $ref: ..\..\parameters/startTime.yaml
+      - $ref: ..\..\parameters/endTime.yaml
+      - $ref: ..\..\parameters/recvWindow.yaml
+      - $ref: ..\..\parameters/timestamp.yaml
+      - $ref: ..\..\parameters/signature.yaml
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/histDataLink_get_200.yaml
+        '400':
+          $ref: ..\..\responses/histDataLink_get_400.yaml
+        '401':
+          $ref: ..\..\responses/histDataLink_get_401.yaml

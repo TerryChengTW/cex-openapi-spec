@@ -1,0 +1,24 @@
+paths:
+  /api/v3/aggTrades:
+    get:
+      summary: Compressed/Aggregate Trades List
+      description: "Get compressed, aggregate trades. Trades that fill at the time,\
+        \ from the same order, with the same price will have the quantity aggregated.\n\
+        - If `fromId`, `startTime`, and `endTime` are not sent, the most recent aggregate\
+        \ trades will be returned.\n- Note that if a trade has the following values,\
+        \ this was a duplicate aggregate trade and marked as invalid:\n\n  p = '0'\
+        \ // price\n\n  q = '0' // qty\n\n  f = -1 // \uFB01rst_trade_id\n\n  l =\
+        \ -1 // last_trade_id\n\nWeight(IP): 2"
+      tags:
+      - Market
+      parameters:
+      - $ref: ..\..\parameters/symbol.yaml
+      - $ref: ..\..\parameters/fromId.yaml
+      - $ref: ..\..\parameters/startTime.yaml
+      - $ref: ..\..\parameters/endTime.yaml
+      - $ref: ..\..\parameters/limit.yaml
+      responses:
+        '200':
+          $ref: ..\..\responses/aggTrades_get_200.yaml
+        '400':
+          $ref: ..\..\responses/aggTrades_get_400.yaml

@@ -1,0 +1,78 @@
+paths:
+  /api/v3/order/cancelReplace:
+    post:
+      summary: Cancel an Existing Order and Send a New Order (Trade)
+      description: 'Cancels an existing order and places a new order on the same symbol.
+
+
+        Filters and Order Count are evaluated before the processing of the cancellation
+        and order placement occurs.
+
+
+        A new order that was not attempted (i.e. when newOrderResult: NOT_ATTEMPTED),
+        will still increase the order count by 1.
+
+
+        Weight(IP): 1'
+      tags:
+      - Trade
+      parameters:
+      - $ref: ..\..\parameters/symbol.yaml
+      - $ref: ..\..\parameters/side.yaml
+      - $ref: ..\..\parameters/orderType.yaml
+      - name: cancelReplaceMode
+        in: query
+        required: true
+        description: '- `STOP_ON_FAILURE` If the cancel request fails, the new order
+          placement will not be attempted.
+
+          - `ALLOW_FAILURES` If new order placement will be attempted even if cancel
+          request fails.'
+        schema:
+          type: string
+          example: STOP_ON_FAILURE
+      - $ref: ..\..\parameters/cancelRestrictions.yaml
+      - $ref: ..\..\parameters/timeInForce.yaml
+      - $ref: ..\..\parameters/optionalQuantity.yaml
+      - $ref: ..\..\parameters/quoteOrderQty.yaml
+      - $ref: ..\..\parameters/optionalPrice.yaml
+      - name: cancelNewClientOrderId
+        in: query
+        description: Used to uniquely identify this cancel. Automatically generated
+          by default
+        schema:
+          type: string
+      - name: cancelOrigClientOrderId
+        in: query
+        description: Either the cancelOrigClientOrderId or cancelOrderId must be provided.
+          If both are provided, cancelOrderId takes precedence.
+        schema:
+          type: string
+      - name: cancelOrderId
+        in: query
+        description: Either the cancelOrigClientOrderId or cancelOrderId must be provided.
+          If both are provided, cancelOrderId takes precedence.
+        schema:
+          type: integer
+          format: int64
+          example: 12
+      - $ref: ..\..\parameters/newClientOrderId.yaml
+      - $ref: ..\..\parameters/strategyId.yaml
+      - $ref: ..\..\parameters/strategyType.yaml
+      - $ref: ..\..\parameters/stopPrice.yaml
+      - $ref: ..\..\parameters/optionalTrailingDelta.yaml
+      - $ref: ..\..\parameters/icebergQty.yaml
+      - $ref: ..\..\parameters/newOrderRespType.yaml
+      - $ref: ..\..\parameters/selfTradePreventionMode.yaml
+      - $ref: ..\..\parameters/recvWindow.yaml
+      - $ref: ..\..\parameters/timestamp.yaml
+      - $ref: ..\..\parameters/signature.yaml
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/cancelReplace_post_200.yaml
+        '400':
+          $ref: ..\..\responses/cancelReplace_post_400.yaml
+        '401':
+          $ref: ..\..\responses/cancelReplace_post_401.yaml

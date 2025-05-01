@@ -1,0 +1,6 @@
+name: symbols
+in: query
+description: Max 5 symbols can be sent; separated by ','
+schema:
+  type: string
+  example: BTCUSDT,BNBUSDT,ADAUSDT

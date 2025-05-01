@@ -1,0 +1,9 @@
+name: accountType
+in: query
+description: 'MAIN: main account. CARD: funding account. If it is blank, we will query
+  spot and card wallet, otherwise, we just query the corresponding wallet'
+schema:
+  type: string
+  enum:
+  - MAIN
+  - CARD

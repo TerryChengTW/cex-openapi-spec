@@ -1,0 +1,40 @@
+description: Collateral Assets Data
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        rows:
+          type: array
+          items:
+            type: object
+            properties:
+              orderId:
+                type: string
+                example: '100000001'
+              collateralCoin:
+                type: string
+                example: BNB
+              preMarginCall:
+                type: string
+                example: '0.8'
+              afterMarginCall:
+                type: string
+                example: '0.7'
+              customizeTime:
+                type: integer
+                format: int64
+                example: 1575018510000
+            required:
+            - orderId
+            - collateralCoin
+            - preMarginCall
+            - afterMarginCall
+            - customizeTime
+        total:
+          type: integer
+          format: int32
+          example: 1
+      required:
+      - rows
+      - total

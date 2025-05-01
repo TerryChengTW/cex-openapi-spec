@@ -1,0 +1,6 @@
+name: configId
+in: query
+required: true
+description: Mining ID
+schema:
+  type: string

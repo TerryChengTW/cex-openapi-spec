@@ -1,0 +1,16 @@
+description: Change Auto-Compound status response
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        positionId:
+          type: string
+          example: 123456789
+        autoCompoundPlan:
+          type: string
+          description: NONE, STANDARD, ADVANCED
+          example: ADVANCED
+      required:
+      - positionId
+      - autoCompoundPlan

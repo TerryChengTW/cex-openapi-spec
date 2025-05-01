@@ -1,0 +1,31 @@
+paths:
+  /sapi/v1/giftcard/buyCode/token-limit:
+    get:
+      summary: Fetch Token Limit (USER_DATA)
+      description: 'This API is to help you verify which tokens are available for
+        you to purchase fixed-value gift cards as mentioned in section 2 and it''s
+        limitation.
+
+
+        Weight(IP): 1'
+      tags:
+      - Gift Card
+      parameters:
+      - name: baseToken
+        in: query
+        description: The token you want to pay, example BUSD
+        required: true
+        schema:
+          type: string
+      - $ref: ..\..\parameters/recvWindow.yaml
+      - $ref: ..\..\parameters/timestamp.yaml
+      - $ref: ..\..\parameters/signature.yaml
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/token-limit_get_200.yaml
+        '400':
+          $ref: ..\..\responses/token-limit_get_400.yaml
+        '401':
+          $ref: ..\..\responses/token-limit_get_401.yaml

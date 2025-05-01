@@ -1,0 +1,80 @@
+type: object
+properties:
+  code:
+    type: integer
+    format: int64
+    example: 200
+  msg:
+    type: string
+    example: ''
+  snapshotVos:
+    type: array
+    items:
+      type: object
+      properties:
+        data:
+          type: object
+          properties:
+            marginLevel:
+              type: string
+              example: '2748.02909813'
+            totalAssetOfBtc:
+              type: string
+              example: '0.00274803'
+            totalLiabilityOfBtc:
+              type: string
+              example: '0.00000100'
+            totalNetAssetOfBtc:
+              type: string
+              example: '0.00274750'
+            userAssets:
+              type: array
+              items:
+                type: object
+                properties:
+                  asset:
+                    type: string
+                    example: XRP
+                  borrowed:
+                    type: string
+                    example: '0.00000000'
+                  free:
+                    type: string
+                    example: '1.00000000'
+                  interest:
+                    type: string
+                    example: '0.00000000'
+                  locked:
+                    type: string
+                    example: '0.00000000'
+                  netAsset:
+                    type: string
+                    example: '1.00000000'
+                required:
+                - asset
+                - borrowed
+                - free
+                - interest
+                - locked
+                - netAsset
+          required:
+          - marginLevel
+          - totalAssetOfBtc
+          - totalLiabilityOfBtc
+          - totalNetAssetOfBtc
+          - userAssets
+        type:
+          type: string
+          example: margin
+        updateTime:
+          type: integer
+          format: int64
+          example: 1576281599000
+      required:
+      - data
+      - type
+      - updateTime
+required:
+- code
+- msg
+- snapshotVos

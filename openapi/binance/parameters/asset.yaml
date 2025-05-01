@@ -1,0 +1,6 @@
+name: asset
+in: query
+required: true
+schema:
+  type: string
+  example: BTC

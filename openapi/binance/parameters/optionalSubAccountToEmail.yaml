@@ -1,0 +1,5 @@
+name: toEmail
+in: query
+schema:
+  type: string
+description: Sub-account email

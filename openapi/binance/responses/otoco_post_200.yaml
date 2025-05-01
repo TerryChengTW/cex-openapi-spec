@@ -1,0 +1,164 @@
+description: OTOCO order
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        orderListId:
+          type: integer
+          format: int64
+          example: 13551
+        contingencyType:
+          type: string
+          example: OTOCO
+        listStatusType:
+          type: string
+          example: EXEC_STARTED
+        listOrderStatus:
+          type: string
+          example: EXECUTING
+        listClientOrderId:
+          type: string
+          example: u2AUo48LLef5qVenRtwJZy
+        transactionTime:
+          type: integer
+          format: int64
+          example: 1725521881300
+        symbol:
+          type: string
+          example: BNBUSDT
+        isIsolated:
+          type: boolean
+          example: false
+        orders:
+          type: array
+          items:
+            type: object
+            properties:
+              symbol:
+                type: string
+              orderId:
+                type: integer
+                format: int64
+              clientOrderId:
+                type: string
+            required:
+            - symbol
+            - orderId
+            - clientOrderId
+            example:
+            - symbol: BNBUSDT
+              orderId: 28282534
+              clientOrderId: IfYDxvrZI4kiyqYpRH13iI
+            - symbol: BNBUSDT
+              orderId: 28282535
+              clientOrderId: 0HCSsPRxVfW8BkTUy9z4np
+            - symbol: BNBUSDT
+              orderId: 28282536
+              clientOrderId: dypsgdxWnLY75kwT930cbD
+        orderReports:
+          type: array
+          items:
+            type: object
+            properties:
+              symbol:
+                type: string
+              orderId:
+                type: integer
+                format: int64
+              orderListId:
+                type: integer
+                format: int64
+              clientOrderId:
+                type: string
+              transactTime:
+                type: integer
+                format: int64
+              price:
+                type: string
+              origQty:
+                type: string
+              executedQty:
+                type: string
+              cummulativeQuoteQty:
+                type: string
+              status:
+                type: string
+              timeInForce:
+                type: string
+              type:
+                type: string
+              side:
+                type: string
+              selfTradePreventionMode:
+                type: string
+            required:
+            - symbol
+            - orderId
+            - orderListId
+            - clientOrderId
+            - transactTime
+            - price
+            - origQty
+            - executedQty
+            - cummulativeQuoteQty
+            - status
+            - timeInForce
+            - type
+            - side
+            - selfTradePreventionMode
+            example:
+            - symbol: BNBUSDT
+              orderId: 28282534
+              orderListId: 13509
+              clientOrderId: IfYDxvrZI4kiyqYpRH13iI
+              transactTime: 1725521881300
+              price: '300.00000000'
+              origQty: '1.00000000'
+              executedQty: '0'
+              cummulativeQuoteQty: '0'
+              status: NEW
+              timeInForce: GTC
+              type: LIMIT
+              side: BUY
+              selfTradePreventionMode: NONE
+            - symbol: BNBUSDT
+              orderId: 28282535
+              orderListId: 13509
+              clientOrderId: 0HCSsPRxVfW8BkTUy9z4np
+              transactTime: 1725521881300
+              price: 0E-8
+              origQty: '1.00000000'
+              executedQty: '0'
+              cummulativeQuoteQty: '0'
+              status: PENDING_NEW
+              timeInForce: GTC
+              type: STOP_LOSS
+              side: SELL
+              stopPrice: '299.00000000'
+              selfTradePreventionMode: NONE
+            - symbol: BNBUSDT
+              orderId: 28282536
+              orderListId: 13509
+              clientOrderId: dypsgdxWnLY75kwT930cbD
+              transactTime: 1725521881300
+              price: '301.00000000'
+              origQty: '1.00000000'
+              executedQty: '0'
+              cummulativeQuoteQty: '0'
+              status: PENDING_NEW
+              timeInForce: GTC
+              type: LIMIT_MAKER
+              side: SELL
+              selfTradePreventionMode: NONE
+      required:
+      - orderListId
+      - contingencyType
+      - listStatusType
+      - listOrderStatus
+      - listClientOrderId
+      - transactionTime
+      - symbol
+      - isIsolated
+      - orders
+      - orderReports

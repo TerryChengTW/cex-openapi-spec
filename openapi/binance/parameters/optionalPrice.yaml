@@ -1,0 +1,7 @@
+name: price
+in: query
+description: Order price
+schema:
+  type: number
+  format: double
+  example: 219.0

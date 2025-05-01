@@ -1,0 +1,6 @@
+name: toEmail
+in: query
+required: true
+schema:
+  type: string
+description: Recipient email

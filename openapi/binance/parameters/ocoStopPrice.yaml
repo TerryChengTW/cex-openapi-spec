@@ -1,0 +1,7 @@
+name: stopPrice
+in: query
+required: true
+schema:
+  type: number
+  format: double
+  example: 220.0

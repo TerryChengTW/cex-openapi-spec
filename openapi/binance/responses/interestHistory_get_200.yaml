@@ -1,0 +1,48 @@
+description: Interest History, response in descending order
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        rows:
+          type: array
+          items:
+            type: object
+            properties:
+              isolatedSymbol:
+                type: string
+                example: BNBUSDT
+              asset:
+                type: string
+                example: BNB
+              interest:
+                type: string
+                example: '0.01866667'
+              interestAccuredTime:
+                type: integer
+                format: int64
+                example: 1566813600
+              interestRate:
+                type: string
+                example: '0.01600000'
+              principal:
+                type: string
+                example: '36.22000000'
+              type:
+                type: string
+                example: ON_BORROW
+            required:
+            - isolatedSymbol
+            - asset
+            - interest
+            - interestAccuredTime
+            - interestRate
+            - principal
+            - type
+        total:
+          type: integer
+          format: int32
+          example: 1
+      required:
+      - rows
+      - total

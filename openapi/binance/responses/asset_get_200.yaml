@@ -1,0 +1,23 @@
+description: Target asset
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        targetAssets:
+          type: array
+          items:
+            type: string
+            example:
+            - BTC
+            - BNB
+        sourceAssets:
+          type: array
+          items:
+            type: string
+            example:
+            - BTC
+            - BNB
+      required:
+      - targetAssets
+      - sourceAssets

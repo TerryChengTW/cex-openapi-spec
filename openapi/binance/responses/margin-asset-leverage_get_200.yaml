@@ -1,0 +1,14 @@
+description: Classic Portfolio Margin Collateral Rate
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          asset:
+            type: string
+            example: USDC
+          collateralRate:
+            type: string
+            example: '1.0000'

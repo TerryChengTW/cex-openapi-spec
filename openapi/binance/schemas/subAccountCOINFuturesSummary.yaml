@@ -1,0 +1,51 @@
+type: object
+properties:
+  deliveryAccountSummaryResp:
+    type: object
+    properties:
+      totalMarginBalanceOfBTC:
+        type: string
+        example: 25.03221121
+      totalUnrealizedProfitOfBTC:
+        type: string
+        example: 0.1223341
+      totalWalletBalanceOfBTC:
+        type: string
+        example: 22.15879444
+      asset:
+        type: string
+        example: BTC
+      subAccountList:
+        type: array
+        items:
+          type: object
+          properties:
+            email:
+              type: string
+              example: 123@test.com
+            totalMarginBalance:
+              type: string
+              example: 22.12659734
+            totalUnrealizedProfit:
+              type: string
+              example: 0.0
+            totalWalletBalance:
+              type: string
+              example: 22.12659734
+            asset:
+              type: string
+              example: BTC
+          required:
+          - email
+          - totalMarginBalance
+          - totalUnrealizedProfit
+          - totalWalletBalance
+          - asset
+    required:
+    - totalMarginBalanceOfBTC
+    - totalUnrealizedProfitOfBTC
+    - totalWalletBalanceOfBTC
+    - asset
+    - subAccountList
+required:
+- deliveryAccountSummaryResp

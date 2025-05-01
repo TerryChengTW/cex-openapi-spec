@@ -1,43 +1,48 @@
-# CEX OpenAPI Spec
+# Cryptocurrency Exchange OpenAPI Specifications
 
-> **Note:** This project is an **unofficial** community-driven specification and is not affiliated with or endorsed by any exchange. It aims to provide an accurate, up-to-date, and unified OpenAPI spec for all major CEXs.
+This repository contains OpenAPI specifications for various cryptocurrency exchanges. The goal is to provide standardized, machine-readable API documentation that can be used to generate client libraries, documentation, and other tools.
 
-A unified, modular, and AI-friendly OpenAPI specification for multiple centralized cryptocurrency exchanges (CEX), designed for seamless aggregation, integration, and cross-exchange tooling.
+## Structure
 
-## Features
+- `openapi/`: Contains the modular OpenAPI specifications
+  - `binance/`: Binance API specifications
+  - Other exchanges will be added in the future
+- `generated/`: Contains client libraries generated from the OpenAPI specs
+- `tools/`: Contains development scripts and utilities (for maintainers)
+- `vendor/`: Contains original API specifications from exchanges
 
-- **Unified Structure:** Standardizes endpoints and schemas across all major CEXs (e.g., Binance, OKX, Bybit, KuCoin, etc.).
-- **Modular Organization:** Each exchange and endpoint category has its own folder and schema files for easy extension and maintenance.
-- **AI & Automation Friendly:** Clear naming, strict example policies, and complete documentation for effortless code generation and AI integration.
-- **Extensible:** Easily add new exchanges or endpoints with minimal friction.
+## Usage
 
-## Directory Structure
+### For Developers Using These Specs
 
-- `openapi/`
-  - `binance/`
-  - `okx/`
-  - `bybit/`
-  - `...`
-  - All schemas and endpoints are organized by exchange and functionality.
+These specifications can be used directly with OpenAPI tools to:
 
-## Contribution Guidelines
+1. Generate client libraries in various programming languages
+2. Create interactive API documentation
+3. Test API endpoints
+4. Validate API responses
 
-- **Only edit OpenAPI YAML files in `openapi/`.**
-- **Use clear, unique, and descriptive names** for all schemas and endpoints.
-- **Only use official or real examples** for the `example` field. Never invent or hallucinate data.
-- **All documentation must be in English.**
-- **Follow folder and naming conventions** as described in `openapi/README.md`.
+Please refer to the `openapi/GUIDELINES.md` file for detailed information about naming conventions, structure, and best practices.
 
-## Use Cases
+### For Maintainers
 
-- Generate unified SDKs/clients for multiple CEXs.
-- Build cross-exchange trading bots and analytics tools.
-- Power AI agents with standardized, machine-readable API specs.
+The `tools/` directory contains scripts used for development and maintenance:
 
-### Third-Party Licenses
+- `split_endpoint.py`: Converts vendor specifications into our modular format
+- Generation scripts: For testing that specifications can generate working client code
 
-This project includes parts of the Binance API documentation (spot_api.yaml), retrieved from:
+See `tools/README.md` for detailed information about these development tools.
 
-- <https://github.com/binance/binance-api-swagger>
+## Notes on Generated Code
 
-The Binance OpenAPI specification is licensed under the [MIT License](https://opensource.org/license/MIT).
+**IMPORTANT**: The generated client libraries will require manual modifications before they can be used in production, especially for authentication flows. Most exchange authentication processes involve dynamic signature generation based on timestamps and other algorithms that cannot be fully described in OpenAPI specifications.
+
+This project's primary purpose is to provide accurate, machine-readable specifications that allow developers and AI tools to understand the latest exchange API structures.
+
+## Contributing
+
+Contributions are welcome! Please read `openapi/GUIDELINES.md` before submitting changes to ensure they follow the project's conventions.
+
+## License
+
+This project is licensed under the terms of the MIT license.

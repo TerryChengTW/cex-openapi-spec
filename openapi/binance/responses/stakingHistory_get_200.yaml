@@ -1,0 +1,45 @@
+description: ETH staking history
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        rows:
+          type: array
+          items:
+            type: object
+            properties:
+              time:
+                type: integer
+                format: int64
+                example: 1575018510000
+              asset:
+                type: string
+                example: ETH
+              amount:
+                type: string
+                example: '21312.23223'
+              status:
+                type: string
+                example: SUCCESS
+                description: PENDING, SUCCESS, FAILED
+              distributeAmount:
+                type: string
+                example: '21286.42584'
+              conversionRatio:
+                type: string
+                example: '1.00121234'
+            required:
+            - time
+            - asset
+            - amount
+            - status
+            - distributeAmount
+            - conversionRatio
+        total:
+          type: integer
+          format: int64
+          example: 1
+      required:
+      - rows
+      - total

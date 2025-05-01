@@ -1,0 +1,5 @@
+name: stopClientOrderId
+in: query
+description: A unique Id for the stop loss/stop loss limit leg
+schema:
+  type: string

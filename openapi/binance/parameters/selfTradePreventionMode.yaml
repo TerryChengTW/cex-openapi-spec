@@ -1,0 +1,12 @@
+name: selfTradePreventionMode
+in: query
+description: The allowed enums is dependent on what is configured on the symbol. The
+  possible supported values are EXPIRE_TAKER, EXPIRE_MAKER, EXPIRE_BOTH, NONE.
+schema:
+  type: string
+  enum:
+  - EXPIRE_TAKER
+  - EXPIRE_MAKER
+  - EXPIRE_BOTH
+  - NONE
+  example: EXPIRE_TAKER

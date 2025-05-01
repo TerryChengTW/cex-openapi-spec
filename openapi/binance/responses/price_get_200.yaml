@@ -1,0 +1,7 @@
+description: Price ticker
+content:
+  application/json:
+    schema:
+      oneOf:
+      - $ref: '#/components/schemas/priceTicker'
+      - $ref: '#/components/schemas/priceTickerList'

@@ -1,0 +1,36 @@
+description: Rate History
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        rows:
+          type: array
+          items:
+            type: object
+            properties:
+              productId:
+                type: string
+                example: BUSD001
+              asset:
+                type: string
+                example: BUSD
+              annualPercentageRate:
+                type: string
+                example: '0.00006408'
+              time:
+                type: integer
+                format: int64
+                example: 1577233578000
+            required:
+            - productId
+            - asset
+            - annualPercentageRate
+            - time
+        total:
+          type: integer
+          format: int64
+          example: 1
+      required:
+      - rows
+      - total

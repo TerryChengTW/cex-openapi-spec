@@ -1,0 +1,37 @@
+description: User assets
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          asset:
+            type: string
+            example: AVAX
+          free:
+            type: string
+            example: '1'
+          locked:
+            type: string
+            example: '0'
+          freeze:
+            type: string
+            example: '0'
+          withdrawing:
+            type: string
+            example: '0'
+          ipoable:
+            type: string
+            example: '0'
+          btcValuation:
+            type: string
+            example: '0'
+        required:
+        - asset
+        - free
+        - locked
+        - freeze
+        - withdrawing
+        - ipoable
+        - btcValuation

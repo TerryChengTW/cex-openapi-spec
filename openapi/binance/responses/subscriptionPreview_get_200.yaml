@@ -1,0 +1,49 @@
+description: Locked Product Subscription Response
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          rewardAsset:
+            type: string
+            example: AXS
+          totalRewardAmt:
+            type: string
+            example: '5.17181528'
+          extraRewardAsset:
+            type: string
+            example: BNB
+          estTotalExtraRewardAmt:
+            type: string
+            example: '5.17181528'
+          nextPay:
+            type: string
+            example: '1.29295383'
+          nextPayDate:
+            type: string
+            example: '1646697600000'
+          valueDate:
+            type: string
+            example: '1646697600000'
+          rewardsEndDate:
+            type: string
+            example: '1651449600000'
+          deliverDate:
+            type: string
+            example: '1651536000000'
+          nextSubscriptionDate:
+            type: string
+            example: '1651536000000'
+        required:
+        - rewardAsset
+        - totalRewardAmt
+        - extraRewardAsset
+        - estTotalExtraRewardAmt
+        - nextPay
+        - nextPayDate
+        - valueDate
+        - rewardsEndDate
+        - deliverDate
+        - nextSubscriptionDate

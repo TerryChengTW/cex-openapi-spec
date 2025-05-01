@@ -1,0 +1,40 @@
+description: Locked Rewards History
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        rows:
+          type: array
+          items:
+            type: object
+            properties:
+              positionId:
+                type: string
+                example: '123123'
+              time:
+                type: integer
+                format: int64
+                example: 1577257222000
+              asset:
+                type: string
+                example: BNB
+              lockPeriod:
+                type: string
+                example: '30'
+              amount:
+                type: string
+                example: '21312.23223'
+            required:
+            - positionId
+            - time
+            - asset
+            - lockPeriod
+            - amount
+        total:
+          type: integer
+          format: int64
+          example: 1
+      required:
+      - rows
+      - total

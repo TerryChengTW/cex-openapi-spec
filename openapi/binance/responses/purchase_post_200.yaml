@@ -1,0 +1,11 @@
+description: Generated Purchase Id
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        purchaseId:
+          type: string
+          example: '18356'
+      required:
+      - purchaseId

@@ -1,0 +1,30 @@
+description: Isolated Margin Tier Data
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          symbol:
+            type: string
+            example: BTCUSDT
+          tier:
+            type: integer
+            format: int32
+            example: 1
+          effectiveMultiple:
+            type: string
+            example: '10'
+          initialRiskRatio:
+            type: string
+            example: '1.111'
+          liquidationRiskRatio:
+            type: string
+            example: '1.05'
+          baseAssetMaxBorrowable:
+            type: string
+            example: '9'
+          quoteAssetMaxBorrowable:
+            type: string
+            example: '70000'

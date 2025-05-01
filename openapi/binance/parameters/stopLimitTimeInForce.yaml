@@ -1,0 +1,8 @@
+name: stopLimitTimeInForce
+in: query
+schema:
+  type: string
+  enum:
+  - GTC
+  - FOK
+  - IOC

@@ -1,0 +1,26 @@
+paths:
+  /sapi/v1/lending/positionChanged:
+    post:
+      summary: Change Fixed/Activity Position to Daily Position (USER_DATA)
+      description: '- PositionId is mandatory parameter for fixed position.
+
+
+        Weight(IP): 1'
+      tags:
+      - Savings
+      parameters:
+      - $ref: ..\..\parameters/projectId.yaml
+      - $ref: ..\..\parameters/lot.yaml
+      - $ref: ..\..\parameters/optionalPositionId.yaml
+      - $ref: ..\..\parameters/recvWindow.yaml
+      - $ref: ..\..\parameters/timestamp.yaml
+      - $ref: ..\..\parameters/signature.yaml
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/positionChanged_post_200.yaml
+        '400':
+          $ref: ..\..\responses/positionChanged_post_400.yaml
+        '401':
+          $ref: ..\..\responses/positionChanged_post_401.yaml

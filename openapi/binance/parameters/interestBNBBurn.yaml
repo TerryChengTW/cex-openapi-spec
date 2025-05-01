@@ -1,0 +1,9 @@
+name: interestBNBBurn
+in: query
+description: Determines whether to use BNB to pay for margin loan interest
+schema:
+  type: string
+  enum:
+  - 'true'
+  - 'false'
+  example: 'false'

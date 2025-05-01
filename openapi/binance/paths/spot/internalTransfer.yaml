@@ -1,0 +1,71 @@
+paths:
+  /sapi/v1/sub-account/futures/internalTransfer:
+    get:
+      summary: Sub-account Futures Asset Transfer History (For Master Account)
+      description: 'Weight(IP): 1'
+      tags:
+      - Sub-Account
+      parameters:
+      - $ref: ..\..\parameters/subAccountEmail.yaml
+      - name: futuresType
+        in: query
+        description: '1:USDT-margined Futures, 2: Coin-margined Futures'
+        required: true
+        schema:
+          type: integer
+          format: int32
+          example: 2
+      - $ref: ..\..\parameters/startTime.yaml
+      - $ref: ..\..\parameters/endTime.yaml
+      - $ref: ..\..\parameters/page.yaml
+      - name: limit
+        in: query
+        description: 'Default value: 50, Max value: 500'
+        schema:
+          type: integer
+          format: int32
+      - $ref: ..\..\parameters/recvWindow.yaml
+      - $ref: ..\..\parameters/timestamp.yaml
+      - $ref: ..\..\parameters/signature.yaml
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/internalTransfer_get_200.yaml
+        '400':
+          $ref: ..\..\responses/internalTransfer_get_400.yaml
+        '401':
+          $ref: ..\..\responses/internalTransfer_get_401.yaml
+    post:
+      summary: Sub-account Futures Asset Transfer (For Master Account)
+      description: '- Master account can transfer max 2000 times a minute
+
+
+        Weight(IP): 1'
+      tags:
+      - Sub-Account
+      parameters:
+      - $ref: ..\..\parameters/subAccountFromEmail.yaml
+      - $ref: ..\..\parameters/subAccountToEmail.yaml
+      - name: futuresType
+        in: query
+        required: true
+        description: '1:USDT-margined Futures,2: Coin-margined Futures'
+        schema:
+          type: integer
+          format: int32
+          example: 2
+      - $ref: ..\..\parameters/asset.yaml
+      - $ref: ..\..\parameters/amount.yaml
+      - $ref: ..\..\parameters/recvWindow.yaml
+      - $ref: ..\..\parameters/timestamp.yaml
+      - $ref: ..\..\parameters/signature.yaml
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/internalTransfer_post_200.yaml
+        '400':
+          $ref: ..\..\responses/internalTransfer_post_400.yaml
+        '401':
+          $ref: ..\..\responses/internalTransfer_post_401.yaml

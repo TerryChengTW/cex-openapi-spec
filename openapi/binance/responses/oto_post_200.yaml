@@ -1,0 +1,146 @@
+description: OTO order
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        orderListId:
+          type: integer
+          format: int64
+          example: 13551
+        contingencyType:
+          type: string
+          example: OTO
+        listStatusType:
+          type: string
+          example: EXEC_STARTED
+        listOrderStatus:
+          type: string
+          example: EXECUTING
+        listClientOrderId:
+          type: string
+          example: JDuOrsu0Ge8GTyvx8J7VTD
+        transactionTime:
+          type: integer
+          format: int64
+          example: 1725521998054
+        symbol:
+          type: string
+          example: BTCUSDT
+        isIsolated:
+          type: boolean
+          example: false
+        orders:
+          type: array
+          items:
+            type: object
+            properties:
+              symbol:
+                type: string
+              orderId:
+                type: integer
+                format: int64
+              clientOrderId:
+                type: string
+            required:
+            - symbol
+            - orderId
+            - clientOrderId
+            example:
+            - symbol: BTCUSDT
+              orderId: 29896699
+              clientOrderId: y8RB6tQEMuHUXybqbtzTxk
+            - symbol: BTCUSDT
+              orderId: 29896700
+              clientOrderId: dKQEdh5HhXb7Lpp85jz1dQ
+        orderReports:
+          type: array
+          items:
+            type: object
+            properties:
+              symbol:
+                type: string
+              orderId:
+                type: integer
+                format: int64
+              orderListId:
+                type: integer
+                format: int64
+              clientOrderId:
+                type: string
+              transactTime:
+                type: integer
+                format: int64
+              price:
+                type: string
+              origQty:
+                type: string
+              executedQty:
+                type: string
+              cummulativeQuoteQty:
+                type: string
+              status:
+                type: string
+              timeInForce:
+                type: string
+              type:
+                type: string
+              side:
+                type: string
+              selfTradePreventionMode:
+                type: string
+            required:
+            - symbol
+            - orderId
+            - orderListId
+            - clientOrderId
+            - transactTime
+            - price
+            - origQty
+            - executedQty
+            - cummulativeQuoteQty
+            - status
+            - timeInForce
+            - type
+            - side
+            - selfTradePreventionMode
+            example:
+            - symbol: BTCUSDT
+              orderId: 29896699
+              orderListId: 13551
+              clientOrderId: y8RB6tQEMuHUXybqbtzTxk
+              transactTime: 1725521998054
+              price: '80000.00000000'
+              origQty: '0.02000000'
+              executedQty: '0'
+              cummulativeQuoteQty: '0'
+              status: NEW
+              timeInForce: GTC
+              type: LIMIT
+              side: SELL
+              selfTradePreventionMode: NONE
+            - symbol: BTCUSDT
+              orderId: 29896700
+              orderListId: 13551
+              clientOrderId: dKQEdh5HhXb7Lpp85jz1dQ
+              transactTime: 1725521998054
+              price: '50000.00000000'
+              origQty: '0.02000000'
+              executedQty: '0'
+              cummulativeQuoteQty: '0'
+              status: PENDING_NEW
+              timeInForce: GTC
+              type: LIMIT
+              side: BUY
+              selfTradePreventionMode: NONE
+      required:
+      - orderListId
+      - contingencyType
+      - listStatusType
+      - listOrderStatus
+      - listClientOrderId
+      - transactionTime
+      - symbol
+      - isIsolated
+      - orders
+      - orderReports

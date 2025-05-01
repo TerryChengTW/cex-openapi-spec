@@ -1,0 +1,157 @@
+description: Operation details
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        cancelResult:
+          type: string
+          example: SUCCESS
+        newOrderResult:
+          type: string
+          example: SUCCESS
+        cancelResponse:
+          type: object
+          properties:
+            symbol:
+              type: string
+              example: BTCUSDT
+            origClientOrderId:
+              type: string
+              example: DnLo3vTAQcjha43lAZhZ0y
+            orderId:
+              type: integer
+              format: int64
+              example: 9
+            orderListId:
+              type: integer
+              format: int64
+              example: -1
+            clientOrderId:
+              type: string
+              example: osxN3JXAtJvKvCqGeMWMVR
+            price:
+              type: string
+              example: '0.01000000'
+            origQty:
+              type: string
+              example: '0.000100'
+            executedQty:
+              type: string
+              example: '0.00000000'
+            cummulativeQuoteQty:
+              type: string
+              example: '0.00000000'
+            status:
+              type: string
+              example: CANCELED
+            timeInForce:
+              type: string
+              example: GTC
+            type:
+              type: string
+              example: LIMIT
+            side:
+              type: string
+              example: SELL
+            selfTradePreventionMode:
+              type: string
+              example: NONE
+            transactTime:
+              type: integer
+              format: int64
+              example: 1507725176595
+          required:
+          - symbol
+          - origClientOrderId
+          - orderId
+          - orderListId
+          - clientOrderId
+          - price
+          - origQty
+          - executedQty
+          - cummulativeQuoteQty
+          - status
+          - timeInForce
+          - type
+          - side
+          - selfTradePreventionMode
+        newOrderResponse:
+          type: object
+          properties:
+            symbol:
+              type: string
+              example: BTCUSDT
+            orderId:
+              type: integer
+              format: int64
+              example: 10
+            orderListId:
+              type: integer
+              format: int64
+              example: -1
+            clientOrderId:
+              type: string
+              example: wOceeeOzNORyLiQfw7jd8S
+            transactTime:
+              type: integer
+              format: int64
+              example: 1652928801803
+            price:
+              type: string
+              example: '0.02000000'
+            origQty:
+              type: string
+              example: '0.040000'
+            executedQty:
+              type: string
+              example: '0.00000000'
+            cummulativeQuoteQty:
+              type: string
+              example: '0.00000000'
+            status:
+              type: string
+              example: NEW
+            timeInForce:
+              type: string
+              example: GTC
+            type:
+              type: string
+              example: LIMIT
+            side:
+              type: string
+              example: BUY
+            workingTime:
+              type: integer
+              format: int64
+              example: 1669277163808
+            fills:
+              type: array
+              items:
+                type: string
+              maxItems: 0
+            selfTradePreventionMode:
+              type: string
+              example: NONE
+          required:
+          - symbol
+          - orderId
+          - orderListId
+          - clientOrderId
+          - transactTime
+          - price
+          - origQty
+          - executedQty
+          - cummulativeQuoteQty
+          - status
+          - timeInForce
+          - type
+          - side
+          - workingTime
+          - fills
+          - selfTradePreventionMode
+      required:
+      - cancelResult
+      - newOrderResult
+      - cancelResponse
+      - newOrderResponse

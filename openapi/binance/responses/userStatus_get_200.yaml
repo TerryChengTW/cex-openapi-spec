@@ -1,0 +1,33 @@
+description: Futures Lead Trader Status
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        code:
+          type: string
+          example: '000000'
+        message:
+          type: string
+          example: success
+        data:
+          type: object
+          properties:
+            isLeadTrader:
+              type: boolean
+              example: true
+            time:
+              type: integer
+              format: int64
+              example: 1717382310843
+          required:
+          - isLeadTrader
+          - time
+        success:
+          type: boolean
+          example: true
+      required:
+      - code
+      - message
+      - data
+      - success

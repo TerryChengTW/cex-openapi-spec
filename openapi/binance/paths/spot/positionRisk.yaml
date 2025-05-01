@@ -1,0 +1,31 @@
+paths:
+  /sapi/v2/sub-account/futures/positionRisk:
+    get:
+      summary: Futures Position-Risk of Sub-account V2 (For Master Account)
+      description: 'Weight(IP): 1'
+      tags:
+      - Sub-Account
+      parameters:
+      - $ref: ..\..\parameters/subAccountEmail.yaml
+      - name: futuresType
+        in: query
+        description: '* `1` - USDT Margined Futures
+
+          * `2` - COIN Margined Futures'
+        required: true
+        schema:
+          type: integer
+          format: int32
+          example: 1
+      - $ref: ..\..\parameters/recvWindow.yaml
+      - $ref: ..\..\parameters/timestamp.yaml
+      - $ref: ..\..\parameters/signature.yaml
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/positionRisk_get_200.yaml
+        '400':
+          $ref: ..\..\responses/positionRisk_get_400.yaml
+        '401':
+          $ref: ..\..\responses/positionRisk_get_401.yaml

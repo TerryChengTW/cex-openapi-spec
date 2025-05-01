@@ -1,0 +1,29 @@
+paths:
+  /sapi/v1/loan/vip/request/interestRate:
+    get:
+      summary: Get Borrow Interest Rate (USER_DATA)
+      description: 'Get borrow interest rate.
+
+
+        Weight(UID): 400'
+      tags:
+      - VIP Loans
+      parameters:
+      - name: loanCoin
+        in: query
+        description: Max 10 assets, Multiple split by ","
+        schema:
+          type: string
+          example: BUSD
+      - $ref: ..\..\parameters/recvWindow.yaml
+      - $ref: ..\..\parameters/timestamp.yaml
+      - $ref: ..\..\parameters/signature.yaml
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/interestRate_get_200.yaml
+        '400':
+          $ref: ..\..\responses/interestRate_get_400.yaml
+        '401':
+          $ref: ..\..\responses/interestRate_get_401.yaml

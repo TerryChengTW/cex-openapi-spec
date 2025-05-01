@@ -1,0 +1,51 @@
+type: object
+properties:
+  commission:
+    type: string
+    example: '0.00006000'
+  commissionAsset:
+    type: string
+    example: BTC
+  id:
+    type: integer
+    format: int64
+    example: 28
+  isBestMatch:
+    type: boolean
+  isBuyer:
+    type: boolean
+  isMaker:
+    type: boolean
+  orderId:
+    type: integer
+    format: int64
+    example: 28
+  price:
+    type: string
+    example: '0.02000000'
+  qty:
+    type: string
+    example: '1.02000000'
+  symbol:
+    type: string
+    example: BNBBTC
+  isIsolated:
+    type: boolean
+    example: false
+  time:
+    type: integer
+    format: int64
+    example: 1507725176595
+required:
+- commission
+- commissionAsset
+- id
+- isBestMatch
+- isBuyer
+- isMaker
+- orderId
+- price
+- qty
+- symbol
+- isIsolated
+- time

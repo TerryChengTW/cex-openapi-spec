@@ -1,0 +1,7 @@
+name: loanCoin
+in: query
+description: Coin loaned
+required: true
+schema:
+  type: string
+  example: BUSD

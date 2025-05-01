@@ -1,0 +1,32 @@
+paths:
+  /sapi/v1/lending/auto-invest/plan/id:
+    get:
+      summary: Query holding details of the plan
+      description: 'Query holding details of the plan
+
+
+        Weight(IP): 1'
+      tags:
+      - Auto-Invest
+      parameters:
+      - name: planId
+        in: query
+        schema:
+          type: integer
+          format: int64
+      - name: requestId
+        in: query
+        schema:
+          type: string
+      - $ref: ..\..\parameters/recvWindow.yaml
+      - $ref: ..\..\parameters/timestamp.yaml
+      - $ref: ..\..\parameters/signature.yaml
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/id_get_200.yaml
+        '400':
+          $ref: ..\..\responses/id_get_400.yaml
+        '401':
+          $ref: ..\..\responses/id_get_401.yaml

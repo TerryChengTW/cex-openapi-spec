@@ -1,0 +1,7 @@
+name: needBtcValuation
+in: query
+schema:
+  type: string
+  enum:
+  - 'true'
+  - 'false'

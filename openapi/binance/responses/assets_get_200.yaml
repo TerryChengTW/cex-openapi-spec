@@ -1,0 +1,26 @@
+description: Sub account balances
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        balances:
+          type: array
+          items:
+            type: object
+            properties:
+              asset:
+                type: string
+                example: BNB
+              free:
+                type: string
+                example: '10000'
+              locked:
+                type: string
+                example: '0'
+            required:
+            - asset
+            - free
+            - locked
+      required:
+      - balances

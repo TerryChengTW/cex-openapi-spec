@@ -1,0 +1,10 @@
+name: newOrderRespType
+in: query
+description: Set the response JSON. MARKET and LIMIT order types default to FULL,
+  all other orders default to ACK.
+schema:
+  type: string
+  enum:
+  - ACK
+  - RESULT
+  - FULL

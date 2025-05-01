@@ -1,0 +1,5 @@
+name: archived
+in: query
+description: 'Default: false. Set to true for archived data from 6 months ago'
+schema:
+  type: string

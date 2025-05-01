@@ -1,0 +1,7 @@
+description: Trading day ticker
+content:
+  application/json:
+    schema:
+      oneOf:
+      - $ref: '#/components/schemas/dayTicker'
+      - $ref: '#/components/schemas/dayTickerList'

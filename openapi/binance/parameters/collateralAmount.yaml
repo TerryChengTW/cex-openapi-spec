@@ -1,0 +1,6 @@
+name: collateralAmount
+in: query
+schema:
+  type: number
+  format: float
+  example: 50.5

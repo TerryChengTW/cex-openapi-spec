@@ -1,0 +1,31 @@
+description: Loan renew result
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        loanAccountId:
+          type: string
+          example: '12345678'
+        loanCoin:
+          type: string
+          example: BTC
+        loanAmount:
+          type: string
+          example: '100.55'
+        collateralAccountId:
+          type: string
+          example: 12345677,12345678,12345679
+        collateralCoin:
+          type: string
+          example: BUSD,USDT,ETH
+        loanTerm:
+          type: string
+          example: '30'
+      required:
+      - loanAccountId
+      - loanCoin
+      - loanAmount
+      - collateralAccountId
+      - collateralCoin
+      - loanTerm

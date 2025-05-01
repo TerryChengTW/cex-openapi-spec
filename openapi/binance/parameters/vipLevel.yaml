@@ -1,0 +1,7 @@
+name: vipLevel
+in: query
+description: Defaults to user's vip level
+schema:
+  type: integer
+  format: int32
+  example: 1

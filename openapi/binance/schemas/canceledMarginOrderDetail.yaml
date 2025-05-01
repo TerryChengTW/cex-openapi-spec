@@ -1,0 +1,60 @@
+type: object
+properties:
+  symbol:
+    type: string
+    example: BNBUSDT
+  isIsolated:
+    type: boolean
+  origClientOrderId:
+    type: string
+    example: E6APeyTJvkMvLMYMqu1KQ4
+  orderId:
+    type: integer
+    format: int64
+    example: 11
+  orderListId:
+    type: integer
+    format: int64
+    example: -1
+  clientOrderId:
+    type: string
+    example: pXLV6Hz6mprAcVYpVMTGgx
+  price:
+    type: string
+    example: '0.089853'
+  origQty:
+    type: string
+    example: '0.178622'
+  executedQty:
+    type: string
+    example: '0.000000'
+  cummulativeQuoteQty:
+    type: string
+    example: '0.000000'
+  status:
+    type: string
+    example: CANCELED
+  timeInForce:
+    type: string
+    example: GTC
+  type:
+    type: string
+    example: LIMIT
+  side:
+    type: string
+    example: BUY
+required:
+- symbol
+- isIsolated
+- origClientOrderId
+- orderId
+- orderListId
+- clientOrderId
+- price
+- origQty
+- executedQty
+- cummulativeQuoteQty
+- status
+- timeInForce
+- type
+- side

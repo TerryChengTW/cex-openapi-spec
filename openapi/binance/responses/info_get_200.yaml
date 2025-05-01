@@ -1,0 +1,35 @@
+description: Index result
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        indexId:
+          type: integer
+          format: int64
+          example: 1
+        indexName:
+          type: string
+          example: BINANCE TOP 10 EW
+        status:
+          type: string
+          example: RUNNING
+        assetAllocation:
+          type: array
+          items:
+            type: object
+            properties:
+              targetAsset:
+                type: string
+                example: ADA
+              allocation:
+                type: string
+                example: '10'
+            required:
+            - targetAsset
+            - allocation
+      required:
+      - indexId
+      - indexName
+      - status
+      - assetAllocation

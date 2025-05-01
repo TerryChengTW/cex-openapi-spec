@@ -1,0 +1,11 @@
+description: Transfer id
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        txnId:
+          type: string
+          example: '2966662589'
+      required:
+      - txnId

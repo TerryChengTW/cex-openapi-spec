@@ -1,0 +1,11 @@
+name: positionSide
+in: query
+description: Default BOTH for One-way Mode ; LONG or SHORT for Hedge Mode. It must
+  be sent in Hedge Mode.
+schema:
+  type: string
+  enum:
+  - BOTH
+  - LONG
+  - SHORT
+  example: BOTH

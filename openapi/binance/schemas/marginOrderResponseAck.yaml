@@ -1,0 +1,24 @@
+type: object
+properties:
+  symbol:
+    type: string
+    example: BTCUSDT
+  orderId:
+    type: integer
+    format: int64
+    example: 28
+  clientOrderId:
+    type: string
+    example: 6gCrw2kRUAF9CvJDGP16IP
+  isIsolated:
+    type: boolean
+  transactTime:
+    type: integer
+    format: int64
+    example: 1507725176595
+required:
+- symbol
+- orderId
+- clientOrderId
+- isIsolated
+- transactTime

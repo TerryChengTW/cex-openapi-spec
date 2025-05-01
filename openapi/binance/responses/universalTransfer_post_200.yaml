@@ -1,0 +1,16 @@
+description: Transfer id
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        tranId:
+          type: integer
+          format: int64
+          example: 11945860693
+        clientTranId:
+          type: string
+          example: '11945860694'
+      required:
+      - tranId
+      - clientTranId

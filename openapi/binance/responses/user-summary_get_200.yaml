@@ -1,0 +1,107 @@
+description: Position Details
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        indexId:
+          type: integer
+          format: int64
+          example: 1
+        totalInvestedInUSD:
+          type: string
+          example: '114.555'
+        currentInvestedInUSD:
+          type: string
+          description: current invest
+          example: '101.2'
+        pnlInUSD:
+          type: string
+          description: PNL of the plan in USD based on current amount
+          example: '101.2'
+        roi:
+          type: string
+          description: ROI of the plan based on current amount
+          example: '1.023'
+        assetAllocation:
+          type: array
+          items:
+            type: object
+            properties:
+              targetAsset:
+                type: string
+                description: for pie chart
+                example: ADA
+              allocation:
+                type: string
+                example: '10'
+            required:
+            - targetAsset
+            - allocation
+        details:
+          type: array
+          items:
+            type: object
+            properties:
+              targetAsset:
+                type: string
+                example: ADA
+              averagePriceInUSD:
+                type: string
+                description: average price of the asset in USD
+                example: '3.4'
+              totalInvestedInUSD:
+                type: string
+                description: total source asset invested for this target asset in
+                  equivilent of USD
+                example: '222.21'
+              currentInvestedInUSD:
+                type: string
+                description: current invest
+                example: '101.2'
+              purchasedAmount:
+                type: string
+                description: purchased amount of target asset
+                example: '122.2'
+              pnlInUSD:
+                type: string
+                description: PNL denominated in USD
+                example: '109.2'
+              roi:
+                type: string
+                description: ROI calculated in decimal
+                example: '0.2'
+              percentage:
+                type: string
+                description: asset allocation in the plan. If it's single plan, then
+                  it's 100
+                example: '10'
+              availableAmount:
+                type: string
+                example: '122.12345678'
+              redeemedAmount:
+                type: string
+                example: '122'
+              assetValueInUSD:
+                type: string
+                example: '101'
+            required:
+            - targetAsset
+            - averagePriceInUSD
+            - totalInvestedInUSD
+            - currentInvestedInUSD
+            - purchasedAmount
+            - pnlInUSD
+            - roi
+            - percentage
+            - availableAmount
+            - redeemedAmount
+            - assetValueInUSD
+      required:
+      - indexId
+      - totalInvestedInUSD
+      - currentInvestedInUSD
+      - pnlInUSD
+      - roi
+      - assetAllocation
+      - details

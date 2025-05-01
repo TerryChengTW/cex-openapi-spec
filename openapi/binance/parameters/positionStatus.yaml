@@ -1,0 +1,8 @@
+name: status
+in: query
+required: true
+schema:
+  type: string
+  enum:
+  - HOLDING
+  - REDEEMED

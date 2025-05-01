@@ -1,0 +1,57 @@
+description: List of deposits
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          amount:
+            type: string
+            example: '0.00999800'
+          coin:
+            type: string
+            example: PAXG
+          network:
+            type: string
+            example: ETH
+          status:
+            type: integer
+            format: int32
+            example: 1
+          address:
+            type: string
+            example: '0x788cabe9236ce061e5a892e1a59395a81fc8d62c'
+          addressTag:
+            type: string
+            example: ''
+          txId:
+            type: string
+            example: '0xaad4654a3234aa6118af9b4b335f5ae81c360b2394721c019b5d1e75328b09f3'
+          insertTime:
+            type: integer
+            format: int64
+            example: 1599621997000
+          transferType:
+            type: integer
+            format: int32
+            example: 0
+          unlockConfirm:
+            type: string
+            example: 12/12
+            description: confirm times for unlocking
+          confirmTimes:
+            type: string
+            example: 12/12
+        required:
+        - amount
+        - coin
+        - network
+        - status
+        - address
+        - addressTag
+        - txId
+        - insertTime
+        - transferType
+        - unlockConfirm
+        - confirmTimes

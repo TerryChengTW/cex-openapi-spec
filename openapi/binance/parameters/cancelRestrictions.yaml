@@ -1,0 +1,9 @@
+name: cancelRestrictions
+in: query
+required: false
+schema:
+  type: string
+  enum:
+  - ONLY_NEW
+  - ONLY_PARTIALLY_FILLED
+  example: ONLY_NEW

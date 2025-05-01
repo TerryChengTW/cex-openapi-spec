@@ -1,0 +1,5 @@
+name: limitStrategyId
+in: query
+schema:
+  type: integer
+  format: int64

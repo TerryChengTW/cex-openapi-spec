@@ -1,0 +1,6 @@
+name: workerStatus
+in: query
+description: miners status(default=0)0 all, 1 valid, 2 invalid, 3 failure
+schema:
+  type: integer
+  format: int32

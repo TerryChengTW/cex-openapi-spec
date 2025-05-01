@@ -1,0 +1,7 @@
+name: collateralCoin
+in: query
+description: Coin used as collateral
+required: true
+schema:
+  type: string
+  example: BNB

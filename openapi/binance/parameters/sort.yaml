@@ -1,0 +1,6 @@
+name: sort
+in: query
+description: sort sequence(default=0)0 positive sequence, 1 negative sequence
+schema:
+  type: integer
+  format: int32

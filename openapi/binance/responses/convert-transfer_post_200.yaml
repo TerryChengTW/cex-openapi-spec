@@ -1,0 +1,16 @@
+description: Conversion Information
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        tranId:
+          type: integer
+          format: int64
+          example: 118263407119
+        status:
+          type: string
+          example: S
+      required:
+      - tranId
+      - status

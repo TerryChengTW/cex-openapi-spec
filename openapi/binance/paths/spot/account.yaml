@@ -1,0 +1,20 @@
+paths:
+  /sapi/v1/simple-earn/account:
+    get:
+      summary: Simple Account (USER_DATA)
+      description: 'Weight(IP): 150'
+      tags:
+      - Simple Earn
+      parameters:
+      - $ref: ..\..\parameters/recvWindow.yaml
+      - $ref: ..\..\parameters/timestamp.yaml
+      - $ref: ..\..\parameters/signature.yaml
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/account_get_200.yaml
+        '400':
+          $ref: ..\..\responses/account_get_400.yaml
+        '401':
+          $ref: ..\..\responses/account_get_401.yaml

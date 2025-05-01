@@ -1,0 +1,7 @@
+name: rows
+in: query
+description: Default 100, max 500
+schema:
+  type: integer
+  format: int32
+  example: 300

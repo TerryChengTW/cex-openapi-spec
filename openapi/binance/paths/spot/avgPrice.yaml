@@ -1,0 +1,17 @@
+paths:
+  /api/v3/avgPrice:
+    get:
+      summary: Current Average Price
+      description: 'Current average price for a symbol.
+
+
+        Weight(IP): 2'
+      tags:
+      - Market
+      parameters:
+      - $ref: ..\..\parameters/symbol.yaml
+      responses:
+        '200':
+          $ref: ..\..\responses/avgPrice_get_200.yaml
+        '400':
+          $ref: ..\..\responses/avgPrice_get_400.yaml

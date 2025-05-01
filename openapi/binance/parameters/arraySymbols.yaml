@@ -1,0 +1,5 @@
+name: symbols
+in: query
+schema:
+  type: string
+  example: '["BTCUSDT","BNBBTC"]'

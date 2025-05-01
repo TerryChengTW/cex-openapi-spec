@@ -1,0 +1,32 @@
+description: Futures Lead Trading Symbol Whitelist
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        code:
+          type: string
+          example: '000000'
+        message:
+          type: string
+          example: success
+        data:
+          type: object
+          properties:
+            symbol:
+              type: string
+              example: BTCUSDT
+            baseAsset:
+              type: string
+              example: BTC
+            quoteAsset:
+              type: string
+              example: USDT
+          required:
+          - symbol
+          - baseAsset
+          - quoteAsset
+      required:
+      - code
+      - message
+      - data

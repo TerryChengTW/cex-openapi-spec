@@ -1,0 +1,8 @@
+name: side
+in: query
+schema:
+  type: string
+  enum:
+  - SELL
+  - BUY
+  example: SELL

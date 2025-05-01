@@ -1,0 +1,51 @@
+description: Transfer History
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          tranId:
+            type: integer
+            format: int64
+            example: 11945860693
+          fromEmail:
+            type: string
+            example: master@test.com
+          toEmail:
+            type: string
+            example: subaccount1@test.com
+          asset:
+            type: string
+            example: BTC
+          amount:
+            type: string
+            example: '0.1'
+          fromAccountType:
+            type: string
+            example: SPOT
+          toAccountType:
+            type: string
+            example: COIN_FUTURE
+          status:
+            type: string
+            example: SUCCESS
+          createTimeStamp:
+            type: integer
+            format: int64
+            example: 1544433325000
+          clientTranId:
+            type: string
+            example: '11945860694'
+        required:
+        - tranId
+        - fromEmail
+        - toEmail
+        - asset
+        - amount
+        - fromAccountType
+        - toAccountType
+        - status
+        - createTimeStamp
+        - clientTranId

@@ -1,0 +1,5 @@
+description: Test new order
+content:
+  application/json:
+    schema:
+      type: object

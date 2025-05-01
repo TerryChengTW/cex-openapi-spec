@@ -1,0 +1,6 @@
+name: baseAsset
+in: query
+required: true
+schema:
+  type: string
+  example: BUSD

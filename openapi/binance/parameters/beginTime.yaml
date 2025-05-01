@@ -1,0 +1,6 @@
+name: beginTime
+in: query
+schema:
+  type: integer
+  format: int64
+  example: 1626144956000

@@ -1,0 +1,12 @@
+description: Binance server UTC timestamp
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        serverTime:
+          type: integer
+          format: int64
+          example: 1499827319559
+      required:
+      - serverTime

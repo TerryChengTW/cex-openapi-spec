@@ -1,0 +1,44 @@
+type: object
+properties:
+  a:
+    type: integer
+    format: int64
+    description: Aggregate tradeId
+    example: 26129
+  p:
+    type: string
+    description: Price
+    example: '0.01633102'
+  q:
+    type: string
+    description: Quantity
+    example: '4.70443515'
+  f:
+    type: integer
+    format: int64
+    description: First tradeId
+    example: 27781
+  l:
+    type: integer
+    format: int64
+    description: Last tradeId
+    example: 27781
+  T:
+    type: boolean
+    description: Timestamp
+    example: 1498793709153
+  m:
+    type: boolean
+    description: Was the buyer the maker?
+  M:
+    type: boolean
+    description: Was the trade the best price match?
+required:
+- a
+- p
+- q
+- f
+- l
+- T
+- m
+- M

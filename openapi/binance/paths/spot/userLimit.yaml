@@ -1,0 +1,21 @@
+paths:
+  /sapi/v1/blvt/userLimit:
+    get:
+      summary: BLVT User Limit Info (USER_DATA)
+      description: 'Weight(IP): 1'
+      tags:
+      - BLVT
+      parameters:
+      - $ref: ..\..\parameters/optionalBlvtTokenName.yaml
+      - $ref: ..\..\parameters/recvWindow.yaml
+      - $ref: ..\..\parameters/timestamp.yaml
+      - $ref: ..\..\parameters/signature.yaml
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/userLimit_get_200.yaml
+        '400':
+          $ref: ..\..\responses/userLimit_get_400.yaml
+        '401':
+          $ref: ..\..\responses/userLimit_get_401.yaml

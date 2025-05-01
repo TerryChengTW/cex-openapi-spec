@@ -4,39 +4,44 @@ This document defines the canonical conventions and rules for all OpenAPI schema
 
 ## 📁 File Structure
 
-- Endpoints and schemas are organized by exchange and functionality (e.g. `binance/general`, `okx/account`).
-- All schema files should be named clearly to indicate their purpose, e.g. `PingResponse.yaml`, `ExchangeInfoResponse.yaml`.
+- OpenAPI specifications are organized by functional types:
+  - `parameters/`: Contains API request parameter definitions
+  - `paths/`: Contains API endpoints organized by service type (e.g., `spot/`)
+  - `responses/`: Contains API response definitions
+  - `schemas/`: Contains data model definitions
+- Development tools and scripts are located in the `tools/` directory
 
 ## 📝 Naming Conventions
 
-**Schema/Type Naming:**
+**Endpoint File Naming:**
+- Use the endpoint's functional name for file naming (e.g., `ping.yaml`, `time.yaml`, `depth.yaml`).
 
-- Use **PascalCase** (each word capitalized, no underscores) for all schema/type names and schema file names. Example: `ExchangeInfoResponse`, `OrderBookItem`, `ServerTimeResponse`.
+**Schema/Type Naming:**
+- Use **PascalCase** (each word capitalized, no underscores) for all schema/type names. Example: `ExchangeInfoResponse`, `OrderBookItem`, `ServerTimeResponse`.
 
 **Property/Parameter Naming:**
-
 - Use **camelCase** (first word lowercase, subsequent words capitalized, no underscores) for all object properties, parameters, and response fields, regardless of the exchange. Example: `orderId`, `serverTime`, `symbol`.
-
-- All schema/model/response files must have unique, descriptive names reflecting their purpose.
 
 ## ✅ Best Practices
 
-- Always use `$ref` to reference external schemas for responses and models.
-- Provide `example` for both request parameters and response bodies **only if there are official examples**.
+- Always use `$ref` with relative paths to reference external schemas for responses, parameters, and models. Example: `$ref: '../responses/ping_get_200.yaml'`.
+- Provide `example` for both request parameters and response bodies.
 - Remove deprecated or renamed schema files promptly to avoid confusion.
 - Never invent or hallucinate request/response examples or fields. If an example is not available, leave it blank or request clarification.
 
 ## 🏷️ Tags and Documentation
 
-- Ensure all tags in `main.yaml` have clear, concise English descriptions.
+- Ensure all tags in OpenAPI files have clear, concise English descriptions.
 - Keep this file updated with any new conventions, naming rules, or architectural decisions.
 - All documentation and comments must be in English.
 
-## ⚙️ Code Generation & Example Policy
+## ⚙️ Code Generation
 
-- Only generate code and OpenAPI schema content that matches the official documentation and real API behavior.
-- If you provide a sample input/output (especially response examples), it will be used directly.
-- If you do not provide an example, you will be asked if one is available before generating a placeholder or leaving it empty.
+- Development scripts for code generation are available in the `tools/` directory for both Windows and macOS/Linux platforms
+- The generation process uses the OpenAPI Generator CLI to create Python clients from the OpenAPI specifications.
+- **IMPORTANT**: Most exchange authentication processes cannot be fully described by OpenAPI specifications as they involve dynamic signature generation based on timestamps and other algorithms.
+- **NOTE**: The generated code will require manual modifications, especially for authentication flows, before it can be used in production.
+- This project's primary purpose is to provide machine-readable specifications that allow AI to understand the latest exchange API structures.
 
 ## 🔄 Updates and Maintenance
 

@@ -1,0 +1,17 @@
+description: Eth staking quota
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        leftStakingPersonalQuota:
+          type: string
+          example: '1000'
+          description: Show min(Daily available limit, total personal staking quota)
+        leftRedemptionPersonalQuota:
+          type: string
+          example: '1000'
+          description: Show min(Daily personal redeem quota, total redemption limit)
+      required:
+      - leftStakingPersonalQuota
+      - leftRedemptionPersonalQuota

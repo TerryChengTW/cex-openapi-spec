@@ -1,0 +1,26 @@
+paths:
+  /api/v3/ticker/tradingDay:
+    get:
+      summary: Trading Day Ticker
+      description: "Price change statistics for a trading day.\n\nNotes:\n- Supported\
+        \ values for timeZone:\n  - Hours and minutes (e.g. -1:00, 05:45)\n  - Only\
+        \ hours (e.g. 0, 8, 4)\n\nWeight:\n- `4` for each requested symbol.\n- The\
+        \ weight for this request will cap at `200` once the number of symbols in\
+        \ the request is more than `50`."
+      tags:
+      - Market
+      parameters:
+      - $ref: ..\..\parameters/optionalSymbol.yaml
+      - $ref: ..\..\parameters/arraySymbols.yaml
+      - name: timeZone
+        in: query
+        required: false
+        description: 'Default: 0 (UTC)'
+        schema:
+          type: string
+      - $ref: ..\..\parameters/tickerType.yaml
+      responses:
+        '200':
+          $ref: ..\..\responses/tradingDay_get_200.yaml
+        '400':
+          $ref: ..\..\responses/tradingDay_get_400.yaml

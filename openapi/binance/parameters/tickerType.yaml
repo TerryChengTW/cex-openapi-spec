@@ -1,0 +1,11 @@
+name: type
+in: query
+description: 'Supported values: FULL or MINI.
+
+  If none provided, the default is FULL'
+schema:
+  type: string
+  enum:
+  - FULL
+  - MINI
+  example: FULL

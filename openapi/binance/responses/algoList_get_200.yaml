@@ -1,0 +1,41 @@
+description: Algorithm information
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int64
+          example: 0
+        msg:
+          type: string
+          example: ''
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              algoName:
+                type: string
+                example: sha256
+              algoId:
+                type: integer
+                format: int64
+                example: 1
+              poolIndex:
+                type: integer
+                format: int64
+                example: 0
+              unit:
+                type: string
+                example: h/s
+            required:
+            - algoName
+            - algoId
+            - poolIndex
+            - unit
+      required:
+      - code
+      - msg
+      - data

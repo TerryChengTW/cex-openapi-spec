@@ -1,0 +1,22 @@
+description: asset price index
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          asset:
+            type: string
+            example: USDT
+          assetIndexPrice:
+            type: string
+            example: '28251.9136906'
+          time:
+            type: integer
+            format: int64
+            example: 1683518338121
+        required:
+        - asset
+        - assetIndexPrice
+        - time

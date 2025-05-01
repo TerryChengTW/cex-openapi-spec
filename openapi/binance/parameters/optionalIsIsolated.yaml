@@ -1,0 +1,7 @@
+name: isIsolated
+in: query
+description: '* `TRUE` - For isolated margin
+
+  * `FALSE` - Default, not for isolated margin'
+schema:
+  type: string

@@ -1,0 +1,7 @@
+name: sortColumn
+in: query
+description: 'Sort by( default 1): 1: miner name, 2: real-time computing power, 3:
+  daily average computing power, 4: real-time rejection rate, 5: last submission time'
+schema:
+  type: integer
+  format: int32

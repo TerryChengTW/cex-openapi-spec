@@ -1,0 +1,18 @@
+description: Details on max borrow amount
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        amount:
+          type: string
+          example: '1.69248805'
+          description: account's currently max borrowable amount with sufficient system
+            availability
+        borrowLimit:
+          type: string
+          example: '60'
+          description: max borrowable amount limited by the account level
+      required:
+      - amount
+      - borrowLimit

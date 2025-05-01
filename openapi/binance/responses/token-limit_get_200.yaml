@@ -1,0 +1,34 @@
+description: Token limit
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        code:
+          type: string
+          example: '000000'
+        message:
+          type: string
+          example: success
+        data:
+          type: object
+          properties:
+            coin:
+              type: string
+              example: BNB
+            fromMin:
+              type: string
+              example: '0.01'
+            fromMax:
+              type: string
+              example: '1'
+          required:
+          - referenceNo
+          - code
+        success:
+          type: boolean
+      required:
+      - code
+      - message
+      - data
+      - success

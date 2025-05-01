@@ -1,0 +1,22 @@
+description: Summary of Margin Account
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        normalBar:
+          type: string
+          description: Account's currently max borrowable amount with sufficient system
+            availability
+          example: '1.5'
+        marginCallBar:
+          type: string
+          description: Max borrowable amount limited by the account level
+          example: '1.3'
+        forceLiquidationBar:
+          type: string
+          description: Liquidation Margin Ratio
+          example: '1.1'
+      required:
+      - amount
+      - borrowLimit

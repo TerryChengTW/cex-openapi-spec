@@ -1,0 +1,11 @@
+type: object
+properties:
+  symbol:
+    type: string
+    example: BNBBTC
+  price:
+    type: string
+    example: '0.17160000'
+required:
+- symbol
+- price

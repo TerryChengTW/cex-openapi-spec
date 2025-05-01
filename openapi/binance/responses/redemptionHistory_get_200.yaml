@@ -1,0 +1,54 @@
+description: ETH redemption history
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        rows:
+          type: array
+          items:
+            type: object
+            properties:
+              time:
+                type: integer
+                format: int64
+                example: 1575018510000
+              arrivalTime:
+                type: integer
+                format: int64
+                example: 1575018510000
+              asset:
+                type: string
+                example: BETH
+              amount:
+                type: string
+                example: '21312.23223'
+              status:
+                type: string
+                example: SUCCESS
+                description: PENDING, SUCCESS, FAILED
+              distributeAsset:
+                type: string
+                example: ETH
+              distributeAmount:
+                type: string
+                example: '21338.0699'
+              conversionRatio:
+                type: string
+                example: '1.00121234'
+            required:
+            - time
+            - arrivalTime
+            - asset
+            - amount
+            - status
+            - distributeAsset
+            - distributeAmount
+            - conversionRatio
+        total:
+          type: integer
+          format: int64
+          example: 1
+      required:
+      - rows
+      - total

@@ -1,0 +1,7 @@
+name: type
+in: query
+schema:
+  type: string
+  enum:
+  - ROLL_IN
+  - ROLL_OUT

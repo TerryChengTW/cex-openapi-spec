@@ -1,0 +1,7 @@
+name: amount
+in: query
+required: true
+schema:
+  type: number
+  format: double
+  example: '1.01'

@@ -1,0 +1,6 @@
+name: pageIndex
+in: query
+description: Page number, default is first page, start form 1
+schema:
+  type: integer
+  format: int32

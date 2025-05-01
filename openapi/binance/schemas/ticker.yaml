@@ -1,0 +1,84 @@
+type: object
+properties:
+  symbol:
+    type: string
+    example: BNBBTC
+  priceChange:
+    type: string
+    example: '0.17160000'
+  priceChangePercent:
+    type: string
+    example: '1.060'
+  prevClosePrice:
+    type: string
+    example: '16.35920000'
+  lastPrice:
+    type: string
+    example: '27.84000000'
+  bidPrice:
+    type: string
+    example: '16.34488284'
+  bidQty:
+    type: string
+    example: '16.34488284'
+  askPrice:
+    type: string
+    example: '16.35920000'
+  askQty:
+    type: string
+    example: '25.06000000'
+  openPrice:
+    type: string
+    example: '16.18760000'
+  highPrice:
+    type: string
+    example: '16.55000000'
+  lowPrice:
+    type: string
+    example: '16.16940000'
+  volume:
+    type: string
+    example: '1678279.95000000'
+  quoteVolume:
+    type: string
+    example: '27431289.14792300'
+  openTime:
+    type: integer
+    format: int64
+    example: 1592808788637
+  closeTime:
+    type: integer
+    format: int64
+    example: 1592895188637
+  firstId:
+    type: integer
+    format: int64
+    example: 62683296
+  lastId:
+    type: integer
+    format: int64
+    example: 62739253
+  count:
+    type: integer
+    format: int64
+    example: 55958
+required:
+- symbol
+- priceChange
+- priceChangePercent
+- prevClosePrice
+- lastPrice
+- bidPrice
+- bidQty
+- askPrice
+- askQty
+- openPrice
+- highPrice
+- lowPrice
+- volume
+- quoteVolume
+- openTime
+- closeTime
+- firstId
+- lastId
+- count

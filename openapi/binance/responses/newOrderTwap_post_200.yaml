@@ -1,0 +1,23 @@
+description: twap order response
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        clientAlgoId:
+          type: string
+          example: 65ce1630101a480b85915d7e11fd5078
+        success:
+          type: boolean
+          example: true
+        code:
+          type: integer
+          example: 0
+        msg:
+          type: string
+          example: OK
+      required:
+      - clientAlgoId
+      - success
+      - code
+      - msg

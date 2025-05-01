@@ -1,0 +1,23 @@
+type: object
+properties:
+  symbol:
+    type: string
+    example: BNBBTC
+  bidPrice:
+    type: string
+    example: '16.36240000'
+  bidQty:
+    type: string
+    example: '256.78000000'
+  askPrice:
+    type: string
+    example: '16.36450000'
+  askQty:
+    type: string
+    example: '12.56000000'
+required:
+- symbol
+- bidPrice
+- bidQty
+- askPrice
+- askQty

@@ -1,0 +1,5 @@
+name: origClientOrderId
+in: query
+description: Order id from client
+schema:
+  type: string

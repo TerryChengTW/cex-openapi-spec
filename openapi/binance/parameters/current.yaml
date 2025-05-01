@@ -1,0 +1,7 @@
+name: current
+in: query
+description: Current querying page. Start from 1. Default:1
+schema:
+  type: integer
+  format: int32
+  example: 1

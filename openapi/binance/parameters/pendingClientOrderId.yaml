@@ -1,0 +1,6 @@
+name: pendingClientOrderId
+in: query
+description: Arbitrary unique ID among open orders for the pending order. Automatically
+  generated if not sent.
+schema:
+  type: string

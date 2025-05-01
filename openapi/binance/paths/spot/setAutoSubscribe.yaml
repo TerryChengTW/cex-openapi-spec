@@ -1,0 +1,31 @@
+paths:
+  /sapi/v1/simple-earn/locked/setAutoSubscribe:
+    post:
+      summary: Set Locked Auto Subscribe (USER_DATA)
+      description: 'Weight(IP): 150'
+      tags:
+      - Simple Earn
+      parameters:
+      - name: positionId
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: autoSubscribe
+        in: query
+        required: true
+        description: true or false
+        schema:
+          type: boolean
+      - $ref: ..\..\parameters/recvWindow.yaml
+      - $ref: ..\..\parameters/timestamp.yaml
+      - $ref: ..\..\parameters/signature.yaml
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          $ref: ..\..\responses/setAutoSubscribe_post_200.yaml
+        '400':
+          $ref: ..\..\responses/setAutoSubscribe_post_400.yaml
+        '401':
+          $ref: ..\..\responses/setAutoSubscribe_post_401.yaml
