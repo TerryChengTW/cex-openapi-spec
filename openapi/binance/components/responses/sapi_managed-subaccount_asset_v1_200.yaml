@@ -1,0 +1,33 @@
+description: List of asset details
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          coin:
+            type: string
+            example: INJ
+          name:
+            type: string
+            example: Injective Protocol
+          totalBalance:
+            type: string
+            example: '0'
+          availableBalance:
+            type: string
+            example: '0'
+          inOrder:
+            type: string
+            example: '0'
+          btcValue:
+            type: string
+            example: '0'
+        required:
+        - coin
+        - name
+        - totalBalance
+        - availableBalance
+        - inOrder
+        - btcValue

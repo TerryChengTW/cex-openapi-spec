@@ -1,0 +1,16 @@
+get:
+  summary: Recent Trades List
+  description: 'Get recent trades.
+
+
+    Weight(IP): 10'
+  tags:
+  - Market
+  parameters:
+  - $ref: ../components/parameters/symbol.yaml
+  - $ref: ../components/parameters/limit.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/trades_v3_200.yaml
+    '400':
+      $ref: ../components/responses/trades_v3_400.yaml

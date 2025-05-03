@@ -1,0 +1,39 @@
+description: Sub-account Spot Asset Transfer History
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          from:
+            type: string
+            example: aaa@test.com
+          to:
+            type: string
+            example: bbb@test.com
+          asset:
+            type: string
+            example: BTC
+          qty:
+            type: string
+            example: 10
+          status:
+            type: string
+            example: SUCCESS
+          tranId:
+            type: integer
+            format: int64
+            example: 6489943656
+          time:
+            type: integer
+            format: int64
+            example: 1544433328000
+        required:
+        - from
+        - to
+        - asset
+        - qty
+        - status
+        - tranId
+        - time

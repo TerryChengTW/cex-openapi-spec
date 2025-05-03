@@ -65,634 +65,1089 @@ tags:
   description: Simple Earn Endpoints
 paths:
   /api/v3/ping:
-    $ref: ./paths/spot/ping.yaml#/paths/api/v3/ping
+    $ref: ./paths/ping_v3.yaml
   /api/v3/time:
-    $ref: ./paths/spot/time.yaml#/paths/api/v3/time
+    $ref: ./paths/time_v3.yaml
   /api/v3/exchangeInfo:
-    $ref: ./paths/spot/exchangeInfo.yaml#/paths/api/v3/exchangeInfo
+    $ref: ./paths/exchangeInfo_v3.yaml
   /api/v3/depth:
-    $ref: ./paths/spot/depth.yaml#/paths/api/v3/depth
+    $ref: ./paths/depth_v3.yaml
   /api/v3/trades:
-    $ref: ./paths/spot/trades.yaml#/paths/api/v3/trades
+    $ref: ./paths/trades_v3.yaml
   /api/v3/historicalTrades:
-    $ref: ./paths/spot/historicalTrades.yaml#/paths/api/v3/historicalTrades
+    $ref: ./paths/historicalTrades_v3.yaml
   /api/v3/aggTrades:
-    $ref: ./paths/spot/aggTrades.yaml#/paths/api/v3/aggTrades
+    $ref: ./paths/aggTrades_v3.yaml
   /api/v3/klines:
-    $ref: ./paths/spot/klines.yaml#/paths/api/v3/klines
+    $ref: ./paths/klines_v3.yaml
   /api/v3/uiKlines:
-    $ref: ./paths/spot/uiKlines.yaml#/paths/api/v3/uiKlines
+    $ref: ./paths/uiKlines_v3.yaml
   /api/v3/avgPrice:
-    $ref: ./paths/spot/avgPrice.yaml#/paths/api/v3/avgPrice
+    $ref: ./paths/avgPrice_v3.yaml
   /api/v3/ticker/24hr:
-    $ref: ./paths/spot/24hr.yaml#/paths/api/v3/ticker/24hr
+    $ref: ./paths/ticker_24hr_v3.yaml
   /api/v3/ticker/tradingDay:
-    $ref: ./paths/spot/tradingDay.yaml#/paths/api/v3/ticker/tradingDay
+    $ref: ./paths/ticker_tradingDay_v3.yaml
   /api/v3/ticker/price:
-    $ref: ./paths/spot/price.yaml#/paths/api/v3/ticker/price
+    $ref: ./paths/ticker_price_v3.yaml
   /api/v3/ticker/bookTicker:
-    $ref: ./paths/spot/bookTicker.yaml#/paths/api/v3/ticker/bookTicker
+    $ref: ./paths/ticker_bookTicker_v3.yaml
   /api/v3/ticker:
-    $ref: ./paths/spot/ticker.yaml#/paths/api/v3/ticker
+    $ref: ./paths/ticker_v3.yaml
   /api/v3/order/test:
-    $ref: ./paths/spot/test.yaml#/paths/api/v3/order/test
+    $ref: ./paths/order_test_v3.yaml
   /api/v3/order:
-    $ref: ./paths/spot/order.yaml#/paths/api/v3/order
+    $ref: ./paths/order_v3.yaml
   /api/v3/order/cancelReplace:
-    $ref: ./paths/spot/cancelReplace.yaml#/paths/api/v3/order/cancelReplace
+    $ref: ./paths/order_cancelReplace_v3.yaml
   /api/v3/openOrders:
-    $ref: ./paths/spot/openOrders.yaml#/paths/api/v3/openOrders
+    $ref: ./paths/openOrders_v3.yaml
   /api/v3/allOrders:
-    $ref: ./paths/spot/allOrders.yaml#/paths/api/v3/allOrders
+    $ref: ./paths/allOrders_v3.yaml
   /api/v3/orderList/oco:
-    $ref: ./paths/spot/oco.yaml#/paths/api/v3/orderList/oco
+    $ref: ./paths/orderList_oco_v3.yaml
   /api/v3/orderList/oto:
-    $ref: ./paths/spot/oto.yaml#/paths/api/v3/orderList/oto
+    $ref: ./paths/orderList_oto_v3.yaml
   /api/v3/orderList/otoco:
-    $ref: ./paths/spot/otoco.yaml#/paths/api/v3/orderList/otoco
+    $ref: ./paths/orderList_otoco_v3.yaml
   /api/v3/orderList:
-    $ref: ./paths/spot/orderList.yaml#/paths/api/v3/orderList
+    $ref: ./paths/orderList_v3.yaml
   /api/v3/allOrderList:
-    $ref: ./paths/spot/allOrderList.yaml#/paths/api/v3/allOrderList
+    $ref: ./paths/allOrderList_v3.yaml
   /api/v3/openOrderList:
-    $ref: ./paths/spot/openOrderList.yaml#/paths/api/v3/openOrderList
+    $ref: ./paths/openOrderList_v3.yaml
   /api/v3/sor/order:
-    $ref: ./paths/spot/order.yaml#/paths/api/v3/sor/order
+    $ref: ./paths/sor_order_v3.yaml
   /api/v3/sor/order/test:
-    $ref: ./paths/spot/test.yaml#/paths/api/v3/sor/order/test
+    $ref: ./paths/sor_order_test_v3.yaml
   /api/v3/account:
-    $ref: ./paths/spot/account.yaml#/paths/api/v3/account
+    $ref: ./paths/account_v3.yaml
   /api/v3/myTrades:
-    $ref: ./paths/spot/myTrades.yaml#/paths/api/v3/myTrades
+    $ref: ./paths/myTrades_v3.yaml
   /api/v3/rateLimit/order:
-    $ref: ./paths/spot/order.yaml#/paths/api/v3/rateLimit/order
+    $ref: ./paths/rateLimit_order_v3.yaml
   /api/v3/myPreventedMatches:
-    $ref: ./paths/spot/myPreventedMatches.yaml#/paths/api/v3/myPreventedMatches
+    $ref: ./paths/myPreventedMatches_v3.yaml
   /api/v3/myAllocations:
-    $ref: ./paths/spot/myAllocations.yaml#/paths/api/v3/myAllocations
+    $ref: ./paths/myAllocations_v3.yaml
   /api/v3/account/commission:
-    $ref: ./paths/spot/commission.yaml#/paths/api/v3/account/commission
+    $ref: ./paths/account_commission_v3.yaml
   /sapi/v1/margin/borrow-repay:
-    $ref: ./paths/spot/borrow-repay.yaml#/paths/sapi/v1/margin/borrow-repay
+    $ref: ./paths/sapi_margin_borrow-repay_v1.yaml
   /sapi/v1/margin/transfer:
-    $ref: ./paths/spot/transfer.yaml#/paths/sapi/v1/margin/transfer
+    $ref: ./paths/sapi_margin_transfer_v1.yaml
   /sapi/v1/margin/allAssets:
-    $ref: ./paths/spot/allAssets.yaml#/paths/sapi/v1/margin/allAssets
+    $ref: ./paths/sapi_margin_allAssets_v1.yaml
   /sapi/v1/margin/allPairs:
-    $ref: ./paths/spot/allPairs.yaml#/paths/sapi/v1/margin/allPairs
+    $ref: ./paths/sapi_margin_allPairs_v1.yaml
   /sapi/v1/margin/priceIndex:
-    $ref: ./paths/spot/priceIndex.yaml#/paths/sapi/v1/margin/priceIndex
+    $ref: ./paths/sapi_margin_priceIndex_v1.yaml
   /sapi/v1/margin/order:
-    $ref: ./paths/spot/order.yaml#/paths/sapi/v1/margin/order
+    $ref: ./paths/sapi_margin_order_v1.yaml
   /sapi/v1/margin/interestHistory:
-    $ref: ./paths/spot/interestHistory.yaml#/paths/sapi/v1/margin/interestHistory
+    $ref: ./paths/sapi_margin_interestHistory_v1.yaml
   /sapi/v1/margin/forceLiquidationRec:
-    $ref: ./paths/spot/forceLiquidationRec.yaml#/paths/sapi/v1/margin/forceLiquidationRec
+    $ref: ./paths/sapi_margin_forceLiquidationRec_v1.yaml
   /sapi/v1/margin/account:
-    $ref: ./paths/spot/account.yaml#/paths/sapi/v1/margin/account
+    $ref: ./paths/sapi_margin_account_v1.yaml
   /sapi/v1/margin/openOrders:
-    $ref: ./paths/spot/openOrders.yaml#/paths/sapi/v1/margin/openOrders
+    $ref: ./paths/sapi_margin_openOrders_v1.yaml
   /sapi/v1/margin/allOrders:
-    $ref: ./paths/spot/allOrders.yaml#/paths/sapi/v1/margin/allOrders
+    $ref: ./paths/sapi_margin_allOrders_v1.yaml
   /sapi/v1/margin/order/oco:
-    $ref: ./paths/spot/oco.yaml#/paths/sapi/v1/margin/order/oco
+    $ref: ./paths/sapi_margin_order_oco_v1.yaml
   /sapi/v1/margin/orderList:
-    $ref: ./paths/spot/orderList.yaml#/paths/sapi/v1/margin/orderList
+    $ref: ./paths/sapi_margin_orderList_v1.yaml
   /sapi/v1/margin/allOrderList:
-    $ref: ./paths/spot/allOrderList.yaml#/paths/sapi/v1/margin/allOrderList
+    $ref: ./paths/sapi_margin_allOrderList_v1.yaml
   /sapi/v1/margin/openOrderList:
-    $ref: ./paths/spot/openOrderList.yaml#/paths/sapi/v1/margin/openOrderList
+    $ref: ./paths/sapi_margin_openOrderList_v1.yaml
   /sapi/v1/margin/myTrades:
-    $ref: ./paths/spot/myTrades.yaml#/paths/sapi/v1/margin/myTrades
+    $ref: ./paths/sapi_margin_myTrades_v1.yaml
   /sapi/v1/margin/maxBorrowable:
-    $ref: ./paths/spot/maxBorrowable.yaml#/paths/sapi/v1/margin/maxBorrowable
+    $ref: ./paths/sapi_margin_maxBorrowable_v1.yaml
   /sapi/v1/margin/maxTransferable:
-    $ref: ./paths/spot/maxTransferable.yaml#/paths/sapi/v1/margin/maxTransferable
+    $ref: ./paths/sapi_margin_maxTransferable_v1.yaml
   /sapi/v1/margin/tradeCoeff:
-    $ref: ./paths/spot/tradeCoeff.yaml#/paths/sapi/v1/margin/tradeCoeff
+    $ref: ./paths/sapi_margin_tradeCoeff_v1.yaml
   /sapi/v1/margin/isolated/account:
-    $ref: ./paths/spot/account.yaml#/paths/sapi/v1/margin/isolated/account
+    $ref: ./paths/sapi_margin_isolated_account_v1.yaml
   /sapi/v1/margin/isolated/accountLimit:
-    $ref: ./paths/spot/accountLimit.yaml#/paths/sapi/v1/margin/isolated/accountLimit
+    $ref: ./paths/sapi_margin_isolated_accountLimit_v1.yaml
   /sapi/v1/margin/isolated/allPairs:
-    $ref: ./paths/spot/allPairs.yaml#/paths/sapi/v1/margin/isolated/allPairs
+    $ref: ./paths/sapi_margin_isolated_allPairs_v1.yaml
   /sapi/v1/bnbBurn:
-    $ref: ./paths/spot/bnbBurn.yaml#/paths/sapi/v1/bnbBurn
+    $ref: ./paths/sapi_bnbBurn_v1.yaml
   /sapi/v1/margin/interestRateHistory:
-    $ref: ./paths/spot/interestRateHistory.yaml#/paths/sapi/v1/margin/interestRateHistory
+    $ref: ./paths/sapi_margin_interestRateHistory_v1.yaml
   /sapi/v1/margin/crossMarginData:
-    $ref: ./paths/spot/crossMarginData.yaml#/paths/sapi/v1/margin/crossMarginData
+    $ref: ./paths/sapi_margin_crossMarginData_v1.yaml
   /sapi/v1/margin/isolatedMarginData:
-    $ref: ./paths/spot/isolatedMarginData.yaml#/paths/sapi/v1/margin/isolatedMarginData
+    $ref: ./paths/sapi_margin_isolatedMarginData_v1.yaml
   /sapi/v1/margin/isolatedMarginTier:
-    $ref: ./paths/spot/isolatedMarginTier.yaml#/paths/sapi/v1/margin/isolatedMarginTier
+    $ref: ./paths/sapi_margin_isolatedMarginTier_v1.yaml
   /sapi/v1/margin/rateLimit/order:
-    $ref: ./paths/spot/order.yaml#/paths/sapi/v1/margin/rateLimit/order
+    $ref: ./paths/sapi_margin_rateLimit_order_v1.yaml
   /sapi/v1/margin/crossMarginCollateralRatio:
-    $ref: ./paths/spot/crossMarginCollateralRatio.yaml#/paths/sapi/v1/margin/crossMarginCollateralRatio
+    $ref: ./paths/sapi_margin_crossMarginCollateralRatio_v1.yaml
   /sapi/v1/margin/exchange-small-liability:
-    $ref: ./paths/spot/exchange-small-liability.yaml#/paths/sapi/v1/margin/exchange-small-liability
+    $ref: ./paths/sapi_margin_exchange-small-liability_v1.yaml
   /sapi/v1/margin/exchange-small-liability-history:
-    $ref: ./paths/spot/exchange-small-liability-history.yaml#/paths/sapi/v1/margin/exchange-small-liability-history
+    $ref: ./paths/sapi_margin_exchange-small-liability-history_v1.yaml
   /sapi/v1/margin/next-hourly-interest-rate:
-    $ref: ./paths/spot/next-hourly-interest-rate.yaml#/paths/sapi/v1/margin/next-hourly-interest-rate
+    $ref: ./paths/sapi_margin_next-hourly-interest-rate_v1.yaml
   /sapi/v1/margin/capital-flow:
-    $ref: ./paths/spot/capital-flow.yaml#/paths/sapi/v1/margin/capital-flow
+    $ref: ./paths/sapi_margin_capital-flow_v1.yaml
   /sapi/v1/margin/delist-schedule:
-    $ref: ./paths/spot/delist-schedule.yaml#/paths/sapi/v1/margin/delist-schedule
+    $ref: ./paths/sapi_margin_delist-schedule_v1.yaml
   /sapi/v1/margin/available-inventory:
-    $ref: ./paths/spot/available-inventory.yaml#/paths/sapi/v1/margin/available-inventory
+    $ref: ./paths/sapi_margin_available-inventory_v1.yaml
   /sapi/v1/margin/manual-liquidation:
-    $ref: ./paths/spot/manual-liquidation.yaml#/paths/sapi/v1/margin/manual-liquidation
+    $ref: ./paths/sapi_margin_manual-liquidation_v1.yaml
   /sapi/v1/margin/order/oto:
-    $ref: ./paths/spot/oto.yaml#/paths/sapi/v1/margin/order/oto
+    $ref: ./paths/sapi_margin_order_oto_v1.yaml
   /sapi/v1/margin/order/otoco:
-    $ref: ./paths/spot/otoco.yaml#/paths/sapi/v1/margin/order/otoco
+    $ref: ./paths/sapi_margin_order_otoco_v1.yaml
   /sapi/v1/margin/max-leverage:
-    $ref: ./paths/spot/max-leverage.yaml#/paths/sapi/v1/margin/max-leverage
+    $ref: ./paths/sapi_margin_max-leverage_v1.yaml
   /sapi/v1/margin/leverageBracket:
-    $ref: ./paths/spot/leverageBracket.yaml#/paths/sapi/v1/margin/leverageBracket
+    $ref: ./paths/sapi_margin_leverageBracket_v1.yaml
   /sapi/v1/system/status:
-    $ref: ./paths/spot/status.yaml#/paths/sapi/v1/system/status
+    $ref: ./paths/sapi_system_status_v1.yaml
   /sapi/v1/capital/config/getall:
-    $ref: ./paths/spot/getall.yaml#/paths/sapi/v1/capital/config/getall
+    $ref: ./paths/sapi_capital_config_getall_v1.yaml
   /sapi/v1/accountSnapshot:
-    $ref: ./paths/spot/accountSnapshot.yaml#/paths/sapi/v1/accountSnapshot
+    $ref: ./paths/sapi_accountSnapshot_v1.yaml
   /sapi/v1/account/disableFastWithdrawSwitch:
-    $ref: ./paths/spot/disableFastWithdrawSwitch.yaml#/paths/sapi/v1/account/disableFastWithdrawSwitch
+    $ref: ./paths/sapi_account_disableFastWithdrawSwitch_v1.yaml
   /sapi/v1/account/enableFastWithdrawSwitch:
-    $ref: ./paths/spot/enableFastWithdrawSwitch.yaml#/paths/sapi/v1/account/enableFastWithdrawSwitch
+    $ref: ./paths/sapi_account_enableFastWithdrawSwitch_v1.yaml
   /sapi/v1/capital/withdraw/apply:
-    $ref: ./paths/spot/apply.yaml#/paths/sapi/v1/capital/withdraw/apply
+    $ref: ./paths/sapi_capital_withdraw_apply_v1.yaml
   /sapi/v1/capital/deposit/hisrec:
-    $ref: ./paths/spot/hisrec.yaml#/paths/sapi/v1/capital/deposit/hisrec
+    $ref: ./paths/sapi_capital_deposit_hisrec_v1.yaml
   /sapi/v1/capital/withdraw/history:
-    $ref: ./paths/spot/history.yaml#/paths/sapi/v1/capital/withdraw/history
+    $ref: ./paths/sapi_capital_withdraw_history_v1.yaml
   /sapi/v1/capital/deposit/address:
-    $ref: ./paths/spot/address.yaml#/paths/sapi/v1/capital/deposit/address
+    $ref: ./paths/sapi_capital_deposit_address_v1.yaml
   /sapi/v1/account/status:
-    $ref: ./paths/spot/status.yaml#/paths/sapi/v1/account/status
+    $ref: ./paths/sapi_account_status_v1.yaml
   /sapi/v1/account/apiTradingStatus:
-    $ref: ./paths/spot/apiTradingStatus.yaml#/paths/sapi/v1/account/apiTradingStatus
+    $ref: ./paths/sapi_account_apiTradingStatus_v1.yaml
   /sapi/v1/asset/dribblet:
-    $ref: ./paths/spot/dribblet.yaml#/paths/sapi/v1/asset/dribblet
+    $ref: ./paths/sapi_asset_dribblet_v1.yaml
   /sapi/v1/asset/dust-btc:
-    $ref: ./paths/spot/dust-btc.yaml#/paths/sapi/v1/asset/dust-btc
+    $ref: ./paths/sapi_asset_dust-btc_v1.yaml
   /sapi/v1/asset/dust:
-    $ref: ./paths/spot/dust.yaml#/paths/sapi/v1/asset/dust
+    $ref: ./paths/sapi_asset_dust_v1.yaml
   /sapi/v1/asset/assetDividend:
-    $ref: ./paths/spot/assetDividend.yaml#/paths/sapi/v1/asset/assetDividend
+    $ref: ./paths/sapi_asset_assetDividend_v1.yaml
   /sapi/v1/asset/assetDetail:
-    $ref: ./paths/spot/assetDetail.yaml#/paths/sapi/v1/asset/assetDetail
+    $ref: ./paths/sapi_asset_assetDetail_v1.yaml
   /sapi/v1/asset/tradeFee:
-    $ref: ./paths/spot/tradeFee.yaml#/paths/sapi/v1/asset/tradeFee
+    $ref: ./paths/sapi_asset_tradeFee_v1.yaml
   /sapi/v1/asset/transfer:
-    $ref: ./paths/spot/transfer.yaml#/paths/sapi/v1/asset/transfer
+    $ref: ./paths/sapi_asset_transfer_v1.yaml
   /sapi/v1/asset/get-funding-asset:
-    $ref: ./paths/spot/get-funding-asset.yaml#/paths/sapi/v1/asset/get-funding-asset
+    $ref: ./paths/sapi_asset_get-funding-asset_v1.yaml
   /sapi/v3/asset/getUserAsset:
-    $ref: ./paths/spot/getUserAsset.yaml#/paths/sapi/v3/asset/getUserAsset
+    $ref: ./paths/sapi_asset_getUserAsset_v3.yaml
   /sapi/v1/asset/convert-transfer:
-    $ref: ./paths/spot/convert-transfer.yaml#/paths/sapi/v1/asset/convert-transfer
+    $ref: ./paths/sapi_asset_convert-transfer_v1.yaml
   /sapi/v1/asset/convert-transfer/queryByPage:
-    $ref: ./paths/spot/queryByPage.yaml#/paths/sapi/v1/asset/convert-transfer/queryByPage
+    $ref: ./paths/sapi_asset_convert-transfer_queryByPage_v1.yaml
   /sapi/v1/asset/ledger-transfer/cloud-mining/queryByPage:
-    $ref: ./paths/spot/queryByPage.yaml#/paths/sapi/v1/asset/ledger-transfer/cloud-mining/queryByPage
+    $ref: ./paths/sapi_asset_ledger-transfer_cloud-mining_queryByPage_v1.yaml
   /sapi/v1/account/apiRestrictions:
-    $ref: ./paths/spot/apiRestrictions.yaml#/paths/sapi/v1/account/apiRestrictions
+    $ref: ./paths/sapi_account_apiRestrictions_v1.yaml
   /sapi/v1/capital/contract/convertible-coins:
-    $ref: ./paths/spot/convertible-coins.yaml#/paths/sapi/v1/capital/contract/convertible-coins
+    $ref: ./paths/sapi_capital_contract_convertible-coins_v1.yaml
   /sapi/v1/sub-account/virtualSubAccount:
-    $ref: ./paths/spot/virtualSubAccount.yaml#/paths/sapi/v1/sub-account/virtualSubAccount
+    $ref: ./paths/sapi_sub-account_virtualSubAccount_v1.yaml
   /sapi/v1/sub-account/list:
-    $ref: ./paths/spot/list.yaml#/paths/sapi/v1/sub-account/list
+    $ref: ./paths/sapi_sub-account_list_v1.yaml
   /sapi/v1/sub-account/sub/transfer/history:
-    $ref: ./paths/spot/history.yaml#/paths/sapi/v1/sub-account/sub/transfer/history
+    $ref: ./paths/sapi_sub-account_sub_transfer_history_v1.yaml
   /sapi/v1/sub-account/futures/internalTransfer:
-    $ref: ./paths/spot/internalTransfer.yaml#/paths/sapi/v1/sub-account/futures/internalTransfer
+    $ref: ./paths/sapi_sub-account_futures_internalTransfer_v1.yaml
   /sapi/v3/sub-account/assets:
-    $ref: ./paths/spot/assets.yaml#/paths/sapi/v3/sub-account/assets
+    $ref: ./paths/sapi_sub-account_assets_v3.yaml
   /sapi/v1/sub-account/spotSummary:
-    $ref: ./paths/spot/spotSummary.yaml#/paths/sapi/v1/sub-account/spotSummary
+    $ref: ./paths/sapi_sub-account_spotSummary_v1.yaml
   /sapi/v1/capital/deposit/subAddress:
-    $ref: ./paths/spot/subAddress.yaml#/paths/sapi/v1/capital/deposit/subAddress
+    $ref: ./paths/sapi_capital_deposit_subAddress_v1.yaml
   /sapi/v1/capital/deposit/subHisrec:
-    $ref: ./paths/spot/subHisrec.yaml#/paths/sapi/v1/capital/deposit/subHisrec
+    $ref: ./paths/sapi_capital_deposit_subHisrec_v1.yaml
   /sapi/v1/capital/deposit/credit-apply:
-    $ref: ./paths/spot/credit-apply.yaml#/paths/sapi/v1/capital/deposit/credit-apply
+    $ref: ./paths/sapi_capital_deposit_credit-apply_v1.yaml
   /sapi/v1/asset/wallet/balance:
-    $ref: ./paths/spot/balance.yaml#/paths/sapi/v1/asset/wallet/balance
+    $ref: ./paths/sapi_asset_wallet_balance_v1.yaml
   /sapi/v1/asset/custody/transfer-history:
-    $ref: ./paths/spot/transfer-history.yaml#/paths/sapi/v1/asset/custody/transfer-history
+    $ref: ./paths/sapi_asset_custody_transfer-history_v1.yaml
   /sapi/v1/capital/deposit/address/list:
-    $ref: ./paths/spot/list.yaml#/paths/sapi/v1/capital/deposit/address/list
+    $ref: ./paths/sapi_capital_deposit_address_list_v1.yaml
   /sapi/v1/spot/delist-schedule:
-    $ref: ./paths/spot/delist-schedule.yaml#/paths/sapi/v1/spot/delist-schedule
+    $ref: ./paths/sapi_spot_delist-schedule_v1.yaml
   /sapi/v1/capital/withdraw/address/list:
-    $ref: ./paths/spot/list.yaml#/paths/sapi/v1/capital/withdraw/address/list
+    $ref: ./paths/sapi_capital_withdraw_address_list_v1.yaml
   /sapi/v1/account/info:
-    $ref: ./paths/spot/info.yaml#/paths/sapi/v1/account/info
+    $ref: ./paths/sapi_account_info_v1.yaml
   /sapi/v1/sub-account/status:
-    $ref: ./paths/spot/status.yaml#/paths/sapi/v1/sub-account/status
+    $ref: ./paths/sapi_sub-account_status_v1.yaml
   /sapi/v1/sub-account/margin/enable:
-    $ref: ./paths/spot/enable.yaml#/paths/sapi/v1/sub-account/margin/enable
+    $ref: ./paths/sapi_sub-account_margin_enable_v1.yaml
   /sapi/v1/sub-account/margin/account:
-    $ref: ./paths/spot/account.yaml#/paths/sapi/v1/sub-account/margin/account
+    $ref: ./paths/sapi_sub-account_margin_account_v1.yaml
   /sapi/v1/sub-account/margin/accountSummary:
-    $ref: ./paths/spot/accountSummary.yaml#/paths/sapi/v1/sub-account/margin/accountSummary
+    $ref: ./paths/sapi_sub-account_margin_accountSummary_v1.yaml
   /sapi/v1/sub-account/futures/enable:
-    $ref: ./paths/spot/enable.yaml#/paths/sapi/v1/sub-account/futures/enable
+    $ref: ./paths/sapi_sub-account_futures_enable_v1.yaml
   /sapi/v1/sub-account/futures/account:
-    $ref: ./paths/spot/account.yaml#/paths/sapi/v1/sub-account/futures/account
+    $ref: ./paths/sapi_sub-account_futures_account_v1.yaml
   /sapi/v1/sub-account/futures/accountSummary:
-    $ref: ./paths/spot/accountSummary.yaml#/paths/sapi/v1/sub-account/futures/accountSummary
+    $ref: ./paths/sapi_sub-account_futures_accountSummary_v1.yaml
   /sapi/v1/sub-account/futures/positionRisk:
-    $ref: ./paths/spot/positionRisk.yaml#/paths/sapi/v1/sub-account/futures/positionRisk
+    $ref: ./paths/sapi_sub-account_futures_positionRisk_v1.yaml
   /sapi/v1/sub-account/futures/transfer:
-    $ref: ./paths/spot/transfer.yaml#/paths/sapi/v1/sub-account/futures/transfer
+    $ref: ./paths/sapi_sub-account_futures_transfer_v1.yaml
   /sapi/v1/sub-account/margin/transfer:
-    $ref: ./paths/spot/transfer.yaml#/paths/sapi/v1/sub-account/margin/transfer
+    $ref: ./paths/sapi_sub-account_margin_transfer_v1.yaml
   /sapi/v1/sub-account/transfer/subToSub:
-    $ref: ./paths/spot/subToSub.yaml#/paths/sapi/v1/sub-account/transfer/subToSub
+    $ref: ./paths/sapi_sub-account_transfer_subToSub_v1.yaml
   /sapi/v1/sub-account/transfer/subToMaster:
-    $ref: ./paths/spot/subToMaster.yaml#/paths/sapi/v1/sub-account/transfer/subToMaster
+    $ref: ./paths/sapi_sub-account_transfer_subToMaster_v1.yaml
   /sapi/v1/sub-account/transfer/subUserHistory:
-    $ref: ./paths/spot/subUserHistory.yaml#/paths/sapi/v1/sub-account/transfer/subUserHistory
+    $ref: ./paths/sapi_sub-account_transfer_subUserHistory_v1.yaml
   /sapi/v1/sub-account/universalTransfer:
-    $ref: ./paths/spot/universalTransfer.yaml#/paths/sapi/v1/sub-account/universalTransfer
+    $ref: ./paths/sapi_sub-account_universalTransfer_v1.yaml
   /sapi/v2/sub-account/futures/account:
-    $ref: ./paths/spot/account.yaml#/paths/sapi/v2/sub-account/futures/account
+    $ref: ./paths/sapi_sub-account_futures_account_v2.yaml
   /sapi/v2/sub-account/futures/accountSummary:
-    $ref: ./paths/spot/accountSummary.yaml#/paths/sapi/v2/sub-account/futures/accountSummary
+    $ref: ./paths/sapi_sub-account_futures_accountSummary_v2.yaml
   /sapi/v2/sub-account/futures/positionRisk:
-    $ref: ./paths/spot/positionRisk.yaml#/paths/sapi/v2/sub-account/futures/positionRisk
+    $ref: ./paths/sapi_sub-account_futures_positionRisk_v2.yaml
   /sapi/v1/sub-account/blvt/enable:
-    $ref: ./paths/spot/enable.yaml#/paths/sapi/v1/sub-account/blvt/enable
+    $ref: ./paths/sapi_sub-account_blvt_enable_v1.yaml
   /sapi/v1/managed-subaccount/deposit:
-    $ref: ./paths/spot/deposit.yaml#/paths/sapi/v1/managed-subaccount/deposit
+    $ref: ./paths/sapi_managed-subaccount_deposit_v1.yaml
   /sapi/v1/managed-subaccount/asset:
-    $ref: ./paths/spot/asset.yaml#/paths/sapi/v1/managed-subaccount/asset
+    $ref: ./paths/sapi_managed-subaccount_asset_v1.yaml
   /sapi/v1/managed-subaccount/withdraw:
-    $ref: ./paths/spot/withdraw.yaml#/paths/sapi/v1/managed-subaccount/withdraw
+    $ref: ./paths/sapi_managed-subaccount_withdraw_v1.yaml
   /sapi/v1/managed-subaccount/accountSnapshot:
-    $ref: ./paths/spot/accountSnapshot.yaml#/paths/sapi/v1/managed-subaccount/accountSnapshot
+    $ref: ./paths/sapi_managed-subaccount_accountSnapshot_v1.yaml
   /sapi/v1/managed-subaccount/queryTransLogForInvestor:
-    $ref: ./paths/spot/queryTransLogForInvestor.yaml#/paths/sapi/v1/managed-subaccount/queryTransLogForInvestor
+    $ref: ./paths/sapi_managed-subaccount_queryTransLogForInvestor_v1.yaml
   /sapi/v1/managed-subaccount/queryTransLogForTradeParent:
-    $ref: ./paths/spot/queryTransLogForTradeParent.yaml#/paths/sapi/v1/managed-subaccount/queryTransLogForTradeParent
+    $ref: ./paths/sapi_managed-subaccount_queryTransLogForTradeParent_v1.yaml
   /sapi/v1/managed-subaccount/fetch-future-asset:
-    $ref: ./paths/spot/fetch-future-asset.yaml#/paths/sapi/v1/managed-subaccount/fetch-future-asset
+    $ref: ./paths/sapi_managed-subaccount_fetch-future-asset_v1.yaml
   /sapi/v1/managed-subaccount/marginAsset:
-    $ref: ./paths/spot/marginAsset.yaml#/paths/sapi/v1/managed-subaccount/marginAsset
+    $ref: ./paths/sapi_managed-subaccount_marginAsset_v1.yaml
   /sapi/v1/managed-subaccount/info:
-    $ref: ./paths/spot/info.yaml#/paths/sapi/v1/managed-subaccount/info
+    $ref: ./paths/sapi_managed-subaccount_info_v1.yaml
   /sapi/v1/managed-subaccount/deposit/address:
-    $ref: ./paths/spot/address.yaml#/paths/sapi/v1/managed-subaccount/deposit/address
+    $ref: ./paths/sapi_managed-subaccount_deposit_address_v1.yaml
   /sapi/v1/managed-subaccount/query-trans-log:
-    $ref: ./paths/spot/query-trans-log.yaml#/paths/sapi/v1/managed-subaccount/query-trans-log
+    $ref: ./paths/sapi_managed-subaccount_query-trans-log_v1.yaml
   /sapi/v1/sub-account/subAccountApi/ipRestriction:
-    $ref: ./paths/spot/ipRestriction.yaml#/paths/sapi/v1/sub-account/subAccountApi/ipRestriction
+    $ref: ./paths/sapi_sub-account_subAccountApi_ipRestriction_v1.yaml
   /sapi/v1/sub-account/subAccountApi/ipRestriction/ipList:
-    $ref: ./paths/spot/ipList.yaml#/paths/sapi/v1/sub-account/subAccountApi/ipRestriction/ipList
+    $ref: ./paths/sapi_sub-account_subAccountApi_ipRestriction_ipList_v1.yaml
   /sapi/v1/sub-account/transaction-statistics:
-    $ref: ./paths/spot/transaction-statistics.yaml#/paths/sapi/v1/sub-account/transaction-statistics
+    $ref: ./paths/sapi_sub-account_transaction-statistics_v1.yaml
   /sapi/v1/sub-account/eoptions/enable:
-    $ref: ./paths/spot/enable.yaml#/paths/sapi/v1/sub-account/eoptions/enable
+    $ref: ./paths/sapi_sub-account_eoptions_enable_v1.yaml
   /sapi/v2/sub-account/subAccountApi/ipRestriction:
-    $ref: ./paths/spot/ipRestriction.yaml#/paths/sapi/v2/sub-account/subAccountApi/ipRestriction
+    $ref: ./paths/sapi_sub-account_subAccountApi_ipRestriction_v2.yaml
   /sapi/v4/sub-account/assets:
-    $ref: ./paths/spot/assets.yaml#/paths/sapi/v4/sub-account/assets
+    $ref: ./paths/sapi_sub-account_assets_v4.yaml
   /api/v3/userDataStream:
-    $ref: ./paths/spot/userDataStream.yaml#/paths/api/v3/userDataStream
+    $ref: ./paths/userDataStream_v3.yaml
   /sapi/v1/userDataStream:
-    $ref: ./paths/spot/userDataStream.yaml#/paths/sapi/v1/userDataStream
+    $ref: ./paths/sapi_userDataStream_v1.yaml
   /sapi/v1/userDataStream/isolated:
-    $ref: ./paths/spot/isolated.yaml#/paths/sapi/v1/userDataStream/isolated
+    $ref: ./paths/sapi_userDataStream_isolated_v1.yaml
   /sapi/v1/fiat/orders:
-    $ref: ./paths/spot/orders.yaml#/paths/sapi/v1/fiat/orders
+    $ref: ./paths/sapi_fiat_orders_v1.yaml
   /sapi/v1/fiat/payments:
-    $ref: ./paths/spot/payments.yaml#/paths/sapi/v1/fiat/payments
+    $ref: ./paths/sapi_fiat_payments_v1.yaml
   /sapi/v1/lending/project/list:
-    $ref: ./paths/spot/list.yaml#/paths/sapi/v1/lending/project/list
+    $ref: ./paths/sapi_lending_project_list_v1.yaml
   /sapi/v1/lending/customizedFixed/purchase:
-    $ref: ./paths/spot/purchase.yaml#/paths/sapi/v1/lending/customizedFixed/purchase
+    $ref: ./paths/sapi_lending_customizedFixed_purchase_v1.yaml
   /sapi/v1/lending/project/position/list:
-    $ref: ./paths/spot/list.yaml#/paths/sapi/v1/lending/project/position/list
+    $ref: ./paths/sapi_lending_project_position_list_v1.yaml
   /sapi/v1/lending/positionChanged:
-    $ref: ./paths/spot/positionChanged.yaml#/paths/sapi/v1/lending/positionChanged
+    $ref: ./paths/sapi_lending_positionChanged_v1.yaml
   /sapi/v1/mining/pub/algoList:
-    $ref: ./paths/spot/algoList.yaml#/paths/sapi/v1/mining/pub/algoList
+    $ref: ./paths/sapi_mining_pub_algoList_v1.yaml
   /sapi/v1/mining/pub/coinList:
-    $ref: ./paths/spot/coinList.yaml#/paths/sapi/v1/mining/pub/coinList
+    $ref: ./paths/sapi_mining_pub_coinList_v1.yaml
   /sapi/v1/mining/worker/detail:
-    $ref: ./paths/spot/detail.yaml#/paths/sapi/v1/mining/worker/detail
+    $ref: ./paths/sapi_mining_worker_detail_v1.yaml
   /sapi/v1/mining/worker/list:
-    $ref: ./paths/spot/list.yaml#/paths/sapi/v1/mining/worker/list
+    $ref: ./paths/sapi_mining_worker_list_v1.yaml
   /sapi/v1/mining/payment/list:
-    $ref: ./paths/spot/list.yaml#/paths/sapi/v1/mining/payment/list
+    $ref: ./paths/sapi_mining_payment_list_v1.yaml
   /sapi/v1/mining/payment/other:
-    $ref: ./paths/spot/other.yaml#/paths/sapi/v1/mining/payment/other
+    $ref: ./paths/sapi_mining_payment_other_v1.yaml
   /sapi/v1/mining/hash-transfer/config/details/list:
-    $ref: ./paths/spot/list.yaml#/paths/sapi/v1/mining/hash-transfer/config/details/list
+    $ref: ./paths/sapi_mining_hash-transfer_config_details_list_v1.yaml
   /sapi/v1/mining/hash-transfer/profit/details:
-    $ref: ./paths/spot/details.yaml#/paths/sapi/v1/mining/hash-transfer/profit/details
+    $ref: ./paths/sapi_mining_hash-transfer_profit_details_v1.yaml
   /sapi/v1/mining/hash-transfer/config:
-    $ref: ./paths/spot/config.yaml#/paths/sapi/v1/mining/hash-transfer/config
+    $ref: ./paths/sapi_mining_hash-transfer_config_v1.yaml
   /sapi/v1/mining/hash-transfer/config/cancel:
-    $ref: ./paths/spot/cancel.yaml#/paths/sapi/v1/mining/hash-transfer/config/cancel
+    $ref: ./paths/sapi_mining_hash-transfer_config_cancel_v1.yaml
   /sapi/v1/mining/statistics/user/status:
-    $ref: ./paths/spot/status.yaml#/paths/sapi/v1/mining/statistics/user/status
+    $ref: ./paths/sapi_mining_statistics_user_status_v1.yaml
   /sapi/v1/mining/statistics/user/list:
-    $ref: ./paths/spot/list.yaml#/paths/sapi/v1/mining/statistics/user/list
+    $ref: ./paths/sapi_mining_statistics_user_list_v1.yaml
   /sapi/v1/mining/payment/uid:
-    $ref: ./paths/spot/uid.yaml#/paths/sapi/v1/mining/payment/uid
+    $ref: ./paths/sapi_mining_payment_uid_v1.yaml
   /sapi/v1/futures/transfer:
-    $ref: ./paths/spot/transfer.yaml#/paths/sapi/v1/futures/transfer
+    $ref: ./paths/sapi_futures_transfer_v1.yaml
   /sapi/v1/futures/histDataLink:
-    $ref: ./paths/spot/histDataLink.yaml#/paths/sapi/v1/futures/histDataLink
+    $ref: ./paths/sapi_futures_histDataLink_v1.yaml
   /sapi/v1/algo/futures/newOrderVp:
-    $ref: ./paths/spot/newOrderVp.yaml#/paths/sapi/v1/algo/futures/newOrderVp
+    $ref: ./paths/sapi_algo_futures_newOrderVp_v1.yaml
   /sapi/v1/algo/futures/newOrderTwap:
-    $ref: ./paths/spot/newOrderTwap.yaml#/paths/sapi/v1/algo/futures/newOrderTwap
+    $ref: ./paths/sapi_algo_futures_newOrderTwap_v1.yaml
   /sapi/v1/algo/futures/order:
-    $ref: ./paths/spot/order.yaml#/paths/sapi/v1/algo/futures/order
+    $ref: ./paths/sapi_algo_futures_order_v1.yaml
   /sapi/v1/algo/futures/openOrders:
-    $ref: ./paths/spot/openOrders.yaml#/paths/sapi/v1/algo/futures/openOrders
+    $ref: ./paths/sapi_algo_futures_openOrders_v1.yaml
   /sapi/v1/algo/futures/historicalOrders:
-    $ref: ./paths/spot/historicalOrders.yaml#/paths/sapi/v1/algo/futures/historicalOrders
+    $ref: ./paths/sapi_algo_futures_historicalOrders_v1.yaml
   /sapi/v1/algo/futures/subOrders:
-    $ref: ./paths/spot/subOrders.yaml#/paths/sapi/v1/algo/futures/subOrders
+    $ref: ./paths/sapi_algo_futures_subOrders_v1.yaml
   /sapi/v1/algo/spot/newOrderTwap:
-    $ref: ./paths/spot/newOrderTwap.yaml#/paths/sapi/v1/algo/spot/newOrderTwap
+    $ref: ./paths/sapi_algo_spot_newOrderTwap_v1.yaml
   /sapi/v1/algo/spot/order:
-    $ref: ./paths/spot/order.yaml#/paths/sapi/v1/algo/spot/order
+    $ref: ./paths/sapi_algo_spot_order_v1.yaml
   /sapi/v1/algo/spot/openOrders:
-    $ref: ./paths/spot/openOrders.yaml#/paths/sapi/v1/algo/spot/openOrders
+    $ref: ./paths/sapi_algo_spot_openOrders_v1.yaml
   /sapi/v1/algo/spot/historicalOrders:
-    $ref: ./paths/spot/historicalOrders.yaml#/paths/sapi/v1/algo/spot/historicalOrders
+    $ref: ./paths/sapi_algo_spot_historicalOrders_v1.yaml
   /sapi/v1/algo/spot/subOrders:
-    $ref: ./paths/spot/subOrders.yaml#/paths/sapi/v1/algo/spot/subOrders
+    $ref: ./paths/sapi_algo_spot_subOrders_v1.yaml
   /sapi/v1/portfolio/account:
-    $ref: ./paths/spot/account.yaml#/paths/sapi/v1/portfolio/account
+    $ref: ./paths/sapi_portfolio_account_v1.yaml
   /sapi/v1/portfolio/collateralRate:
-    $ref: ./paths/spot/collateralRate.yaml#/paths/sapi/v1/portfolio/collateralRate
+    $ref: ./paths/sapi_portfolio_collateralRate_v1.yaml
   /sapi/v2/portfolio/collateralRate:
-    $ref: ./paths/spot/collateralRate.yaml#/paths/sapi/v2/portfolio/collateralRate
+    $ref: ./paths/sapi_portfolio_collateralRate_v2.yaml
   /sapi/v1/portfolio/pmLoan:
-    $ref: ./paths/spot/pmLoan.yaml#/paths/sapi/v1/portfolio/pmLoan
+    $ref: ./paths/sapi_portfolio_pmLoan_v1.yaml
   /sapi/v1/portfolio/repay:
-    $ref: ./paths/spot/repay.yaml#/paths/sapi/v1/portfolio/repay
+    $ref: ./paths/sapi_portfolio_repay_v1.yaml
   /sapi/v1/portfolio/interest-history:
-    $ref: ./paths/spot/interest-history.yaml#/paths/sapi/v1/portfolio/interest-history
+    $ref: ./paths/sapi_portfolio_interest-history_v1.yaml
   /sapi/v1/portfolio/asset-index-price:
-    $ref: ./paths/spot/asset-index-price.yaml#/paths/sapi/v1/portfolio/asset-index-price
+    $ref: ./paths/sapi_portfolio_asset-index-price_v1.yaml
   /sapi/v1/portfolio/auto-collection:
-    $ref: ./paths/spot/auto-collection.yaml#/paths/sapi/v1/portfolio/auto-collection
+    $ref: ./paths/sapi_portfolio_auto-collection_v1.yaml
   /sapi/v1/portfolio/bnb-transfer:
-    $ref: ./paths/spot/bnb-transfer.yaml#/paths/sapi/v1/portfolio/bnb-transfer
+    $ref: ./paths/sapi_portfolio_bnb-transfer_v1.yaml
   /sapi/v1/portfolio/repay-futures-switch:
-    $ref: ./paths/spot/repay-futures-switch.yaml#/paths/sapi/v1/portfolio/repay-futures-switch
+    $ref: ./paths/sapi_portfolio_repay-futures-switch_v1.yaml
   /sapi/v1/portfolio/repay-futures-negative-balance:
-    $ref: ./paths/spot/repay-futures-negative-balance.yaml#/paths/sapi/v1/portfolio/repay-futures-negative-balance
+    $ref: ./paths/sapi_portfolio_repay-futures-negative-balance_v1.yaml
   /sapi/v1/portfolio/margin-asset-leverage:
-    $ref: ./paths/spot/margin-asset-leverage.yaml#/paths/sapi/v1/portfolio/margin-asset-leverage
+    $ref: ./paths/sapi_portfolio_margin-asset-leverage_v1.yaml
   /sapi/v1/portfolio/asset-collection:
-    $ref: ./paths/spot/asset-collection.yaml#/paths/sapi/v1/portfolio/asset-collection
+    $ref: ./paths/sapi_portfolio_asset-collection_v1.yaml
   /sapi/v1/blvt/tokenInfo:
-    $ref: ./paths/spot/tokenInfo.yaml#/paths/sapi/v1/blvt/tokenInfo
+    $ref: ./paths/sapi_blvt_tokenInfo_v1.yaml
   /sapi/v1/blvt/subscribe:
-    $ref: ./paths/spot/subscribe.yaml#/paths/sapi/v1/blvt/subscribe
+    $ref: ./paths/sapi_blvt_subscribe_v1.yaml
   /sapi/v1/blvt/subscribe/record:
-    $ref: ./paths/spot/record.yaml#/paths/sapi/v1/blvt/subscribe/record
+    $ref: ./paths/sapi_blvt_subscribe_record_v1.yaml
   /sapi/v1/blvt/redeem:
-    $ref: ./paths/spot/redeem.yaml#/paths/sapi/v1/blvt/redeem
+    $ref: ./paths/sapi_blvt_redeem_v1.yaml
   /sapi/v1/blvt/redeem/record:
-    $ref: ./paths/spot/record.yaml#/paths/sapi/v1/blvt/redeem/record
+    $ref: ./paths/sapi_blvt_redeem_record_v1.yaml
   /sapi/v1/blvt/userLimit:
-    $ref: ./paths/spot/userLimit.yaml#/paths/sapi/v1/blvt/userLimit
+    $ref: ./paths/sapi_blvt_userLimit_v1.yaml
   /sapi/v1/c2c/orderMatch/listUserOrderHistory:
-    $ref: ./paths/spot/listUserOrderHistory.yaml#/paths/sapi/v1/c2c/orderMatch/listUserOrderHistory
+    $ref: ./paths/sapi_c2c_orderMatch_listUserOrderHistory_v1.yaml
   /sapi/v1/loan/vip/ongoing/orders:
-    $ref: ./paths/spot/orders.yaml#/paths/sapi/v1/loan/vip/ongoing/orders
+    $ref: ./paths/sapi_loan_vip_ongoing_orders_v1.yaml
   /sapi/v1/loan/vip/repay:
-    $ref: ./paths/spot/repay.yaml#/paths/sapi/v1/loan/vip/repay
+    $ref: ./paths/sapi_loan_vip_repay_v1.yaml
   /sapi/v1/loan/vip/repay/history:
-    $ref: ./paths/spot/history.yaml#/paths/sapi/v1/loan/vip/repay/history
+    $ref: ./paths/sapi_loan_vip_repay_history_v1.yaml
   /sapi/v1/loan/vip/collateral/account:
-    $ref: ./paths/spot/account.yaml#/paths/sapi/v1/loan/vip/collateral/account
+    $ref: ./paths/sapi_loan_vip_collateral_account_v1.yaml
   /sapi/v1/loan/vip/borrow:
-    $ref: ./paths/spot/borrow.yaml#/paths/sapi/v1/loan/vip/borrow
+    $ref: ./paths/sapi_loan_vip_borrow_v1.yaml
   /sapi/v1/loan/vip/loanable/data:
-    $ref: ./paths/spot/data.yaml#/paths/sapi/v1/loan/vip/loanable/data
+    $ref: ./paths/sapi_loan_vip_loanable_data_v1.yaml
   /sapi/v1/loan/vip/collateral/data:
-    $ref: ./paths/spot/data.yaml#/paths/sapi/v1/loan/vip/collateral/data
+    $ref: ./paths/sapi_loan_vip_collateral_data_v1.yaml
   /sapi/v1/loan/vip/request/data:
-    $ref: ./paths/spot/data.yaml#/paths/sapi/v1/loan/vip/request/data
+    $ref: ./paths/sapi_loan_vip_request_data_v1.yaml
   /sapi/v1/loan/vip/request/interestRate:
-    $ref: ./paths/spot/interestRate.yaml#/paths/sapi/v1/loan/vip/request/interestRate
+    $ref: ./paths/sapi_loan_vip_request_interestRate_v1.yaml
   /sapi/v1/loan/vip/renew:
-    $ref: ./paths/spot/renew.yaml#/paths/sapi/v1/loan/vip/renew
+    $ref: ./paths/sapi_loan_vip_renew_v1.yaml
   /sapi/v1/loan/income:
-    $ref: ./paths/spot/income.yaml#/paths/sapi/v1/loan/income
+    $ref: ./paths/sapi_loan_income_v1.yaml
   /sapi/v1/loan/borrow:
-    $ref: ./paths/spot/borrow.yaml#/paths/sapi/v1/loan/borrow
+    $ref: ./paths/sapi_loan_borrow_v1.yaml
   /sapi/v1/loan/borrow/history:
-    $ref: ./paths/spot/history.yaml#/paths/sapi/v1/loan/borrow/history
+    $ref: ./paths/sapi_loan_borrow_history_v1.yaml
   /sapi/v1/loan/ongoing/orders:
-    $ref: ./paths/spot/orders.yaml#/paths/sapi/v1/loan/ongoing/orders
+    $ref: ./paths/sapi_loan_ongoing_orders_v1.yaml
   /sapi/v1/loan/repay:
-    $ref: ./paths/spot/repay.yaml#/paths/sapi/v1/loan/repay
+    $ref: ./paths/sapi_loan_repay_v1.yaml
   /sapi/v1/loan/repay/history:
-    $ref: ./paths/spot/history.yaml#/paths/sapi/v1/loan/repay/history
+    $ref: ./paths/sapi_loan_repay_history_v1.yaml
   /sapi/v1/loan/adjust/ltv:
-    $ref: ./paths/spot/ltv.yaml#/paths/sapi/v1/loan/adjust/ltv
+    $ref: ./paths/sapi_loan_adjust_ltv_v1.yaml
   /sapi/v1/loan/ltv/adjustment/history:
-    $ref: ./paths/spot/history.yaml#/paths/sapi/v1/loan/ltv/adjustment/history
+    $ref: ./paths/sapi_loan_ltv_adjustment_history_v1.yaml
   /sapi/v1/loan/loanable/data:
-    $ref: ./paths/spot/data.yaml#/paths/sapi/v1/loan/loanable/data
+    $ref: ./paths/sapi_loan_loanable_data_v1.yaml
   /sapi/v1/loan/collateral/data:
-    $ref: ./paths/spot/data.yaml#/paths/sapi/v1/loan/collateral/data
+    $ref: ./paths/sapi_loan_collateral_data_v1.yaml
   /sapi/v1/loan/repay/collateral/rate:
-    $ref: ./paths/spot/rate.yaml#/paths/sapi/v1/loan/repay/collateral/rate
+    $ref: ./paths/sapi_loan_repay_collateral_rate_v1.yaml
   /sapi/v1/loan/customize/margin_call:
-    $ref: ./paths/spot/margin_call.yaml#/paths/sapi/v1/loan/customize/margin_call
+    $ref: ./paths/sapi_loan_customize_margin_call_v1.yaml
   /sapi/v2/loan/flexible/borrow:
-    $ref: ./paths/spot/borrow.yaml#/paths/sapi/v2/loan/flexible/borrow
+    $ref: ./paths/sapi_loan_flexible_borrow_v2.yaml
   /sapi/v2/loan/flexible/ongoing/orders:
-    $ref: ./paths/spot/orders.yaml#/paths/sapi/v2/loan/flexible/ongoing/orders
+    $ref: ./paths/sapi_loan_flexible_ongoing_orders_v2.yaml
   /sapi/v2/loan/flexible/borrow/history:
-    $ref: ./paths/spot/history.yaml#/paths/sapi/v2/loan/flexible/borrow/history
+    $ref: ./paths/sapi_loan_flexible_borrow_history_v2.yaml
   /sapi/v2/loan/flexible/repay:
-    $ref: ./paths/spot/repay.yaml#/paths/sapi/v2/loan/flexible/repay
+    $ref: ./paths/sapi_loan_flexible_repay_v2.yaml
   /sapi/v2/loan/flexible/repay/history:
-    $ref: ./paths/spot/history.yaml#/paths/sapi/v2/loan/flexible/repay/history
+    $ref: ./paths/sapi_loan_flexible_repay_history_v2.yaml
   /sapi/v2/loan/flexible/adjust/ltv:
-    $ref: ./paths/spot/ltv.yaml#/paths/sapi/v2/loan/flexible/adjust/ltv
+    $ref: ./paths/sapi_loan_flexible_adjust_ltv_v2.yaml
   /sapi/v2/loan/flexible/ltv/adjustment/history:
-    $ref: ./paths/spot/history.yaml#/paths/sapi/v2/loan/flexible/ltv/adjustment/history
+    $ref: ./paths/sapi_loan_flexible_ltv_adjustment_history_v2.yaml
   /sapi/v2/loan/flexible/loanable/data:
-    $ref: ./paths/spot/data.yaml#/paths/sapi/v2/loan/flexible/loanable/data
+    $ref: ./paths/sapi_loan_flexible_loanable_data_v2.yaml
   /sapi/v2/loan/flexible/collateral/data:
-    $ref: ./paths/spot/data.yaml#/paths/sapi/v2/loan/flexible/collateral/data
+    $ref: ./paths/sapi_loan_flexible_collateral_data_v2.yaml
   /sapi/v1/pay/transactions:
-    $ref: ./paths/spot/transactions.yaml#/paths/sapi/v1/pay/transactions
+    $ref: ./paths/sapi_pay_transactions_v1.yaml
   /sapi/v1/convert/exchangeInfo:
-    $ref: ./paths/spot/exchangeInfo.yaml#/paths/sapi/v1/convert/exchangeInfo
+    $ref: ./paths/sapi_convert_exchangeInfo_v1.yaml
   /sapi/v1/convert/assetInfo:
-    $ref: ./paths/spot/assetInfo.yaml#/paths/sapi/v1/convert/assetInfo
+    $ref: ./paths/sapi_convert_assetInfo_v1.yaml
   /sapi/v1/convert/getQuote:
-    $ref: ./paths/spot/getQuote.yaml#/paths/sapi/v1/convert/getQuote
+    $ref: ./paths/sapi_convert_getQuote_v1.yaml
   /sapi/v1/convert/acceptQuote:
-    $ref: ./paths/spot/acceptQuote.yaml#/paths/sapi/v1/convert/acceptQuote
+    $ref: ./paths/sapi_convert_acceptQuote_v1.yaml
   /sapi/v1/convert/orderStatus:
-    $ref: ./paths/spot/orderStatus.yaml#/paths/sapi/v1/convert/orderStatus
+    $ref: ./paths/sapi_convert_orderStatus_v1.yaml
   /sapi/v1/convert/limit/placeOrder:
-    $ref: ./paths/spot/placeOrder.yaml#/paths/sapi/v1/convert/limit/placeOrder
+    $ref: ./paths/sapi_convert_limit_placeOrder_v1.yaml
   /sapi/v1/convert/limit/cancelOrder:
-    $ref: ./paths/spot/cancelOrder.yaml#/paths/sapi/v1/convert/limit/cancelOrder
+    $ref: ./paths/sapi_convert_limit_cancelOrder_v1.yaml
   /sapi/v1/convert/limit/queryOpenOrders:
-    $ref: ./paths/spot/queryOpenOrders.yaml#/paths/sapi/v1/convert/limit/queryOpenOrders
+    $ref: ./paths/sapi_convert_limit_queryOpenOrders_v1.yaml
   /sapi/v1/convert/tradeFlow:
-    $ref: ./paths/spot/tradeFlow.yaml#/paths/sapi/v1/convert/tradeFlow
+    $ref: ./paths/sapi_convert_tradeFlow_v1.yaml
   /sapi/v1/rebate/taxQuery:
-    $ref: ./paths/spot/taxQuery.yaml#/paths/sapi/v1/rebate/taxQuery
+    $ref: ./paths/sapi_rebate_taxQuery_v1.yaml
   /sapi/v1/nft/history/transactions:
-    $ref: ./paths/spot/transactions.yaml#/paths/sapi/v1/nft/history/transactions
+    $ref: ./paths/sapi_nft_history_transactions_v1.yaml
   /sapi/v1/nft/history/deposit:
-    $ref: ./paths/spot/deposit.yaml#/paths/sapi/v1/nft/history/deposit
+    $ref: ./paths/sapi_nft_history_deposit_v1.yaml
   /sapi/v1/nft/history/withdraw:
-    $ref: ./paths/spot/withdraw.yaml#/paths/sapi/v1/nft/history/withdraw
+    $ref: ./paths/sapi_nft_history_withdraw_v1.yaml
   /sapi/v1/nft/user/getAsset:
-    $ref: ./paths/spot/getAsset.yaml#/paths/sapi/v1/nft/user/getAsset
+    $ref: ./paths/sapi_nft_user_getAsset_v1.yaml
   /sapi/v1/giftcard/createCode:
-    $ref: ./paths/spot/createCode.yaml#/paths/sapi/v1/giftcard/createCode
+    $ref: ./paths/sapi_giftcard_createCode_v1.yaml
   /sapi/v1/giftcard/redeemCode:
-    $ref: ./paths/spot/redeemCode.yaml#/paths/sapi/v1/giftcard/redeemCode
+    $ref: ./paths/sapi_giftcard_redeemCode_v1.yaml
   /sapi/v1/giftcard/verify:
-    $ref: ./paths/spot/verify.yaml#/paths/sapi/v1/giftcard/verify
+    $ref: ./paths/sapi_giftcard_verify_v1.yaml
   /sapi/v1/giftcard/cryptography/rsa-public-key:
-    $ref: ./paths/spot/rsa-public-key.yaml#/paths/sapi/v1/giftcard/cryptography/rsa-public-key
+    $ref: ./paths/sapi_giftcard_cryptography_rsa-public-key_v1.yaml
   /sapi/v1/giftcard/buyCode:
-    $ref: ./paths/spot/buyCode.yaml#/paths/sapi/v1/giftcard/buyCode
+    $ref: ./paths/sapi_giftcard_buyCode_v1.yaml
   /sapi/v1/giftcard/buyCode/token-limit:
-    $ref: ./paths/spot/token-limit.yaml#/paths/sapi/v1/giftcard/buyCode/token-limit
+    $ref: ./paths/sapi_giftcard_buyCode_token-limit_v1.yaml
   /sapi/v1/lending/auto-invest/target-asset/list:
-    $ref: ./paths/spot/list.yaml#/paths/sapi/v1/lending/auto-invest/target-asset/list
+    $ref: ./paths/sapi_lending_auto-invest_target-asset_list_v1.yaml
   /sapi/v1/lending/auto-invest/target-asset/roi/list:
-    $ref: ./paths/spot/list.yaml#/paths/sapi/v1/lending/auto-invest/target-asset/roi/list
+    $ref: ./paths/sapi_lending_auto-invest_target-asset_roi_list_v1.yaml
   /sapi/v1/lending/auto-invest/all/asset:
-    $ref: ./paths/spot/asset.yaml#/paths/sapi/v1/lending/auto-invest/all/asset
+    $ref: ./paths/sapi_lending_auto-invest_all_asset_v1.yaml
   /sapi/v1/lending/auto-invest/source-asset/list:
-    $ref: ./paths/spot/list.yaml#/paths/sapi/v1/lending/auto-invest/source-asset/list
+    $ref: ./paths/sapi_lending_auto-invest_source-asset_list_v1.yaml
   /sapi/v1/lending/auto-invest/plan/add:
-    $ref: ./paths/spot/add.yaml#/paths/sapi/v1/lending/auto-invest/plan/add
+    $ref: ./paths/sapi_lending_auto-invest_plan_add_v1.yaml
   /sapi/v1/lending/auto-invest/plan/edit:
-    $ref: ./paths/spot/edit.yaml#/paths/sapi/v1/lending/auto-invest/plan/edit
+    $ref: ./paths/sapi_lending_auto-invest_plan_edit_v1.yaml
   /sapi/v1/lending/auto-invest/plan/edit-status:
-    $ref: ./paths/spot/edit-status.yaml#/paths/sapi/v1/lending/auto-invest/plan/edit-status
+    $ref: ./paths/sapi_lending_auto-invest_plan_edit-status_v1.yaml
   /sapi/v1/lending/auto-invest/plan/list:
-    $ref: ./paths/spot/list.yaml#/paths/sapi/v1/lending/auto-invest/plan/list
+    $ref: ./paths/sapi_lending_auto-invest_plan_list_v1.yaml
   /sapi/v1/lending/auto-invest/plan/id:
-    $ref: ./paths/spot/id.yaml#/paths/sapi/v1/lending/auto-invest/plan/id
+    $ref: ./paths/sapi_lending_auto-invest_plan_id_v1.yaml
   /sapi/v1/lending/auto-invest/history/list:
-    $ref: ./paths/spot/list.yaml#/paths/sapi/v1/lending/auto-invest/history/list
+    $ref: ./paths/sapi_lending_auto-invest_history_list_v1.yaml
   /sapi/v1/lending/auto-invest/index/info:
-    $ref: ./paths/spot/info.yaml#/paths/sapi/v1/lending/auto-invest/index/info
+    $ref: ./paths/sapi_lending_auto-invest_index_info_v1.yaml
   /sapi/v1/lending/auto-invest/index/user-summary:
-    $ref: ./paths/spot/user-summary.yaml#/paths/sapi/v1/lending/auto-invest/index/user-summary
+    $ref: ./paths/sapi_lending_auto-invest_index_user-summary_v1.yaml
   /sapi/v1/lending/auto-invest/one-off:
-    $ref: ./paths/spot/one-off.yaml#/paths/sapi/v1/lending/auto-invest/one-off
+    $ref: ./paths/sapi_lending_auto-invest_one-off_v1.yaml
   /sapi/v1/lending/auto-invest/one-off/status:
-    $ref: ./paths/spot/status.yaml#/paths/sapi/v1/lending/auto-invest/one-off/status
+    $ref: ./paths/sapi_lending_auto-invest_one-off_status_v1.yaml
   /sapi/v1/lending/auto-invest/redeem:
-    $ref: ./paths/spot/redeem.yaml#/paths/sapi/v1/lending/auto-invest/redeem
+    $ref: ./paths/sapi_lending_auto-invest_redeem_v1.yaml
   /sapi/v1/lending/auto-invest/redeem/history:
-    $ref: ./paths/spot/history.yaml#/paths/sapi/v1/lending/auto-invest/redeem/history
+    $ref: ./paths/sapi_lending_auto-invest_redeem_history_v1.yaml
   /sapi/v1/lending/auto-invest/rebalance/history:
-    $ref: ./paths/spot/history.yaml#/paths/sapi/v1/lending/auto-invest/rebalance/history
+    $ref: ./paths/sapi_lending_auto-invest_rebalance_history_v1.yaml
   /sapi/v2/eth-staking/eth/stake:
-    $ref: ./paths/spot/stake.yaml#/paths/sapi/v2/eth-staking/eth/stake
+    $ref: ./paths/sapi_eth-staking_eth_stake_v2.yaml
   /sapi/v1/eth-staking/eth/redeem:
-    $ref: ./paths/spot/redeem.yaml#/paths/sapi/v1/eth-staking/eth/redeem
+    $ref: ./paths/sapi_eth-staking_eth_redeem_v1.yaml
   /sapi/v1/eth-staking/eth/history/stakingHistory:
-    $ref: ./paths/spot/stakingHistory.yaml#/paths/sapi/v1/eth-staking/eth/history/stakingHistory
+    $ref: ./paths/sapi_eth-staking_eth_history_stakingHistory_v1.yaml
   /sapi/v1/eth-staking/eth/history/redemptionHistory:
-    $ref: ./paths/spot/redemptionHistory.yaml#/paths/sapi/v1/eth-staking/eth/history/redemptionHistory
+    $ref: ./paths/sapi_eth-staking_eth_history_redemptionHistory_v1.yaml
   /sapi/v1/eth-staking/eth/history/rewardsHistory:
-    $ref: ./paths/spot/rewardsHistory.yaml#/paths/sapi/v1/eth-staking/eth/history/rewardsHistory
+    $ref: ./paths/sapi_eth-staking_eth_history_rewardsHistory_v1.yaml
   /sapi/v1/eth-staking/eth/quota:
-    $ref: ./paths/spot/quota.yaml#/paths/sapi/v1/eth-staking/eth/quota
+    $ref: ./paths/sapi_eth-staking_eth_quota_v1.yaml
   /sapi/v1/eth-staking/eth/history/rateHistory:
-    $ref: ./paths/spot/rateHistory.yaml#/paths/sapi/v1/eth-staking/eth/history/rateHistory
+    $ref: ./paths/sapi_eth-staking_eth_history_rateHistory_v1.yaml
   /sapi/v2/eth-staking/account:
-    $ref: ./paths/spot/account.yaml#/paths/sapi/v2/eth-staking/account
+    $ref: ./paths/sapi_eth-staking_account_v2.yaml
   /sapi/v1/eth-staking/wbeth/wrap:
-    $ref: ./paths/spot/wrap.yaml#/paths/sapi/v1/eth-staking/wbeth/wrap
+    $ref: ./paths/sapi_eth-staking_wbeth_wrap_v1.yaml
   /sapi/v1/eth-staking/wbeth/history/wrapHistory:
-    $ref: ./paths/spot/wrapHistory.yaml#/paths/sapi/v1/eth-staking/wbeth/history/wrapHistory
+    $ref: ./paths/sapi_eth-staking_wbeth_history_wrapHistory_v1.yaml
   /sapi/v1/eth-staking/wbeth/history/unwrapHistory:
-    $ref: ./paths/spot/unwrapHistory.yaml#/paths/sapi/v1/eth-staking/wbeth/history/unwrapHistory
+    $ref: ./paths/sapi_eth-staking_wbeth_history_unwrapHistory_v1.yaml
   /sapi/v1/eth-staking/eth/history/wbethRewardsHistory:
-    $ref: ./paths/spot/wbethRewardsHistory.yaml#/paths/sapi/v1/eth-staking/eth/history/wbethRewardsHistory
+    $ref: ./paths/sapi_eth-staking_eth_history_wbethRewardsHistory_v1.yaml
   /sapi/v1/copyTrading/futures/userStatus:
-    $ref: ./paths/spot/userStatus.yaml#/paths/sapi/v1/copyTrading/futures/userStatus
+    $ref: ./paths/sapi_copyTrading_futures_userStatus_v1.yaml
   /sapi/v1/copyTrading/futures/leadSymbol:
-    $ref: ./paths/spot/leadSymbol.yaml#/paths/sapi/v1/copyTrading/futures/leadSymbol
+    $ref: ./paths/sapi_copyTrading_futures_leadSymbol_v1.yaml
   /sapi/v1/simple-earn/flexible/list:
-    $ref: ./paths/spot/list.yaml#/paths/sapi/v1/simple-earn/flexible/list
+    $ref: ./paths/sapi_simple-earn_flexible_list_v1.yaml
   /sapi/v1/simple-earn/locked/list:
-    $ref: ./paths/spot/list.yaml#/paths/sapi/v1/simple-earn/locked/list
+    $ref: ./paths/sapi_simple-earn_locked_list_v1.yaml
   /sapi/v1/simple-earn/flexible/subscribe:
-    $ref: ./paths/spot/subscribe.yaml#/paths/sapi/v1/simple-earn/flexible/subscribe
+    $ref: ./paths/sapi_simple-earn_flexible_subscribe_v1.yaml
   /sapi/v1/simple-earn/locked/subscribe:
-    $ref: ./paths/spot/subscribe.yaml#/paths/sapi/v1/simple-earn/locked/subscribe
+    $ref: ./paths/sapi_simple-earn_locked_subscribe_v1.yaml
   /sapi/v1/simple-earn/flexible/redeem:
-    $ref: ./paths/spot/redeem.yaml#/paths/sapi/v1/simple-earn/flexible/redeem
+    $ref: ./paths/sapi_simple-earn_flexible_redeem_v1.yaml
   /sapi/v1/simple-earn/locked/redeem:
-    $ref: ./paths/spot/redeem.yaml#/paths/sapi/v1/simple-earn/locked/redeem
+    $ref: ./paths/sapi_simple-earn_locked_redeem_v1.yaml
   /sapi/v1/simple-earn/flexible/position:
-    $ref: ./paths/spot/position.yaml#/paths/sapi/v1/simple-earn/flexible/position
+    $ref: ./paths/sapi_simple-earn_flexible_position_v1.yaml
   /sapi/v1/simple-earn/locked/position:
-    $ref: ./paths/spot/position.yaml#/paths/sapi/v1/simple-earn/locked/position
+    $ref: ./paths/sapi_simple-earn_locked_position_v1.yaml
   /sapi/v1/simple-earn/account:
-    $ref: ./paths/spot/account.yaml#/paths/sapi/v1/simple-earn/account
+    $ref: ./paths/sapi_simple-earn_account_v1.yaml
   /sapi/v1/simple-earn/flexible/history/subscriptionRecord:
-    $ref: ./paths/spot/subscriptionRecord.yaml#/paths/sapi/v1/simple-earn/flexible/history/subscriptionRecord
+    $ref: ./paths/sapi_simple-earn_flexible_history_subscriptionRecord_v1.yaml
   /sapi/v1/simple-earn/locked/history/subscriptionRecord:
-    $ref: ./paths/spot/subscriptionRecord.yaml#/paths/sapi/v1/simple-earn/locked/history/subscriptionRecord
+    $ref: ./paths/sapi_simple-earn_locked_history_subscriptionRecord_v1.yaml
   /sapi/v1/simple-earn/flexible/history/redemptionRecord:
-    $ref: ./paths/spot/redemptionRecord.yaml#/paths/sapi/v1/simple-earn/flexible/history/redemptionRecord
+    $ref: ./paths/sapi_simple-earn_flexible_history_redemptionRecord_v1.yaml
   /sapi/v1/simple-earn/locked/history/redemptionRecord:
-    $ref: ./paths/spot/redemptionRecord.yaml#/paths/sapi/v1/simple-earn/locked/history/redemptionRecord
+    $ref: ./paths/sapi_simple-earn_locked_history_redemptionRecord_v1.yaml
   /sapi/v1/simple-earn/flexible/history/rewardsRecord:
-    $ref: ./paths/spot/rewardsRecord.yaml#/paths/sapi/v1/simple-earn/flexible/history/rewardsRecord
+    $ref: ./paths/sapi_simple-earn_flexible_history_rewardsRecord_v1.yaml
   /sapi/v1/simple-earn/locked/history/rewardsRecord:
-    $ref: ./paths/spot/rewardsRecord.yaml#/paths/sapi/v1/simple-earn/locked/history/rewardsRecord
+    $ref: ./paths/sapi_simple-earn_locked_history_rewardsRecord_v1.yaml
   /sapi/v1/simple-earn/flexible/setAutoSubscribe:
-    $ref: ./paths/spot/setAutoSubscribe.yaml#/paths/sapi/v1/simple-earn/flexible/setAutoSubscribe
+    $ref: ./paths/sapi_simple-earn_flexible_setAutoSubscribe_v1.yaml
   /sapi/v1/simple-earn/locked/setAutoSubscribe:
-    $ref: ./paths/spot/setAutoSubscribe.yaml#/paths/sapi/v1/simple-earn/locked/setAutoSubscribe
+    $ref: ./paths/sapi_simple-earn_locked_setAutoSubscribe_v1.yaml
   /sapi/v1/simple-earn/flexible/personalLeftQuota:
-    $ref: ./paths/spot/personalLeftQuota.yaml#/paths/sapi/v1/simple-earn/flexible/personalLeftQuota
+    $ref: ./paths/sapi_simple-earn_flexible_personalLeftQuota_v1.yaml
   /sapi/v1/simple-earn/locked/personalLeftQuota:
-    $ref: ./paths/spot/personalLeftQuota.yaml#/paths/sapi/v1/simple-earn/locked/personalLeftQuota
+    $ref: ./paths/sapi_simple-earn_locked_personalLeftQuota_v1.yaml
   /sapi/v1/simple-earn/flexible/subscriptionPreview:
-    $ref: ./paths/spot/subscriptionPreview.yaml#/paths/sapi/v1/simple-earn/flexible/subscriptionPreview
+    $ref: ./paths/sapi_simple-earn_flexible_subscriptionPreview_v1.yaml
   /sapi/v1/simple-earn/locked/subscriptionPreview:
-    $ref: ./paths/spot/subscriptionPreview.yaml#/paths/sapi/v1/simple-earn/locked/subscriptionPreview
+    $ref: ./paths/sapi_simple-earn_locked_subscriptionPreview_v1.yaml
   /sapi/v1/simple-earn/locked/setRedeemOption:
-    $ref: ./paths/spot/setRedeemOption.yaml#/paths/sapi/v1/simple-earn/locked/setRedeemOption
+    $ref: ./paths/sapi_simple-earn_locked_setRedeemOption_v1.yaml
   /sapi/v1/simple-earn/flexible/history/rateHistory:
-    $ref: ./paths/spot/rateHistory.yaml#/paths/sapi/v1/simple-earn/flexible/history/rateHistory
+    $ref: ./paths/sapi_simple-earn_flexible_history_rateHistory_v1.yaml
   /sapi/v1/simple-earn/flexible/history/collateralRecord:
-    $ref: ./paths/spot/collateralRecord.yaml#/paths/sapi/v1/simple-earn/flexible/history/collateralRecord
+    $ref: ./paths/sapi_simple-earn_flexible_history_collateralRecord_v1.yaml
   /sapi/v1/dci/product/list:
-    $ref: ./paths/spot/list.yaml#/paths/sapi/v1/dci/product/list
+    $ref: ./paths/sapi_dci_product_list_v1.yaml
   /sapi/v1/dci/product/subscribe:
-    $ref: ./paths/spot/subscribe.yaml#/paths/sapi/v1/dci/product/subscribe
+    $ref: ./paths/sapi_dci_product_subscribe_v1.yaml
   /sapi/v1/dci/product/positions:
-    $ref: ./paths/spot/positions.yaml#/paths/sapi/v1/dci/product/positions
+    $ref: ./paths/sapi_dci_product_positions_v1.yaml
   /sapi/v1/dci/product/accounts:
-    $ref: ./paths/spot/accounts.yaml#/paths/sapi/v1/dci/product/accounts
+    $ref: ./paths/sapi_dci_product_accounts_v1.yaml
   /sapi/v1/dci/product/auto_compound/edit-status:
-    $ref: ./paths/spot/edit-status.yaml#/paths/sapi/v1/dci/product/auto_compound/edit-status
+    $ref: ./paths/sapi_dci_product_auto_compound_edit-status_v1.yaml
+components:
+  parameters:
+    getCrossMargingTransferHistoryType:
+      $ref: ./components/parameters/getCrossMargingTransferHistoryType.yaml
+    spotBNBBurn:
+      $ref: ./components/parameters/spotBNBBurn.yaml
+    interestBNBBurn:
+      $ref: ./components/parameters/interestBNBBurn.yaml
+    depositHistory:
+      $ref: ./components/parameters/depositHistory.yaml
+    withdrawHistory:
+      $ref: ./components/parameters/withdrawHistory.yaml
+    queryConvertTransfer:
+      $ref: ./components/parameters/queryConvertTransfer.yaml
+    querySubAccountList:
+      $ref: ./components/parameters/querySubAccountList.yaml
+    asset:
+      $ref: ./components/parameters/asset.yaml
+    amount:
+      $ref: ./components/parameters/amount.yaml
+    current:
+      $ref: ./components/parameters/current.yaml
+    optionalCoin:
+      $ref: ./components/parameters/optionalCoin.yaml
+    coin:
+      $ref: ./components/parameters/coin.yaml
+    side:
+      $ref: ./components/parameters/side.yaml
+    optionalSide:
+      $ref: ./components/parameters/optionalSide.yaml
+    positionSide:
+      $ref: ./components/parameters/positionSide.yaml
+    size:
+      $ref: ./components/parameters/size.yaml
+    symbol:
+      $ref: ./components/parameters/symbol.yaml
+    optionalSymbol:
+      $ref: ./components/parameters/optionalSymbol.yaml
+    optionalAsset:
+      $ref: ./components/parameters/optionalAsset.yaml
+    limit:
+      $ref: ./components/parameters/limit.yaml
+    limit50:
+      $ref: ./components/parameters/limit50.yaml
+    listenKey:
+      $ref: ./components/parameters/listenKey.yaml
+    fromId:
+      $ref: ./components/parameters/fromId.yaml
+    offset:
+      $ref: ./components/parameters/offset.yaml
+    orderId:
+      $ref: ./components/parameters/orderId.yaml
+    orderListId:
+      $ref: ./components/parameters/orderListId.yaml
+    origClientOrderId:
+      $ref: ./components/parameters/origClientOrderId.yaml
+    listClientOrderId:
+      $ref: ./components/parameters/listClientOrderId.yaml
+    newClientOrderId:
+      $ref: ./components/parameters/newClientOrderId.yaml
+    strategyId:
+      $ref: ./components/parameters/strategyId.yaml
+    strategyType:
+      $ref: ./components/parameters/strategyType.yaml
+    newOrderRespType:
+      $ref: ./components/parameters/newOrderRespType.yaml
+    selfTradePreventionMode:
+      $ref: ./components/parameters/selfTradePreventionMode.yaml
+    ocoNewOrderRespType:
+      $ref: ./components/parameters/ocoNewOrderRespType.yaml
+    startTime:
+      $ref: ./components/parameters/startTime.yaml
+    endTime:
+      $ref: ./components/parameters/endTime.yaml
+    startTimeReq:
+      $ref: ./components/parameters/startTimeReq.yaml
+    endTimeReq:
+      $ref: ./components/parameters/endTimeReq.yaml
+    collateralCoinReq:
+      $ref: ./components/parameters/collateralCoinReq.yaml
+    collateralCoin:
+      $ref: ./components/parameters/collateralCoin.yaml
+    collateralAmount:
+      $ref: ./components/parameters/collateralAmount.yaml
+    loanCoinReq:
+      $ref: ./components/parameters/loanCoinReq.yaml
+    loanCoin:
+      $ref: ./components/parameters/loanCoin.yaml
+    loanAmount:
+      $ref: ./components/parameters/loanAmount.yaml
+    price:
+      $ref: ./components/parameters/price.yaml
+    optionalPrice:
+      $ref: ./components/parameters/optionalPrice.yaml
+    quantity:
+      $ref: ./components/parameters/quantity.yaml
+    optionalQuantity:
+      $ref: ./components/parameters/optionalQuantity.yaml
+    recvWindow:
+      $ref: ./components/parameters/recvWindow.yaml
+    timestamp:
+      $ref: ./components/parameters/timestamp.yaml
+    timeInForce:
+      $ref: ./components/parameters/timeInForce.yaml
+    type:
+      $ref: ./components/parameters/type.yaml
+    orderType:
+      $ref: ./components/parameters/orderType.yaml
+    univTransferType:
+      $ref: ./components/parameters/univTransferType.yaml
+    signature:
+      $ref: ./components/parameters/signature.yaml
+    stopPrice:
+      $ref: ./components/parameters/stopPrice.yaml
+    isIsolatedMargin:
+      $ref: ./components/parameters/isIsolatedMargin.yaml
+    transFrom:
+      $ref: ./components/parameters/transFrom.yaml
+    optionalTransFrom:
+      $ref: ./components/parameters/optionalTransFrom.yaml
+    transTo:
+      $ref: ./components/parameters/transTo.yaml
+    optionalTransTo:
+      $ref: ./components/parameters/optionalTransTo.yaml
+    symbols:
+      $ref: ./components/parameters/symbols.yaml
+    arraySymbols:
+      $ref: ./components/parameters/arraySymbols.yaml
+    tickerType:
+      $ref: ./components/parameters/tickerType.yaml
+    permissions:
+      $ref: ./components/parameters/permissions.yaml
+    transactionType:
+      $ref: ./components/parameters/transactionType.yaml
+    beginTime:
+      $ref: ./components/parameters/beginTime.yaml
+    page:
+      $ref: ./components/parameters/page.yaml
+    rows:
+      $ref: ./components/parameters/rows.yaml
+    quoteOrderQty:
+      $ref: ./components/parameters/quoteOrderQty.yaml
+    icebergQty:
+      $ref: ./components/parameters/icebergQty.yaml
+    flexibleProductStatus:
+      $ref: ./components/parameters/flexibleProductStatus.yaml
+    optionalFlexibleProductStatus:
+      $ref: ./components/parameters/optionalFlexibleProductStatus.yaml
+    optionalFixedAndActivityProductStatus:
+      $ref: ./components/parameters/optionalFixedAndActivityProductStatus.yaml
+    featured:
+      $ref: ./components/parameters/featured.yaml
+    flexibleProductId:
+      $ref: ./components/parameters/flexibleProductId.yaml
+    fixedAndActivityProjectId:
+      $ref: ./components/parameters/fixedAndActivityProjectId.yaml
+    flexibleProductType:
+      $ref: ./components/parameters/flexibleProductType.yaml
+    fixedAndActivityProductType:
+      $ref: ./components/parameters/fixedAndActivityProductType.yaml
+    sortBy:
+      $ref: ./components/parameters/sortBy.yaml
+    isSortAsc:
+      $ref: ./components/parameters/isSortAsc.yaml
+    projectId:
+      $ref: ./components/parameters/projectId.yaml
+    lot:
+      $ref: ./components/parameters/lot.yaml
+    needBtcValuation:
+      $ref: ./components/parameters/needBtcValuation.yaml
+    lendingType:
+      $ref: ./components/parameters/lendingType.yaml
+    optionalPositionId:
+      $ref: ./components/parameters/optionalPositionId.yaml
+    positionId:
+      $ref: ./components/parameters/positionId.yaml
+    positionStatus:
+      $ref: ./components/parameters/positionStatus.yaml
+    userName:
+      $ref: ./components/parameters/userName.yaml
+    algo:
+      $ref: ./components/parameters/algo.yaml
+    pageIndex:
+      $ref: ./components/parameters/pageIndex.yaml
+    sort:
+      $ref: ./components/parameters/sort.yaml
+    sortColumn:
+      $ref: ./components/parameters/sortColumn.yaml
+    workerStatus:
+      $ref: ./components/parameters/workerStatus.yaml
+    startDate:
+      $ref: ./components/parameters/startDate.yaml
+    endDate:
+      $ref: ./components/parameters/endDate.yaml
+    pageSize:
+      $ref: ./components/parameters/pageSize.yaml
+    smallPageSize:
+      $ref: ./components/parameters/smallPageSize.yaml
+    configId:
+      $ref: ./components/parameters/configId.yaml
+    toPoolUser:
+      $ref: ./components/parameters/toPoolUser.yaml
+    hashRate:
+      $ref: ./components/parameters/hashRate.yaml
+    workerName:
+      $ref: ./components/parameters/workerName.yaml
+    blvtTokenName:
+      $ref: ./components/parameters/blvtTokenName.yaml
+    optionalBlvtTokenName:
+      $ref: ./components/parameters/optionalBlvtTokenName.yaml
+    poolId:
+      $ref: ./components/parameters/poolId.yaml
+    optionalPoolId:
+      $ref: ./components/parameters/optionalPoolId.yaml
+    quoteAsset:
+      $ref: ./components/parameters/quoteAsset.yaml
+    baseAsset:
+      $ref: ./components/parameters/baseAsset.yaml
+    quoteQty:
+      $ref: ./components/parameters/quoteQty.yaml
+    subAccountEmail:
+      $ref: ./components/parameters/subAccountEmail.yaml
+    optionalSubAccountEmail:
+      $ref: ./components/parameters/optionalSubAccountEmail.yaml
+    optionalSubAccountFromEmail:
+      $ref: ./components/parameters/optionalSubAccountFromEmail.yaml
+    optionalSubAccountToEmail:
+      $ref: ./components/parameters/optionalSubAccountToEmail.yaml
+    subAccountFromEmail:
+      $ref: ./components/parameters/subAccountFromEmail.yaml
+    subAccountToEmail:
+      $ref: ./components/parameters/subAccountToEmail.yaml
+    fromSymbol:
+      $ref: ./components/parameters/fromSymbol.yaml
+    toSymbol:
+      $ref: ./components/parameters/toSymbol.yaml
+    isolatedSymbol:
+      $ref: ./components/parameters/isolatedSymbol.yaml
+    archived:
+      $ref: ./components/parameters/archived.yaml
+    sideEffectType:
+      $ref: ./components/parameters/sideEffectType.yaml
+    interval:
+      $ref: ./components/parameters/interval.yaml
+    crossMarginAccountTransferType:
+      $ref: ./components/parameters/crossMarginAccountTransferType.yaml
+    limitClientOrderId:
+      $ref: ./components/parameters/limitClientOrderId.yaml
+    limitStrategyId:
+      $ref: ./components/parameters/limitStrategyId.yaml
+    limitStrategyType:
+      $ref: ./components/parameters/limitStrategyType.yaml
+    limitIcebergQty:
+      $ref: ./components/parameters/limitIcebergQty.yaml
+    stopClientOrderId:
+      $ref: ./components/parameters/stopClientOrderId.yaml
+    stopStrategyId:
+      $ref: ./components/parameters/stopStrategyId.yaml
+    stopStrategyType:
+      $ref: ./components/parameters/stopStrategyType.yaml
+    ocoStopPrice:
+      $ref: ./components/parameters/ocoStopPrice.yaml
+    stopLimitPrice:
+      $ref: ./components/parameters/stopLimitPrice.yaml
+    stopIcebergQty:
+      $ref: ./components/parameters/stopIcebergQty.yaml
+    stopLimitTimeInForce:
+      $ref: ./components/parameters/stopLimitTimeInForce.yaml
+    subAccountApiKey:
+      $ref: ./components/parameters/subAccountApiKey.yaml
+    ipRestrict:
+      $ref: ./components/parameters/ipRestrict.yaml
+    thirdParty:
+      $ref: ./components/parameters/thirdParty.yaml
+    thirdPartyName:
+      $ref: ./components/parameters/thirdPartyName.yaml
+    ipAddress:
+      $ref: ./components/parameters/ipAddress.yaml
+    optionalIpAddress:
+      $ref: ./components/parameters/optionalIpAddress.yaml
+    vipLevel:
+      $ref: ./components/parameters/vipLevel.yaml
+    clientTranId:
+      $ref: ./components/parameters/clientTranId.yaml
+    optionalTrailingDelta:
+      $ref: ./components/parameters/optionalTrailingDelta.yaml
+    productId:
+      $ref: ./components/parameters/productId.yaml
+    optionalIsIsolated:
+      $ref: ./components/parameters/optionalIsIsolated.yaml
+    email:
+      $ref: ./components/parameters/email.yaml
+    preventedMatchId:
+      $ref: ./components/parameters/preventedMatchId.yaml
+    cancelRestrictions:
+      $ref: ./components/parameters/cancelRestrictions.yaml
+    network:
+      $ref: ./components/parameters/network.yaml
+    targetAsset:
+      $ref: ./components/parameters/targetAsset.yaml
+    autoRepay:
+      $ref: ./components/parameters/autoRepay.yaml
+    autoCompoundPlan:
+      $ref: ./components/parameters/autoCompoundPlan.yaml
+    workingType:
+      $ref: ./components/parameters/workingType.yaml
+    workingSide:
+      $ref: ./components/parameters/workingSide.yaml
+    workingClientOrderId:
+      $ref: ./components/parameters/workingClientOrderId.yaml
+    workingPrice:
+      $ref: ./components/parameters/workingPrice.yaml
+    workingQuantity:
+      $ref: ./components/parameters/workingQuantity.yaml
+    workingIcebergQty:
+      $ref: ./components/parameters/workingIcebergQty.yaml
+    workingTimeInForce:
+      $ref: ./components/parameters/workingTimeInForce.yaml
+    pendingType:
+      $ref: ./components/parameters/pendingType.yaml
+    pendingSide:
+      $ref: ./components/parameters/pendingSide.yaml
+    pendingClientOrderId:
+      $ref: ./components/parameters/pendingClientOrderId.yaml
+    pendingPrice:
+      $ref: ./components/parameters/pendingPrice.yaml
+    pendingStopPrice:
+      $ref: ./components/parameters/pendingStopPrice.yaml
+    pendingTrailingDelta:
+      $ref: ./components/parameters/pendingTrailingDelta.yaml
+    pendingQuantity:
+      $ref: ./components/parameters/pendingQuantity.yaml
+    pendingIcebergQty:
+      $ref: ./components/parameters/pendingIcebergQty.yaml
+    pendingTimeInForce:
+      $ref: ./components/parameters/pendingTimeInForce.yaml
+    pendingAboveType:
+      $ref: ./components/parameters/pendingAboveType.yaml
+    pendingAboveClientOrderId:
+      $ref: ./components/parameters/pendingAboveClientOrderId.yaml
+    pendingAbovePrice:
+      $ref: ./components/parameters/pendingAbovePrice.yaml
+    pendingAboveStopPrice:
+      $ref: ./components/parameters/pendingAboveStopPrice.yaml
+    pendingAboveTrailingDelta:
+      $ref: ./components/parameters/pendingAboveTrailingDelta.yaml
+    pendingAboveIcebergQty:
+      $ref: ./components/parameters/pendingAboveIcebergQty.yaml
+    pendingAboveTimeInForce:
+      $ref: ./components/parameters/pendingAboveTimeInForce.yaml
+    pendingBelowType:
+      $ref: ./components/parameters/pendingBelowType.yaml
+    pendingBelowClientOrderId:
+      $ref: ./components/parameters/pendingBelowClientOrderId.yaml
+    pendingBelowPrice:
+      $ref: ./components/parameters/pendingBelowPrice.yaml
+    pendingBelowStopPrice:
+      $ref: ./components/parameters/pendingBelowStopPrice.yaml
+    pendingBelowTrailingDelta:
+      $ref: ./components/parameters/pendingBelowTrailingDelta.yaml
+    pendingBelowIcebergQty:
+      $ref: ./components/parameters/pendingBelowIcebergQty.yaml
+    pendingBelowTimeInForce:
+      $ref: ./components/parameters/pendingBelowTimeInForce.yaml
+  schemas:
+    account:
+      $ref: ./components/schemas/account.yaml
+    order:
+      $ref: ./components/schemas/order.yaml
+    ocoOrder:
+      $ref: ./components/schemas/ocoOrder.yaml
+    marginOcoOrder:
+      $ref: ./components/schemas/marginOcoOrder.yaml
+    orderDetails:
+      $ref: ./components/schemas/orderDetails.yaml
+    orderResponseAck:
+      $ref: ./components/schemas/orderResponseAck.yaml
+    orderResponseResult:
+      $ref: ./components/schemas/orderResponseResult.yaml
+    orderResponseFull:
+      $ref: ./components/schemas/orderResponseFull.yaml
+    marginOrder:
+      $ref: ./components/schemas/marginOrder.yaml
+    marginOrderDetail:
+      $ref: ./components/schemas/marginOrderDetail.yaml
+    canceledMarginOrderDetail:
+      $ref: ./components/schemas/canceledMarginOrderDetail.yaml
+    marginOrderResponseAck:
+      $ref: ./components/schemas/marginOrderResponseAck.yaml
+    marginOrderResponseResult:
+      $ref: ./components/schemas/marginOrderResponseResult.yaml
+    marginOrderResponseFull:
+      $ref: ./components/schemas/marginOrderResponseFull.yaml
+    marginTrade:
+      $ref: ./components/schemas/marginTrade.yaml
+    marginTransferDetails:
+      $ref: ./components/schemas/marginTransferDetails.yaml
+    isolatedMarginAccountInfo:
+      $ref: ./components/schemas/isolatedMarginAccountInfo.yaml
+    bookTickerList:
+      $ref: ./components/schemas/bookTickerList.yaml
+    bookTicker:
+      $ref: ./components/schemas/bookTicker.yaml
+    priceTickerList:
+      $ref: ./components/schemas/priceTickerList.yaml
+    priceTicker:
+      $ref: ./components/schemas/priceTicker.yaml
+    repaymentInfo:
+      $ref: ./components/schemas/repaymentInfo.yaml
+    repaymentInfo2:
+      $ref: ./components/schemas/repaymentInfo2.yaml
+    tickerList:
+      $ref: ./components/schemas/tickerList.yaml
+    ticker:
+      $ref: ./components/schemas/ticker.yaml
+    dayTickerList:
+      $ref: ./components/schemas/dayTickerList.yaml
+    dayTicker:
+      $ref: ./components/schemas/dayTicker.yaml
+    myTrade:
+      $ref: ./components/schemas/myTrade.yaml
+    transaction:
+      $ref: ./components/schemas/transaction.yaml
+    trade:
+      $ref: ./components/schemas/trade.yaml
+    aggTrade:
+      $ref: ./components/schemas/aggTrade.yaml
+    bnbBurnStatus:
+      $ref: ./components/schemas/bnbBurnStatus.yaml
+    snapshotSpot:
+      $ref: ./components/schemas/snapshotSpot.yaml
+    snapshotMargin:
+      $ref: ./components/schemas/snapshotMargin.yaml
+    snapshotFutures:
+      $ref: ./components/schemas/snapshotFutures.yaml
+    subAccountUSDTFuturesDetails:
+      $ref: ./components/schemas/subAccountUSDTFuturesDetails.yaml
+    subAccountCOINFuturesDetails:
+      $ref: ./components/schemas/subAccountCOINFuturesDetails.yaml
+    subAccountUSDTFuturesSummary:
+      $ref: ./components/schemas/subAccountUSDTFuturesSummary.yaml
+    subAccountCOINFuturesSummary:
+      $ref: ./components/schemas/subAccountCOINFuturesSummary.yaml
+    subAccountUSDTFuturesPositionRisk:
+      $ref: ./components/schemas/subAccountUSDTFuturesPositionRisk.yaml
+    subAccountCOINFuturesPositionRisk:
+      $ref: ./components/schemas/subAccountCOINFuturesPositionRisk.yaml
+    error:
+      $ref: ./components/schemas/error.yaml
+  securitySchemes:
+    ApiKeyAuth:
+      name: X-MBX-APIKEY
+      in: header
+      description: Binance Public API Key
+      type: apiKey

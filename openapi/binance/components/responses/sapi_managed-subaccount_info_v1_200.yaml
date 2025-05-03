@@ -1,0 +1,65 @@
+description: Managed sub account list
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        total:
+          type: integer
+          example: 3
+        managerSubUserInfoVoList:
+          type: array
+          items:
+            type: object
+            properties:
+              rootUserId:
+                type: integer
+                format: int64
+                example: 1000138475670
+              managersubUserId:
+                type: integer
+                format: int64
+                example: 1000137842513
+              bindParentUserId:
+                type: integer
+                format: int64
+                example: 1000138475669
+              email:
+                type: string
+                example: test_0_virtual@kq3kno9imanagedsub.com
+              insertTimeStamp:
+                type: integer
+                format: int64
+                example: 1678435149000
+              bindParentEmail:
+                type: string
+                example: wdyw8xsh8pey@test.com
+              isSubUserEnabled:
+                type: boolean
+                example: true
+              isUserActive:
+                type: boolean
+                example: true
+              isMarginEnabled:
+                type: boolean
+                example: true
+              isFutureEnabled:
+                type: boolean
+                example: true
+              isSignedLVTRiskAgreement:
+                type: boolean
+                example: true
+            required:
+            - rootUserId
+            - managersubUserId
+            - bindParentUserId
+            - insertTimeStamp
+            - bindParentEmail
+            - isSubUserEnabled
+            - isUserActive
+            - isMarginEnabled
+            - isFutureEnabled
+            - isSignedLVTRiskAgreement
+      required:
+      - total
+      - managerSubUserInfoVoList

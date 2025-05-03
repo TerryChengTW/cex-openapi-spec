@@ -1,0 +1,25 @@
+get:
+  summary: Query Portfolio Margin Asset Index Price (MARKET_DATA)
+  description: 'Query Portfolio Margin Asset Index Price
+
+
+    Weight(IP):
+
+    - 1 if send asset
+
+    - 50 if not send asset'
+  security:
+  - ApiKeyAuth: []
+  tags:
+  - Portfolio Margin
+  parameters:
+  - name: asset
+    in: query
+    schema:
+      type: string
+      example: BTC
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_portfolio_asset-index-price_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_portfolio_asset-index-price_v1_400.yaml

@@ -1,0 +1,25 @@
+description: Cancelled order
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        algoId:
+          type: integer
+          format: int64
+          example: 14511
+        success:
+          type: boolean
+          example: true
+        code:
+          type: integer
+          format: int64
+          example: 0
+        msg:
+          type: string
+          example: OK
+      required:
+      - algoId
+      - success
+      - code
+      - msg

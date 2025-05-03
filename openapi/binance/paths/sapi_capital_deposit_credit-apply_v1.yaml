@@ -1,0 +1,42 @@
+post:
+  summary: One click arrival deposit apply (USER_DATA)
+  description: 'Apply deposit credit for expired address (One click arrival)
+
+
+    Weight(IP): 1'
+  tags:
+  - Wallet
+  parameters:
+  - name: depositId
+    in: query
+    description: Deposit record Id, priority use
+    schema:
+      type: integer
+      format: int64
+  - name: txId
+    in: query
+    description: Deposit txId, used when depositId is not specified
+    schema:
+      type: string
+  - name: subAccountId
+    in: query
+    schema:
+      type: integer
+      format: int64
+  - name: subUserId
+    in: query
+    schema:
+      type: integer
+      format: int64
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_capital_deposit_credit-apply_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_capital_deposit_credit-apply_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_capital_deposit_credit-apply_v1_401.yaml

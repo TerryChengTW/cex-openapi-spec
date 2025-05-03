@@ -1,0 +1,23 @@
+get:
+  summary: Get tokens or symbols delist schedule for cross margin and isolated margin
+    (MARKET_DATA)
+  description: 'Get tokens or symbols delist schedule for cross margin and isolated
+    margin
+
+
+    Weight(IP): 100'
+  tags:
+  - Margin
+  parameters:
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_margin_delist-schedule_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_margin_delist-schedule_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_margin_delist-schedule_v1_401.yaml

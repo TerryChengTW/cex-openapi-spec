@@ -1,0 +1,24 @@
+get:
+  summary: Symbol Order Book Ticker
+  description: 'Best price/qty on the order book for a symbol or symbols.
+
+
+    - If the symbol is not sent, bookTickers for all symbols will be returned in an
+    array.
+
+
+    Weight(IP):
+
+    - `2` for a single symbol;
+
+    - `4` when the symbol parameter is omitted;'
+  tags:
+  - Market
+  parameters:
+  - $ref: ../components/parameters/optionalSymbol.yaml
+  - $ref: ../components/parameters/arraySymbols.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/ticker_bookTicker_v3_200.yaml
+    '400':
+      $ref: ../components/responses/ticker_bookTicker_v3_400.yaml

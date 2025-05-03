@@ -1,0 +1,30 @@
+get:
+  summary: Query Historical Algo Orders (USER_DATA)
+  description: '- You need to enable Futures Trading Permission for the api key which
+    requests this endpoint.
+
+    - Base URL: https://api.binance.com
+
+
+    Weight(IP): 1'
+  tags:
+  - Futures Algo
+  parameters:
+  - $ref: ../components/parameters/optionalSymbol.yaml
+  - $ref: ../components/parameters/optionalSide.yaml
+  - $ref: ../components/parameters/startTime.yaml
+  - $ref: ../components/parameters/endTime.yaml
+  - $ref: ../components/parameters/page.yaml
+  - $ref: ../components/parameters/smallPageSize.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_algo_futures_historicalOrders_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_algo_futures_historicalOrders_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_algo_futures_historicalOrders_v1_401.yaml

@@ -1,0 +1,35 @@
+get:
+  summary: Redemption Record (USER_DATA)
+  description: '- Only the data of the latest 90 days is available
+
+
+    Weight(IP): 1'
+  tags:
+  - BLVT
+  parameters:
+  - $ref: ../components/parameters/optionalBlvtTokenName.yaml
+  - name: id
+    in: query
+    schema:
+      type: integer
+      format: int64
+  - $ref: ../components/parameters/startTime.yaml
+  - $ref: ../components/parameters/endTime.yaml
+  - name: limit
+    in: query
+    schema:
+      type: integer
+      format: int32
+    description: default 1000, max 1000
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_blvt_redeem_record_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_blvt_redeem_record_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_blvt_redeem_record_v1_401.yaml

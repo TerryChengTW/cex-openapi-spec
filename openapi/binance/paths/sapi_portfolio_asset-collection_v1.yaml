@@ -1,0 +1,22 @@
+post:
+  summary: Fund Collection by Asset (USER_DATA)
+  description: 'Transfers specific asset from Futures Account to Margin account
+
+
+    Weight(IP): 60'
+  tags:
+  - Portfolio Margin
+  parameters:
+  - $ref: ../components/parameters/asset.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_portfolio_asset-collection_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_portfolio_asset-collection_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_portfolio_asset-collection_v1_401.yaml

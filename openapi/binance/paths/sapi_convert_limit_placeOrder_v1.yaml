@@ -1,0 +1,76 @@
+post:
+  summary: Place limit order (USER_DATA)
+  description: 'Enable users to place a limit order
+
+
+    - baseAsset or quoteAsset can be determined via exchangeInfo endpoint.
+
+    - Limit price is defined from baseAsset to quoteAsset.
+
+    - Either baseAmount or quoteAmount is used.
+
+
+    Weight(UID): 500'
+  tags:
+  - Convert
+  parameters:
+  - $ref: ../components/parameters/baseAsset.yaml
+  - $ref: ../components/parameters/quoteAsset.yaml
+  - name: limitPrice
+    in: query
+    required: true
+    description: Symbol limit price (from baseAsset to quoteAsset)
+    schema:
+      type: number
+      format: double
+  - name: baseAmount
+    in: query
+    required: false
+    description: Base asset amount. (One of baseAmount or quoteAmount is required)
+    schema:
+      type: number
+      format: double
+  - name: quoteAmount
+    in: query
+    required: false
+    description: Quote asset amount. (One of baseAmount or quoteAmount is required)
+    schema:
+      type: number
+      format: double
+  - $ref: ../components/parameters/side.yaml
+  - name: walletType
+    in: query
+    required: false
+    description: SPOT or FUNDING or SPOT_FUNDING. It is to use which type of assets.
+      Default is SPOT.
+    schema:
+      type: string
+      enum:
+      - SPOT
+      - FUNDING
+      - SPOT_FUNDING
+      example: SPOT
+  - name: expiredType
+    in: query
+    required: false
+    description: 1_D, 3_D, 7_D, 30_D (D means day)
+    schema:
+      type: string
+      enum:
+      - 1_D
+      - 3_D
+      - 7_D
+      - 30_D
+      example: 1_D
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_convert_limit_placeOrder_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_convert_limit_placeOrder_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_convert_limit_placeOrder_v1_401.yaml

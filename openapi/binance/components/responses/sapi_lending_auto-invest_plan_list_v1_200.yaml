@@ -1,0 +1,122 @@
+description: Plan result
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        planValueInUSD:
+          type: string
+          example: '123'
+        planValueInBTC:
+          type: string
+          example: '0.1'
+        pnlInUSD:
+          type: string
+          example: '120'
+        roi:
+          type: string
+          example: '2.3'
+        plan:
+          type: array
+          items:
+            type: object
+            properties:
+              planId:
+                type: integer
+                example: 12345
+              planType:
+                type: string
+                example: SINGLE
+              editAllowed:
+                type: string
+                example: 'true'
+              creationDateTime:
+                type: integer
+                format: int64
+                example: 1648378800000
+              firstExecutionDateTime:
+                type: integer
+                format: int64
+                example: 1648378800000
+              nextExecutionDateTime:
+                type: integer
+                format: int64
+                example: 1648378800000
+              status:
+                type: string
+                example: ONGOING
+              lastUpdatedDateTime:
+                type: integer
+                format: int64
+                example: 1648378800000
+              targetAsset:
+                type: string
+                example: BTC
+              totalTargetAmount:
+                type: string
+                example: '0.111'
+              sourceAsset:
+                type: string
+                example: BUSD
+              totalInvestedInUSD:
+                type: string
+                example: '4.555'
+              subscriptionAmount:
+                type: string
+                example: '0.1'
+              subscriptionCycle:
+                type: string
+                example: WEEKLY
+              subscriptionStartDay:
+                type: string
+                example: '1'
+              subscriptionStartWeekday:
+                type: string
+                example: MON
+              subscriptionStartTime:
+                type: string
+                example: '1'
+              sourceWallet:
+                type: string
+                example: SPOT_WALLET
+              flexibleAllowedToUse:
+                type: string
+                example: 'false'
+              planValueInUSD:
+                type: string
+                example: '101.2'
+              pnlInUSD:
+                type: string
+                example: '101.2'
+              roi:
+                type: string
+                example: '1.02'
+            required:
+            - planId
+            - planType
+            - editAllowed
+            - creationDateTime
+            - firstExecutionDateTime
+            - nextExecutionDateTime
+            - status
+            - lastUpdatedDateTime
+            - targetAsset
+            - totalTargetAmount
+            - sourceAsset
+            - totalInvestedInUSD
+            - subscriptionAmount
+            - subscriptionCycle
+            - subscriptionStartDay
+            - subscriptionStartWeekday
+            - subscriptionStartTime
+            - sourceWallet
+            - flexibleAllowedToUse
+            - planValueInUSD
+            - pnlInUSD
+            - roi
+      required:
+      - planValueInUSD
+      - planValueInBTC
+      - pnlInUSD
+      - roi
+      - plan

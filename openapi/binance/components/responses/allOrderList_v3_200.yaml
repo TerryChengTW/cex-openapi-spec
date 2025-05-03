@@ -1,0 +1,66 @@
+description: List of OCO orders
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          orderListId:
+            type: integer
+            format: int64
+            example: 29
+          contingencyType:
+            type: string
+            example: OCO
+          listStatusType:
+            type: string
+            example: EXEC_STARTED
+          listOrderStatus:
+            type: string
+            example: EXECUTING
+          listClientOrderId:
+            type: string
+            example: amEEAXryFzFwYF1FeRpUoZ
+          transactionTime:
+            type: integer
+            format: int64
+            example: 1565245913483
+          symbol:
+            type: string
+            example: LTCBTC
+          isIsolated:
+            type: boolean
+          orders:
+            type: array
+            items:
+              type: object
+              properties:
+                symbol:
+                  type: string
+                orderId:
+                  type: integer
+                  format: int64
+                clientOrderId:
+                  type: string
+              example:
+              - symbol: LTCBTC
+                orderId: 4
+                clientOrderId: oD7aesZqjEGlZrbtRpy5zB
+              - symbol: LTCBTC
+                orderId: 5
+                clientOrderId: Jr1h6xirOxgeJOUuYQS7V3
+              required:
+              - symbol
+              - orderId
+              - clientOrderId
+        required:
+        - orderListId
+        - contingencyType
+        - listStatusType
+        - listOrderStatus
+        - listClientOrderId
+        - transactionTime
+        - symbol
+        - isIsolated
+        - orders

@@ -1,0 +1,17 @@
+description: Target asset list
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          date:
+            type: string
+            example: '1648378800000'
+          simulateRoi:
+            type: string
+            example: '1.75'
+        required:
+        - date
+        - simulateRoi

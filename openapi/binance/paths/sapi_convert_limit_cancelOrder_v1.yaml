@@ -1,0 +1,28 @@
+post:
+  summary: Cancel limit order (USER_DATA)
+  description: 'Enable users to cancel a limit order
+
+
+    Weight(UID): 200'
+  tags:
+  - Convert
+  parameters:
+  - name: orderId
+    in: query
+    required: true
+    schema:
+      type: integer
+      format: int64
+      example: 1603680255057330400
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_convert_limit_cancelOrder_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_convert_limit_cancelOrder_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_convert_limit_cancelOrder_v1_401.yaml

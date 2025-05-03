@@ -1,0 +1,48 @@
+description: Redemption history
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          indexId:
+            type: integer
+            format: int64
+            example: 1
+          indexName:
+            type: string
+            example: BINANCE TOP 10 EW
+          redemptionId:
+            type: integer
+            format: int64
+            example: 11
+          status:
+            type: string
+            example: SUCCESS
+          asset:
+            type: string
+            example: BTC
+          amount:
+            type: string
+            example: '0.005'
+          redemptionDateTime:
+            type: integer
+            format: int64
+            example: 1648378800000
+          transactionFee:
+            type: string
+            example: '0'
+          transactionFeeUnit:
+            type: string
+            example: USDT
+        required:
+        - indexId
+        - indexName
+        - redemptionId
+        - status
+        - asset
+        - amount
+        - redemptionDateTime
+        - transactionFee
+        - transactionFeeUnit

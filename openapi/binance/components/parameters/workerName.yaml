@@ -1,0 +1,6 @@
+name: workerName
+in: query
+required: true
+description: Miner’s name
+schema:
+  type: string

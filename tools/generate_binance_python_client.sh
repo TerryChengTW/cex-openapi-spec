@@ -1,65 +1,67 @@
 #!/bin/bash
 
-# --- Get script directory ---
-SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-ROOT_DIR="$(dirname "$SCRIPT_DIR")"
+# Use OpenAPI Generator to generate a Python API client
+# Usage: ./run_api_generator.sh [OpenAPI file path] [output directory] [package name]
 
-# --- Settings ---
-INPUT_SPEC="$ROOT_DIR/openapi/binance/openapi.yaml"
-OUTPUT_DIR="$ROOT_DIR/generated/binance_python_client"
+# Default parameters
+OPENAPI_FILE=${1:-"./openapi/binance/openapi.yaml"}
+OUTPUT_DIR=${2:-"./generated/binance_client"}
+PACKAGE_NAME=${3:-"binance_client"}
 
-echo "[INFO] Current directory: $(pwd)"
-echo "[INFO] Script directory: $SCRIPT_DIR"
-echo "[INFO] Root directory: $ROOT_DIR"
-echo "[INFO] OpenAPI specification file: $INPUT_SPEC"
-echo "[INFO] Output directory: $OUTPUT_DIR"
+# Helper functions for colored output
+function info {
+  echo -e "\033[36m$1\033[0m"
+}
+function success {
+  echo -e "\033[32m$1\033[0m"
+}
+function warn {
+  echo -e "\033[33m$1\033[0m"
+}
+function error {
+  echo -e "\033[31m$1\033[0m"
+}
 
-# --- Check if Java is available ---
-if ! command -v java &> /dev/null; then
-    echo "[ERROR] Java not found. Please install Java and add it to PATH."
-    exit 1
+# Check if the OpenAPI file exists
+if [ ! -f "$OPENAPI_FILE" ]; then
+  error "Error: OpenAPI file not found at $OPENAPI_FILE"
+  exit 1
 fi
 
-# --- Check if openapi-generator-cli is available ---
+# Check if OpenAPI Generator CLI is installed
 if ! command -v openapi-generator-cli &> /dev/null; then
-    echo "[ERROR] openapi-generator-cli not found."
-    echo "[TIP] Please install first: npm install @openapitools/openapi-generator-cli -g"
+  warn "OpenAPI Generator CLI not found. Attempting to install via npm..."
+  npm install -g @openapitools/openapi-generator-cli
+  if [ $? -ne 0 ]; then
+    error "Failed to install OpenAPI Generator CLI. Please install it manually and try again."
     exit 1
+  fi
+else
+  VERSION=$(openapi-generator-cli version)
+  success "OpenAPI Generator CLI is installed: $VERSION"
 fi
 
-# --- First run the split script ---
-echo "[INFO] Running split script to generate modular OpenAPI specification files..."
-python "$SCRIPT_DIR/split_endpoint.py"
-if [ $? -ne 0 ]; then
-    echo "[ERROR] Failed to split OpenAPI specification files."
-    exit 1
+# Ensure output directory exists
+if [ ! -d "$OUTPUT_DIR" ]; then
+  mkdir -p "$OUTPUT_DIR"
+  warn "Created output directory: $OUTPUT_DIR"
 fi
 
-# --- Check if OpenAPI specification file exists ---
-if [ ! -f "$INPUT_SPEC" ]; then
-    echo "[ERROR] OpenAPI specification file not found: $INPUT_SPEC"
-    exit 1
+# Run the OpenAPI Generator
+info "Starting Python API client generation..."
+CMD="openapi-generator-cli generate -i \"$OPENAPI_FILE\" -g python -o \"$OUTPUT_DIR\" --package-name \"$PACKAGE_NAME\" --skip-validate-spec"
+info "Running command: $CMD"
+eval $CMD
+
+# Check the result
+if [ $? -eq 0 ]; then
+  success "\nSuccessfully generated Python API client in: $OUTPUT_DIR"
+  success "Package name: $PACKAGE_NAME"
+  info "\nUsage:"
+  echo "cd $OUTPUT_DIR"
+  echo "pip install -e ."
+  echo "import $PACKAGE_NAME"
+else
+  error "An error occurred during client generation."
+  exit 1
 fi
-
-# --- Clean up old output directory (if exists) ---
-if [ -d "$OUTPUT_DIR" ]; then
-    echo "[INFO] Cleaning up old output directory: $OUTPUT_DIR"
-    rm -rf "$OUTPUT_DIR"
-fi
-
-# --- Generate Python client ---
-echo "[INFO] Using $INPUT_SPEC to generate Binance Python client to $OUTPUT_DIR ..."
-
-mkdir -p "$OUTPUT_DIR"
-
-echo "[INFO] Using openapi-generator-cli to generate code..."
-openapi-generator-cli generate -i $INPUT_SPEC -g python -o $OUTPUT_DIR --skip-validate-spec --additional-properties=packageName=binance_client,useTags=true,enumPropertyNaming=UPPERCASE
-
-if [ $? -ne 0 ]; then
-    echo "[ERROR] Failed to generate Binance Python client."
-    exit 1
-fi
-
-echo
-echo "[SUCCESS] Binance Python client has been successfully generated at: $OUTPUT_DIR"
-echo "[TIP] You can navigate to $OUTPUT_DIR and follow the instructions to install and use." 

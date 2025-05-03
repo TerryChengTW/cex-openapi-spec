@@ -1,0 +1,35 @@
+description: List of sub-accounts
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        subAccounts:
+          type: array
+          items:
+            type: object
+            properties:
+              email:
+                type: string
+                example: testsub@gmail.com
+              isFreeze:
+                type: boolean
+                example: false
+              createTime:
+                type: integer
+                format: int64
+                example: 1544433328000
+              isManagedSubAccount:
+                type: boolean
+                example: false
+              isAssetManagementSubAccount:
+                type: boolean
+                example: false
+            required:
+            - email
+            - isFreeze
+            - createTime
+            - isManagedSubAccount
+            - isAssetManagementSubAccount
+      required:
+      - subAccounts

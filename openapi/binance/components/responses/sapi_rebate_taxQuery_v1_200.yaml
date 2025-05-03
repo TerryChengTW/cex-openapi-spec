@@ -1,0 +1,66 @@
+description: Rebate History
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: OK
+        type:
+          type: string
+          example: GENERAL
+        code:
+          type: string
+          example: '000000000'
+        data:
+          type: object
+          properties:
+            page:
+              type: integer
+              format: int32
+              example: 1
+            totalRecords:
+              type: integer
+              format: int32
+              example: 2
+            totalPageNum:
+              type: integer
+              format: int32
+              example: 1
+            data:
+              type: array
+              items:
+                type: object
+                properties:
+                  asset:
+                    type: string
+                    example: USDT
+                  type:
+                    type: integer
+                    format: int32
+                    example: 1
+                    description: rebate type：1 is commission rebate，2 is referral
+                      kickback
+                  amount:
+                    type: string
+                    example: '0.0001126'
+                  updateTime:
+                    type: integer
+                    format: int64
+                    example: 1637651320000
+                required:
+                - asset
+                - type
+                - amount
+                - updateTime
+          required:
+          - page
+          - totalRecords
+          - totalPageNum
+          - data
+      required:
+      - status
+      - type
+      - code
+      - data

@@ -1,0 +1,7 @@
+description: Price ticker
+content:
+  application/json:
+    schema:
+      oneOf:
+      - $ref: ../schemas/priceTicker.yaml
+      - $ref: ../schemas/priceTickerList.yaml

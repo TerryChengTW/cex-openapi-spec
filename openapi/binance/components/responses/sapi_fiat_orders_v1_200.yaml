@@ -1,0 +1,70 @@
+description: History of deposit/withdraw orders
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        code:
+          type: string
+          example: '000000'
+        message:
+          type: string
+          example: success
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              orderNo:
+                type: string
+                example: 7d76d611-0568-4f43-afb6-24cac7767365
+              fiatCurrency:
+                type: string
+                example: BRL
+              indicatedAmount:
+                type: string
+                example: '10.00'
+              amount:
+                type: string
+                example: '10.00'
+              totalFee:
+                type: string
+                example: '0.00'
+              method:
+                type: string
+                example: BankAccount
+              status:
+                type: string
+                example: Expired
+                description: Processing, Failed, Successful, Finished, Refunding,
+                  Refunded, Refund Failed, Order Partial credit Stopped
+              createTime:
+                type: integer
+                format: int64
+                example: 1626144956000
+              updateTime:
+                type: integer
+                format: int64
+                example: 1626400907000
+            required:
+            - orderNo
+            - fiatCurrency
+            - indicatedAmount
+            - amount
+            - totalFee
+            - method
+            - status
+            - createTime
+            - updateTime
+        total:
+          type: integer
+          format: int32
+          example: 1
+        success:
+          type: boolean
+      required:
+      - code
+      - message
+      - data
+      - total
+      - success

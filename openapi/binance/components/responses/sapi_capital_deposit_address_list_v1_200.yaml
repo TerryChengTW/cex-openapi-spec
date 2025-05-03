@@ -1,0 +1,22 @@
+description: Coin address
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          coin:
+            type: string
+            example: ETH
+          address:
+            type: string
+            example: '0xD316E95Fd9E8E237Cb11f8200Babbc5D8D177BA4'
+          isDefault:
+            type: integer
+            format: int32
+            example: 1
+        required:
+        - coin
+        - address
+        - isDefault

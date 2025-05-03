@@ -1,0 +1,24 @@
+description: Returned ETH
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        success:
+          type: boolean
+          example: true
+        arrivalTime:
+          type: integer
+          format: int64
+          example: 1575018510000
+        ethAmount:
+          type: string
+          example: '0.23092091'
+        conversionRatio:
+          type: string
+          example: '1.00121234'
+      required:
+      - success
+      - arrivalTime
+      - ethAmount
+      - conversionRatio

@@ -1,0 +1,22 @@
+get:
+  summary: Query Sub-account Assets (For Master Account)
+  description: 'Fetch sub-account assets
+
+
+    Weight(UID): 60'
+  tags:
+  - Sub-Account
+  parameters:
+  - $ref: ../components/parameters/email.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_sub-account_assets_v4_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_sub-account_assets_v4_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_sub-account_assets_v4_401.yaml

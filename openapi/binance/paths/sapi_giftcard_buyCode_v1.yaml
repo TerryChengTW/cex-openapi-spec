@@ -1,0 +1,64 @@
+post:
+  summary: Buy a Binance Code (TRADE)
+  description: 'This API is for buying a fixed-value Binance Code, which means your
+    Binance Code will be redeemable to a token that is different to the token that
+    you are paying in. If the token you’re paying and the redeemable token are the
+    same, please use the Create Binance Code endpoint.
+
+    You can use supported crypto currency or fiat token as baseToken to buy Binance
+    Code that is redeemable to your chosen faceToken.
+
+    Once successfully purchased, the amount of baseToken would be deducted from your
+    funding wallet.
+
+
+    To get started with, please make sure:
+
+    - You have a Binance account
+
+    - You have passed kyc
+
+    - You have a sufficient balance in your Binance funding wallet
+
+    - You need Enable Withdrawals for the API Key which requests this endpoint.
+
+
+    Daily creation volume: 2 BTC / 24H Daily creation times: 200 Codes / 24H
+
+
+    Weight(IP): 1'
+  tags:
+  - Gift Card
+  parameters:
+  - name: baseToken
+    in: query
+    description: The token you want to pay, example BUSD
+    required: true
+    schema:
+      type: string
+  - name: faceToken
+    in: query
+    description: The token you want to buy, example BNB. If faceToken = baseToken,
+      it's the same as createCode endpoint.
+    required: true
+    schema:
+      type: string
+  - name: baseTokenAmount
+    in: query
+    required: true
+    description: The base token asset quantity, example  1.002
+    schema:
+      type: number
+      format: double
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_giftcard_buyCode_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_giftcard_buyCode_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_giftcard_buyCode_v1_401.yaml

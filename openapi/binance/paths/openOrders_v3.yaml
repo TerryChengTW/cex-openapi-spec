@@ -1,0 +1,51 @@
+get:
+  summary: Current Open Orders (USER_DATA)
+  description: 'Get all open orders on a symbol. Careful when accessing this with
+    no symbol.
+
+
+    Weight(IP):
+
+    - `6` for a single symbol;
+
+    - `80` when the symbol parameter is omitted;'
+  tags:
+  - Trade
+  parameters:
+  - $ref: ../components/parameters/optionalSymbol.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/openOrders_v3_200.yaml
+    '400':
+      $ref: ../components/responses/openOrders_v3_400.yaml
+    '401':
+      $ref: ../components/responses/openOrders_v3_401.yaml
+delete:
+  summary: Cancel all Open Orders on a Symbol (TRADE)
+  description: 'Cancels all active orders on a symbol.
+
+    This includes OCO orders.
+
+
+    Weight(IP): 1'
+  tags:
+  - Trade
+  parameters:
+  - $ref: ../components/parameters/symbol.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/openOrders_v3_200.yaml
+    '400':
+      $ref: ../components/responses/openOrders_v3_400.yaml
+    '401':
+      $ref: ../components/responses/openOrders_v3_401.yaml

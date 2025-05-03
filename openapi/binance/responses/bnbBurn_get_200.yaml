@@ -1,5 +1,0 @@
-description: Status on BNB to pay for trading fees
-content:
-  application/json:
-    schema:
-      $ref: '#/components/schemas/bnbBurnStatus'

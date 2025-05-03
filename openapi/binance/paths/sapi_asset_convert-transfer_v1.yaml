@@ -1,0 +1,39 @@
+post:
+  summary: Convert Transfer (USER_DATA)
+  description: 'Convert transfer, convert between BUSD and stablecoins.
+
+    If the clientId has been used before, will not do the convert transfer, the original
+    transfer will be returned.
+
+
+    Weight(UID): 5'
+  tags:
+  - Wallet
+  parameters:
+  - name: clientTranId
+    in: query
+    description: The unique flag, the min length is 20
+    required: true
+    schema:
+      type: string
+  - $ref: ../components/parameters/asset.yaml
+  - $ref: ../components/parameters/amount.yaml
+  - name: targetAsset
+    in: query
+    description: Target asset you want to convert
+    required: true
+    schema:
+      type: string
+      example: BNB
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_asset_convert-transfer_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_asset_convert-transfer_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_asset_convert-transfer_v1_401.yaml

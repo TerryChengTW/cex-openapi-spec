@@ -1,0 +1,42 @@
+post:
+  summary: Subscribe Flexible Product (TRADE)
+  description: 'Weight(IP): 1
+
+
+    Rate Limit: 1/3s per account'
+  tags:
+  - Simple Earn
+  parameters:
+  - name: productId
+    in: query
+    required: true
+    schema:
+      type: string
+  - name: amount
+    in: query
+    required: true
+    schema:
+      type: number
+      format: double
+  - name: autoSubscribe
+    in: query
+    description: true or false, default true.
+    schema:
+      type: boolean
+  - name: sourceAccount
+    in: query
+    description: SPOT,FUND,ALL, default SPOT
+    schema:
+      type: string
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_simple-earn_flexible_subscribe_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_simple-earn_flexible_subscribe_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_simple-earn_flexible_subscribe_v1_401.yaml

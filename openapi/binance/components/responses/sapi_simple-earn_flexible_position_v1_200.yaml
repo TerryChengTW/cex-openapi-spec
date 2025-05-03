@@ -1,0 +1,86 @@
+description: Flexible Product Position
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        rows:
+          type: array
+          items:
+            type: object
+            properties:
+              totalAmount:
+                type: string
+                example: '75.46000000'
+              tierAnnualPercentageRate:
+                type: object
+                properties:
+                  0-5BTC:
+                    type: number
+                    format: double
+                    example: 0.05
+                  5-10BTC:
+                    type: number
+                    format: double
+                    example: 0.03
+                required:
+                - 0-5BTC
+                - 5-10BTC
+              latestAnnualPercentageRate:
+                type: string
+                example: '0.02599895'
+              yesterdayAirdropPercentageRate:
+                type: string
+                example: '0.02599895'
+              asset:
+                type: string
+                example: USDT
+              airDropAsset:
+                type: string
+                example: BETH
+              canRedeem:
+                type: boolean
+                example: true
+              collateralAmount:
+                type: string
+                example: '232.23123213'
+              productId:
+                type: string
+                example: USDT001
+              yesterdayRealTimeRewards:
+                type: string
+                example: '0.10293829'
+              cumulativeBonusRewards:
+                type: string
+                example: '0.22759183'
+              cumulativeRealTimeRewards:
+                type: string
+                example: '0.22759183'
+              cumulativeTotalRewards:
+                type: string
+                example: '0.45459183'
+              autoSubscribe:
+                type: boolean
+                example: true
+            required:
+            - totalAmount
+            - tierAnnualPercentageRate
+            - latestAnnualPercentageRate
+            - yesterdayAirdropPercentageRate
+            - asset
+            - airDropAsset
+            - canRedeem
+            - collateralAmount
+            - productId
+            - yesterdayRealTimeRewards
+            - cumulativeBonusRewards
+            - cumulativeRealTimeRewards
+            - cumulativeTotalRewards
+            - autoSubscribe
+        total:
+          type: integer
+          format: int64
+          example: 1
+      required:
+      - rows
+      - total

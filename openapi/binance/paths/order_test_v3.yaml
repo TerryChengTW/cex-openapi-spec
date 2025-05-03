@@ -1,0 +1,41 @@
+post:
+  summary: Test New Order (TRADE)
+  description: "Test new order creation and signature/recvWindow long.\nCreates and\
+    \ validates a new order but does not send it into the matching engine.\n\nWeight(IP):\n\
+    \  - Without computeCommissionRates: `1`\n  - With computeCommissionRates: `20`"
+  tags:
+  - Trade
+  parameters:
+  - $ref: ../components/parameters/symbol.yaml
+  - $ref: ../components/parameters/side.yaml
+  - $ref: ../components/parameters/orderType.yaml
+  - $ref: ../components/parameters/timeInForce.yaml
+  - $ref: ../components/parameters/optionalQuantity.yaml
+  - $ref: ../components/parameters/quoteOrderQty.yaml
+  - $ref: ../components/parameters/optionalPrice.yaml
+  - $ref: ../components/parameters/newClientOrderId.yaml
+  - $ref: ../components/parameters/strategyId.yaml
+  - $ref: ../components/parameters/strategyType.yaml
+  - $ref: ../components/parameters/stopPrice.yaml
+  - $ref: ../components/parameters/optionalTrailingDelta.yaml
+  - $ref: ../components/parameters/icebergQty.yaml
+  - $ref: ../components/parameters/newOrderRespType.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - name: computeCommissionRates
+    in: query
+    required: false
+    description: 'Default: false'
+    schema:
+      type: boolean
+      example: false
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/order_test_v3_200.yaml
+    '400':
+      $ref: ../components/responses/order_test_v3_400.yaml
+    '401':
+      $ref: ../components/responses/order_test_v3_401.yaml

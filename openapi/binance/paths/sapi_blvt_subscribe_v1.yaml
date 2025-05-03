@@ -1,0 +1,26 @@
+post:
+  summary: Subscribe BLVT (USER_DATA)
+  description: 'Weight(IP): 1'
+  tags:
+  - BLVT
+  parameters:
+  - $ref: ../components/parameters/blvtTokenName.yaml
+  - name: cost
+    in: query
+    description: Spot balance
+    required: true
+    schema:
+      type: number
+      format: double
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_blvt_subscribe_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_blvt_subscribe_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_blvt_subscribe_v1_401.yaml

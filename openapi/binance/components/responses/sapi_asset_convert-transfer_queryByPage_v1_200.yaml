@@ -1,0 +1,58 @@
+description: Query Convert Transfer
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        total:
+          type: integer
+          format: int32
+          example: 1
+        rows:
+          type: array
+          items:
+            type: object
+            properties:
+              tranId:
+                type: integer
+                format: int64
+                example: 118263407119
+              type:
+                type: integer
+                format: int64
+                example: 244
+              time:
+                type: integer
+                format: int64
+                example: 1664442078000
+              deductedAsset:
+                type: string
+                example: BUSD
+              deductedAmount:
+                type: string
+                example: '1'
+              targetAsset:
+                type: string
+                example: USDC
+              targetAmount:
+                type: string
+                example: '1'
+              status:
+                type: string
+                example: S
+              accountType:
+                type: string
+                example: MAIN
+            required:
+            - tranId
+            - type
+            - time
+            - deductedAsset
+            - deductedAmount
+            - targetAsset
+            - targetAmount
+            - status
+            - accountType
+      required:
+      - total
+      - rows

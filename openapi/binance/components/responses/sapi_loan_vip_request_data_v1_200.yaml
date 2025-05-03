@@ -1,0 +1,54 @@
+description: Application Status
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        total:
+          type: integer
+          example: 1
+        rows:
+          type: array
+          items:
+            type: object
+            properties:
+              loanAccountId:
+                type: string
+                example: '12345678'
+              orderId:
+                type: string
+                example: '12345678'
+              requestId:
+                type: string
+                example: '12345678'
+              loanCoin:
+                type: string
+                example: BTC
+              loanAmount:
+                type: string
+                example: '100.5'
+              collateralAccountId:
+                type: string
+                example: 12345678,12345678,12345678
+              collateralCoin:
+                type: string
+                example: BUSD,USDT,ETH
+              loanTerm:
+                type: integer
+                example: '30'
+              status:
+                type: integer
+                example: Repaid
+            required:
+            - loanAccountId
+            - orderId
+            - requestId
+            - loanCoin
+            - loanAmount
+            - collateralAccountId
+            - collateralCoin
+            - loanTerm
+            - status
+      required:
+      - total
+      - rows

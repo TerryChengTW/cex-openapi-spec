@@ -1,0 +1,5 @@
+description: Report on deleted OCO
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/ocoOrder.yaml

@@ -1,0 +1,27 @@
+post:
+  summary: Accept Quote (TRADE)
+  description: 'Accept the offered quote by quote ID.
+
+
+    Weight(UID): 500'
+  tags:
+  - Convert
+  parameters:
+  - name: quoteId
+    in: query
+    required: true
+    schema:
+      type: string
+      example: 1000
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_convert_acceptQuote_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_convert_acceptQuote_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_convert_acceptQuote_v1_401.yaml

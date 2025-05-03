@@ -1,0 +1,25 @@
+get:
+  summary: Fetch RSA Public Key (USER_DATA)
+  description: 'This API is for fetching the RSA Public Key.
+
+    This RSA Public key will be used to encrypt the card code.
+
+    Please note that the RSA Public key fetched is valid only for the current day.
+
+
+    Weight(IP): 1'
+  tags:
+  - Gift Card
+  parameters:
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_giftcard_cryptography_rsa-public-key_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_giftcard_cryptography_rsa-public-key_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_giftcard_cryptography_rsa-public-key_v1_401.yaml

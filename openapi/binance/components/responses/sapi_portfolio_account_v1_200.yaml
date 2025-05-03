@@ -1,0 +1,40 @@
+description: Portfolio account.
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        uniMMR:
+          type: string
+          example: '1.87987800'
+          description: Classic Portfolio margin account maintenance margin rate
+        accountEquity:
+          type: string
+          example: '122607.35137903'
+          description: Account equity, unit is USD
+        actualEquity:
+          type: string
+          example: '142607.35137903'
+          description: Actual equity, unit is USD
+        accountMaintMargin:
+          type: string
+          example: '23.72469206'
+          description: Classic Portfolio margin account maintenance margin, unit is
+            USD
+        accountStatus:
+          type: string
+          example: NORMAL
+          description: Classic Portfolio margin account status:"NORMAL", "MARGIN_CALL",
+            "SUPPLY_MARGIN", "REDUCE_ONLY", "ACTIVE_LIQUIDATION", "FORCE_LIQUIDATION",
+            "BANKRUPTED"
+        accountType:
+          type: string
+          example: PM_1
+          description: PM_1 for classic PM, PM_2 for PM
+      required:
+      - uniMMR
+      - accountEquity
+      - actualEquity
+      - accountMaintMargin
+      - accountStatus
+      - accountType

@@ -1,0 +1,18 @@
+get:
+  summary: Query Open OCO (USER_DATA)
+  description: 'Weight(IP): 6'
+  tags:
+  - Trade
+  parameters:
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/openOrderList_v3_200.yaml
+    '400':
+      $ref: ../components/responses/openOrderList_v3_400.yaml
+    '401':
+      $ref: ../components/responses/openOrderList_v3_401.yaml

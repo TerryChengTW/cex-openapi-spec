@@ -1,0 +1,27 @@
+get:
+  summary: Query Current Margin Order Count Usage (TRADE)
+  description: 'Displays the user''s current margin order count usage for all intervals.
+
+
+    Weight(IP): 20'
+  tags:
+  - Margin
+  parameters:
+  - $ref: ../components/parameters/optionalIsIsolated.yaml
+  - name: symbol
+    in: query
+    description: isolated symbol, mandatory for isolated margin
+    schema:
+      type: string
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_margin_rateLimit_order_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_margin_rateLimit_order_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_margin_rateLimit_order_v1_401.yaml

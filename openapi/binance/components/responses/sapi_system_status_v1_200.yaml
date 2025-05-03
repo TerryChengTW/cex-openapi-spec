@@ -1,0 +1,18 @@
+description: OK
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: integer
+          format: int32
+          example: 0
+          description: '0: normal, 1：system maintenance'
+        msg:
+          type: string
+          example: normal
+          description: '"normal", "system_maintenance"'
+      required:
+      - status
+      - msg

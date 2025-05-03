@@ -1,0 +1,7 @@
+description: Trading day ticker
+content:
+  application/json:
+    schema:
+      oneOf:
+      - $ref: ../schemas/dayTicker.yaml
+      - $ref: ../schemas/dayTickerList.yaml

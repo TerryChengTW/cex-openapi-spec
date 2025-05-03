@@ -1,0 +1,69 @@
+get:
+  summary: Sub-account Futures Asset Transfer History (For Master Account)
+  description: 'Weight(IP): 1'
+  tags:
+  - Sub-Account
+  parameters:
+  - $ref: ../components/parameters/subAccountEmail.yaml
+  - name: futuresType
+    in: query
+    description: '1:USDT-margined Futures, 2: Coin-margined Futures'
+    required: true
+    schema:
+      type: integer
+      format: int32
+      example: 2
+  - $ref: ../components/parameters/startTime.yaml
+  - $ref: ../components/parameters/endTime.yaml
+  - $ref: ../components/parameters/page.yaml
+  - name: limit
+    in: query
+    description: 'Default value: 50, Max value: 500'
+    schema:
+      type: integer
+      format: int32
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_sub-account_futures_internalTransfer_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_sub-account_futures_internalTransfer_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_sub-account_futures_internalTransfer_v1_401.yaml
+post:
+  summary: Sub-account Futures Asset Transfer (For Master Account)
+  description: '- Master account can transfer max 2000 times a minute
+
+
+    Weight(IP): 1'
+  tags:
+  - Sub-Account
+  parameters:
+  - $ref: ../components/parameters/subAccountFromEmail.yaml
+  - $ref: ../components/parameters/subAccountToEmail.yaml
+  - name: futuresType
+    in: query
+    required: true
+    description: '1:USDT-margined Futures,2: Coin-margined Futures'
+    schema:
+      type: integer
+      format: int32
+      example: 2
+  - $ref: ../components/parameters/asset.yaml
+  - $ref: ../components/parameters/amount.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_sub-account_futures_internalTransfer_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_sub-account_futures_internalTransfer_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_sub-account_futures_internalTransfer_v1_401.yaml

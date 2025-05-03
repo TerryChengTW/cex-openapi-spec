@@ -1,0 +1,49 @@
+post:
+  summary: Crypto Loan Repay (TRADE)
+  description: 'Weight(UID): 6000'
+  tags:
+  - Crypto Loans
+  parameters:
+  - name: orderId
+    in: query
+    description: Order ID
+    required: true
+    schema:
+      type: integer
+      format: int64
+      example: 123456789
+  - name: amount
+    in: query
+    description: Repayment Amount
+    required: true
+    schema:
+      type: number
+      format: double
+      example: 100.5
+  - name: type
+    in: query
+    description: 'Default: 1. 1 for ''repay with borrowed coin''; 2 for ''repay with
+      collateral''.'
+    schema:
+      type: integer
+      format: int32
+      example: 1
+  - name: collateralReturn
+    in: query
+    description: 'Default: TRUE. TRUE: Return extra collateral to spot account; FALSE:
+      Keep extra collateral in the order.'
+    schema:
+      type: boolean
+      example: true
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_loan_repay_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_loan_repay_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_loan_repay_v1_401.yaml

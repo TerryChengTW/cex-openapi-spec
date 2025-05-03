@@ -1,5 +1,0 @@
-description: Margin OCO details
-content:
-  application/json:
-    schema:
-      $ref: '#/components/schemas/marginOcoOrder'

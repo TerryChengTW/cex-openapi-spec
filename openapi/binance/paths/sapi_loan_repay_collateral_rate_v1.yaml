@@ -1,0 +1,31 @@
+get:
+  summary: Check Collateral Repay Rate (USER_DATA)
+  description: 'Get the the rate of collateral coin / loan coin when using collateral
+    repay, the rate will be valid within 8 second.
+
+
+    Weight(IP): 6000'
+  tags:
+  - Crypto Loans
+  parameters:
+  - $ref: ../components/parameters/loanCoinReq.yaml
+  - $ref: ../components/parameters/collateralCoinReq.yaml
+  - name: repayAmount
+    in: query
+    required: true
+    description: repay amount of loanCoin
+    schema:
+      type: number
+      format: float
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_loan_repay_collateral_rate_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_loan_repay_collateral_rate_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_loan_repay_collateral_rate_v1_401.yaml

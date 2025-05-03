@@ -1,0 +1,23 @@
+get:
+  summary: Get Locked Personal Left Quota (USER_DATA)
+  description: 'Weight(IP): 150'
+  tags:
+  - Simple Earn
+  parameters:
+  - name: projectId
+    in: query
+    required: true
+    schema:
+      type: string
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_simple-earn_locked_personalLeftQuota_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_simple-earn_locked_personalLeftQuota_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_simple-earn_locked_personalLeftQuota_v1_401.yaml

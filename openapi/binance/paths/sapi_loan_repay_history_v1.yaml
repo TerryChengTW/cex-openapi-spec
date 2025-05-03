@@ -1,0 +1,43 @@
+get:
+  summary: Get Loan Repayment History (USER_DATA)
+  description: 'If startTime and endTime are not sent, the recent 90-day data will
+    be returned.
+
+    The max interval between startTime and endTime is 180 days.
+
+
+    Weight(IP): 400'
+  tags:
+  - Crypto Loans
+  parameters:
+  - name: orderId
+    in: query
+    description: Order ID
+    schema:
+      type: integer
+      format: int64
+      example: 10
+  - $ref: ../components/parameters/loanCoin.yaml
+  - $ref: ../components/parameters/collateralCoin.yaml
+  - $ref: ../components/parameters/startTime.yaml
+  - $ref: ../components/parameters/endTime.yaml
+  - $ref: ../components/parameters/current.yaml
+  - name: limit
+    in: query
+    description: default 10, max 100
+    schema:
+      type: integer
+      format: int64
+      example: 10
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_loan_repay_history_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_loan_repay_history_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_loan_repay_history_v1_401.yaml

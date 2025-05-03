@@ -1,0 +1,29 @@
+get:
+  summary: Detail on Sub-account's Futures Account V2 (For Master Account)
+  description: 'Weight(IP): 1'
+  tags:
+  - Sub-Account
+  parameters:
+  - $ref: ../components/parameters/subAccountEmail.yaml
+  - name: futuresType
+    in: query
+    description: '* `1` - USDT Margined Futures
+
+      * `2` - COIN Margined Futures'
+    required: true
+    schema:
+      type: integer
+      format: int32
+      example: 1
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_sub-account_futures_account_v2_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_sub-account_futures_account_v2_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_sub-account_futures_account_v2_401.yaml

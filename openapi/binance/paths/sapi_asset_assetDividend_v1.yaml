@@ -1,0 +1,31 @@
+get:
+  summary: Asset Dividend Record (USER_DATA)
+  description: 'Query asset Dividend Record
+
+
+    Weight(IP): 10'
+  tags:
+  - Wallet
+  parameters:
+  - $ref: ../components/parameters/optionalAsset.yaml
+  - $ref: ../components/parameters/startTime.yaml
+  - $ref: ../components/parameters/endTime.yaml
+  - name: limit
+    in: query
+    schema:
+      type: integer
+      format: int32
+      default: 20
+      maximum: 500
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_asset_assetDividend_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_asset_assetDividend_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_asset_assetDividend_v1_401.yaml

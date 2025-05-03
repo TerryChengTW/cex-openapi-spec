@@ -1,0 +1,35 @@
+get:
+  summary: Sub-account Spot Asset Transfer History (For Master Account)
+  description: '- fromEmail and toEmail cannot be sent at the same time.
+
+    - Return fromEmail equal master account email by default.
+
+
+    Weight(IP): 1'
+  tags:
+  - Sub-Account
+  parameters:
+  - $ref: ../components/parameters/optionalSubAccountFromEmail.yaml
+  - $ref: ../components/parameters/optionalSubAccountToEmail.yaml
+  - $ref: ../components/parameters/startTime.yaml
+  - $ref: ../components/parameters/endTime.yaml
+  - $ref: ../components/parameters/page.yaml
+  - name: limit
+    in: query
+    description: Default 1
+    schema:
+      type: integer
+      format: int32
+      example: 1
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_sub-account_sub_transfer_history_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_sub-account_sub_transfer_history_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_sub-account_sub_transfer_history_v1_401.yaml

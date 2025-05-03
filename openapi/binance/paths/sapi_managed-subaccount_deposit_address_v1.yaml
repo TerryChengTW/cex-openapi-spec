@@ -1,0 +1,24 @@
+get:
+  summary: Get Managed Sub-account Deposit Address (For Investor Master Account)
+  description: 'Get investor''s managed sub-account deposit address
+
+
+    Weight(UID): 1'
+  tags:
+  - Sub-Account
+  parameters:
+  - $ref: ../components/parameters/email.yaml
+  - $ref: ../components/parameters/coin.yaml
+  - $ref: ../components/parameters/network.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_managed-subaccount_deposit_address_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_managed-subaccount_deposit_address_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_managed-subaccount_deposit_address_v1_401.yaml

@@ -1,0 +1,31 @@
+description: Flexible Subscription Preview
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        totalAmount:
+          type: string
+          example: '1232.32230982'
+        rewardAsset:
+          type: string
+          example: BUSD
+        airDropAsset:
+          type: string
+          example: BETH
+        estDailyBonusRewards:
+          type: string
+          example: '0.22759183'
+        estDailyRealTimeRewards:
+          type: string
+          example: '0.22759183'
+        estDailyAirdropRewards:
+          type: string
+          example: '0.22759183'
+      required:
+      - totalAmount
+      - rewardAsset
+      - airDropAsset
+      - estDailyBonusRewards
+      - estDailyRealTimeRewards
+      - estDailyAirdropRewards

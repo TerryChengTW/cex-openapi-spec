@@ -1,0 +1,56 @@
+get:
+  summary: Query Margin Account's Open Orders (USER_DATA)
+  description: '- If the `symbol` is not sent, orders for all symbols will be returned
+    in an array.
+
+    - When all symbols are returned, the number of requests counted against the rate
+    limiter is equal to the number of symbols currently trading on the exchange
+
+    - If isIsolated ="TRUE", symbol must be sent.
+
+
+    Weight(IP): 10'
+  tags:
+  - Margin
+  parameters:
+  - $ref: ../components/parameters/optionalSymbol.yaml
+  - $ref: ../components/parameters/isIsolatedMargin.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_margin_openOrders_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_margin_openOrders_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_margin_openOrders_v1_401.yaml
+delete:
+  summary: Margin Account Cancel all Open Orders on a Symbol (TRADE)
+  description: '- Cancels all active orders on a symbol for margin account.
+
+    - This includes OCO orders.
+
+
+    Weight(IP): 1
+
+    '
+  tags:
+  - Margin
+  parameters:
+  - $ref: ../components/parameters/symbol.yaml
+  - $ref: ../components/parameters/isIsolatedMargin.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_margin_openOrders_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_margin_openOrders_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_margin_openOrders_v1_401.yaml

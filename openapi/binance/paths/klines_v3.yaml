@@ -1,0 +1,53 @@
+get:
+  summary: Kline/Candlestick Data
+  description: 'Kline/candlestick bars for a symbol.
+
+    Klines are uniquely identified by their open time.
+
+
+    - If `startTime` and `endTime` are not sent, the most recent klines are returned.
+
+
+    Weight(IP): 2'
+  tags:
+  - Market
+  parameters:
+  - $ref: ../components/parameters/symbol.yaml
+  - name: interval
+    in: query
+    required: true
+    description: kline intervals
+    schema:
+      type: string
+      enum:
+      - 1s
+      - 1m
+      - 3m
+      - 5m
+      - 15m
+      - 30m
+      - 1h
+      - 2h
+      - 4h
+      - 6h
+      - 8h
+      - 12h
+      - 1d
+      - 3d
+      - 1w
+      - 1M
+      example: '"1m"'
+  - $ref: ../components/parameters/startTime.yaml
+  - $ref: ../components/parameters/endTime.yaml
+  - name: timeZone
+    in: query
+    required: false
+    description: 'Default: 0 (UTC)'
+    schema:
+      type: string
+  - $ref: ../components/parameters/limit.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/klines_v3_200.yaml
+    '400':
+      $ref: ../components/responses/klines_v3_400.yaml

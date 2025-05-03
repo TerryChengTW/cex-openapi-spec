@@ -1,0 +1,28 @@
+description: List of assets balances
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        balances:
+          type: array
+          items:
+            type: object
+            properties:
+              asset:
+                type: string
+                example: ADA
+              free:
+                type: integer
+                format: int64
+                example: 10000
+              locked:
+                type: integer
+                format: int64
+                example: 0
+            required:
+            - asset
+            - free
+            - locked
+      required:
+      - balances

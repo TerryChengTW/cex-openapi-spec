@@ -1,0 +1,38 @@
+description: Collateral Assets Data
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        loanAccountId:
+          type: string
+          example: '12345678'
+        requestId:
+          type: string
+          example: '12345678'
+        loanCoin:
+          type: string
+          example: BTC
+        isFlexibleRate:
+          type: string
+          example: 'No'
+        loanAmount:
+          type: string
+          example: '100.55'
+        collateralAccountId:
+          type: string
+          example: 12345678,12345678,12345678
+        collateralCoin:
+          type: string
+          example: BUSD,USDT,ETH
+        loanTerm:
+          type: string
+          example: '30'
+      required:
+      - loanAccountId
+      - requestId
+      - loanCoin
+      - isFlexibleRate
+      - loanAmount
+      - collateralAccountId
+      - collateralCoin

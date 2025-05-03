@@ -1,0 +1,66 @@
+description: List of withdraw history
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          address:
+            type: string
+            example: '0x94df8b352de7f46f64b01d3666bf6e936e44ce60'
+          amount:
+            type: string
+            example: '8.91000000'
+          applyTime:
+            type: string
+            example: '2019-10-12 11:12:02'
+          coin:
+            type: string
+            example: USDT
+          id:
+            type: string
+            example: b6ae22b3aa844210a7041aee7589627c
+          withdrawOrderId:
+            type: string
+            example: WITHDRAWtest123
+            description: will not be returned if there's no withdrawOrderId for this
+              withdraw.
+          network:
+            type: string
+            example: ETH
+          transferType:
+            type: integer
+            format: int32
+            example: 0
+            description: 1 for internal transfer, 0 for external transfer
+          status:
+            type: integer
+            format: int32
+            example: 6
+          transactionFee:
+            type: string
+            example: '0.004'
+          confirmNo:
+            type: integer
+            format: int32
+            example: 3
+          info:
+            type: string
+            example: The address is not valid. Please confirm with the recipient
+            description: Reason for withdrawal failure
+          txId:
+            type: string
+            example: '0xb5ef8c13b968a406cc62a93a8bd80f9e9a906ef1b3fcf20a2e48573c17659268'
+        required:
+        - address
+        - amount
+        - applyTime
+        - coin
+        - id
+        - withdrawOrderId
+        - network
+        - transferType
+        - status
+        - transactionFee
+        - txId

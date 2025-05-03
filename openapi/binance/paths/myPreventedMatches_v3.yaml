@@ -1,0 +1,36 @@
+get:
+  summary: Query Prevented Matches
+  description: "Displays the list of orders that were expired because of STP.\n\n\
+    For additional information on what a Prevented match is, as well as Self Trade\
+    \ Prevention (STP), please refer to our STP FAQ page.\n\nThese are the combinations\
+    \ supported:\n\n* symbol + preventedMatchId\n* symbol + orderId\n* symbol + orderId\
+    \ + fromPreventedMatchId (limit will default to 500)\n* symbol + orderId + fromPreventedMatchId\
+    \ + limit\n\nWeight(IP):\n\nCase \t                          Weight\nIf symbol\
+    \ is invalid: \t        2\nQuerying by preventedMatchId: \t2\nQuerying by orderId:\
+    \ \t          20"
+  tags:
+  - Trade
+  parameters:
+  - $ref: ../components/parameters/symbol.yaml
+  - $ref: ../components/parameters/preventedMatchId.yaml
+  - $ref: ../components/parameters/orderId.yaml
+  - name: fromPreventedMatchId
+    in: query
+    required: false
+    schema:
+      type: integer
+      format: int64
+      example: 1
+  - $ref: ../components/parameters/limit.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/myPreventedMatches_v3_200.yaml
+    '400':
+      $ref: ../components/responses/myPreventedMatches_v3_400.yaml
+    '401':
+      $ref: ../components/responses/myPreventedMatches_v3_401.yaml

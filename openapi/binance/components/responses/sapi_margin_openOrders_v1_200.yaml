@@ -1,0 +1,9 @@
+description: Cancelled margin orders
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        anyOf:
+        - $ref: ../schemas/canceledMarginOrderDetail.yaml
+        - $ref: ../schemas/marginOcoOrder.yaml

@@ -1,0 +1,44 @@
+get:
+  summary: Get Spot Rebate History Records (USER_DATA)
+  description: '- The max interval between startTime and endTime is 90 days.
+
+    - If startTime and endTime are not sent, the recent 7 days'' data will be returned.
+
+    - The earliest startTime is supported on June 10, 2020
+
+
+    Weight(UID): 3000'
+  tags:
+  - Rebate
+  parameters:
+  - name: startTime
+    in: query
+    description: UTC timestamp in ms
+    schema:
+      type: integer
+      format: int64
+  - name: endTime
+    in: query
+    description: UTC timestamp in ms
+    schema:
+      type: integer
+      format: int64
+  - name: page
+    in: query
+    description: default 1
+    schema:
+      type: integer
+      format: int32
+      example: 1
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_rebate_taxQuery_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_rebate_taxQuery_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_rebate_taxQuery_v1_401.yaml

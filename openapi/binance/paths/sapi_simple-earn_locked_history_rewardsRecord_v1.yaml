@@ -1,0 +1,29 @@
+get:
+  summary: Get Locked Rewards History (USER_DATA)
+  description: 'Weight(IP): 150'
+  tags:
+  - Simple Earn
+  parameters:
+  - name: positionId
+    in: query
+    schema:
+      type: string
+  - name: asset
+    in: query
+    schema:
+      type: string
+  - $ref: ../components/parameters/startTime.yaml
+  - $ref: ../components/parameters/endTime.yaml
+  - $ref: ../components/parameters/size.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_simple-earn_locked_history_rewardsRecord_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_simple-earn_locked_history_rewardsRecord_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_simple-earn_locked_history_rewardsRecord_v1_401.yaml

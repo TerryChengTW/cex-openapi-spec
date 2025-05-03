@@ -1,0 +1,40 @@
+description: Flexible Rewards History
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        rows:
+          type: array
+          items:
+            type: object
+            properties:
+              asset:
+                type: string
+                example: BUSD
+              rewards:
+                type: string
+                example: '0.00006408'
+              projectId:
+                type: string
+                example: USDT001
+              type:
+                type: string
+                example: BONUS
+              time:
+                type: integer
+                format: int64
+                example: 1577257222000
+            required:
+            - asset
+            - rewards
+            - projectId
+            - type
+            - time
+        total:
+          type: integer
+          format: int64
+          example: 2
+      required:
+      - rows
+      - total

@@ -1,0 +1,43 @@
+post:
+  summary: Change Auto-repay-futures Status (USER_DATA)
+  description: 'Change Auto-repay-futures Status
+
+
+    Weight(IP): 1500'
+  tags:
+  - Portfolio Margin
+  parameters:
+  - $ref: ../components/parameters/autoRepay.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_portfolio_repay-futures-switch_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_portfolio_repay-futures-switch_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_portfolio_repay-futures-switch_v1_401.yaml
+get:
+  summary: Get Auto-repay-futures Status (USER_DATA)
+  description: 'Query Auto-repay-futures Status
+
+
+    Weight(IP): 30'
+  tags:
+  - Portfolio Margin
+  parameters:
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_portfolio_repay-futures-switch_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_portfolio_repay-futures-switch_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_portfolio_repay-futures-switch_v1_401.yaml

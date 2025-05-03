@@ -1,0 +1,89 @@
+description: List of earnings
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int64
+          example: 0
+        msg:
+          type: string
+          example: ''
+        data:
+          type: object
+          properties:
+            accountProfits:
+              type: array
+              items:
+                type: object
+                properties:
+                  time:
+                    type: integer
+                    format: int64
+                    example: 1586188800000
+                    description: Mining date
+                  type:
+                    type: integer
+                    format: int64
+                    example: 31
+                    description: 0:Mining Wallet,5:Mining Address,7:Pool Savings,8:Transferred,31:Income
+                      Transfer ,32:Hashrate Resale-Mining Wallet 33:Hashrate Resale-Pool
+                      Savings
+                  hashTransfer:
+                    type: integer
+                    format: nullable
+                    example: null
+                    description: Transferred Hashrate
+                  transferAmount:
+                    type: number
+                    format: nullable
+                    example: null
+                    description: Transferred Income
+                  dayHashRate:
+                    type: integer
+                    format: int64
+                    example: 129129903378244
+                    description: Daily Hashrate
+                  profitAmount:
+                    type: number
+                    format: double
+                    example: 8.6083060304
+                    description: Earnings Amount
+                  coinName:
+                    type: string
+                    example: BTC
+                    description: Coin Type
+                  status:
+                    type: integer
+                    format: int32
+                    example: 2
+                    description: Status：0:Unpaid, 1:Paying  2：Paid
+                required:
+                - time
+                - type
+                - hashTransfer
+                - transferAmount
+                - dayHashRate
+                - profitAmount
+                - coinName
+                - status
+            totalNum:
+              type: integer
+              format: int64
+              example: 3
+              description: Total Rows
+            pageSize:
+              type: integer
+              format: int64
+              example: 20
+              description: Rows per page
+          required:
+          - accountProfits
+          - totalNum
+          - pageSize
+      required:
+      - code
+      - msg
+      - data

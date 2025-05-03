@@ -1,0 +1,27 @@
+get:
+  summary: Query Index Details(USER_DATA)
+  description: 'Query index details
+
+
+    Weight(IP): 1'
+  tags:
+  - Auto-Invest
+  parameters:
+  - name: indexId
+    in: query
+    required: true
+    schema:
+      type: integer
+      format: int64
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_lending_auto-invest_index_info_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_lending_auto-invest_index_info_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_lending_auto-invest_index_info_v1_401.yaml

@@ -1,0 +1,24 @@
+get:
+  summary: Query Margin Account's Open OCO (USER_DATA)
+  description: 'Weight(IP): 10'
+  tags:
+  - Margin
+  parameters:
+  - $ref: ../components/parameters/isIsolatedMargin.yaml
+  - name: symbol
+    in: query
+    description: Mandatory for isolated margin, not supported for cross margin
+    schema:
+      type: string
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_margin_openOrderList_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_margin_openOrderList_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_margin_openOrderList_v1_401.yaml

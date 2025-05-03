@@ -1,0 +1,70 @@
+get:
+  summary: Get cross or isolated margin capital flow(USER_DATA)
+  description: 'Get cross or isolated margin capital flow
+
+
+    Weight(IP): 100'
+  tags:
+  - Margin
+  parameters:
+  - $ref: ../components/parameters/optionalAsset.yaml
+  - name: symbol
+    in: query
+    description: Required when querying isolated data
+    schema:
+      type: string
+      example: BTCUSDT
+  - name: type
+    in: query
+    schema:
+      type: string
+      enum:
+      - TRANSFER
+      - BORROW
+      - REPAY
+      - BUY_INCOME
+      - BUY_EXPENSE
+      - SELL_INCOME
+      - SELL_EXPENSE
+      - TRADING_COMMISSION
+      - BUY_LIQUIDATION
+      - SELL_LIQUIDATION
+      - REPAY_LIQUIDATION
+      - OTHER_LIQUIDATION
+      - LIQUIDATION_FEE
+      - SMALL_BALANCE_CONVERT
+      - COMMISSION_RETURN
+      - SMALL_CONVERT
+  - name: startTime
+    in: query
+    description: Only supports querying the data of the last 90 days
+    schema:
+      type: integer
+      format: int64
+  - $ref: ../components/parameters/endTime.yaml
+  - name: fromId
+    in: query
+    description: If fromId is set, the data with id > fromId will be returned. Otherwise
+      the latest data will be returned
+    schema:
+      type: integer
+      format: int64
+  - name: limit
+    in: query
+    description: The number of data items returned each time is limited. Default 500;
+      Max 1000.
+    schema:
+      type: integer
+      format: int64
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_margin_capital-flow_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_margin_capital-flow_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_margin_capital-flow_v1_401.yaml

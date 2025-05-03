@@ -1,0 +1,12 @@
+get:
+  summary: Get Portfolio Margin Asset Leverage (USER_DATA)
+  description: 'Weight(IP): 50'
+  tags:
+  - Portfolio Margin
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_portfolio_margin-asset-leverage_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_portfolio_margin-asset-leverage_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_portfolio_margin-asset-leverage_v1_401.yaml

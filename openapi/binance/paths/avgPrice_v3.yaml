@@ -1,0 +1,15 @@
+get:
+  summary: Current Average Price
+  description: 'Current average price for a symbol.
+
+
+    Weight(IP): 2'
+  tags:
+  - Market
+  parameters:
+  - $ref: ../components/parameters/symbol.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/avgPrice_v3_200.yaml
+    '400':
+      $ref: ../components/responses/avgPrice_v3_400.yaml

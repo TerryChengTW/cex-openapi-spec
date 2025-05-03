@@ -1,0 +1,86 @@
+description: Sub orders
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        total:
+          type: integer
+          format: int32
+          example: 1
+        executedQty:
+          type: string
+          example: '1.000'
+        executedAmt:
+          type: string
+          example: '3229.44000000'
+        subOrders:
+          type: array
+          items:
+            type: object
+            properties:
+              algoId:
+                type: integer
+                format: int64
+                example: 13723
+              orderId:
+                type: integer
+                format: int64
+                example: 8389765519993908929
+              orderStatus:
+                type: string
+                example: FILLED
+              executedQty:
+                type: string
+                example: '1.000'
+              executedAmt:
+                type: string
+                example: '3229.44000000'
+              feeAmt:
+                type: string
+                example: '-1.61471999'
+              feeAsset:
+                type: string
+                example: USDT
+              bookTime:
+                type: integer
+                format: int64
+                example: 1649756817004
+              avgPrice:
+                type: string
+                example: '3229.44'
+              side:
+                type: string
+                example: SELL
+              symbol:
+                type: string
+                example: ETHUSDT
+              subId:
+                type: integer
+                format: int64
+                example: 1
+              timeInForce:
+                type: string
+                example: IMMEDIATE_OR_CANCEL
+              origQty:
+                type: string
+                example: '1.000'
+            required:
+            - algoId
+            - orderId
+            - orderStatus
+            - executedAmt
+            - feeAmt
+            - feeAsset
+            - bookTime
+            - avgPrice
+            - side
+            - symbol
+            - subId
+            - timeInForce
+            - origQty
+      required:
+      - total
+      - executedQty
+      - executedAmt
+      - subOrders

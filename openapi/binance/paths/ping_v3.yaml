@@ -1,0 +1,11 @@
+get:
+  summary: Test Connectivity
+  description: 'Test connectivity to the Rest API.
+
+
+    Weight(IP): 1'
+  tags:
+  - Market
+  responses:
+    '200':
+      $ref: ../components/responses/ping_v3_200.yaml

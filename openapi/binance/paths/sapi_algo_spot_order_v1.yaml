@@ -1,0 +1,28 @@
+delete:
+  summary: Cancel Algo Order
+  description: 'Cancel an open TWAP order
+
+
+    Weight(IP): 1'
+  tags:
+  - Spot Algo
+  parameters:
+  - name: algoId
+    in: query
+    required: true
+    schema:
+      type: integer
+      format: int64
+      example: 1
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_algo_spot_order_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_algo_spot_order_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_algo_spot_order_v1_401.yaml

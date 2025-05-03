@@ -1,0 +1,21 @@
+get:
+  summary: Query all source asset and target asset (USER_DATA)
+  description: 'Query all source assets and target assets
+
+
+    Weight(IP): 1'
+  tags:
+  - Auto-Invest
+  parameters:
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_lending_auto-invest_all_asset_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_lending_auto-invest_all_asset_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_lending_auto-invest_all_asset_v1_401.yaml

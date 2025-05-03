@@ -1,0 +1,44 @@
+description: VIP Loan Repayment History
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        rows:
+          type: array
+          items:
+            type: object
+            properties:
+              loanCoin:
+                type: string
+                example: BUSD
+              repayAmount:
+                type: string
+                example: '10000'
+              collateralCoin:
+                type: string
+                example: BNB,BTC,ETH
+              repayStatus:
+                type: string
+                example: Repaid
+                description: Repaid, Repaying, Failed
+              repayTime:
+                type: string
+                example: '1575018510000'
+              orderId:
+                type: string
+                example: '756783308056935434'
+            required:
+            - loanCoin
+            - repayAmount
+            - collateralCoin
+            - repayStatus
+            - repayTime
+            - orderId
+        total:
+          type: integer
+          format: int32
+          example: 1
+      required:
+      - rows
+      - total

@@ -1,0 +1,58 @@
+description: Loanable Assets Data
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        total:
+          type: integer
+          example: 1
+        rows:
+          type: array
+          items:
+            type: object
+            properties:
+              loanCoin:
+                type: string
+                example: BUSD
+              _flexibleDailyInterestRate:
+                type: string
+                example: '0.001503'
+              _flexibleYearlyInterestRate:
+                type: string
+                example: '0.548595'
+              _30dDailyInterestRate:
+                type: string
+                example: '0.000136'
+              _30dYearlyInterestRate:
+                type: string
+                example: '0.03450'
+              _60dDailyInterestRate:
+                type: string
+                example: '0.000145'
+              _60dYearlyInterestRate:
+                type: string
+                example: '0.04103'
+              minLimit:
+                type: string
+                example: '100'
+              maxLimit:
+                type: string
+                example: '1000000'
+              vipLevel:
+                type: integer
+                example: 1
+            required:
+            - loanCoin
+            - _flexibleDailyInterestRate
+            - _flexibleYearlyInterestRate
+            - _30dDailyInterestRate
+            - _30dYearlyInterestRate
+            - _60dDailyInterestRate
+            - _60dYearlyInterestRate
+            - minLimit
+            - maxLimit
+            - vipLevel
+      required:
+      - total
+      - rows

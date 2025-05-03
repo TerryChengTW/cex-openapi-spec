@@ -1,0 +1,43 @@
+get:
+  summary: Deposit History(supporting network) (USER_DATA)
+  description: 'Fetch deposit history.
+
+
+    - Please notice the default `startTime` and `endTime` to make sure that time interval
+    is within 0-90 days.
+
+    - If both `startTime` and `endTime` are sent, time between `startTime` and `endTime`
+    must be less than 90 days.
+
+
+    Weight(IP): 1'
+  tags:
+  - Wallet
+  parameters:
+  - $ref: ../components/parameters/optionalCoin.yaml
+  - name: status
+    in: query
+    description: '* `0` - pending
+
+      * `6` - credited but cannot withdraw
+
+      * `1` - success'
+    schema:
+      type: integer
+      format: int32
+  - $ref: ../components/parameters/startTime.yaml
+  - $ref: ../components/parameters/endTime.yaml
+  - $ref: ../components/parameters/offset.yaml
+  - $ref: ../components/parameters/limit.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_capital_deposit_hisrec_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_capital_deposit_hisrec_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_capital_deposit_hisrec_v1_401.yaml

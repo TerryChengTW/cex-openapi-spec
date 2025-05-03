@@ -1,0 +1,153 @@
+description: Pay History
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        code:
+          type: string
+          example: '000000'
+        message:
+          type: string
+          example: success
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              orderType:
+                type: string
+                example: C2C
+                description: Enum：PAY(C2B Merchant Acquiring Payment), PAY_REFUND(C2B
+                  Merchant Acquiring Payment,refund), C2C(C2C Transfer Payment),CRYPTO_BOX(Crypto
+                  box), CRYPTO_BOX_RF(Crypto Box, refund), C2C_HOLDING(Transfer to
+                  new Binance user), C2C_HOLDING_RF(Transfer to new Binance user,refund),
+                  PAYOUT(B2C Disbursement Payment)
+              transactionId:
+                type: string
+                example: M_P_71505104267788288
+              transactionTime:
+                type: integer
+                format: int64
+                example: 1610090460133
+              amount:
+                type: string
+                example: '23.72469206'
+                description: order amount(up to 8 decimal places), positive is income,
+                  negative is expenditure
+              currency:
+                type: string
+                example: BNB
+              walletType:
+                type: integer
+                example: 1
+              walletTypes:
+                type: array
+                items:
+                  type: integer
+              fundsDetail:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    currency:
+                      type: string
+                    amount:
+                      type: string
+                  example:
+                  - currency: USDT
+                    amount: '1.2'
+                  - currency: ETH
+                    amount: '0.0001'
+                  required:
+                  - currency
+                  - amount
+              payerInfo:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    example: Jack
+                  type:
+                    type: string
+                    example: USER
+                  binanceId:
+                    type: string
+                    example: '12345678'
+                  accountId:
+                    type: string
+                    example: '67736251'
+                required:
+                - name
+                - type
+                - binanceId
+                - accountId
+              receiverInfo:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    example: Alan
+                  type:
+                    type: string
+                    example: MERCHANT
+                  email:
+                    type: string
+                    example: alan@test.com
+                  binanceId:
+                    type: string
+                    example: '34355667'
+                  accountId:
+                    type: string
+                    example: '21326891'
+                  countryCode:
+                    type: string
+                    example: '1'
+                  phoneNumber:
+                    type: string
+                    example: '8057651210'
+                  mobileCode:
+                    type: string
+                    example: US
+                  extend:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        institutionName:
+                          type: string
+                        cardNumber:
+                          type: string
+                        digitalWalletId:
+                          type: string
+                      required:
+                      - institutionName
+                      - cardNumber
+                      - digitalWalletId
+                required:
+                - name
+                - type
+                - email
+                - binanceId
+                - accountId
+                - countryCode
+                - phoneNumber
+                - mobileCode
+            required:
+            - orderType
+            - transactionId
+            - transactionTime
+            - amount
+            - currency
+            - walletType
+            - walletTypes
+            - fundsDetail
+            - payerInfo
+            - receiverInfo
+        success:
+          type: boolean
+      required:
+      - code
+      - message
+      - data
+      - success

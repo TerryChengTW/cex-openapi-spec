@@ -1,0 +1,36 @@
+post:
+  summary: Crypto Loan Customize Margin Call (TRADE)
+  description: 'Customize margin call for ongoing orders only.
+
+
+    Weight(UID): 6000'
+  tags:
+  - Crypto Loans
+  parameters:
+  - name: orderId
+    in: query
+    required: false
+    description: Mandatory when collateralCoin is empty. Send either orderId or collateralCoin,
+      if both parameters are sent, take orderId only.
+    schema:
+      type: integer
+      format: int64
+  - $ref: ../components/parameters/collateralCoin.yaml
+  - name: marginCall
+    in: query
+    required: true
+    schema:
+      type: number
+      format: float
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_loan_customize_margin_call_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_loan_customize_margin_call_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_loan_customize_margin_call_v1_401.yaml

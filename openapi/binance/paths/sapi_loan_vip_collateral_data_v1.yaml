@@ -1,0 +1,22 @@
+get:
+  summary: Get Collateral Asset Data (USER_DATA)
+  description: 'Get collateral asset data.
+
+
+    Weight(IP): 400'
+  tags:
+  - VIP Loans
+  parameters:
+  - $ref: ../components/parameters/collateralCoin.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_loan_vip_collateral_data_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_loan_vip_collateral_data_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_loan_vip_collateral_data_v1_401.yaml

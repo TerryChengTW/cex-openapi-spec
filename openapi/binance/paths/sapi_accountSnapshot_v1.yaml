@@ -1,0 +1,44 @@
+get:
+  summary: Daily Account Snapshot (USER_DATA)
+  description: '- The query time period must be less than 30 days
+
+    - Support query within the last one month only
+
+    - If startTimeand endTime not sent, return records of the last 7 days by default
+
+
+    Weight(IP): 2400'
+  tags:
+  - Wallet
+  parameters:
+  - name: type
+    in: query
+    required: true
+    schema:
+      type: string
+      enum:
+      - SPOT
+      - MARGIN
+      - FUTURES
+  - $ref: ../components/parameters/startTime.yaml
+  - $ref: ../components/parameters/endTime.yaml
+  - name: limit
+    in: query
+    schema:
+      type: integer
+      format: int32
+      default: 7
+      minimum: 7
+      maximum: 30
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_accountSnapshot_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_accountSnapshot_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_accountSnapshot_v1_401.yaml

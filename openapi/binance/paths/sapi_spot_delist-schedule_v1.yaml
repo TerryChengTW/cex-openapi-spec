@@ -1,0 +1,21 @@
+get:
+  summary: Get symbols delist schedule for spot (MARKET_DATA)
+  description: 'Get symbols delist schedule for spot
+
+
+    Weight(IP): 100'
+  tags:
+  - Wallet
+  parameters:
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_spot_delist-schedule_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_spot_delist-schedule_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_spot_delist-schedule_v1_401.yaml

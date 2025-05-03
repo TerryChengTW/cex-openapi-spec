@@ -1,0 +1,44 @@
+post:
+  summary: Crypto Loan Adjust LTV (TRADE)
+  description: 'Weight(UID): 6000'
+  tags:
+  - Crypto Loans
+  parameters:
+  - name: orderId
+    in: query
+    description: Order ID
+    required: true
+    schema:
+      type: integer
+      format: int64
+      example: 123456789
+  - name: amount
+    in: query
+    description: Amount
+    required: true
+    schema:
+      type: number
+      format: double
+      example: 100.5
+  - name: direction
+    in: query
+    description: '''ADDITIONAL'', ''REDUCED'''
+    required: true
+    schema:
+      type: string
+      enum:
+      - ADDITIONAL
+      - REDUCED
+      example: ADDITIONAL
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_loan_adjust_ltv_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_loan_adjust_ltv_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_loan_adjust_ltv_v1_401.yaml

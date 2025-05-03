@@ -1,0 +1,18 @@
+get:
+  summary: Summary of Sub-account's Futures Account (For Master Account)
+  description: 'Weight(IP): 1'
+  tags:
+  - Sub-Account
+  parameters:
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_sub-account_futures_accountSummary_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_sub-account_futures_accountSummary_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_sub-account_futures_accountSummary_v1_401.yaml

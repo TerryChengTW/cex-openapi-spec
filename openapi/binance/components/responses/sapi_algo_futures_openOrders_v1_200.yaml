@@ -1,0 +1,77 @@
+description: Open Algo Orders
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        total:
+          type: integer
+          format: int32
+          example: 1
+        orders:
+          type: array
+          items:
+            type: object
+            properties:
+              algoId:
+                type: integer
+                format: int64
+                example: 14517
+              symbol:
+                type: string
+                example: ETHUSDT
+              side:
+                type: string
+                example: SELL
+              positionSide:
+                type: string
+                example: SHORT
+              totalQty:
+                type: string
+                example: '5.00'
+              executedQty:
+                type: string
+                example: '0.000'
+              executedAmt:
+                type: string
+                example: '0.00000000'
+              avgPrice:
+                type: string
+                example: '0.00'
+              clientAlgoId:
+                type: string
+                example: d7096549481642f8a0bb69e9e2e31f2e
+              bookTime:
+                type: integer
+                format: int64
+                example: 1649756817004
+              endTime:
+                type: integer
+                format: int64
+                example: 0
+              algoStatus:
+                type: string
+                example: WORKING
+              algoType:
+                type: string
+                example: VP
+              urgency:
+                type: string
+                example: LOW
+            required:
+            - algoId
+            - symbol
+            - side
+            - positionSide
+            - totalQty
+            - executedQty
+            - executedAmt
+            - avgPrice
+            - clientAlgoId
+            - bookTime
+            - endTime
+            - algoStatus
+            - algoType
+            - urgency
+      required:
+      - total

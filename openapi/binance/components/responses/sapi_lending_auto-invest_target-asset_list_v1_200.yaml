@@ -1,0 +1,38 @@
+description: Target asset list
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        targetAssets:
+          type: string
+          example: BTC
+        autoInvestAssetList:
+          type: array
+          items:
+            type: object
+            properties:
+              targetAsset:
+                type: string
+                example: BTC
+              roiAndDimensionTypeList:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    simulateRoi:
+                      type: string
+                      example: '5.004'
+                    dimensionValue:
+                      type: string
+                      example: '3'
+                    dimensionUnit:
+                      type: string
+                      example: year
+                  required:
+                  - simulateRoi
+                  - dimensionValue
+                  - dimensionUnit
+            required:
+            - targetAsset
+            - roiAndDimensionTypeList

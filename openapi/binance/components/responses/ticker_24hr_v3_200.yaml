@@ -1,0 +1,7 @@
+description: 24hr ticker
+content:
+  application/json:
+    schema:
+      oneOf:
+      - $ref: ../schemas/ticker.yaml
+      - $ref: ../schemas/tickerList.yaml

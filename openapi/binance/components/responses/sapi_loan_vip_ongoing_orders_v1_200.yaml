@@ -1,0 +1,76 @@
+description: Ongoing VIP Loan Orders
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        rows:
+          type: array
+          items:
+            type: object
+            properties:
+              orderId:
+                type: integer
+                format: int64
+                example: 100000001
+              loanCoin:
+                type: string
+                example: BUSD
+              totalDebt:
+                type: string
+                example: '10000'
+              residualInterest:
+                type: string
+                example: '10.27687923'
+              collateralAccountId:
+                type: string
+                example: 12345678, 23456789
+              collateralCoin:
+                type: string
+                example: BNB,BTC,ETH
+              collateralValue:
+                type: string
+                example: '25000.27565492'
+                description: locked collateral value shown in USD value
+              totalCollateralValueAfterHaircut:
+                type: string
+                example: '25000.27565492'
+              lockedCollateralValue:
+                type: string
+                example: '25000.27565492'
+              currentLTV:
+                type: string
+                example: '0.57'
+              expirationTime:
+                type: integer
+                format: int64
+                example: 1575018510000
+              loanDate:
+                type: string
+                example: '1676851200000'
+              loanRate:
+                type: string
+                example: '0.0123'
+              loanTerm:
+                type: string
+                example: 30days
+            required:
+            - orderId
+            - loanCoin
+            - totalDebt
+            - residualInterest
+            - collateralAccountId
+            - collateralCoin
+            - collateralValue
+            - currentLTV
+            - expirationTime
+            - loanDate
+            - loanRate
+            - loanTerm
+        total:
+          type: integer
+          format: int32
+          example: 1
+      required:
+      - rows
+      - total

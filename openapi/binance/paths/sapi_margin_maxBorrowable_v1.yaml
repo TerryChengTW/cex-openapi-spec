@@ -1,0 +1,25 @@
+get:
+  summary: Query Max Borrow (USER_DATA)
+  description: '- If `isolatedSymbol` is not sent, crossed margin data will be sent.
+
+    - `borrowLimit` is also available from https://www.binance.com/en/margin-fee
+
+
+    Weight(IP): 50'
+  tags:
+  - Margin
+  parameters:
+  - $ref: ../components/parameters/asset.yaml
+  - $ref: ../components/parameters/isolatedSymbol.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_margin_maxBorrowable_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_margin_maxBorrowable_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_margin_maxBorrowable_v1_401.yaml

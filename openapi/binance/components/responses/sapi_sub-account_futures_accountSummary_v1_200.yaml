@@ -1,0 +1,82 @@
+description: Futures account summary
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        totalInitialMargin:
+          type: string
+          example: '9.83137400'
+        totalMaintenanceMargin:
+          type: string
+          example: '0.41568700'
+        totalMarginBalance:
+          type: string
+          example: '23.03235621'
+        totalOpenOrderInitialMargin:
+          type: string
+          example: '9.00000000'
+        totalPositionInitialMargin:
+          type: string
+          example: '0.83137400'
+        totalUnrealizedProfit:
+          type: string
+          example: '0.03219710'
+        totalWalletBalance:
+          type: string
+          example: '22.15879444'
+        asset:
+          type: string
+          example: USD
+        subAccountList:
+          type: array
+          items:
+            type: object
+            properties:
+              email:
+                type: string
+                example: 123@test.com
+              totalInitialMargin:
+                type: string
+                example: '9.00000000'
+              totalMaintenanceMargin:
+                type: string
+                example: '0.00000000'
+              totalMarginBalance:
+                type: string
+                example: '22.12659734'
+              totalOpenOrderInitialMargin:
+                type: string
+                example: '9.00000000'
+              totalPositionInitialMargin:
+                type: string
+                example: '0.00000000'
+              totalUnrealizedProfit:
+                type: string
+                example: '0.00000000'
+              totalWalletBalance:
+                type: string
+                example: '22.12659734'
+              asset:
+                type: string
+                example: USD
+            required:
+            - email
+            - totalInitialMargin
+            - totalMaintenanceMargin
+            - totalMarginBalance
+            - totalOpenOrderInitialMargin
+            - totalPositionInitialMargin
+            - totalUnrealizedProfit
+            - totalWalletBalance
+            - asset
+      required:
+      - totalInitialMargin
+      - totalMaintenanceMargin
+      - totalMarginBalance
+      - totalOpenOrderInitialMargin
+      - totalPositionInitialMargin
+      - totalUnrealizedProfit
+      - totalWalletBalance
+      - asset
+      - subAccountList

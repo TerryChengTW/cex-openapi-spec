@@ -1,0 +1,21 @@
+get:
+  summary: Query Current Order Count Usage (TRADE)
+  description: 'Displays the user''s current order count usage for all intervals.
+
+
+    Weight(IP): 40'
+  tags:
+  - Trade
+  parameters:
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/rateLimit_order_v3_200.yaml
+    '400':
+      $ref: ../components/responses/rateLimit_order_v3_400.yaml
+    '401':
+      $ref: ../components/responses/rateLimit_order_v3_401.yaml

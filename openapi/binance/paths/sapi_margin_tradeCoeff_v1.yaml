@@ -1,0 +1,28 @@
+get:
+  summary: Get Summary of Margin account (USER_DATA)
+  description: 'Get personal margin level information
+
+
+    Weight(IP): 10'
+  tags:
+  - Margin
+  parameters:
+  - name: email
+    in: query
+    description: Email Address
+    required: true
+    schema:
+      type: string
+      example: me@email.com
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_margin_tradeCoeff_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_margin_tradeCoeff_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_margin_tradeCoeff_v1_401.yaml

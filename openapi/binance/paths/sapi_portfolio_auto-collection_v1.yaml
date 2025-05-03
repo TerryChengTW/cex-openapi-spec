@@ -1,0 +1,21 @@
+post:
+  summary: Fund Auto-collection (USER_DATA)
+  description: 'Transfers all assets from Futures Account to Margin account
+
+
+    Weight(IP): 1500'
+  tags:
+  - Portfolio Margin
+  parameters:
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_portfolio_auto-collection_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_portfolio_auto-collection_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_portfolio_auto-collection_v1_401.yaml

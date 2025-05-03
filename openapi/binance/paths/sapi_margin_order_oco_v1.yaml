@@ -1,0 +1,39 @@
+post:
+  summary: Margin Account New OCO (TRADE)
+  description: "Send in a new OCO for a margin account\n\n- Price Restrictions:\n\
+    \  - SELL: Limit Price > Last Price > Stop Price\n  - BUY: Limit Price < Last\
+    \ Price < Stop Price\n- Quantity Restrictions:\n  - Both legs must have the same\
+    \ quantity\n  - ICEBERG quantities however do not have to be the same.\n- Order\
+    \ Rate Limit\n  - OCO counts as 2 orders against the order rate limit.\n\nWeight(UID):\
+    \ 6"
+  tags:
+  - Margin
+  parameters:
+  - $ref: ../components/parameters/symbol.yaml
+  - $ref: ../components/parameters/isIsolatedMargin.yaml
+  - $ref: ../components/parameters/listClientOrderId.yaml
+  - $ref: ../components/parameters/side.yaml
+  - $ref: ../components/parameters/quantity.yaml
+  - $ref: ../components/parameters/limitClientOrderId.yaml
+  - $ref: ../components/parameters/price.yaml
+  - $ref: ../components/parameters/limitIcebergQty.yaml
+  - $ref: ../components/parameters/stopClientOrderId.yaml
+  - $ref: ../components/parameters/ocoStopPrice.yaml
+  - $ref: ../components/parameters/stopLimitPrice.yaml
+  - $ref: ../components/parameters/stopIcebergQty.yaml
+  - $ref: ../components/parameters/stopLimitTimeInForce.yaml
+  - $ref: ../components/parameters/ocoNewOrderRespType.yaml
+  - $ref: ../components/parameters/sideEffectType.yaml
+  - $ref: ../components/parameters/selfTradePreventionMode.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_margin_order_oco_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_margin_order_oco_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_margin_order_oco_v1_401.yaml

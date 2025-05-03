@@ -1,0 +1,23 @@
+description: Deposit address info
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        address:
+          type: string
+          example: 1HPn8Rx2y6nNSfagQBKy27GB99Vbzg89wv
+        coin:
+          type: string
+          example: BTC
+        tag:
+          type: string
+          example: ''
+        url:
+          type: string
+          example: https://btc.com/1HPn8Rx2y6nNSfagQBKy27GB99Vbzg89wv
+      required:
+      - address
+      - coin
+      - tag
+      - url

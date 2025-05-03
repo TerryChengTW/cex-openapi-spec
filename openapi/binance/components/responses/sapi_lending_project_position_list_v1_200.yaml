@@ -1,0 +1,84 @@
+description: List of fixed project positions
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          asset:
+            type: string
+            example: USDT
+          canTransfer:
+            type: boolean
+          createTimestamp:
+            type: integer
+            format: int64
+            example: 1587010770000
+          duration:
+            type: integer
+            format: int64
+            example: 14
+          endTime:
+            type: integer
+            format: int64
+            example: 1588291200000
+          interest:
+            type: string
+            example: '0.19950000'
+          interestRate:
+            type: string
+            example: '0.05201250'
+          lot:
+            type: integer
+            format: int64
+            example: 1
+          positionId:
+            type: integer
+            format: int64
+            example: 51724
+          principal:
+            type: string
+            example: '100.00000000'
+          projectId:
+            type: string
+            example: CUSDT14DAYSS001
+          projectName:
+            type: string
+            example: USDT
+          purchaseTime:
+            type: integer
+            format: int64
+            example: 1587010771000
+          redeemDate:
+            type: string
+            format: date
+            example: '2020-05-01'
+          startTime:
+            type: integer
+            format: int64
+            example: 1587081600000
+          status:
+            type: string
+            example: HOLDING
+          type:
+            type: string
+            example: CUSTOMIZED_FIXED
+        required:
+        - asset
+        - canTransfer
+        - createTimestamp
+        - duration
+        - endTime
+        - interest
+        - interestRate
+        - lot
+        - positionId
+        - principal
+        - projectId
+        - projectName
+        - purchaseTime
+        - redeemDate
+        - startTime
+        - status
+        - type

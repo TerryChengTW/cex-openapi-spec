@@ -1,0 +1,167 @@
+description: New OTOCO details
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        orderListId:
+          type: integer
+          format: int64
+          example: 1
+        contingencyType:
+          type: string
+          example: OTOCO
+        listStatusType:
+          type: string
+          example: EXEC_STARTED
+        listOrderStatus:
+          type: string
+          example: EXECUTING
+        listClientOrderId:
+          type: string
+          example: RumwQpBaDctlUu5jyG5rs0
+        transactionTime:
+          type: integer
+          format: int64
+          example: 1712291372842
+        symbol:
+          type: string
+          example: LTCBTC
+        orders:
+          type: array
+          items:
+            type: object
+            properties:
+              symbol:
+                type: string
+              orderId:
+                type: integer
+                format: int64
+              clientOrderId:
+                type: string
+            required:
+            - symbol
+            - orderId
+            - clientOrderId
+            example:
+            - symbol: LTCBTC
+              orderId: 6
+              clientOrderId: fM9Y4m23IFJVCQmIrlUmMK
+            - symbol: LTCBTC
+              orderId: 7
+              clientOrderId: 6pcQbFIzTXGZQ1e2MkGDq4
+            - symbol: LTCBTC
+              orderId: 8
+              clientOrderId: r4JMv9cwAYYUwwBZfbussx
+        orderReports:
+          type: array
+          items:
+            type: object
+            properties:
+              symbol:
+                type: string
+              orderId:
+                type: integer
+                format: int64
+              orderListId:
+                type: integer
+                format: int64
+              clientOrderId:
+                type: string
+              transactTime:
+                type: integer
+                format: int64
+              price:
+                type: string
+              origQty:
+                type: string
+              executedQty:
+                type: string
+              cummulativeQuoteQty:
+                type: string
+              status:
+                type: string
+              timeInForce:
+                type: string
+              type:
+                type: string
+              side:
+                type: string
+              workingTime:
+                type: integer
+                format: int64
+              selfTradePreventionMode:
+                type: string
+            required:
+            - symbol
+            - orderId
+            - orderListId
+            - clientOrderId
+            - transactTime
+            - price
+            - origQty
+            - executedQty
+            - cummulativeQuoteQty
+            - status
+            - timeInForce
+            - type
+            - side
+            - workingTime
+            - selfTradePreventionMode
+            example:
+            - symbol: LTCBTC
+              orderId: 6
+              orderListId: 1
+              clientOrderId: fM9Y4m23IFJVCQmIrlUmMK
+              transactTime: 1712291372842
+              price: '1.000000'
+              origQty: '1.00000000'
+              executedQty: '0.00000000'
+              cummulativeQuoteQty: '0.00000000'
+              status: NEW
+              timeInForce: GTC
+              type: LIMIT
+              side: SELL
+              workingTime: 1712291372842
+              selfTradePreventionMode: NONE
+            - symbol: LTCBTC
+              orderId: 7
+              orderListId: 1
+              clientOrderId: 6pcQbFIzTXGZQ1e2MkGDq4
+              transactTime: 1712291372842
+              price: '1.00000000'
+              origQty: '5.00000000'
+              executedQty: '0.00000000'
+              cummulativeQuoteQty: '0.00000000'
+              status: PENDING_NEW
+              timeInForce: IOC
+              type: STOP_LOSS_LIMIT
+              side: BUY
+              stopPrice: '6.00000000'
+              workingTime: -1
+              selfTradePreventionMode: NONE
+            - symbol: LTCBTC
+              orderId: 8
+              orderListId: 1
+              clientOrderId: r4JMv9cwAYYUwwBZfbussx
+              transactTime: 1712291372842
+              price: '3.00000000'
+              origQty: '5.00000000'
+              executedQty: '0.00000000'
+              cummulativeQuoteQty: '0.00000000'
+              status: PENDING_NEW
+              timeInForce: GTC
+              type: LIMIT_MAKER
+              side: BUY
+              workingTime: -1
+              selfTradePreventionMode: NONE
+      required:
+      - orderListId
+      - contingencyType
+      - listStatusType
+      - listOrderStatus
+      - listClientOrderId
+      - transactionTime
+      - symbol
+      - orders
+      - orderReports

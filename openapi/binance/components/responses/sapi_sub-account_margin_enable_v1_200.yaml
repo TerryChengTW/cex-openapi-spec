@@ -1,0 +1,14 @@
+description: Margin status
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        email:
+          type: string
+          example: 123@test.com
+        isMarginEnabled:
+          type: boolean
+      required:
+      - email
+      - isMarginEnabled

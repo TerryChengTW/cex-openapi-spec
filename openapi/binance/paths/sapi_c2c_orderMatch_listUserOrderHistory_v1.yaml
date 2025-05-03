@@ -1,0 +1,51 @@
+get:
+  summary: Get C2C Trade History (USER_DATA)
+  description: '- If startTimestamp and endTimestamp are not sent, the recent 30-day
+    data will be returned.
+
+    - The max interval between startTimestamp and endTimestamp is 30 days.
+
+
+    Weight(IP): 1'
+  tags:
+  - C2C
+  parameters:
+  - name: tradeType
+    in: query
+    required: true
+    schema:
+      type: string
+      enum:
+      - BUY
+      - SELL
+  - name: startTimestamp
+    in: query
+    description: UTC timestamp in ms
+    schema:
+      type: integer
+      format: int64
+  - name: endTimestamp
+    in: query
+    description: UTC timestamp in ms
+    schema:
+      type: integer
+      format: int64
+  - $ref: ../components/parameters/page.yaml
+  - name: rows
+    in: query
+    description: default 100, max 100
+    schema:
+      type: integer
+      format: int32
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_c2c_orderMatch_listUserOrderHistory_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_c2c_orderMatch_listUserOrderHistory_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_c2c_orderMatch_listUserOrderHistory_v1_401.yaml

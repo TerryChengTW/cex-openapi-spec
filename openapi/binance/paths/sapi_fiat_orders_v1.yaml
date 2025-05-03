@@ -1,0 +1,27 @@
+get:
+  summary: Fiat Deposit/Withdraw History (USER_DATA)
+  description: '- If beginTime and endTime are not sent, the recent 30-day data will
+    be returned.
+
+
+    Weight(UID): 90000'
+  tags:
+  - Fiat
+  parameters:
+  - $ref: ../components/parameters/transactionType.yaml
+  - $ref: ../components/parameters/beginTime.yaml
+  - $ref: ../components/parameters/endTime.yaml
+  - $ref: ../components/parameters/page.yaml
+  - $ref: ../components/parameters/rows.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_fiat_orders_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_fiat_orders_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_fiat_orders_v1_401.yaml

@@ -1,0 +1,83 @@
+description: Margin account details
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        created:
+          type: boolean
+          example: true
+        borrowEnabled:
+          type: boolean
+          example: true
+        marginLevel:
+          type: string
+          example: '11.64405625'
+        collateralMarginLevel:
+          type: string
+          example: '3.2'
+        totalAssetOfBtc:
+          type: string
+          example: '6.82728457'
+        totalLiabilityOfBtc:
+          type: string
+          example: '0.58633215'
+        totalNetAssetOfBtc:
+          type: string
+          example: '6.24095242'
+        TotalCollateralValueInUSDT:
+          type: string
+          example: '5.82728457'
+        tradeEnabled:
+          type: boolean
+        transferInEnabled:
+          type: boolean
+        transferOutEnabled:
+          type: boolean
+        accountType:
+          type: string
+          example: MARGIN_1
+        userAssets:
+          type: array
+          items:
+            type: object
+            properties:
+              asset:
+                type: string
+                example: BTC
+              borrowed:
+                type: string
+                example: '0.00000000'
+              free:
+                type: string
+                example: '0.00499500'
+              interest:
+                type: string
+                example: '0.00000000'
+              locked:
+                type: string
+                example: '0.00000000'
+              netAsset:
+                type: string
+                example: '0.00499500'
+            required:
+            - asset
+            - borrowed
+            - free
+            - interest
+            - locked
+            - netAsset
+      required:
+      - created
+      - borrowEnabled
+      - marginLevel
+      - collateralMarginLevel
+      - totalAssetOfBtc
+      - totalLiabilityOfBtc
+      - totalNetAssetOfBtc
+      - TotalCollateralValueInUSDT
+      - tradeEnabled
+      - transferInEnabled
+      - transferOutEnabled
+      - accountType
+      - userAssets

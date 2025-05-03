@@ -1,0 +1,26 @@
+post:
+  summary: Portfolio Margin Bankruptcy Loan Repay (USER_DATA)
+  description: 'Repay Portfolio Margin Bankruptcy Loan.
+
+
+    Weight(UID): 3000'
+  tags:
+  - Portfolio Margin
+  parameters:
+  - name: from
+    in: query
+    schema:
+      type: string
+      example: SPOT
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_portfolio_repay_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_portfolio_repay_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_portfolio_repay_v1_401.yaml

@@ -1,0 +1,7 @@
+description: Current open orders
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        $ref: ../schemas/orderDetails.yaml

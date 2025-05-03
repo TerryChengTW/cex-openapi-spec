@@ -1,0 +1,7 @@
+description: Repayment Information
+content:
+  application/json:
+    schema:
+      oneOf:
+      - $ref: ../schemas/repaymentInfo.yaml
+      - $ref: ../schemas/repaymentInfo2.yaml

@@ -1,0 +1,85 @@
+description: Mining account statistics
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int64
+          example: 0
+        msg:
+          type: string
+          example: ''
+        data:
+          type: object
+          properties:
+            fifteenMinHashRate:
+              type: string
+              example: '457835490067496409.00000000'
+            dayHashRate:
+              type: string
+              example: '214289268068874127.65000000'
+            validNum:
+              type: integer
+              format: int64
+              example: 0
+            invalidNum:
+              type: integer
+              format: int64
+              example: 17562
+            profitToday:
+              type: object
+              properties:
+                BTC:
+                  type: string
+                  example: '0.00314332'
+                BSV:
+                  type: string
+                  example: '56.17055953'
+                BCH:
+                  type: string
+                  example: '106.61586001'
+              required:
+              - BTC
+              - BSV
+              - BCH
+            profitYesterday:
+              type: object
+              properties:
+                BTC:
+                  type: string
+                  example: '0.00314332'
+                BSV:
+                  type: string
+                  example: '56.17055953'
+                BCH:
+                  type: string
+                  example: '106.61586001'
+              required:
+              - BTC
+              - BSV
+              - BCH
+            userName:
+              type: string
+              example: test
+            unit:
+              type: string
+              example: h/s
+            algo:
+              type: string
+              example: sha256
+          required:
+          - fifteenMinHashRate
+          - dayHashRate
+          - validNum
+          - invalidNum
+          - profitToday
+          - profitYesterday
+          - userName
+          - unit
+          - algo
+      required:
+      - code
+      - msg
+      - data

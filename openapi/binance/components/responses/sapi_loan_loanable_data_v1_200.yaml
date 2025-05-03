@@ -1,0 +1,76 @@
+description: Loanable Assets Data
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        rows:
+          type: array
+          items:
+            type: object
+            properties:
+              loanCoin:
+                type: string
+                example: BUSD
+              _7dHourlyInterestRate:
+                type: string
+                example: '0.00000491'
+              _7dDailyInterestRate:
+                type: string
+                example: '0.000118'
+              _14dHourlyInterestRate:
+                type: string
+                example: '0.00000491'
+              _14dDailyInterestRate:
+                type: string
+                example: '0.000118'
+              _30dHourlyInterestRate:
+                type: string
+                example: '0.00000567'
+              _30dDailyInterestRate:
+                type: string
+                example: '0.000136'
+              _90dHourlyInterestRate:
+                type: string
+                example: '0.00000596'
+              _90dDailyInterestRate:
+                type: string
+                example: '0.000143'
+              _180dHourlyInterestRate:
+                type: string
+                example: '0.00000631'
+              _180dDailyInterestRate:
+                type: string
+                example: '0.000151'
+              minLimit:
+                type: string
+                example: '100'
+              maxLimit:
+                type: string
+                example: '1000000'
+              vipLevel:
+                type: integer
+                format: int32
+                example: 1
+            required:
+            - loanCoin
+            - _7dHourlyInterestRate
+            - _7dDailyInterestRate
+            - _14dHourlyInterestRate
+            - _14dDailyInterestRate
+            - _30dHourlyInterestRate
+            - _30dDailyInterestRate
+            - _90dHourlyInterestRate
+            - _90dDailyInterestRate
+            - _180dHourlyInterestRate
+            - _180dDailyInterestRate
+            - minLimit
+            - maxLimit
+            - vipLevel
+        total:
+          type: integer
+          format: int32
+          example: 1
+      required:
+      - rows
+      - total

@@ -1,0 +1,28 @@
+post:
+  summary: Withdrawl assets from the managed sub-account(For Investor Master Account)
+  description: 'Weight(IP): 1'
+  tags:
+  - Sub-Account
+  parameters:
+  - $ref: ../components/parameters/subAccountFromEmail.yaml
+  - $ref: ../components/parameters/asset.yaml
+  - $ref: ../components/parameters/amount.yaml
+  - name: transferDate
+    in: query
+    description: Withdrawals is automatically occur on the transfer date(UTC0). If
+      a date is not selected, the withdrawal occurs right now
+    schema:
+      type: integer
+      format: int64
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_managed-subaccount_withdraw_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_managed-subaccount_withdraw_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_managed-subaccount_withdraw_v1_401.yaml

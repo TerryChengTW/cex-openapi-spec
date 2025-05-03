@@ -1,0 +1,48 @@
+description: Margin account transfer history, response in descending order
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        rows:
+          type: array
+          items:
+            type: object
+            properties:
+              amount:
+                type: string
+              asset:
+                type: string
+              status:
+                type: string
+              timestamp:
+                type: integer
+                format: int64
+              txId:
+                type: integer
+                format: int64
+              type:
+                type: string
+            required:
+            - amount
+            - asset
+            - status
+            - timestamp
+            - txId
+            - type
+        total:
+          type: integer
+          format: int32
+          example: 3
+      example:
+        rows:
+        - amount: '0.10000000'
+          asset: BNB
+          status: CONFIRMED
+          timestamp: 1566898617
+          txId: 5240372201
+          type: ROLL_IN
+        total: 1
+      required:
+      - rows
+      - total

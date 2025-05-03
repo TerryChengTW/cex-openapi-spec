@@ -1,0 +1,16 @@
+description: Flexible Product Subscription Response
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        purchaseId:
+          type: integer
+          format: int64
+          example: 40607
+        success:
+          type: boolean
+          example: true
+      required:
+      - purchaseId
+      - success

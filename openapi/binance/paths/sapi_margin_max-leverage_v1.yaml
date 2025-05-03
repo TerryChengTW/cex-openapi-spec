@@ -1,0 +1,28 @@
+post:
+  summary: Adjust cross margin max leverage (USER_DATA)
+  description: 'Adjust cross margin max leverage
+
+
+    Weight(UID): 3000'
+  tags:
+  - Margin
+  parameters:
+  - name: maxLeverage
+    in: query
+    required: true
+    description: Can only adjust 3 or 5
+    schema:
+      type: integer
+      example: 3
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_margin_max-leverage_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_margin_max-leverage_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_margin_max-leverage_v1_401.yaml

@@ -1,0 +1,24 @@
+description: Time-Weighted Average Price(Twap) New Order
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        clientAlgoId:
+          type: string
+          example: 00358ce6a268403398bd34eaa36dffe7
+        success:
+          type: boolean
+          example: true
+        code:
+          type: integer
+          format: int64
+          example: 0
+        msg:
+          type: string
+          example: OK
+      required:
+      - clientAlgoId
+      - success
+      - code
+      - msg

@@ -1,0 +1,21 @@
+get:
+  summary: Get Fixed/Activity Project Position (USER_DATA)
+  description: 'Weight(IP): 1'
+  tags:
+  - Savings
+  parameters:
+  - $ref: ../components/parameters/asset.yaml
+  - $ref: ../components/parameters/fixedAndActivityProjectId.yaml
+  - $ref: ../components/parameters/optionalFixedAndActivityProductStatus.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_lending_project_position_list_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_lending_project_position_list_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_lending_project_position_list_v1_401.yaml

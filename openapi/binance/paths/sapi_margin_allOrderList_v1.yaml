@@ -1,0 +1,41 @@
+get:
+  summary: Query Margin Account's all OCO (USER_DATA)
+  description: 'Retrieves all OCO for a specific margin account based on provided
+    optional parameters
+
+
+    Weight(IP): 200'
+  tags:
+  - Margin
+  parameters:
+  - $ref: ../components/parameters/isIsolatedMargin.yaml
+  - name: symbol
+    in: query
+    description: Mandatory for isolated margin, not supported for cross margin
+    schema:
+      type: string
+  - name: fromId
+    in: query
+    description: If supplied, neither `startTime` or `endTime` can be provided
+    schema:
+      type: string
+  - $ref: ../components/parameters/startTime.yaml
+  - $ref: ../components/parameters/endTime.yaml
+  - name: limit
+    in: query
+    description: 'Default Value: 500; Max Value: 1000'
+    schema:
+      type: integer
+      format: int32
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_margin_allOrderList_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_margin_allOrderList_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_margin_allOrderList_v1_401.yaml

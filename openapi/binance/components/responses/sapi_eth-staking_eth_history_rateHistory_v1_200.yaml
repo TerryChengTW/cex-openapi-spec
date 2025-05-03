@@ -1,0 +1,34 @@
+description: WBETH Rate History
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        rows:
+          type: array
+          items:
+            type: object
+            properties:
+              annualPercentageRate:
+                type: string
+                example: '0.5'
+                description: BETH APR
+              exchangeRate:
+                type: string
+                example: '1.00121234'
+                description: BETH value per 1 WBETH
+              time:
+                type: integer
+                format: int64
+                example: 1575018510000
+            required:
+            - annualPercentageRate
+            - exchangeRate
+            - time
+        total:
+          type: integer
+          format: int64
+          example: 1
+      required:
+      - rows
+      - total

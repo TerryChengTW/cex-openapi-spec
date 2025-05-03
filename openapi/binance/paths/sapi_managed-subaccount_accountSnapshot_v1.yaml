@@ -1,0 +1,40 @@
+get:
+  summary: Managed sub-account snapshot (For Investor Master Account)
+  description: '- The query time period must be less then 30 days
+
+    - Support query within the last one month only
+
+    - If `startTime` and `endTime` not sent, return records of the last 7 days by
+    default
+
+
+    Weight(IP): 2400'
+  tags:
+  - Sub-Account
+  parameters:
+  - $ref: ../components/parameters/subAccountEmail.yaml
+  - name: type
+    in: query
+    required: true
+    description: '"SPOT", "MARGIN"(cross), "FUTURES"(UM)'
+    schema:
+      type: string
+      example: SPOT
+  - $ref: ../components/parameters/startTime.yaml
+  - $ref: ../components/parameters/endTime.yaml
+  - name: limit
+    in: query
+    description: min 7, max 30, default 7
+    schema:
+      type: integer
+      format: int32
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_managed-subaccount_accountSnapshot_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_managed-subaccount_accountSnapshot_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_managed-subaccount_accountSnapshot_v1_401.yaml

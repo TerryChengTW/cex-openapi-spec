@@ -1,0 +1,36 @@
+get:
+  summary: Sub-account Transfer History (For Sub-account)
+  description: '- If `type` is not sent, the records of type 2: transfer out will
+    be returned by default.
+
+    - If `startTime` and `endTime` are not sent, the recent 30-day data will be returned.
+
+
+    Weight(IP): 1'
+  tags:
+  - Sub-Account
+  parameters:
+  - $ref: ../components/parameters/optionalAsset.yaml
+  - name: type
+    in: query
+    description: '* `1` - transfer in
+
+      * `2` - transfer out'
+    schema:
+      type: integer
+      format: int32
+  - $ref: ../components/parameters/startTime.yaml
+  - $ref: ../components/parameters/endTime.yaml
+  - $ref: ../components/parameters/limit.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_sub-account_transfer_subUserHistory_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_sub-account_transfer_subUserHistory_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_sub-account_transfer_subUserHistory_v1_401.yaml

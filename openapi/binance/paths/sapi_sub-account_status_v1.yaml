@@ -1,0 +1,22 @@
+get:
+  summary: Sub-account's Status on Margin/Futures (For Master Account)
+  description: '- If no `email` sent, all sub-accounts'' information will be returned.
+
+
+    Weight(IP): 10'
+  tags:
+  - Sub-Account
+  parameters:
+  - $ref: ../components/parameters/optionalSubAccountEmail.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_sub-account_status_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_sub-account_status_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_sub-account_status_v1_401.yaml

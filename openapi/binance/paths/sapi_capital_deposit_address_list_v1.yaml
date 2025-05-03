@@ -1,0 +1,32 @@
+get:
+  summary: Fetch deposit address list with network (USER_DATA)
+  description: 'Fetch deposit address list with network.
+
+
+    Weight(IP): 10'
+  tags:
+  - Wallet
+  parameters:
+  - name: coin
+    in: query
+    required: true
+    schema:
+      type: string
+      example: BTC
+  - name: network
+    in: query
+    schema:
+      type: string
+      example: BTC
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_capital_deposit_address_list_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_capital_deposit_address_list_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_capital_deposit_address_list_v1_401.yaml

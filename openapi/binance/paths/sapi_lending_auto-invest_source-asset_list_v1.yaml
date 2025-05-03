@@ -1,0 +1,44 @@
+get:
+  summary: Query source asset list (USER_DATA)
+  description: 'Query Source Asset to be used for investment
+
+
+    Weight(IP): 1'
+  tags:
+  - Auto-Invest
+  parameters:
+  - name: targetAsset
+    in: query
+    schema:
+      type: string
+      example: BTC
+  - name: indexId
+    in: query
+    schema:
+      type: integer
+      format: int64
+      example: 1
+  - name: usageType
+    in: query
+    required: true
+    schema:
+      type: string
+      example: RECURRING
+  - name: flexibleAllowedToUse
+    in: query
+    required: false
+    schema:
+      type: boolean
+      example: true
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_lending_auto-invest_source-asset_list_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_lending_auto-invest_source-asset_list_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_lending_auto-invest_source-asset_list_v1_401.yaml

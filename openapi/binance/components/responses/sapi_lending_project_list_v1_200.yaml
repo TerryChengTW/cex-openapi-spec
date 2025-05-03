@@ -1,0 +1,77 @@
+description: List of fixed projects
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          asset:
+            type: string
+            example: USDT
+          displayPriority:
+            type: integer
+            format: int64
+            example: 1
+          duration:
+            type: integer
+            format: int64
+            example: 90
+          interestPerLot:
+            type: string
+            example: '1.35810000'
+          interestRate:
+            type: string
+            example: '0.05510000'
+          lotSize:
+            type: string
+            example: '100.00000000'
+          lotsLowLimit:
+            type: integer
+            format: int64
+            example: 1
+          lotsPurchased:
+            type: integer
+            format: int64
+            example: 74155
+          lotsUpLimit:
+            type: integer
+            format: int64
+            example: 80000
+          maxLotsPerUser:
+            type: integer
+            format: int64
+            example: 2000
+          needKyc:
+            type: boolean
+          projectId:
+            type: string
+            example: CUSDT90DAYSS001
+          projectName:
+            type: string
+            example: USDT
+          status:
+            type: string
+            example: PURCHASING
+          type:
+            type: string
+            example: CUSTOMIZED_FIXED
+          withAreaLimitation:
+            type: boolean
+        required:
+        - asset
+        - displayPriority
+        - duration
+        - interestPerLot
+        - interestRate
+        - lotSize
+        - lotsLowLimit
+        - lotsPurchased
+        - lotsUpLimit
+        - maxLotsPerUser
+        - needKyc
+        - projectId
+        - projectName
+        - status
+        - type
+        - withAreaLimitation

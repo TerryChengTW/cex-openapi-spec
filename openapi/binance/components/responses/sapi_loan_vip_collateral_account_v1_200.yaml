@@ -1,0 +1,32 @@
+description: VIP Locked Value
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        rows:
+          type: array
+          items:
+            type: object
+            properties:
+              collateralAccountId:
+                type: string
+                example: '12345678'
+              collateralCoin:
+                type: string
+                example: BNB,BTC,ETH
+              collateralValue:
+                type: string
+                example: '500.27565492'
+                description: locked collateral value shown in USD value
+            required:
+            - collateralAccountId
+            - collateralCoin
+            - collateralValue
+        total:
+          type: integer
+          format: int32
+          example: 1
+      required:
+      - rows
+      - total

@@ -1,0 +1,60 @@
+description: Loan Repayment History
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        rows:
+          type: array
+          items:
+            type: object
+            properties:
+              loanCoin:
+                type: string
+                example: BUSD
+              repayAmount:
+                type: string
+                example: '10000'
+              collateralCoin:
+                type: string
+                example: BNB
+              collateralUsed:
+                type: string
+                example: '0'
+              collateralReturn:
+                type: string
+                example: '49.27565492'
+              repayType:
+                type: string
+                example: '1'
+              repayStatus:
+                type: string
+                example: Repaid
+                description: '''repayType'': ''1'' // 1 for ''repay with borrowed
+                  coin'', 2 for ''repay with collateral'' ''repayStatus'': ''Repaid''
+                  // Repaid, Repaying, Failed'
+              repayTime:
+                type: integer
+                format: int64
+                example: 1575018510000
+              orderId:
+                type: integer
+                format: int64
+                example: 756783308056935434
+            required:
+            - loanCoin
+            - repayAmount
+            - collateralCoin
+            - collateralUsed
+            - collateralReturn
+            - repayType
+            - repayStatus
+            - repayTime
+            - orderId
+        total:
+          type: integer
+          format: int32
+          example: 1
+      required:
+      - rows
+      - total

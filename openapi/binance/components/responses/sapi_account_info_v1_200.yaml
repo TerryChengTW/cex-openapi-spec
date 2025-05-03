@@ -1,0 +1,22 @@
+description: Account info detail
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        vipLevel:
+          type: integer
+          format: int32
+          example: 0
+        isMarginEnabled:
+          type: boolean
+          description: true or false for margin.
+          example: true
+        isFutureEnabled:
+          type: boolean
+          description: true or false for futures.
+          example: true
+      required:
+      - vipLevel
+      - isMarginEnabled
+      - isFutureEnabled

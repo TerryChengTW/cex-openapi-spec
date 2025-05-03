@@ -1,0 +1,9 @@
+description: Cancelled orders
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        anyOf:
+        - $ref: ../schemas/order.yaml
+        - $ref: ../schemas/ocoOrder.yaml

@@ -1,0 +1,29 @@
+get:
+  summary: Deposit Address (supporting network) (USER_DATA)
+  description: 'Fetch deposit address with network.
+
+
+    - If network is not send, return with default network of the coin.
+
+    - You can get network and isDefault in networkList in the response of Get /sapi/v1/capital/config/getall
+    (HMAC SHA256).
+
+
+    Weight(IP): 10'
+  tags:
+  - Wallet
+  parameters:
+  - $ref: ../components/parameters/coin.yaml
+  - $ref: ../components/parameters/network.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_capital_deposit_address_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_capital_deposit_address_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_capital_deposit_address_v1_401.yaml

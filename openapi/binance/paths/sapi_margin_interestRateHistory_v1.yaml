@@ -1,0 +1,25 @@
+get:
+  summary: Margin Interest Rate History (USER_DATA)
+  description: 'The max interval between startTime and endTime is 30 days.
+
+
+    Weight(IP): 1'
+  tags:
+  - Margin
+  parameters:
+  - $ref: ../components/parameters/asset.yaml
+  - $ref: ../components/parameters/vipLevel.yaml
+  - $ref: ../components/parameters/startTime.yaml
+  - $ref: ../components/parameters/endTime.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_margin_interestRateHistory_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_margin_interestRateHistory_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_margin_interestRateHistory_v1_401.yaml

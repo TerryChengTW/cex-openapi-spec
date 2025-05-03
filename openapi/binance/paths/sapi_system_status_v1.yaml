@@ -1,0 +1,11 @@
+get:
+  summary: System Status (System)
+  description: 'Fetch system status.
+
+
+    Weight(IP): 1'
+  tags:
+  - Wallet
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_system_status_v1_200.yaml

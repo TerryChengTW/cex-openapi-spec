@@ -1,0 +1,14 @@
+description: Futures status
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        email:
+          type: string
+          example: 123@test.com
+        isFuturesEnabled:
+          type: boolean
+      required:
+      - email
+      - isFuturesEnabled

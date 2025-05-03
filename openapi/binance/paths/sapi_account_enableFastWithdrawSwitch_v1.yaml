@@ -1,0 +1,26 @@
+post:
+  summary: Enable Fast Withdraw Switch (USER_DATA)
+  description: '- This request will enable fastwithdraw switch under your account.
+    You need to enable "trade" option for the api key which requests this endpoint.
+
+    - When Fast Withdraw Switch is on, transferring funds to a Binance account will
+    be done instantly. There is no on-chain transaction, no transaction ID and no
+    withdrawal fee.
+
+
+    Weight(IP): 1'
+  tags:
+  - Wallet
+  parameters:
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_account_enableFastWithdrawSwitch_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_account_enableFastWithdrawSwitch_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_account_enableFastWithdrawSwitch_v1_401.yaml

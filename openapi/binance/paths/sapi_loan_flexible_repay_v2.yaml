@@ -1,0 +1,50 @@
+post:
+  summary: Repay - Flexible Loan Repay (TRADE)
+  description: '- repayAmount is mandatory even fullRepayment = FALSE
+
+
+    Weight(IP): 6000'
+  tags:
+  - Crypto Loans
+  parameters:
+  - $ref: ../components/parameters/loanCoin.yaml
+  - $ref: ../components/parameters/collateralCoin.yaml
+  - name: repayAmount
+    in: query
+    required: true
+    description: repay amount of loanCoin
+    schema:
+      type: number
+      format: float
+  - name: collateralReturn
+    in: query
+    description: 'Default: TRUE.
+
+      TRUE: Return extra collateral to earn account;
+
+      FALSE: Keep extra collateral in the order, and lower LTV.'
+    schema:
+      type: boolean
+      example: true
+  - name: fullRepayment
+    in: query
+    description: 'Default: FALSE.
+
+      TRUE: Full repayment;
+
+      FALSE: Partial repayment, based on loanAmount'
+    schema:
+      type: boolean
+      example: true
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_loan_flexible_repay_v2_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_loan_flexible_repay_v2_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_loan_flexible_repay_v2_401.yaml

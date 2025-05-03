@@ -1,0 +1,50 @@
+get:
+  summary: Get Dual Investment positions(USER_DATA)
+  description: 'Get Dual Investment positions (batch)
+
+
+    Weight(IP): 1'
+  tags:
+  - Dual Investment
+  parameters:
+  - name: status
+    in: query
+    description: '- PENDING: Products are purchasing, will give results later;
+
+      - PURCHASE_SUCCESS: purchase successfully;
+
+      - SETTLED: Products are finish settling;
+
+      - PURCHASE_FAIL: fail to purchase;
+
+      - REFUNDING: refund ongoing;
+
+      - REFUND_SUCCESS: refund to spot account successfully;
+
+      - SETTLING: Products are settling.
+
+      If don''t fill this field, will response all the position status.'
+    schema:
+      type: string
+      enum:
+      - PENDING
+      - PURCHASE_SUCCESS
+      - SETTLED
+      - PURCHASE_FAIL
+      - REFUNDING
+      - REFUND_SUCCESS
+      - SETTLING
+  - $ref: ../components/parameters/smallPageSize.yaml
+  - $ref: ../components/parameters/pageIndex.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_dci_product_positions_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_dci_product_positions_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_dci_product_positions_v1_401.yaml

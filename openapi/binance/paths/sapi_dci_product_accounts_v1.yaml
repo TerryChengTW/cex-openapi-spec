@@ -1,0 +1,21 @@
+get:
+  summary: Check Dual Investment accounts(USER_DATA)
+  description: 'Check Dual Investment accounts
+
+
+    Weight(IP): 1'
+  tags:
+  - Dual Investment
+  parameters:
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_dci_product_accounts_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_dci_product_accounts_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_dci_product_accounts_v1_401.yaml

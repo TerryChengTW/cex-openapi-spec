@@ -1,0 +1,35 @@
+description: Loan asset data
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        rows:
+          type: array
+          items:
+            type: object
+            properties:
+              loanCoin:
+                type: string
+                example: BNB
+              flexibleInterestRate:
+                type: string
+                example: '0.01'
+              flexibleMinLimit:
+                type: string
+                example: '100'
+              flexibleMaxLimit:
+                type: string
+                example: '1000000'
+            required:
+            - loanCoin
+            - flexibleInterestRate
+            - flexibleMinLimit
+            - flexibleMaxLimit
+        total:
+          type: integer
+          format: int32
+          example: 1
+      required:
+      - rows
+      - total

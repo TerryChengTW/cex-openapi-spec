@@ -1,0 +1,8 @@
+description: Account Snapshot
+content:
+  application/json:
+    schema:
+      oneOf:
+      - $ref: ../schemas/snapshotSpot.yaml
+      - $ref: ../schemas/snapshotMargin.yaml
+      - $ref: ../schemas/snapshotFutures.yaml

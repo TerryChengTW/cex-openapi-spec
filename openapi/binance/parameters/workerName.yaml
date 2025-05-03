@@ -1,6 +1,0 @@
-name: workerName
-in: query
-required: true
-description: "Miner\u2019s name"
-schema:
-  type: string

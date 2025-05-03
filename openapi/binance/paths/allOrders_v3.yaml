@@ -1,0 +1,35 @@
+get:
+  summary: All Orders (USER_DATA)
+  description: 'Get all account orders; active, canceled, or filled..
+
+
+    - If `orderId` is set, it will get orders >= that `orderId`. Otherwise most recent
+    orders are returned.
+
+    - For some historical orders `cummulativeQuoteQty` will be < 0, meaning the data
+    is not available at this time.
+
+    - If `startTime` and/or `endTime` provided, `orderId` is not required
+
+
+    Weight(IP): 20'
+  tags:
+  - Trade
+  parameters:
+  - $ref: ../components/parameters/symbol.yaml
+  - $ref: ../components/parameters/orderId.yaml
+  - $ref: ../components/parameters/startTime.yaml
+  - $ref: ../components/parameters/endTime.yaml
+  - $ref: ../components/parameters/limit.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/allOrders_v3_200.yaml
+    '400':
+      $ref: ../components/responses/allOrders_v3_400.yaml
+    '401':
+      $ref: ../components/responses/allOrders_v3_401.yaml

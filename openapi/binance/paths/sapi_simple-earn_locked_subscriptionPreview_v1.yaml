@@ -1,0 +1,34 @@
+get:
+  summary: Get Locked Subscription Preview (USER_DATA)
+  description: 'Weight(IP): 150'
+  tags:
+  - Simple Earn
+  parameters:
+  - name: projectId
+    in: query
+    required: true
+    schema:
+      type: string
+  - name: amount
+    in: query
+    required: true
+    schema:
+      type: number
+      format: double
+  - name: autoSubscribe
+    in: query
+    description: true or false, default true.
+    schema:
+      type: boolean
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_simple-earn_locked_subscriptionPreview_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_simple-earn_locked_subscriptionPreview_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_simple-earn_locked_subscriptionPreview_v1_401.yaml

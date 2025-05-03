@@ -1,0 +1,91 @@
+post:
+  summary: Investment plan adjustment
+  description: 'Query Source Asset to be used for investment
+
+
+    Weight(IP): 1'
+  tags:
+  - Auto-Invest
+  parameters:
+  - name: planId
+    in: query
+    required: true
+    schema:
+      type: integer
+  - name: subscriptionAmount
+    in: query
+    required: true
+    schema:
+      type: number
+      format: float
+  - name: subscriptionCycle
+    in: query
+    required: true
+    schema:
+      type: string
+      enum:
+      - H1
+      - H4
+      - H8
+      - H12
+      - WEEKLY
+      - DAILY
+      - MONTHLY
+      - BI_WEEKLY
+  - name: subscriptionStartDay
+    in: query
+    schema:
+      type: integer
+  - name: subscriptionStartWeekday
+    in: query
+    schema:
+      type: string
+      enum:
+      - MON
+      - TUE
+      - WED
+      - THU
+      - FRI
+      - SAT
+      - SUN
+  - name: subscriptionStartTime
+    in: query
+    required: true
+    schema:
+      type: integer
+  - name: sourceAsset
+    in: query
+    required: true
+    schema:
+      type: string
+      example: USDT
+  - name: flexibleAllowedToUse
+    in: query
+    schema:
+      type: boolean
+      example: true
+  - name: details
+    in: query
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          targetAsset:
+            type: string
+            example: BTC
+          percentage:
+            type: integer
+            format: int64
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_lending_auto-invest_plan_edit_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_lending_auto-invest_plan_edit_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_lending_auto-invest_plan_edit_v1_401.yaml

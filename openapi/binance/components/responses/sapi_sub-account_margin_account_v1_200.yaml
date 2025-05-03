@@ -1,0 +1,78 @@
+description: Margin sub-account details
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        email:
+          type: string
+          example: 123@test.com
+        marginLevel:
+          type: string
+          example: '11.64405625'
+        totalAssetOfBtc:
+          type: string
+          example: '6.82728457'
+        totalLiabilityOfBtc:
+          type: string
+          example: '0.58633215'
+        totalNetAssetOfBtc:
+          type: string
+          example: '6.24095242'
+        marginTradeCoeffVo:
+          type: object
+          properties:
+            forceLiquidationBar:
+              type: string
+              example: '1.10000000'
+              description: Liquidation margin ratio
+            marginCallBar:
+              type: string
+              example: '1.50000000'
+              description: Margin call margin ratio
+            normalBar:
+              type: string
+              example: '2.00000000'
+              description: Initial margin ratio
+          required:
+          - forceLiquidationBar
+          - marginCallBar
+          - normalBar
+        marginUserAssetVoList:
+          type: array
+          items:
+            type: object
+            properties:
+              asset:
+                type: string
+                example: BTC
+              borrowed:
+                type: string
+                example: '0.00000000'
+              free:
+                type: string
+                example: '0.00499500'
+              interest:
+                type: string
+                example: '0.00000000'
+              locked:
+                type: string
+                example: '0.00000000'
+              netAsset:
+                type: string
+                example: '0.00499500'
+            required:
+            - asset
+            - borrowed
+            - free
+            - interest
+            - locked
+            - netAsset
+      required:
+      - email
+      - marginLevel
+      - totalAssetOfBtc
+      - totalLiabilityOfBtc
+      - totalNetAssetOfBtc
+      - marginTradeCoeffVo
+      - marginUserAssetVoList

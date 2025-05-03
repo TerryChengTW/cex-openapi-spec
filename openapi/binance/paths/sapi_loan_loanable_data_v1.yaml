@@ -1,0 +1,24 @@
+get:
+  summary: Get Loanable Assets Data (USER_DATA)
+  description: 'Get interest rate and borrow limit of loanable assets. The borrow
+    limit is shown in USD value.
+
+
+    Weight(IP): 400'
+  tags:
+  - Crypto Loans
+  parameters:
+  - $ref: ../components/parameters/loanCoin.yaml
+  - $ref: ../components/parameters/vipLevel.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_loan_loanable_data_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_loan_loanable_data_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_loan_loanable_data_v1_401.yaml

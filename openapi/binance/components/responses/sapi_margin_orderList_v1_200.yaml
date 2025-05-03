@@ -1,0 +1,5 @@
+description: Margin OCO details
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/marginOcoOrder.yaml

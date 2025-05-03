@@ -1,0 +1,68 @@
+description: Flexible Product Position
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        rows:
+          type: array
+          items:
+            type: object
+            properties:
+              amount:
+                type: string
+                example: '100.00000000'
+              asset:
+                type: string
+                example: USDT
+              time:
+                type: integer
+                format: int64
+                example: 1575018510000
+              purchaseId:
+                type: integer
+                format: int64
+                example: 26055
+              productId:
+                type: string
+                example: USDT001
+              type:
+                type: string
+                example: AUTO
+                description: AUTO for auto subscribe, NORMAL for normal subscription,
+                  CONVERT for Locked to Flexible, LOAN for flexible loan collateral,
+                  AI for Auto Invest subscribe, TRANSFER for Locked Savings to Flexible
+              sourceAccount:
+                type: string
+                example: SPOT
+                description: SPOT, FUNDING, SPOTANDFUNDING
+              amtFromSpot:
+                type: string
+                example: '30'
+                description: 'Display if sourceAccount is SPOTANDFUNDING '
+              amtFromFunding:
+                type: string
+                example: '70'
+                description: Display if sourceAccount is SPOTANDFUNDING
+              status:
+                type: string
+                example: SUCCESS
+                description: PURCHASING/SUCCESS/FAILED
+            required:
+            - amount
+            - asset
+            - time
+            - purchaseId
+            - productId
+            - type
+            - sourceAccount
+            - amtFromSpot
+            - amtFromFunding
+            - status
+        total:
+          type: integer
+          format: int64
+          example: 1
+      required:
+      - rows
+      - total

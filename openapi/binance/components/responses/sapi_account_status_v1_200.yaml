@@ -1,0 +1,11 @@
+description: OK
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        data:
+          type: string
+          example: Normal
+      required:
+      - data

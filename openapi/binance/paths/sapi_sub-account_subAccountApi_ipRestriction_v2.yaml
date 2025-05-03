@@ -1,0 +1,32 @@
+post:
+  summary: Update IP Restriction for Sub-Account API key (For Master Account)
+  description: 'Update IP Restriction for Sub-Account API key
+
+
+    Weight(UID): 3000'
+  tags:
+  - Sub-Account
+  parameters:
+  - $ref: ../components/parameters/subAccountEmail.yaml
+  - $ref: ../components/parameters/subAccountApiKey.yaml
+  - name: status
+    in: query
+    required: true
+    description: IP Restriction status. 1 = IP Unrestricted. 2 = Restrict access to
+      trusted IPs only. 3 = Restrict access to users' trusted third party IPs only
+    schema:
+      type: string
+      example: '1'
+  - $ref: ../components/parameters/thirdPartyName.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_sub-account_subAccountApi_ipRestriction_v2_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_sub-account_subAccountApi_ipRestriction_v2_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_sub-account_subAccountApi_ipRestriction_v2_401.yaml

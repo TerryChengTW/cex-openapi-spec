@@ -1,0 +1,20 @@
+get:
+  summary: Get NFT Asset (USER_DATA)
+  description: 'Weight(UID): 3000'
+  tags:
+  - NFT
+  parameters:
+  - $ref: ../components/parameters/limit50.yaml
+  - $ref: ../components/parameters/page.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_nft_user_getAsset_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_nft_user_getAsset_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_nft_user_getAsset_v1_401.yaml

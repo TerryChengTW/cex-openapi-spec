@@ -1,0 +1,82 @@
+description: Simple Earn Locked Product List
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        rows:
+          type: array
+          items:
+            type: object
+            properties:
+              projectId:
+                type: string
+                example: BNB
+              detail:
+                type: object
+                properties:
+                  asset:
+                    type: string
+                    example: AXS
+                  rewardAsset:
+                    type: string
+                    example: AXS
+                  duration:
+                    type: integer
+                    format: int64
+                    example: 90
+                  renewable:
+                    type: boolean
+                    example: true
+                  isSoldOut:
+                    type: boolean
+                    example: true
+                  apr:
+                    type: string
+                    example: '1.2069'
+                  status:
+                    type: string
+                    example: CREATED
+                  subscriptionStartTime:
+                    type: string
+                    example: '1646182276000'
+                  extraRewardAsset:
+                    type: string
+                    example: BNB
+                  extraRewardAPR:
+                    type: string
+                    example: '0.23'
+                required:
+                - asset
+                - rewardAsset
+                - duration
+                - renewable
+                - isSoldOut
+                - apr
+                - status
+                - subscriptionStartTime
+                - extraRewardAsset
+                - extraRewardAPR
+              quota:
+                type: object
+                properties:
+                  totalPersonalQuota:
+                    type: string
+                    example: '2'
+                  minimum:
+                    type: string
+                    example: '0.001'
+                required:
+                - totalPersonalQuota
+                - minimum
+            required:
+            - projectId
+            - detail
+            - quota
+        total:
+          type: integer
+          format: int64
+          example: 1
+      required:
+      - rows
+      - total

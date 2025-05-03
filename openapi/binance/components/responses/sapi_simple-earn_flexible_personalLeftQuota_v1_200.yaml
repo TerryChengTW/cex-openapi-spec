@@ -1,0 +1,11 @@
+description: Flexible Personal Left Quota
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        leftPersonalQuota:
+          type: string
+          example: '1000'
+      required:
+      - leftPersonalQuota

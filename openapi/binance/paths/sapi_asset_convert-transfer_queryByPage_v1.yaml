@@ -1,0 +1,58 @@
+get:
+  summary: Query Convert Transfer (USER_DATA)
+  description: 'Weight(UID): 5'
+  tags:
+  - Wallet
+  parameters:
+  - name: tranId
+    in: query
+    description: The transaction id
+    required: false
+    schema:
+      type: integer
+      format: int64
+      example: 118263615991
+  - name: asset
+    in: query
+    required: false
+    description: If it is blank, we will match deducted asset and target asset.
+    schema:
+      type: string
+      example: BTC
+  - name: startTime
+    in: query
+    description: UTC timestamp in ms
+    required: true
+    schema:
+      type: integer
+      format: int64
+  - name: endTime
+    in: query
+    description: UTC timestamp in ms
+    required: true
+    schema:
+      type: integer
+      format: int64
+  - name: accountType
+    in: query
+    description: 'MAIN: main account. CARD: funding account. If it is blank, we will
+      query spot and card wallet, otherwise, we just query the corresponding wallet'
+    schema:
+      type: string
+      enum:
+      - MAIN
+      - CARD
+  - $ref: ../components/parameters/current.yaml
+  - $ref: ../components/parameters/size.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_asset_convert-transfer_queryByPage_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_asset_convert-transfer_queryByPage_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_asset_convert-transfer_queryByPage_v1_401.yaml

@@ -1,0 +1,50 @@
+description: Flexible Redemption Record
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        rows:
+          type: array
+          items:
+            type: object
+            properties:
+              amount:
+                type: string
+                example: '10.54000000'
+              asset:
+                type: string
+                example: USDT
+              time:
+                type: integer
+                format: int64
+                example: 1577257222000
+              projectId:
+                type: string
+                example: USDT001
+              redeemId:
+                type: integer
+                format: int64
+                example: 40607
+              destAccount:
+                type: string
+                example: SPOT
+                description: SPOT, FUNDING
+              status:
+                type: string
+                example: PAID
+            required:
+            - amount
+            - asset
+            - time
+            - projectId
+            - redeemId
+            - destAccount
+            - status
+        total:
+          type: integer
+          format: int64
+          example: 1
+      required:
+      - rows
+      - total

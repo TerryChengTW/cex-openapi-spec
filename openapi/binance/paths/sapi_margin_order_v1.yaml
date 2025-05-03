@@ -1,0 +1,98 @@
+get:
+  summary: Query Margin Account's Order (USER_DATA)
+  description: '- Either `orderId` or `origClientOrderId` must be sent.
+
+    - For some historical orders `cummulativeQuoteQty` will be < 0, meaning the data
+    is not available at this time.
+
+
+    Weight(IP): 10'
+  tags:
+  - Margin
+  parameters:
+  - $ref: ../components/parameters/symbol.yaml
+  - $ref: ../components/parameters/isIsolatedMargin.yaml
+  - $ref: ../components/parameters/orderId.yaml
+  - $ref: ../components/parameters/origClientOrderId.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_margin_order_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_margin_order_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_margin_order_v1_401.yaml
+post:
+  summary: Margin Account New Order (TRADE)
+  description: 'Post a new order for margin account.
+
+
+    Weight(UID): 6'
+  tags:
+  - Margin
+  parameters:
+  - $ref: ../components/parameters/symbol.yaml
+  - $ref: ../components/parameters/isIsolatedMargin.yaml
+  - $ref: ../components/parameters/side.yaml
+  - $ref: ../components/parameters/orderType.yaml
+  - $ref: ../components/parameters/quantity.yaml
+  - $ref: ../components/parameters/quoteOrderQty.yaml
+  - $ref: ../components/parameters/optionalPrice.yaml
+  - $ref: ../components/parameters/stopPrice.yaml
+  - $ref: ../components/parameters/newClientOrderId.yaml
+  - $ref: ../components/parameters/icebergQty.yaml
+  - $ref: ../components/parameters/ocoNewOrderRespType.yaml
+  - $ref: ../components/parameters/sideEffectType.yaml
+  - $ref: ../components/parameters/timeInForce.yaml
+  - name: autoRepayAtCancel
+    in: query
+    required: true
+    schema:
+      type: boolean
+      example: true
+  - $ref: ../components/parameters/selfTradePreventionMode.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_margin_order_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_margin_order_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_margin_order_v1_401.yaml
+delete:
+  summary: Margin Account Cancel Order (TRADE)
+  description: 'Cancel an active order for margin account.
+
+
+    Either `orderId` or `origClientOrderId` must be sent.
+
+
+    Weight(IP): 10'
+  tags:
+  - Margin
+  parameters:
+  - $ref: ../components/parameters/symbol.yaml
+  - $ref: ../components/parameters/isIsolatedMargin.yaml
+  - $ref: ../components/parameters/orderId.yaml
+  - $ref: ../components/parameters/origClientOrderId.yaml
+  - $ref: ../components/parameters/newClientOrderId.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_margin_order_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_margin_order_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_margin_order_v1_401.yaml

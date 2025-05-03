@@ -1,0 +1,51 @@
+get:
+  summary: Query OCO (USER_DATA)
+  description: 'Retrieves a specific OCO based on provided optional parameters
+
+
+    Weight(IP): 4'
+  tags:
+  - Trade
+  parameters:
+  - $ref: ../components/parameters/orderListId.yaml
+  - $ref: ../components/parameters/origClientOrderId.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/orderList_v3_200.yaml
+    '400':
+      $ref: ../components/responses/orderList_v3_400.yaml
+    '401':
+      $ref: ../components/responses/orderList_v3_401.yaml
+delete:
+  summary: Cancel OCO (TRADE)
+  description: 'Cancel an entire Order List
+
+
+    Canceling an individual leg will cancel the entire OCO
+
+
+    Weight(IP): 1'
+  tags:
+  - Trade
+  parameters:
+  - $ref: ../components/parameters/symbol.yaml
+  - $ref: ../components/parameters/orderListId.yaml
+  - $ref: ../components/parameters/listClientOrderId.yaml
+  - $ref: ../components/parameters/newClientOrderId.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/orderList_v3_200.yaml
+    '400':
+      $ref: ../components/responses/orderList_v3_400.yaml
+    '401':
+      $ref: ../components/responses/orderList_v3_401.yaml

@@ -1,0 +1,83 @@
+description: List of hashrate resales
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int64
+          example: 0
+        msg:
+          type: string
+          example: ''
+        data:
+          type: object
+          properties:
+            configDetails:
+              type: array
+              items:
+                type: object
+                properties:
+                  configId:
+                    type: integer
+                    format: int64
+                    example: 168
+                    description: Mining ID
+                  poolUsername:
+                    type: string
+                    example: '123'
+                    description: Transfer out of subaccount
+                  toPoolUsername:
+                    type: string
+                    example: user1
+                    description: Transfer into subaccount
+                  algoName:
+                    type: string
+                    example: Ethash
+                    description: Transfer algorithm
+                  hashRate:
+                    type: integer
+                    format: int64
+                    example: 5000000
+                    description: Transferred Hashrate quantity
+                  startDay:
+                    type: integer
+                    format: int64
+                    example: 20201210
+                    description: Start date
+                  endDay:
+                    type: integer
+                    format: int64
+                    example: 20210405
+                    description: End date
+                  status:
+                    type: integer
+                    format: int32
+                    example: 1
+                    description: '0 Processing, 1：Cancelled, 2：Terminated '
+                required:
+                - configId
+                - poolUsername
+                - toPoolUsername
+                - algoName
+                - hashRate
+                - startDay
+                - endDay
+                - status
+            totalNum:
+              type: integer
+              format: int64
+              example: 21
+            pageSize:
+              type: integer
+              format: int64
+              example: 200
+          required:
+          - configDetails
+          - totalNum
+          - pageSize
+      required:
+      - code
+      - msg
+      - data

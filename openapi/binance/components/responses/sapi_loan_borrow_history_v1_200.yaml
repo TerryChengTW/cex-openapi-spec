@@ -1,0 +1,58 @@
+description: Borrow History
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        rows:
+          type: array
+          items:
+            type: object
+            properties:
+              orderId:
+                type: integer
+                format: int64
+                example: 100000001
+              loanCoin:
+                type: string
+                example: BUSD
+              initialLoanAmount:
+                type: string
+                example: '10000'
+              hourlyInterestRate:
+                type: string
+                example: '0.000057'
+              loanTerm:
+                type: string
+                example: '7'
+              collateralCoin:
+                type: string
+                example: BNB
+              initialCollateralAmount:
+                type: string
+                example: '49.27565492'
+              borrowTime:
+                type: integer
+                format: int64
+                example: 1575018510000
+              status:
+                type: string
+                example: Accruing_Interest, Overdue, Liquidating, Repaying, Repaid,
+                  Liquidated, Pending, Failed
+            required:
+            - orderId
+            - loanCoin
+            - initialLoanAmount
+            - hourlyInterestRate
+            - loanTerm
+            - collateralCoin
+            - initialCollateralAmount
+            - borrowTime
+            - status
+        total:
+          type: integer
+          format: int32
+          example: 1
+      required:
+      - rows
+      - total

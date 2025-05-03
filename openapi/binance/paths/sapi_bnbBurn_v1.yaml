@@ -1,0 +1,57 @@
+post:
+  summary: Toggle BNB Burn On Spot Trade And Margin Interest (USER_DATA)
+  description: '- "spotBNBBurn" and "interestBNBBurn" should be sent at least one.
+
+
+    Weight(IP): 1'
+  tags:
+  - Margin
+  parameters:
+  - name: spotBNBBurn
+    in: query
+    description: Determines whether to use BNB to pay for trading fees on SPOT
+    schema:
+      type: string
+      enum:
+      - 'true'
+      - 'false'
+      example: 'true'
+  - name: interestBNBBurn
+    in: query
+    description: Determines whether to use BNB to pay for margin loan's interest
+    schema:
+      type: string
+      enum:
+      - 'true'
+      - 'false'
+      example: 'false'
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_bnbBurn_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_bnbBurn_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_bnbBurn_v1_401.yaml
+get:
+  summary: Get BNB Burn Status(USER_DATA)
+  description: 'Weight(IP): 1'
+  tags:
+  - Margin
+  parameters:
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_bnbBurn_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_bnbBurn_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_bnbBurn_v1_401.yaml

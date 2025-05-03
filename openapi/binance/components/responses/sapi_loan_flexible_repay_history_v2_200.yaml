@@ -1,0 +1,44 @@
+description: Loan repay history
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        rows:
+          type: array
+          items:
+            type: object
+            properties:
+              loanCoin:
+                type: string
+                example: BUSD
+              repayAmount:
+                type: string
+                example: '10000'
+              collateralCoin:
+                type: string
+                example: BNB
+              collateralReturn:
+                type: string
+                example: '100'
+              repayStatus:
+                type: string
+                example: Repaid
+              repayTime:
+                type: integer
+                format: int64
+                example: 1575018510000
+            required:
+            - loanCoin
+            - repayAmount
+            - collateralCoin
+            - collateralReturn
+            - repayStatus
+            - repayTime
+        total:
+          type: integer
+          format: int32
+          example: 1
+      required:
+      - rows
+      - total

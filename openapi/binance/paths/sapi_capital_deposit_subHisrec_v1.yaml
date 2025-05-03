@@ -1,0 +1,37 @@
+get:
+  summary: Sub-account Deposit History (For Master Account)
+  description: 'Fetch sub-account deposit history
+
+
+    Weight(IP): 1'
+  tags:
+  - Sub-Account
+  parameters:
+  - $ref: ../components/parameters/subAccountEmail.yaml
+  - $ref: ../components/parameters/optionalCoin.yaml
+  - name: status
+    in: query
+    description: '0(0:pending,6: credited but cannot withdraw, 1:success)'
+    schema:
+      type: integer
+      format: int32
+  - $ref: ../components/parameters/startTime.yaml
+  - $ref: ../components/parameters/endTime.yaml
+  - name: limit
+    in: query
+    schema:
+      type: integer
+      format: int64
+  - $ref: ../components/parameters/offset.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_capital_deposit_subHisrec_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_capital_deposit_subHisrec_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_capital_deposit_subHisrec_v1_401.yaml

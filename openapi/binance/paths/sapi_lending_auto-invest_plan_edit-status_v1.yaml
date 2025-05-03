@@ -1,0 +1,35 @@
+post:
+  summary: Change Plan Status
+  description: 'Change Plan Status
+
+
+    Weight(IP): 1'
+  tags:
+  - Auto-Invest
+  parameters:
+  - name: planId
+    in: query
+    required: true
+    schema:
+      type: integer
+  - name: status
+    in: query
+    required: true
+    schema:
+      type: string
+      enum:
+      - ONGOING
+      - PAUSED
+      - REMOVED
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_lending_auto-invest_plan_edit-status_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_lending_auto-invest_plan_edit-status_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_lending_auto-invest_plan_edit-status_v1_401.yaml

@@ -1,0 +1,38 @@
+post:
+  summary: Redeem ETH (TRADE)
+  description: 'Redeem WBETH or BETH and get ETH
+
+
+    - You need to open Enable Spot & Margin Trading permission for the API Key which
+    requests this endpoint.
+
+
+    Weight(IP): 150'
+  tags:
+  - Staking
+  parameters:
+  - name: asset
+    in: query
+    required: false
+    description: WBETH or BETH, default to BETH
+    schema:
+      type: string
+  - name: amount
+    in: query
+    required: true
+    description: Amount in BETH, limit 8 decimals
+    schema:
+      type: number
+      format: double
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_eth-staking_eth_redeem_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_eth-staking_eth_redeem_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_eth-staking_eth_redeem_v1_401.yaml

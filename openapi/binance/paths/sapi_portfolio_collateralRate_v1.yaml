@@ -1,0 +1,15 @@
+get:
+  summary: Portfolio Margin Collateral Rate (MARKET_DATA)
+  description: 'Portfolio Margin Collateral Rate.
+
+
+    Weight(IP): 50'
+  security:
+  - ApiKeyAuth: []
+  tags:
+  - Portfolio Margin
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_portfolio_collateralRate_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_portfolio_collateralRate_v1_400.yaml

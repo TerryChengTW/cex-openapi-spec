@@ -1,0 +1,5 @@
+description: Cancelled margin order details
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/marginOrder.yaml

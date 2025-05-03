@@ -1,0 +1,41 @@
+description: List of subscription record
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: 1
+        tokenName:
+          type: string
+          example: LINKUP
+        amount:
+          type: string
+          example: '0.54216292'
+          description: Subscription amount
+        nav:
+          type: string
+          example: '18.42621386'
+          description: NAV price of subscription
+        fee:
+          type: string
+          example: '0.00999000'
+          description: Subscription fee in usdt
+        totalCharge:
+          type: string
+          example: '9.99999991'
+          description: Subscription cost in usdt
+        timestamp:
+          type: integer
+          format: int64
+          example: 1599127217916
+      required:
+      - id
+      - tokenName
+      - amount
+      - nav
+      - fee
+      - totalCharge
+      - timestamp

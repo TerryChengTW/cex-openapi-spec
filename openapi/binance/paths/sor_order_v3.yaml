@@ -1,0 +1,35 @@
+post:
+  summary: New order using SOR (TRADE)
+  description: 'Weight(IP): 6'
+  tags:
+  - Trade
+  parameters:
+  - $ref: ../components/parameters/symbol.yaml
+  - $ref: ../components/parameters/side.yaml
+  - $ref: ../components/parameters/orderType.yaml
+  - $ref: ../components/parameters/timeInForce.yaml
+  - $ref: ../components/parameters/quantity.yaml
+  - name: price
+    in: query
+    required: false
+    schema:
+      type: number
+      format: double
+  - $ref: ../components/parameters/newClientOrderId.yaml
+  - $ref: ../components/parameters/strategyId.yaml
+  - $ref: ../components/parameters/strategyType.yaml
+  - $ref: ../components/parameters/icebergQty.yaml
+  - $ref: ../components/parameters/newOrderRespType.yaml
+  - $ref: ../components/parameters/selfTradePreventionMode.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sor_order_v3_200.yaml
+    '400':
+      $ref: ../components/responses/sor_order_v3_400.yaml
+    '401':
+      $ref: ../components/responses/sor_order_v3_401.yaml

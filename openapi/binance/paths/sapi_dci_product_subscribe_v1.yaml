@@ -1,0 +1,46 @@
+post:
+  summary: Subscribe Dual Investment products(USER_DATA)
+  description: 'Subscribe Dual Investment products
+
+
+    - `Products are not available.` means that the APR changes to lower value, or
+    the orders are not available.
+
+    - `Failed` is a system or network errors.
+
+
+    Weight(IP): 1'
+  tags:
+  - Dual Investment
+  parameters:
+  - name: id
+    in: query
+    required: true
+    description: get id from /sapi/v1/dci/product/list
+    schema:
+      type: string
+  - name: orderId
+    in: query
+    required: true
+    description: get orderId from /sapi/v1/dci/product/list
+    schema:
+      type: string
+  - name: depositAmount
+    in: query
+    required: true
+    schema:
+      type: number
+      format: double
+  - $ref: ../components/parameters/autoCompoundPlan.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_dci_product_subscribe_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_dci_product_subscribe_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_dci_product_subscribe_v1_401.yaml

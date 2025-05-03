@@ -1,0 +1,48 @@
+get:
+  summary: Query auto-converting stable coins (USER_DATA)
+  description: 'Get a user''s auto-conversion settings in deposit/withdrawal
+
+
+    Weight(UID): 600'''
+  tags:
+  - Wallet
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_capital_contract_convertible-coins_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_capital_contract_convertible-coins_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_capital_contract_convertible-coins_v1_401.yaml
+post:
+  summary: Switch on/off BUSD and stable coins conversion (USER_DATA) (USER_DATA)
+  description: 'User can use it to turn on or turn off the BUSD auto-conversion from/to
+    a specific stable coin.
+
+
+    Weight(UID): 600'''
+  tags:
+  - Wallet
+  parameters:
+  - name: coin
+    in: query
+    required: true
+    description: Must be USDC, USDP or TUSD
+    schema:
+      type: string
+  - name: enable
+    in: query
+    required: true
+    description: 'true: turn on the auto-conversion. false: turn off the auto-conversion'
+    schema:
+      type: boolean
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_capital_contract_convertible-coins_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_capital_contract_convertible-coins_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_capital_contract_convertible-coins_v1_401.yaml

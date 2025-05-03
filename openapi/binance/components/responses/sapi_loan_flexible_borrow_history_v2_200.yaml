@@ -1,0 +1,43 @@
+description: Loan borrow histroy
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        total:
+          type: integer
+          example: 1
+        rows:
+          type: array
+          items:
+            type: object
+            properties:
+              loanCoin:
+                type: string
+                example: BUSD
+              initialLoanAmount:
+                type: string
+                example: '10000'
+              collateralCoin:
+                type: string
+                example: BNB
+              initialCollateralAmount:
+                type: string
+                example: '49.27565492'
+              borrowTime:
+                type: integer
+                format: int64
+                example: 1575018510000
+              status:
+                type: string
+                example: Succeeds
+            required:
+            - loanCoin
+            - initialLoanAmount
+            - collateralCoin
+            - initialCollateralAmount
+            - borrowTime
+            - status
+      required:
+      - rows
+      - total

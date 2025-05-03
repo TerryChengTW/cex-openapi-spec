@@ -1,0 +1,63 @@
+get:
+  summary: Query Margin Account's OCO (USER_DATA)
+  description: 'Retrieves a specific OCO based on provided optional parameters
+
+
+    - Either `orderListId` or `origClientOrderId` must be provided
+
+
+    Weight(IP): 10'
+  tags:
+  - Margin
+  parameters:
+  - $ref: ../components/parameters/isIsolatedMargin.yaml
+  - name: symbol
+    in: query
+    description: Mandatory for isolated margin, not supported for cross margin
+    schema:
+      type: string
+  - $ref: ../components/parameters/orderListId.yaml
+  - $ref: ../components/parameters/origClientOrderId.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_margin_orderList_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_margin_orderList_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_margin_orderList_v1_401.yaml
+delete:
+  summary: Margin Account Cancel OCO (TRADE)
+  description: 'Cancel an entire Order List for a margin account
+
+
+    - Canceling an individual leg will cancel the entire OCO
+
+    - Either `orderListId` or `listClientOrderId` must be provided
+
+
+    Weight(UID): 1'
+  tags:
+  - Margin
+  parameters:
+  - $ref: ../components/parameters/symbol.yaml
+  - $ref: ../components/parameters/isIsolatedMargin.yaml
+  - $ref: ../components/parameters/orderListId.yaml
+  - $ref: ../components/parameters/listClientOrderId.yaml
+  - $ref: ../components/parameters/newClientOrderId.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_margin_orderList_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_margin_orderList_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_margin_orderList_v1_401.yaml

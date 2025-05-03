@@ -1,0 +1,12 @@
+description: Redemption result
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        redemptionId:
+          type: integer
+          format: int64
+          example: 12345
+      required:
+      - redemptionId

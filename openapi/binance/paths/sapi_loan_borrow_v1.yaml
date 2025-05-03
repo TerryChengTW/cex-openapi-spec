@@ -1,0 +1,30 @@
+post:
+  summary: Crypto Loan Borrow (TRADE)
+  description: 'Weight(UID): 6000'
+  tags:
+  - Crypto Loans
+  parameters:
+  - $ref: ../components/parameters/loanCoinReq.yaml
+  - $ref: ../components/parameters/loanAmount.yaml
+  - $ref: ../components/parameters/collateralCoinReq.yaml
+  - $ref: ../components/parameters/collateralAmount.yaml
+  - name: loanTerm
+    in: query
+    description: 7/14/30/90/180 days
+    required: true
+    schema:
+      type: integer
+      format: int32
+      example: 30
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_loan_borrow_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_loan_borrow_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_loan_borrow_v1_401.yaml

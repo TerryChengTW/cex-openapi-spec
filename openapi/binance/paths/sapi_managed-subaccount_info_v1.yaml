@@ -1,0 +1,24 @@
+get:
+  summary: Query Managed Sub-account List (For Investor)
+  description: 'Get investor''s managed sub-account list.
+
+
+    Weight(UID): 60'
+  tags:
+  - Sub-Account
+  parameters:
+  - $ref: ../components/parameters/email.yaml
+  - $ref: ../components/parameters/page.yaml
+  - $ref: ../components/parameters/limit.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_managed-subaccount_info_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_managed-subaccount_info_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_managed-subaccount_info_v1_401.yaml

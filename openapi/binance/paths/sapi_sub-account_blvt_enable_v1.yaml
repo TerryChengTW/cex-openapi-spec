@@ -1,0 +1,25 @@
+post:
+  summary: Enable Leverage Token for Sub-account (For Master Account)
+  description: 'Weight(IP): 1'
+  tags:
+  - Sub-Account
+  parameters:
+  - $ref: ../components/parameters/subAccountEmail.yaml
+  - name: enableBlvt
+    in: query
+    description: Only true for now
+    required: true
+    schema:
+      type: boolean
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_sub-account_blvt_enable_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_sub-account_blvt_enable_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_sub-account_blvt_enable_v1_401.yaml

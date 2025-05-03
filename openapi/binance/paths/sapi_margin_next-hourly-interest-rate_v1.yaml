@@ -1,0 +1,36 @@
+get:
+  summary: Get a future hourly interest rate (USER_DATA)
+  description: 'Get user the next hourly estimate interest
+
+
+    Weight(UID): 100'
+  tags:
+  - Margin
+  parameters:
+  - name: assets
+    in: query
+    description: List of assets, separated by commas, up to 20
+    schema:
+      type: string
+      example: BTC,ETH
+  - name: isIsolated
+    in: query
+    description: for isolated margin or not, "TRUE", "FALSE"
+    schema:
+      type: string
+      enum:
+      - 'TRUE'
+      - 'FALSE'
+      example: 'TRUE'
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_margin_next-hourly-interest-rate_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_margin_next-hourly-interest-rate_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_margin_next-hourly-interest-rate_v1_401.yaml

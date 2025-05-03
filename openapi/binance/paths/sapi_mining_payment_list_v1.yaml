@@ -1,0 +1,25 @@
+get:
+  summary: Earnings List (USER_DATA)
+  description: 'Weight(IP): 5'
+  tags:
+  - Mining
+  parameters:
+  - $ref: ../components/parameters/algo.yaml
+  - $ref: ../components/parameters/userName.yaml
+  - $ref: ../components/parameters/optionalCoin.yaml
+  - $ref: ../components/parameters/startDate.yaml
+  - $ref: ../components/parameters/endDate.yaml
+  - $ref: ../components/parameters/pageIndex.yaml
+  - $ref: ../components/parameters/pageSize.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_mining_payment_list_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_mining_payment_list_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_mining_payment_list_v1_401.yaml

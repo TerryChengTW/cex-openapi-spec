@@ -1,0 +1,78 @@
+description: Simple Earn Flexible Product List
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        rows:
+          type: array
+          items:
+            type: object
+            properties:
+              asset:
+                type: string
+                example: BTC
+              latestAnnualPercentageRate:
+                type: string
+                example: '0.05000000'
+              tierAnnualPercentageRate:
+                type: object
+                properties:
+                  0-5BTC:
+                    type: number
+                    format: double
+                    example: 0.05
+                  5-10BTC:
+                    type: number
+                    format: double
+                    example: 0.03
+                required:
+                - 0-5BTC
+                - 5-10BTC
+              airDropPercentageRate:
+                type: string
+                example: '0.05000000'
+              canPurchase:
+                type: boolean
+                example: true
+              canRedeem:
+                type: boolean
+                example: true
+              isSoldOut:
+                type: boolean
+                example: true
+              hot:
+                type: boolean
+                example: true
+              minPurchaseAmount:
+                type: string
+                example: '0.01000000'
+              productId:
+                type: string
+                example: BTC001
+              subscriptionStartTime:
+                type: string
+                example: '1646182276000'
+              status:
+                type: string
+                example: PURCHASING
+            required:
+            - asset
+            - latestAnnualPercentageRate
+            - tierAnnualPercentageRate
+            - airDropPercentageRate
+            - canPurchase
+            - canRedeem
+            - isSoldOut
+            - hot
+            - minPurchaseAmount
+            - productId
+            - subscriptionStartTime
+            - status
+        total:
+          type: integer
+          format: int64
+          example: 1
+      required:
+      - rows
+      - total

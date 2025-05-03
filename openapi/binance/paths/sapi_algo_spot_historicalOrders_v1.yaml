@@ -1,0 +1,27 @@
+get:
+  summary: Query Historical Algo Orders
+  description: 'Get all historical SPOT TWAP orders
+
+
+    Weight(IP): 1'
+  tags:
+  - Spot Algo
+  parameters:
+  - $ref: ../components/parameters/symbol.yaml
+  - $ref: ../components/parameters/side.yaml
+  - $ref: ../components/parameters/startTime.yaml
+  - $ref: ../components/parameters/endTime.yaml
+  - $ref: ../components/parameters/page.yaml
+  - $ref: ../components/parameters/smallPageSize.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_algo_spot_historicalOrders_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_algo_spot_historicalOrders_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_algo_spot_historicalOrders_v1_401.yaml

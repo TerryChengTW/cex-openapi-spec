@@ -1,0 +1,35 @@
+get:
+  summary: Account Trade List (USER_DATA)
+  description: "Get trades for a specific account and symbol.\n\nIf `fromId` is set,\
+    \ it will get id >= that `fromId`. Otherwise most recent orders are returned.\n\
+    \nThe time between startTime and endTime can't be longer than 24 hours.\nThese\
+    \ are the supported combinations of all parameters:\n\n  symbol\n\n  symbol +\
+    \ orderId\n\n  symbol + startTime\n\n  symbol + endTime\n\n  symbol + fromId\n\
+    \n  symbol + startTime + endTime\n\n  symbol+ orderId + fromId\n\nWeight(IP):\
+    \ 20"
+  tags:
+  - Trade
+  parameters:
+  - $ref: ../components/parameters/symbol.yaml
+  - name: orderId
+    in: query
+    description: This can only be used in combination with symbol.
+    schema:
+      type: integer
+      format: int64
+  - $ref: ../components/parameters/startTime.yaml
+  - $ref: ../components/parameters/endTime.yaml
+  - $ref: ../components/parameters/fromId.yaml
+  - $ref: ../components/parameters/limit.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/myTrades_v3_200.yaml
+    '400':
+      $ref: ../components/responses/myTrades_v3_400.yaml
+    '401':
+      $ref: ../components/responses/myTrades_v3_401.yaml

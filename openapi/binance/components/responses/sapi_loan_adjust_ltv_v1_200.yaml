@@ -1,0 +1,27 @@
+description: LTV Adjust
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        loanCoin:
+          type: string
+          example: BUSD
+        collateralCoin:
+          type: string
+          example: BNB
+        direction:
+          type: string
+          example: ADDITIONAL
+        amount:
+          type: string
+          example: '5.235'
+        currentLTV:
+          type: string
+          example: '0.52'
+      required:
+      - loanCoin
+      - collateralCoin
+      - direction
+      - amount
+      - currentLTV

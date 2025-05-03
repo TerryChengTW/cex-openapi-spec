@@ -1,0 +1,36 @@
+description: Subscription Info
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: 123
+        status:
+          type: string
+          example: S
+          description: S, P, and F for "success", "pending", and "failure"
+        tokenName:
+          type: string
+          example: LINKUP
+        amount:
+          type: string
+          example: '0.9559090500'
+          description: subscribed token amount
+        cost:
+          type: string
+          example: '9.99999995'
+          description: subscription cost in usdt
+        timestamp:
+          type: integer
+          format: int64
+          example: 1600249972899
+      required:
+      - id
+      - status
+      - tokenName
+      - amount
+      - cost
+      - timestamp

@@ -1,0 +1,17 @@
+get:
+  summary: Fetch withdraw address list (USER_DATA)
+  description: 'Fetch withdraw address list
+
+
+    Weight(IP): 10'
+  tags:
+  - Wallet
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_capital_withdraw_address_list_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_capital_withdraw_address_list_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_capital_withdraw_address_list_v1_401.yaml

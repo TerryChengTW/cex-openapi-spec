@@ -1,0 +1,41 @@
+description: ETH Staking account
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        holdingInETH:
+          type: string
+          example: '1.22330928'
+        holdings:
+          type: object
+          properties:
+            wbethAmount:
+              type: string
+              example: '1.10928781'
+            bethAmount:
+              type: string
+              example: '1.90002112'
+          required:
+          - wbethAmount
+          - bethAmount
+        thirtyDaysProfitInETH:
+          type: string
+          example: '0.22330928'
+        profit:
+          type: object
+          properties:
+            amountFromWBETH:
+              type: string
+              example: '0.12330928'
+            amountFromBETH:
+              type: string
+              example: '0.1'
+          required:
+          - amountFromWBETH
+          - amountFromBETH
+      required:
+      - holdingInETH
+      - holdings
+      - thirtyDaysProfitInETH
+      - profit

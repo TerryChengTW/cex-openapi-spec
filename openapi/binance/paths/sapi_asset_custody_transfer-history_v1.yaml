@@ -1,0 +1,49 @@
+get:
+  summary: Query User Delegation History(For Master Account) (USER_DATA)
+  description: 'Query User Delegation History
+
+
+    Weight(IP): 60'
+  tags:
+  - Wallet
+  parameters:
+  - name: email
+    in: query
+    required: true
+    schema:
+      type: string
+      example: alice@test.com
+  - name: startTime
+    in: query
+    required: true
+    schema:
+      type: integer
+      format: int64
+      example: 1695205406000
+  - name: endTime
+    in: query
+    required: true
+    schema:
+      type: integer
+      format: int64
+      example: 1695205396000
+  - name: type
+    in: query
+    schema:
+      type: string
+      example: Delegate
+  - $ref: ../components/parameters/asset.yaml
+  - $ref: ../components/parameters/current.yaml
+  - $ref: ../components/parameters/size.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_asset_custody_transfer-history_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_asset_custody_transfer-history_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_asset_custody_transfer-history_v1_401.yaml

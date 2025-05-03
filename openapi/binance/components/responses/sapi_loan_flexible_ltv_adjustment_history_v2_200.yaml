@@ -1,0 +1,48 @@
+description: LTV adjustment history
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        rows:
+          type: array
+          items:
+            type: object
+            properties:
+              loanCoin:
+                type: string
+                example: BNB
+              collateralCoin:
+                type: string
+                example: BNB
+              direction:
+                type: string
+                example: ADDITIONAL
+              collateralAmount:
+                type: string
+                example: '5.75'
+              preLTV:
+                type: string
+                example: '0.83'
+              afterLTV:
+                type: string
+                example: '0.5'
+              adjustTime:
+                type: integer
+                format: int64
+                example: 1575018510000
+            required:
+            - loanCoin
+            - collateralCoin
+            - direction
+            - collateralAmount
+            - preLTV
+            - afterLTV
+            - adjustTime
+        total:
+          type: integer
+          format: int32
+          example: 1
+      required:
+      - rows
+      - total

@@ -1,0 +1,41 @@
+get:
+  summary: Get Loan Ongoing Orders (USER_DATA)
+  description: 'Weight(IP): 300'
+  tags:
+  - Crypto Loans
+  parameters:
+  - name: orderId
+    in: query
+    description: orderId in POST /sapi/v1/loan/borrow
+    schema:
+      type: integer
+      format: int64
+      example: 10
+  - $ref: ../components/parameters/loanCoin.yaml
+  - $ref: ../components/parameters/collateralCoin.yaml
+  - name: current
+    in: query
+    description: Current querying page. Start from 1; default:1, max:1000
+    schema:
+      type: integer
+      format: int32
+      example: 1
+  - name: limit
+    in: query
+    description: default 10, max 100
+    schema:
+      type: integer
+      format: int64
+      example: 10
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_loan_ongoing_orders_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_loan_ongoing_orders_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_loan_ongoing_orders_v1_401.yaml

@@ -1,0 +1,36 @@
+description: VIP Loan Repayment
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        loanCoin:
+          type: string
+          example: BUSD
+        repayAmount:
+          type: string
+          example: '200.5'
+        remainingPrincipal:
+          type: string
+          example: '100.5'
+        remainingInterest:
+          type: string
+          example: '0'
+        collateralCoin:
+          type: string
+          example: BNB,BTC,ETH
+        currentLTV:
+          type: string
+          example: '0.25'
+        repayStatus:
+          type: string
+          example: Repaid
+          description: Repaid, Repaying, Failed
+      required:
+      - loanCoin
+      - repayAmount
+      - remainingPrincipal
+      - remainingInterest
+      - collateralCoin
+      - currentLTV
+      - repayStatus

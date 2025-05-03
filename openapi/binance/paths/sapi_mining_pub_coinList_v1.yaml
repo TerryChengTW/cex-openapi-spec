@@ -1,0 +1,12 @@
+get:
+  summary: Acquiring CoinName (MARKET_DATA)
+  description: 'Weight(IP): 1'
+  security:
+  - ApiKeyAuth: []
+  tags:
+  - Mining
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_mining_pub_coinList_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_mining_pub_coinList_v1_400.yaml

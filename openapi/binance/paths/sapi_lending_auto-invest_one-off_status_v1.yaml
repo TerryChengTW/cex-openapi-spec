@@ -1,0 +1,33 @@
+get:
+  summary: Query One-Time Transaction Status (USER_DATA)
+  description: 'Transaction status for one-time transaction
+
+
+    Weight(IP): 1'
+  tags:
+  - Auto-Invest
+  parameters:
+  - name: transactionId
+    in: query
+    required: true
+    schema:
+      type: integer
+      format: int64
+      example: 12345
+  - name: requestId
+    in: query
+    schema:
+      type: string
+      example: TR12354859
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_lending_auto-invest_one-off_status_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_lending_auto-invest_one-off_status_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_lending_auto-invest_one-off_status_v1_401.yaml

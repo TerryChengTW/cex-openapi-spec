@@ -1,0 +1,38 @@
+description: Asset list
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        feeRate:
+          type: string
+          example: '0.002'
+        sourceAssets:
+          type: array
+          items:
+            type: object
+            properties:
+              sourceAsset:
+                type: string
+                example: USDT
+              assetMinAmount:
+                type: string
+                example: '0.1'
+              assetMaxAmount:
+                type: string
+                example: '1000000'
+              scale:
+                type: string
+                example: '2'
+              flexibleAmount:
+                type: string
+                example: '1111'
+            required:
+            - sourceAsset
+            - assetMinAmount
+            - assetMaxAmount
+            - scale
+            - flexibleAmount
+      required:
+      - feeRate
+      - sourceAssets

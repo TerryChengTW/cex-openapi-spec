@@ -1,0 +1,49 @@
+get:
+  summary: Get Crypto Loans Income History (USER_DATA)
+  description: '- If startTime and endTime are not sent, the recent 7-day data will
+    be returned.
+
+    - The max interval between startTime and endTime is 30 days.
+
+
+    Weight(UID): 6000'
+  tags:
+  - Crypto Loans
+  parameters:
+  - $ref: ../components/parameters/optionalAsset.yaml
+  - name: type
+    in: query
+    description: "All types will be returned by default.\n  * `borrowIn`\n  * `collateralSpent`\n\
+      \  * `repayAmount`\n  * `collateralReturn` - Collateral return after repayment\n\
+      \  * `addCollateral`\n  * `removeCollateral`\n  * `collateralReturnAfterLiquidation`"
+    schema:
+      type: string
+      enum:
+      - borrowIn
+      - collateralSpent
+      - repayAmount
+      - collateralReturn
+      - addCollateral
+      - removeCollateral
+      - collateralReturnAfterLiquidation
+  - $ref: ../components/parameters/startTime.yaml
+  - $ref: ../components/parameters/endTime.yaml
+  - name: limit
+    in: query
+    description: default 20, max 100
+    schema:
+      type: integer
+      format: int32
+      example: 20
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_loan_income_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_loan_income_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_loan_income_v1_401.yaml

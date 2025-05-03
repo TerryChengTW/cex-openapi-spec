@@ -1,0 +1,91 @@
+get:
+  summary: Query User Universal Transfer History (USER_DATA)
+  description: '- `fromSymbol` must be sent when type are ISOLATEDMARGIN_MARGIN and
+    ISOLATEDMARGIN_ISOLATEDMARGIN
+
+    - `toSymbol` must be sent when type are MARGIN_ISOLATEDMARGIN and ISOLATEDMARGIN_ISOLATEDMARGIN
+
+    - Support query within the last 6 months only
+
+    - If `startTime` and `endTime` not sent, return records of the last 7 days by
+    default
+
+
+    Weight(IP): 1'
+  tags:
+  - Wallet
+  parameters:
+  - $ref: ../components/parameters/univTransferType.yaml
+  - $ref: ../components/parameters/startTime.yaml
+  - $ref: ../components/parameters/endTime.yaml
+  - $ref: ../components/parameters/current.yaml
+  - $ref: ../components/parameters/size.yaml
+  - $ref: ../components/parameters/fromSymbol.yaml
+  - $ref: ../components/parameters/toSymbol.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_asset_transfer_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_asset_transfer_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_asset_transfer_v1_401.yaml
+post:
+  summary: User Universal Transfer (USER_DATA)
+  description: "You need to enable `Permits Universal Transfer` option for the api\
+    \ key which requests this endpoint.\n\n- `fromSymbol` must be sent when type are\
+    \ ISOLATEDMARGIN_MARGIN and ISOLATEDMARGIN_ISOLATEDMARGIN\n- `toSymbol` must be\
+    \ sent when type are MARGIN_ISOLATEDMARGIN and ISOLATEDMARGIN_ISOLATEDMARGIN\n\
+    \nENUM of transfer types:\n  - MAIN_UMFUTURE Spot account transfer to USDⓈ-M Futures\
+    \ account\n  - MAIN_CMFUTURE Spot account transfer to COIN-M Futures account\n\
+    \  - MAIN_MARGIN Spot account transfer to Margin(cross)account\n  - UMFUTURE_MAIN\
+    \ USDⓈ-M Futures account transfer to Spot account\n  - UMFUTURE_MARGIN USDⓈ-M\
+    \ Futures account transfer to Margin(cross)account\n  - CMFUTURE_MAIN COIN-M Futures\
+    \ account transfer to Spot account\n  - CMFUTURE_MARGIN COIN-M Futures account\
+    \ transfer to Margin(cross) account\n  - MARGIN_MAIN Margin(cross)account transfer\
+    \ to Spot account\n  - MARGIN_UMFUTURE Margin(cross)account transfer to USDⓈ-M\
+    \ Futures\n  - MARGIN_CMFUTURE Margin(cross)account transfer to COIN-M Futures\n\
+    \  - ISOLATEDMARGIN_MARGIN Isolated margin account transfer to Margin(cross) account\n\
+    \  - MARGIN_ISOLATEDMARGIN Margin(cross) account transfer to Isolated margin account\n\
+    \  - ISOLATEDMARGIN_ISOLATEDMARGIN Isolated margin account transfer to Isolated\
+    \ margin account\n  - MAIN_FUNDING Spot account transfer to Funding account\n\
+    \  - FUNDING_MAIN Funding account transfer to Spot account\n  - FUNDING_UMFUTURE\
+    \ Funding account transfer to UMFUTURE account\n  - UMFUTURE_FUNDING UMFUTURE\
+    \ account transfer to Funding account\n  - MARGIN_FUNDING MARGIN account transfer\
+    \ to Funding account\n  - FUNDING_MARGIN Funding account transfer to Margin account\n\
+    \  - FUNDING_CMFUTURE Funding account transfer to CMFUTURE account\n  - CMFUTURE_FUNDING\
+    \ CMFUTURE account transfer to Funding account\n  - MAIN_OPTION Spot account transfer\
+    \ to Options account\n  - OPTION_MAIN Options account transfer to Spot account\n\
+    \  - UMFUTURE_OPTION USDⓈ-M Futures account transfer to Options account\n  - OPTION_UMFUTURE\
+    \ Options account transfer to USDⓈ-M Futures account\n  - MARGIN_OPTION Margin(cross)account\
+    \ transfer to Options account\n  - OPTION_MARGIN Options account transfer to Margin(cross)account\n\
+    \  - FUNDING_OPTION Funding account transfer to Options account\n  - OPTION_FUNDING\
+    \ Options account transfer to Funding account\n  - MAIN_PORTFOLIO_MARGIN Spot\
+    \ account transfer to Portfolio Margin account\n  - PORTFOLIO_MARGIN_MAIN Portfolio\
+    \ Margin account transfer to Spot account\n  - MAIN_ISOLATED_MARGIN Spot account\
+    \ transfer to Isolated margin account\n  - ISOLATED_MARGIN_MAIN Isolated margin\
+    \ account transfer to Spot account\n\nWeight(IP): 1"
+  tags:
+  - Wallet
+  parameters:
+  - $ref: ../components/parameters/univTransferType.yaml
+  - $ref: ../components/parameters/asset.yaml
+  - $ref: ../components/parameters/amount.yaml
+  - $ref: ../components/parameters/fromSymbol.yaml
+  - $ref: ../components/parameters/toSymbol.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_asset_transfer_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_asset_transfer_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_asset_transfer_v1_401.yaml

@@ -1,0 +1,23 @@
+post:
+  summary: User Asset (USER_DATA)
+  description: 'Get user assets, just for positive data.
+
+
+    Weight(IP): 5'
+  tags:
+  - Wallet
+  parameters:
+  - $ref: ../components/parameters/optionalAsset.yaml
+  - $ref: ../components/parameters/needBtcValuation.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_asset_getUserAsset_v3_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_asset_getUserAsset_v3_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_asset_getUserAsset_v3_401.yaml

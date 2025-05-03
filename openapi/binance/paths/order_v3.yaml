@@ -1,0 +1,130 @@
+get:
+  summary: Query Order (USER_DATA)
+  description: 'Check an order''s status.
+
+
+    - Either `orderId` or `origClientOrderId` must be sent.
+
+    - For some historical orders `cummulativeQuoteQty` will be < 0, meaning the data
+    is not available at this time.
+
+
+    Weight(IP): 4'
+  tags:
+  - Trade
+  parameters:
+  - $ref: ../components/parameters/symbol.yaml
+  - $ref: ../components/parameters/orderId.yaml
+  - $ref: ../components/parameters/origClientOrderId.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/order_v3_200.yaml
+    '400':
+      $ref: ../components/responses/order_v3_400.yaml
+    '401':
+      $ref: ../components/responses/order_v3_401.yaml
+post:
+  summary: New Order (TRADE)
+  description: 'Send in a new order.
+
+
+    - `LIMIT_MAKER` are `LIMIT` orders that will be rejected if they would immediately
+    match and trade as a taker.
+
+    - `STOP_LOSS` and `TAKE_PROFIT` will execute a `MARKET` order when the `stopPrice`
+    is reached.
+
+    - Any `LIMIT` or `LIMIT_MAKER` type order can be made an iceberg order by sending
+    an `icebergQty`.
+
+    - Any order with an `icebergQty` MUST have `timeInForce` set to `GTC`.
+
+    - `MARKET` orders using `quantity` specifies how much a user wants to buy or sell
+    based on the market price.
+
+    - `MARKET` orders using `quoteOrderQty` specifies the amount the user wants to
+    spend (when buying) or receive (when selling) of the quote asset; the correct
+    quantity will be determined based on the market liquidity and `quoteOrderQty`.
+
+    - `MARKET` orders using `quoteOrderQty` will not break `LOT_SIZE` filter rules;
+    the order will execute a quantity that will have the notional value as close as
+    possible to `quoteOrderQty`.
+
+    - same `newClientOrderId` can be accepted only when the previous one is filled,
+    otherwise the order will be rejected.
+
+
+    Trigger order price rules against market price for both `MARKET` and `LIMIT` versions:
+
+
+    - Price above market price: `STOP_LOSS` `BUY`, `TAKE_PROFIT` `SELL`
+
+    - Price below market price: `STOP_LOSS` `SELL`, `TAKE_PROFIT` `BUY`
+
+
+
+    Weight(IP): 1'
+  tags:
+  - Trade
+  parameters:
+  - $ref: ../components/parameters/symbol.yaml
+  - $ref: ../components/parameters/side.yaml
+  - $ref: ../components/parameters/orderType.yaml
+  - $ref: ../components/parameters/timeInForce.yaml
+  - $ref: ../components/parameters/optionalQuantity.yaml
+  - $ref: ../components/parameters/quoteOrderQty.yaml
+  - $ref: ../components/parameters/optionalPrice.yaml
+  - $ref: ../components/parameters/newClientOrderId.yaml
+  - $ref: ../components/parameters/strategyId.yaml
+  - $ref: ../components/parameters/strategyType.yaml
+  - $ref: ../components/parameters/stopPrice.yaml
+  - $ref: ../components/parameters/optionalTrailingDelta.yaml
+  - $ref: ../components/parameters/icebergQty.yaml
+  - $ref: ../components/parameters/newOrderRespType.yaml
+  - $ref: ../components/parameters/selfTradePreventionMode.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/order_v3_200.yaml
+    '400':
+      $ref: ../components/responses/order_v3_400.yaml
+    '401':
+      $ref: ../components/responses/order_v3_401.yaml
+delete:
+  summary: Cancel Order (TRADE)
+  description: 'Cancel an active order.
+
+
+    Either `orderId` or `origClientOrderId` must be sent.
+
+
+    Weight(IP): 1'
+  tags:
+  - Trade
+  parameters:
+  - $ref: ../components/parameters/symbol.yaml
+  - $ref: ../components/parameters/orderId.yaml
+  - $ref: ../components/parameters/origClientOrderId.yaml
+  - $ref: ../components/parameters/newClientOrderId.yaml
+  - $ref: ../components/parameters/cancelRestrictions.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/order_v3_200.yaml
+    '400':
+      $ref: ../components/responses/order_v3_400.yaml
+    '401':
+      $ref: ../components/responses/order_v3_401.yaml

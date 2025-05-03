@@ -1,0 +1,31 @@
+get:
+  summary: List All Convert Pairs
+  description: 'Query for all convertible token pairs and the tokens’ respective upper/lower
+    limits
+
+
+    Weight(IP): 3000'
+  tags:
+  - Convert
+  parameters:
+  - name: fromAsset
+    in: query
+    required: false
+    description: User spends coin
+    schema:
+      type: string
+      example: BTC
+  - name: toAsset
+    in: query
+    required: false
+    description: User receives coin
+    schema:
+      type: string
+      example: USDT
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_convert_exchangeInfo_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_convert_exchangeInfo_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_convert_exchangeInfo_v1_401.yaml

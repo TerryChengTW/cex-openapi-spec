@@ -1,0 +1,27 @@
+post:
+  summary: VIP Loan Renew
+  description: 'VIP loan is available for VIP users only.
+
+
+    Weight(UID): 6000'
+  tags:
+  - VIP Loans
+  parameters:
+  - $ref: ../components/parameters/orderId.yaml
+  - name: loanTerm
+    in: query
+    schema:
+      type: integer
+      example: 30
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_loan_vip_renew_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_loan_vip_renew_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_loan_vip_renew_v1_401.yaml

@@ -1,0 +1,33 @@
+post:
+  summary: Margin manual liquidation(MARGIN)
+  description: 'Margin manual liquidation
+
+
+    Weight(UID): 3000'
+  tags:
+  - Margin
+  parameters:
+  - name: type
+    in: query
+    required: true
+    schema:
+      type: string
+      enum:
+      - MARGIN
+      - ISOLATED
+  - name: symbol
+    in: query
+    schema:
+      type: string
+      example: BTCUSDT
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_margin_manual-liquidation_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_margin_manual-liquidation_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_margin_manual-liquidation_v1_401.yaml

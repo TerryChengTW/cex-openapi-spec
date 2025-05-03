@@ -1,0 +1,46 @@
+get:
+  summary: Query Managed Sub Account Transfer Log (For Trading Team Sub Account)(USER_DATA)
+  description: 'Query Managed Sub Account Transfer Log (For Trading Team Sub Account)
+
+
+    Weight(UID): 60'
+  tags:
+  - Sub-Account
+  parameters:
+  - $ref: ../components/parameters/startTime.yaml
+  - $ref: ../components/parameters/endTime.yaml
+  - $ref: ../components/parameters/page.yaml
+  - $ref: ../components/parameters/limit.yaml
+  - name: transfers
+    in: query
+    required: true
+    description: Transfer Direction
+    schema:
+      type: string
+      enum:
+      - FROM
+      - TO
+  - name: transferFunctionAccountType
+    in: query
+    required: true
+    description: Transfer function account type
+    schema:
+      type: string
+      enum:
+      - SPOT
+      - MARGIN
+      - ISOLATED_MARGIN
+      - USDT_FUTURE
+      - COIN_FUTURE
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_managed-subaccount_query-trans-log_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_managed-subaccount_query-trans-log_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_managed-subaccount_query-trans-log_v1_401.yaml

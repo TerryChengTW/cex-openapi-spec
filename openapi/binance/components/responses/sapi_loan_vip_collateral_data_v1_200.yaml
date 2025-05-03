@@ -1,0 +1,55 @@
+description: Collateral Asset Data
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        rows:
+          type: array
+          items:
+            type: object
+            properties:
+              collateralCoin:
+                type: string
+                example: BUSD
+              _1stCollateralRatio:
+                type: string
+                example: 100%
+              _1stCollateralRange:
+                type: string
+                example: 1-10000000
+              _2ndCollateralRatio:
+                type: string
+                example: 80%
+              _2ndCollateralRange:
+                type: string
+                example: 10000000-100000000
+              _3rdCollateralRatio:
+                type: string
+                example: 60%
+              _3rdCollateralRange:
+                type: string
+                example: 100000000-1000000000
+              _4thCollateralRatio:
+                type: string
+                example: 0%
+              _4thCollateralRange:
+                type: string
+                example: '>10000000000'
+            required:
+            - collateralCoin
+            - _1stCollateralRatio
+            - _1stCollateralRange
+            - _2ndCollateralRatio
+            - _2ndCollateralRange
+            - _3rdCollateralRatio
+            - _3rdCollateralRange
+            - _4thCollateralRatio
+            - _4thCollateralRange
+        total:
+          type: integer
+          format: int32
+          example: 1
+      required:
+      - rows
+      - total

@@ -1,0 +1,38 @@
+get:
+  summary: Get VIP Loan Ongoing Orders (USER_DATA)
+  description: 'VIP loan is available for VIP users only.
+
+
+    Weight(IP): 400'
+  tags:
+  - VIP Loans
+  parameters:
+  - $ref: ../components/parameters/orderId.yaml
+  - name: collateralAccountId
+    in: query
+    required: false
+    schema:
+      type: integer
+      format: int64
+  - $ref: ../components/parameters/loanCoin.yaml
+  - $ref: ../components/parameters/collateralCoin.yaml
+  - $ref: ../components/parameters/current.yaml
+  - name: limit
+    in: query
+    description: Default 10; max 100.
+    schema:
+      type: integer
+      format: int32
+      example: 10
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_loan_vip_ongoing_orders_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_loan_vip_ongoing_orders_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_loan_vip_ongoing_orders_v1_401.yaml

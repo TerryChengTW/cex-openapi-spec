@@ -1,0 +1,43 @@
+post:
+  summary: Index Linked Plan Redemption (TRADE)
+  description: 'To redeem index-Linked plan holdings
+
+
+    Weight(IP): 1'
+  tags:
+  - Auto-Invest
+  parameters:
+  - name: indexId
+    in: query
+    description: PORTFOLIO plan's Id
+    required: true
+    schema:
+      type: integer
+      format: int64
+      example: 123456
+  - name: requestId
+    in: query
+    description: sourceType + unique, transactionId and requestId cannot be empty
+      at the same time
+    schema:
+      type: string
+      example: TR12354859
+  - name: redemptionPercentage
+    in: query
+    description: user redeem percentage,10/20/100.
+    required: true
+    schema:
+      type: integer
+      example: 10
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_lending_auto-invest_redeem_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_lending_auto-invest_redeem_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_lending_auto-invest_redeem_v1_401.yaml

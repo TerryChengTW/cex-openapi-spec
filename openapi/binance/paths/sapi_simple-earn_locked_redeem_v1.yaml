@@ -1,0 +1,27 @@
+post:
+  summary: Redeem Locked Product (TRADE)
+  description: 'Weight(IP): 1
+
+
+    Rate Limit: 1/3s per account'
+  tags:
+  - Simple Earn
+  parameters:
+  - name: positionId
+    in: query
+    required: true
+    description: '1234'
+    schema:
+      type: string
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_simple-earn_locked_redeem_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_simple-earn_locked_redeem_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_simple-earn_locked_redeem_v1_401.yaml

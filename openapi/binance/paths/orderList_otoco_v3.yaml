@@ -1,0 +1,109 @@
+post:
+  summary: New Order List - OTOCO (TRADE)
+  description: "Place an `OTOCO`.\n- An `OTOCO` (One-Triggers-One-Cancels-the-Other)\
+    \ is an order list comprised of 3 orders.\n- The first order is called the working\
+    \ order and must be `LIMIT` or `LIMIT_MAKER`. Initially, only the working order\
+    \ goes on the order book.\n  - The behavior of the working order is the same as\
+    \ the `OTO`.\n- `OTOCO` has 2 pending orders (pending above and pending below),\
+    \ forming an `OCO` pair. The pending orders are only placed on the order book\
+    \ when the working order gets fully filled.\n  - The rules of the pending above\
+    \ and pending below follow the same rules as the Order List `OCO`.\n- OTOCOs add\
+    \ 3 orders against the unfilled order count, `EXCHANGE_MAX_NUM_ORDERS` filter,\
+    \ and `MAX_NUM_ORDERS` filter.\n\nWeight: 1"
+  tags:
+  - Trade
+  parameters:
+  - $ref: ../components/parameters/symbol.yaml
+  - name: listClientOrderId
+    in: query
+    description: 'Arbitrary unique ID among open order lists. Automatically generated
+      if not sent.
+
+      A new order list with the same `listClientOrderId` is accepted only when the
+      previous one is filled or completely expired.
+
+      `listClientOrderId` is distinct from the `workingClientOrderId` and the `pendingClientOrderId`.'
+    schema:
+      type: string
+  - $ref: ../components/parameters/ocoNewOrderRespType.yaml
+  - $ref: ../components/parameters/selfTradePreventionMode.yaml
+  - $ref: ../components/parameters/workingType.yaml
+  - $ref: ../components/parameters/workingSide.yaml
+  - $ref: ../components/parameters/workingClientOrderId.yaml
+  - $ref: ../components/parameters/workingPrice.yaml
+  - $ref: ../components/parameters/workingQuantity.yaml
+  - $ref: ../components/parameters/workingIcebergQty.yaml
+  - $ref: ../components/parameters/workingTimeInForce.yaml
+  - name: workingStrategyId
+    in: query
+    description: Arbitrary numeric value identifying the working order within an order
+      strategy.
+    schema:
+      type: number
+      format: double
+  - name: workingStrategyType
+    in: query
+    description: 'Arbitrary numeric value identifying the working order strategy.
+
+      Values smaller than 1000000 are reserved and cannot be used.'
+    schema:
+      type: integer
+      format: int64
+  - $ref: ../components/parameters/pendingSide.yaml
+  - $ref: ../components/parameters/pendingQuantity.yaml
+  - $ref: ../components/parameters/pendingAboveType.yaml
+  - $ref: ../components/parameters/pendingAboveClientOrderId.yaml
+  - $ref: ../components/parameters/pendingAbovePrice.yaml
+  - $ref: ../components/parameters/pendingAboveStopPrice.yaml
+  - $ref: ../components/parameters/pendingAboveTrailingDelta.yaml
+  - $ref: ../components/parameters/pendingAboveIcebergQty.yaml
+  - $ref: ../components/parameters/pendingAboveTimeInForce.yaml
+  - name: pendingAboveStrategyId
+    in: query
+    description: Arbitrary numeric value identifying the pending above order within
+      an order strategy.
+    schema:
+      type: number
+      format: double
+  - name: pendingAboveStrategyType
+    in: query
+    description: 'Arbitrary numeric value identifying the pending above order strategy.
+
+      Values smaller than 1000000 are reserved and cannot be used.'
+    schema:
+      type: integer
+      format: int64
+  - $ref: ../components/parameters/pendingBelowType.yaml
+  - $ref: ../components/parameters/pendingBelowClientOrderId.yaml
+  - $ref: ../components/parameters/pendingBelowPrice.yaml
+  - $ref: ../components/parameters/pendingBelowStopPrice.yaml
+  - $ref: ../components/parameters/pendingBelowTrailingDelta.yaml
+  - $ref: ../components/parameters/pendingBelowIcebergQty.yaml
+  - $ref: ../components/parameters/pendingBelowTimeInForce.yaml
+  - name: pendingBelowStrategyId
+    in: query
+    description: Arbitrary numeric value identifying the pending below order within
+      an order strategy.
+    schema:
+      type: number
+      format: double
+  - name: pendingBelowStrategyType
+    in: query
+    description: 'Arbitrary numeric value identifying the pending below order strategy.
+
+      Values smaller than 1000000 are reserved and cannot be used.'
+    schema:
+      type: integer
+      format: int64
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/orderList_otoco_v3_200.yaml
+    '400':
+      $ref: ../components/responses/orderList_otoco_v3_400.yaml
+    '401':
+      $ref: ../components/responses/orderList_otoco_v3_401.yaml

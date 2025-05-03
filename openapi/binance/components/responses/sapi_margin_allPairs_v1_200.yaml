@@ -1,0 +1,35 @@
+description: Margin pairs
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          base:
+            type: string
+            example: BNB
+          id:
+            type: integer
+            format: int64
+            example: 351637150141315861
+          isBuyAllowed:
+            type: boolean
+          isMarginTrade:
+            type: boolean
+          isSellAllowed:
+            type: boolean
+          quote:
+            type: string
+            example: BTC
+          symbol:
+            type: string
+            example: BNBBTC
+        required:
+        - base
+        - id
+        - isBuyAllowed
+        - isMarginTrade
+        - isSellAllowed
+        - quote
+        - symbol

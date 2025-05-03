@@ -1,0 +1,24 @@
+get:
+  summary: Borrow - Get Flexible Loan Ongoing Orders (USER_DATA)
+  description: '
+
+    Weight(IP): 300'
+  tags:
+  - Crypto Loans
+  parameters:
+  - $ref: ../components/parameters/loanCoin.yaml
+  - $ref: ../components/parameters/collateralCoin.yaml
+  - $ref: ../components/parameters/current.yaml
+  - $ref: ../components/parameters/limit.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_loan_flexible_ongoing_orders_v2_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_loan_flexible_ongoing_orders_v2_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_loan_flexible_ongoing_orders_v2_401.yaml

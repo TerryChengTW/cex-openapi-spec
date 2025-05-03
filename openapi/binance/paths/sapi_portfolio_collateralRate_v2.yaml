@@ -1,0 +1,21 @@
+get:
+  summary: Portfolio Margin Pro Tiered Collateral Rate(USER_DATA)
+  description: 'Portfolio Margin PRO Tiered Collateral Rate
+
+
+    Weight(IP): 50'
+  parameters:
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  tags:
+  - Portfolio Margin
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_portfolio_collateralRate_v2_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_portfolio_collateralRate_v2_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_portfolio_collateralRate_v2_401.yaml

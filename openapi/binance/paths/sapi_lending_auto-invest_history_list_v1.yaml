@@ -1,0 +1,44 @@
+get:
+  summary: Query subscription transaction history
+  description: 'Query subscription transaction history of a plan
+
+
+    Weight(IP): 1'
+  tags:
+  - Auto-Invest
+  parameters:
+  - name: planId
+    in: query
+    schema:
+      type: integer
+      format: int64
+  - $ref: ../components/parameters/startTime.yaml
+  - $ref: ../components/parameters/endTime.yaml
+  - name: targetAsset
+    in: query
+    schema:
+      type: number
+      format: int64
+  - name: planType
+    in: query
+    schema:
+      type: string
+      enum:
+      - SINGLE
+      - PORTFOLIO
+      - INDEX
+      - ALL
+  - $ref: ../components/parameters/size.yaml
+  - $ref: ../components/parameters/current.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_lending_auto-invest_history_list_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_lending_auto-invest_history_list_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_lending_auto-invest_history_list_v1_401.yaml

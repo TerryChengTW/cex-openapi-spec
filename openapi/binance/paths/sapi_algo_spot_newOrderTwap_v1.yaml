@@ -1,0 +1,40 @@
+post:
+  summary: Time-Weighted Average Price (Twap) New Order
+  description: 'Place a new spot TWAP order with Algo service.
+
+
+    Weight(UID): 3000'
+  tags:
+  - Spot Algo
+  parameters:
+  - $ref: ../components/parameters/symbol.yaml
+  - $ref: ../components/parameters/side.yaml
+  - $ref: ../components/parameters/quantity.yaml
+  - name: duration
+    in: query
+    required: true
+    schema:
+      type: integer
+      format: int32
+      example: 300
+  - name: clientAlgoId
+    in: query
+    schema:
+      type: string
+  - name: limitPrice
+    in: query
+    schema:
+      type: number
+      format: float
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_algo_spot_newOrderTwap_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_algo_spot_newOrderTwap_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_algo_spot_newOrderTwap_v1_401.yaml

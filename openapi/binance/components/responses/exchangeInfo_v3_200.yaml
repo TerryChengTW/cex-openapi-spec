@@ -1,0 +1,176 @@
+description: Current exchange trading rules and symbol information
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        timezone:
+          type: string
+          example: UTC
+        serverTime:
+          type: integer
+          format: int64
+          example: 1592882214236
+        rateLimits:
+          type: array
+          items:
+            type: object
+            properties:
+              rateLimitType:
+                type: string
+                example: REQUEST_WEIGHT
+              interval:
+                type: string
+                example: MINUTE
+              intervalNum:
+                type: integer
+                format: int32
+                example: 1
+              limit:
+                type: integer
+                format: int32
+                example: 1200
+            required:
+            - rateLimitType
+            - interval
+            - intervalNum
+            - limit
+        exchangeFilters:
+          type: array
+          items:
+            type: object
+        symbols:
+          type: array
+          items:
+            type: object
+            properties:
+              symbol:
+                type: string
+                example: ETHBTC
+              status:
+                type: string
+                example: TRADING
+              baseAsset:
+                type: string
+                example: ETH
+              baseAssetPrecision:
+                type: integer
+                format: int32
+                example: 8
+              quoteAsset:
+                type: string
+                example: BTC
+              quoteAssetPrecision:
+                type: integer
+                format: int32
+                example: 8
+              baseCommissionPrecision:
+                type: integer
+                format: int32
+                example: 8
+              quoteCommissionPrecision:
+                type: integer
+                format: int32
+                example: 8
+              orderTypes:
+                type: array
+                items:
+                  type: string
+                  example: LIMIT
+              icebergAllowed:
+                type: boolean
+                example: true
+              ocoAllowed:
+                type: boolean
+                example: true
+              otoAllowed:
+                type: boolean
+                example: false
+              quoteOrderQtyMarketAllowed:
+                type: boolean
+                example: true
+              allowTrailingStop:
+                type: boolean
+                example: false
+              cancelReplaceAllowed:
+                type: boolean
+                example: true
+              isSpotTradingAllowed:
+                type: boolean
+                example: true
+              isMarginTradingAllowed:
+                type: boolean
+                example: true
+              filters:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    filterType:
+                      type: string
+                      example: PRICE_FILTER
+                    minPrice:
+                      type: string
+                      example: '0.00000100'
+                    maxPrice:
+                      type: string
+                      example: '100000.00000000'
+                    tickSize:
+                      type: string
+                      example: '0.00000100'
+                  required:
+                  - filterType
+                  - minPrice
+                  - maxPrice
+                  - tickSize
+              permissions:
+                type: array
+                items:
+                  type: string
+                  example: SPOT
+              permissionSets:
+                type: array
+                items:
+                  type: array
+                  items:
+                    type: string
+                    example:
+                    - SPOT
+                    - MARGIN
+              defaultSelfTradePreventionMode:
+                type: string
+                example: NONE
+              allowedSelfTradePreventionModes:
+                type: array
+                items:
+                  type: string
+                  example: NONE
+            required:
+            - symbol
+            - status
+            - baseAsset
+            - baseAssetPrecision
+            - quoteAsset
+            - quoteAssetPrecision
+            - baseCommissionPrecision
+            - quoteCommissionPrecision
+            - orderTypes
+            - icebergAllowed
+            - ocoAllowed
+            - otoAllowed
+            - quoteOrderQtyMarketAllowed
+            - allowTrailingStop
+            - cancelReplaceAllowed
+            - isSpotTradingAllowed
+            - isMarginTradingAllowed
+            - filters
+            - permissions
+            - permissionSets
+            - defaultSelfTradePreventionMode
+            - allowedSelfTradePreventionModes
+      required:
+      - timezone
+      - serverTime
+      - rateLimits
+      - exchangeFilters
+      - symbols

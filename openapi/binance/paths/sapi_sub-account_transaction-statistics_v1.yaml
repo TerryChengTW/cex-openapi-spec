@@ -1,0 +1,22 @@
+get:
+  summary: Query Sub-account Transaction Statistics (For Master Account)
+  description: 'Query Sub-account Transaction statistics (For Master Account).
+
+
+    Weight(UID): 60'
+  tags:
+  - Sub-Account
+  parameters:
+  - $ref: ../components/parameters/email.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_sub-account_transaction-statistics_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_sub-account_transaction-statistics_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_sub-account_transaction-statistics_v1_401.yaml

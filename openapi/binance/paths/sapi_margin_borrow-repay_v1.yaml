@@ -1,0 +1,84 @@
+post:
+  summary: Margin account borrow/repay(MARGIN)
+  description: 'Margin account borrow/repay(MARGIN)
+
+
+    Weight(UID): 3000'
+  tags:
+  - Margin
+  parameters:
+  - $ref: ../components/parameters/asset.yaml
+  - name: isIsolated
+    in: query
+    required: true
+    description: TRUE for isolated margin, FALSE for crossed margin
+    schema:
+      type: string
+  - $ref: ../components/parameters/symbol.yaml
+  - $ref: ../components/parameters/amount.yaml
+  - name: type
+    in: query
+    required: true
+    description: BORROW or REPAY
+    schema:
+      type: string
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_margin_borrow-repay_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_margin_borrow-repay_v1_400.yaml
+get:
+  summary: Query borrow/repay records in Margin account(USER_DATA)
+  description: 'Query borrow/repay records in Margin account
+
+
+    - txId or startTime must be sent. txId takes precedence. Response in descending
+    order
+
+    - If an asset is sent, data within 30 days before endTime; If an asset is not
+    sent, data within 7 days before endTime
+
+    - If neither startTime nor endTime is sent, the recent 7-day data will be returned.
+
+    - startTime set as endTime - 7 days by default, endTime set as current time by
+    default
+
+
+    Weight(IP): 10'
+  tags:
+  - Margin
+  parameters:
+  - $ref: ../components/parameters/asset.yaml
+  - $ref: ../components/parameters/isolatedSymbol.yaml
+  - name: txId
+    in: query
+    required: false
+    description: tranId in POST /sapi/v1/margin/loan
+    schema:
+      type: integer
+      format: int64
+  - $ref: ../components/parameters/startTime.yaml
+  - $ref: ../components/parameters/endTime.yaml
+  - $ref: ../components/parameters/current.yaml
+  - $ref: ../components/parameters/size.yaml
+  - name: type
+    in: query
+    required: true
+    description: BORROW or REPAY
+    schema:
+      type: string
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_margin_borrow-repay_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_margin_borrow-repay_v1_400.yaml

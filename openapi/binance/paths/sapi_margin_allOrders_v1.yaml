@@ -1,0 +1,34 @@
+get:
+  summary: Query Margin Account's All Orders (USER_DATA)
+  description: '- If `orderId` is set, it will get orders >= that orderId. Otherwise
+    most recent orders are returned.
+
+    - For some historical orders `cummulativeQuoteQty` will be < 0, meaning the data
+    is not available at this time.
+
+
+    Weight(IP): 200
+
+
+    Request Limit: 60 times/min per IP'
+  tags:
+  - Margin
+  parameters:
+  - $ref: ../components/parameters/symbol.yaml
+  - $ref: ../components/parameters/isIsolatedMargin.yaml
+  - $ref: ../components/parameters/orderId.yaml
+  - $ref: ../components/parameters/startTime.yaml
+  - $ref: ../components/parameters/endTime.yaml
+  - $ref: ../components/parameters/limit.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_margin_allOrders_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_margin_allOrders_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_margin_allOrders_v1_401.yaml

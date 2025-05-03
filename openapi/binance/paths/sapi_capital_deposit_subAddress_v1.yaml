@@ -1,0 +1,24 @@
+get:
+  summary: Sub-account Spot Assets Summary (For Master Account)
+  description: 'Fetch sub-account deposit address
+
+
+    Weight(IP): 1'
+  tags:
+  - Sub-Account
+  parameters:
+  - $ref: ../components/parameters/subAccountEmail.yaml
+  - $ref: ../components/parameters/coin.yaml
+  - $ref: ../components/parameters/network.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_capital_deposit_subAddress_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_capital_deposit_subAddress_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_capital_deposit_subAddress_v1_401.yaml

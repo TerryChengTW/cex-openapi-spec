@@ -1,0 +1,21 @@
+get:
+  summary: Account Information (USER_DATA)
+  description: 'Get current account information.
+
+
+    Weight(IP): 20'
+  tags:
+  - Trade
+  parameters:
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/account_v3_200.yaml
+    '400':
+      $ref: ../components/responses/account_v3_400.yaml
+    '401':
+      $ref: ../components/responses/account_v3_401.yaml

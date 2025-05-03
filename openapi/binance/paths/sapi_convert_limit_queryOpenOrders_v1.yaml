@@ -1,0 +1,21 @@
+get:
+  summary: Query limit open orders (USER_DATA)
+  description: 'Enable users to query for all existing limit orders
+
+
+    Weight(UID): 3000'
+  tags:
+  - Convert
+  parameters:
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_convert_limit_queryOpenOrders_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_convert_limit_queryOpenOrders_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_convert_limit_queryOpenOrders_v1_401.yaml

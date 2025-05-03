@@ -1,0 +1,51 @@
+description: List of mining accounts
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int64
+          example: 0
+        msg:
+          type: string
+          example: ''
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              type:
+                type: string
+                example: H_hashrate
+              userName:
+                type: string
+                example: test
+              list:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    time:
+                      type: integer
+                      format: int64
+                      example: 1585267200000
+                    hashrate:
+                      type: string
+                      example: '0.00000000'
+                    reject:
+                      type: string
+                      example: '0.00000000'
+                  required:
+                  - time
+                  - hashrate
+                  - reject
+            required:
+            - type
+            - userName
+            - list
+      required:
+      - code
+      - msg
+      - data

@@ -1,0 +1,41 @@
+description: Withdraw address list
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          address:
+            type: string
+            example: '0xD316E95Fd9E8E237Cb11f8200Babbc5D8D177BA4'
+          addressTag:
+            type: string
+            example: '101764890'
+          coin:
+            type: string
+            example: BNB
+          name:
+            type: string
+            example: ''
+          network:
+            type: string
+            example: BNB
+          origin:
+            type: string
+            example: ''
+          originType:
+            type: string
+            example: ''
+          whiteStatus:
+            type: boolean
+            example: true
+        required:
+        - address
+        - addressTag
+        - coin
+        - name
+        - network
+        - origin
+        - originType
+        - whiteStatus

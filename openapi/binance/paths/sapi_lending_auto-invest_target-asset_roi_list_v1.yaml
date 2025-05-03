@@ -1,0 +1,28 @@
+get:
+  summary: Get target asset ROI data (USER_DATA)
+  description: 'ROI return list for target asset
+
+
+    Weight(IP): 1'
+  tags:
+  - Auto-Invest
+  parameters:
+  - $ref: ../components/parameters/targetAsset.yaml
+  - name: hisRoiType
+    in: query
+    required: true
+    schema:
+      type: string
+      example: FIVE_YEAR
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_lending_auto-invest_target-asset_roi_list_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_lending_auto-invest_target-asset_roi_list_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_lending_auto-invest_target-asset_roi_list_v1_401.yaml

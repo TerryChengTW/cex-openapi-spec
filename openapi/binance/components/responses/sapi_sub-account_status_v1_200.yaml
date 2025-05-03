@@ -1,0 +1,37 @@
+description: Status on Margin/Futures
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          email:
+            type: string
+            example: 123@test.com
+          isSubUserEnabled:
+            type: boolean
+          isUserActive:
+            type: boolean
+          insertTime:
+            type: integer
+            format: int64
+            example: 1570791523523
+            description: sub account create time
+          isMarginEnabled:
+            type: boolean
+          isFutureEnabled:
+            type: boolean
+          mobile:
+            type: integer
+            format: int64
+            example: 1570791523523
+            description: user mobile number
+        required:
+        - email
+        - isSubUserEnabled
+        - isUserActive
+        - insertTime
+        - isMarginEnabled
+        - isFutureEnabled
+        - mobile

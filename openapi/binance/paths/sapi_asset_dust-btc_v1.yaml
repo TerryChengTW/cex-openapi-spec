@@ -1,0 +1,27 @@
+post:
+  summary: Get Assets That Can Be Converted Into BNB (USER_DATA)
+  description: 'Weight(IP): 1'
+  tags:
+  - Wallet
+  parameters:
+  - name: accountType
+    in: query
+    required: false
+    description: SPOT or MARGIN, default SPOT
+    schema:
+      type: string
+      enum:
+      - SPOT
+      - MARGIN
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_asset_dust-btc_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_asset_dust-btc_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_asset_dust-btc_v1_401.yaml

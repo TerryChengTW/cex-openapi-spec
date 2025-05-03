@@ -1,0 +1,52 @@
+post:
+  summary: Create a ListenKey (USER_STREAM)
+  description: 'Start a new user data stream.
+
+    The stream will close after 60 minutes unless a keepalive is sent. If the account
+    has an active `listenKey`, that `listenKey` will be returned and its validity
+    will be extended for 60 minutes.
+
+
+    Weight: 2'
+  tags:
+  - Stream
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/userDataStream_v3_200.yaml
+put:
+  summary: Ping/Keep-alive a ListenKey (USER_STREAM)
+  description: 'Keepalive a user data stream to prevent a time out. User data streams
+    will close after 60 minutes. It''s recommended to send a ping about every 30 minutes.
+
+
+    Weight: 2'
+  tags:
+  - Stream
+  parameters:
+  - $ref: ../components/parameters/listenKey.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/userDataStream_v3_200.yaml
+    '400':
+      $ref: ../components/responses/userDataStream_v3_400.yaml
+delete:
+  summary: Close a ListenKey (USER_STREAM)
+  description: 'Close out a user data stream.
+
+
+    Weight: 2'
+  tags:
+  - Stream
+  parameters:
+  - $ref: ../components/parameters/listenKey.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/userDataStream_v3_200.yaml
+    '400':
+      $ref: ../components/responses/userDataStream_v3_400.yaml

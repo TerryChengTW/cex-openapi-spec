@@ -1,0 +1,109 @@
+description: Futures account details
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        email:
+          type: string
+          example: abc@test.com
+        asset:
+          type: string
+          example: USDT
+        assets:
+          type: array
+          items:
+            type: object
+            properties:
+              asset:
+                type: string
+                example: USDT
+              initialMargin:
+                type: string
+                example: '0.00000000'
+              maintenanceMargin:
+                type: string
+                example: '0.00000000'
+              marginBalance:
+                type: string
+                example: '0.88308000'
+              maxWithdrawAmount:
+                type: string
+                example: '0.88308000'
+              openOrderInitialMargin:
+                type: string
+                example: '0.00000000'
+              positionInitialMargin:
+                type: string
+                example: '0.00000000'
+              unrealizedProfit:
+                type: string
+                example: '0.00000000'
+              walletBalance:
+                type: string
+                example: '0.88308000'
+            required:
+            - asset
+            - initialMargin
+            - maintenanceMargin
+            - marginBalance
+            - maxWithdrawAmount
+            - openOrderInitialMargin
+            - positionInitialMargin
+            - unrealizedProfit
+            - walletBalance
+        canDeposit:
+          type: boolean
+        canTrade:
+          type: boolean
+        canWithdraw:
+          type: boolean
+        feeTier:
+          type: integer
+          format: int64
+          example: 2
+        maxWithdrawAmount:
+          type: string
+          example: '0.88308000'
+        totalInitialMargin:
+          type: string
+          example: '0.00000000'
+        totalMaintenanceMargin:
+          type: string
+          example: '0.00000000'
+        totalMarginBalance:
+          type: string
+          example: '0.88308000'
+        totalOpenOrderInitialMargin:
+          type: string
+          example: '0.00000000'
+        totalPositionInitialMargin:
+          type: string
+          example: '0.00000000'
+        totalUnrealizedProfit:
+          type: string
+          example: '0.00000000'
+        totalWalletBalance:
+          type: string
+          example: '0.88308000'
+        updateTime:
+          type: integer
+          format: int64
+          example: 1576756674610
+      required:
+      - email
+      - asset
+      - assets
+      - canDeposit
+      - canTrade
+      - canWithdraw
+      - feeTier
+      - maxWithdrawAmount
+      - totalInitialMargin
+      - totalMaintenanceMargin
+      - totalMarginBalance
+      - totalOpenOrderInitialMargin
+      - totalPositionInitialMargin
+      - totalUnrealizedProfit
+      - totalWalletBalance
+      - updateTime

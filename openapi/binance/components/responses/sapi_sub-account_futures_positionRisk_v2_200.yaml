@@ -1,0 +1,7 @@
+description: USDT or COIN Margined Futures Position Risk
+content:
+  application/json:
+    schema:
+      oneOf:
+      - $ref: ../schemas/subAccountUSDTFuturesPositionRisk.yaml
+      - $ref: ../schemas/subAccountCOINFuturesPositionRisk.yaml

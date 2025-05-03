@@ -1,0 +1,92 @@
+description: Trades history
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        code:
+          type: string
+          example: '000000'
+        message:
+          type: string
+          example: success
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              orderNumber:
+                type: string
+                example: '20219644646554779648'
+              advNo:
+                type: string
+                example: '11218246497340923904'
+              tradeType:
+                type: string
+                example: SELL
+              asset:
+                type: string
+                example: BUSD
+              fiat:
+                type: string
+                example: CNY
+              fiatSymbol:
+                type: string
+                example: ￥
+              amount:
+                type: string
+                example: '5000.00000000'
+                description: Quantity (in Crypto)
+              totalPrice:
+                type: string
+                example: '33400.00000000'
+              unitPrice:
+                type: string
+                example: '6.68'
+                description: Unit Price (in Fiat)
+              orderStatus:
+                type: string
+                example: COMPLETED
+                description: PENDING, TRADING, BUYER_PAYED, DISTRIBUTING, COMPLETED,
+                  IN_APPEAL, CANCELLED, CANCELLED_BY_SYSTEM
+              createTime:
+                type: integer
+                format: int64
+                example: 1619361369000
+              commission:
+                type: string
+                example: '0'
+                description: Transaction Fee (in Crypto)
+              counterPartNickName:
+                type: string
+                example: ab***
+              advertisementRole:
+                type: string
+                example: TAKER
+            required:
+            - orderNumber
+            - advNo
+            - tradeType
+            - asset
+            - fiat
+            - fiatSymbol
+            - amount
+            - totalPrice
+            - unitPrice
+            - orderStatus
+            - createTime
+            - commission
+            - counterPartNickName
+            - advertisementRole
+        total:
+          type: integer
+          format: int32
+          example: 1
+        success:
+          type: boolean
+      required:
+      - code
+      - message
+      - data
+      - total
+      - success

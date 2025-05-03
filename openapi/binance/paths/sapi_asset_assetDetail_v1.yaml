@@ -1,0 +1,25 @@
+get:
+  summary: Asset Detail (USER_DATA)
+  description: 'Fetch details of assets supported on Binance.
+
+
+    - Please get network and other deposit or withdraw details from `GET /sapi/v1/capital/config/getall`.
+
+
+    Weight(IP): 1'
+  tags:
+  - Wallet
+  parameters:
+  - $ref: ../components/parameters/optionalAsset.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_asset_assetDetail_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_asset_assetDetail_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_asset_assetDetail_v1_401.yaml

@@ -1,0 +1,153 @@
+description: New OCO details
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        orderListId:
+          type: integer
+          format: int64
+          example: 1
+        contingencyType:
+          type: string
+          example: OCO
+        listStatusType:
+          type: string
+          example: EXEC_STARTED
+        listOrderStatus:
+          type: string
+          example: EXECUTING
+        listClientOrderId:
+          type: string
+          example: lH1YDkuQKWiXVXHPSKYEIp
+        transactionTime:
+          type: integer
+          format: int64
+          example: 1710485608839
+        symbol:
+          type: string
+          example: LTCBTC
+        orders:
+          type: array
+          items:
+            type: object
+            properties:
+              symbol:
+                type: string
+              orderId:
+                type: integer
+                format: int64
+              clientOrderId:
+                type: string
+            required:
+            - symbol
+            - orderId
+            - clientOrderId
+            example:
+            - symbol: LTCBTC
+              orderId: 10
+              clientOrderId: 44nZvqpemY7sVYgPYbvPih
+            - symbol: LTCBTC
+              orderId: 11
+              clientOrderId: NuMp0nVYnciDiFmVqfpBqK
+        orderReports:
+          type: array
+          items:
+            type: object
+            properties:
+              symbol:
+                type: string
+              orderId:
+                type: integer
+                format: int64
+              orderListId:
+                type: integer
+                format: int64
+              clientOrderId:
+                type: string
+              transactTime:
+                type: integer
+                format: int64
+              price:
+                type: string
+              origQty:
+                type: string
+              executedQty:
+                type: string
+              cummulativeQuoteQty:
+                type: string
+              status:
+                type: string
+              timeInForce:
+                type: string
+              type:
+                type: string
+              side:
+                type: string
+              stopPrice:
+                type: string
+              workingTime:
+                type: integer
+                format: int64
+              selfTradePreventionMode:
+                type: string
+            required:
+            - symbol
+            - orderId
+            - orderListId
+            - clientOrderId
+            - transactTime
+            - price
+            - origQty
+            - executedQty
+            - cummulativeQuoteQty
+            - status
+            - timeInForce
+            - type
+            - side
+            - stopPrice
+            - workingTime
+            - selfTradePreventionMode
+          example:
+          - symbol: LTCBTC
+            orderId: 10
+            orderListId: 1
+            clientOrderId: 44nZvqpemY7sVYgPYbvPih
+            transactTime: 1710485608839
+            price: '1.000000'
+            origQty: '5.00000000'
+            executedQty: '0.000000'
+            cummulativeQuoteQty: '0.000000'
+            status: NEW
+            timeInForce: GTC
+            type: STOP_LOSS_LIMIT
+            side: SELL
+            stopPrice: '1.00000000'
+            workingTime: -1
+            icebergQty: '1.00000000'
+            selfTradePreventionMode: NONE
+          - symbol: LTCBTC
+            orderId: 11
+            orderListId: 1
+            clientOrderId: NuMp0nVYnciDiFmVqfpBqK
+            transactTime: 1710485608839
+            price: '3.00000000'
+            origQty: '5.00000000'
+            executedQty: '0.000000'
+            cummulativeQuoteQty: '0.000000'
+            status: NEW
+            timeInForce: GTC
+            type: LIMIT_MAKER
+            side: SELL
+            workingTime: 1710485608839
+            selfTradePreventionMode: NONE
+      required:
+      - orderListId
+      - contingencyType
+      - listStatusType
+      - listOrderStatus
+      - listClientOrderId
+      - transactionTime
+      - symbol
+      - orders
+      - orderReports

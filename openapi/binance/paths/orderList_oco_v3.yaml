@@ -1,0 +1,166 @@
+post:
+  summary: New Order list - OCO (TRADE)
+  description: "Send in an one-cancels-the-other (OCO) pair, where activation of one\
+    \ order immediately cancels the other.\n\n- An `OCO` has 2 orders called the above\
+    \ order and below order.\n- One of the orders must be a `LIMIT_MAKER` order and\
+    \ the other must be `STOP_LOSS` or`STOP_LOSS_LIMIT` order.\n- Price restrictions:\n\
+    \    - If the `OCO` is on the `SELL` side: `LIMIT_MAKER` price > Last Traded Price\
+    \ > stopPrice\n    - If the `OCO` is on the `BUY` side: `LIMIT_MAKER` price <\
+    \ Last Traded Price < stopPrice\n- OCOs add 2 orders to the unfilled order count,\
+    \ `EXCHANGE_MAX_ORDERS` filter, and the `MAX_NUM_ORDERS` filter.\n\nWeight(IP):\
+    \ 1"
+  tags:
+  - Trade
+  parameters:
+  - $ref: ../components/parameters/symbol.yaml
+  - name: listClientOrderId
+    in: query
+    description: 'Arbitrary unique ID among open order lists. Automatically generated
+      if not sent.
+
+      A new order list with the same `listClientOrderId` is accepted only when the
+      previous one is filled or completely expired.
+
+      `listClientOrderId` is distinct from the `aboveClientOrderId` and the `belowCLientOrderId`.'
+    schema:
+      type: string
+  - $ref: ../components/parameters/side.yaml
+  - $ref: ../components/parameters/quantity.yaml
+  - name: aboveType
+    in: query
+    required: true
+    description: 'Supported values : `STOP_LOSS_LIMIT`, `STOP_LOSS`, `LIMIT_MAKER`'
+    schema:
+      type: string
+  - name: aboveClientOrderId
+    in: query
+    description: Arbitrary unique ID among open orders for the above order. Automatically
+      generated if not sent
+    schema:
+      type: string
+  - name: aboveIcebergQty
+    in: query
+    description: Note that this can only be used if `aboveTimeInForce` is `GTC`.
+    schema:
+      type: number
+      format: double
+  - name: abovePrice
+    in: query
+    schema:
+      type: number
+      format: double
+  - name: aboveStopPrice
+    in: query
+    description: 'Can be used if `aboveType` is `STOP_LOSS` or `STOP_LOSS_LIMIT`.
+
+      Either `aboveStopPrice` or `aboveTrailingDelta` or both, must be specified.'
+    schema:
+      type: number
+      format: double
+  - name: aboveTrailingDelta
+    in: query
+    schema:
+      type: number
+      format: double
+  - name: aboveTimeInForce
+    in: query
+    description: Required if the `aboveType` is `STOP_LOSS_LIMIT`.
+    schema:
+      type: string
+      enum:
+      - GTC
+      - IOC
+      - FOK
+      example: GTC
+  - name: aboveStrategyId
+    in: query
+    description: Arbitrary numeric value identifying the above order within an order
+      strategy.
+    schema:
+      type: number
+      format: double
+  - name: aboveStrategyType
+    in: query
+    description: 'Arbitrary numeric value identifying the above order strategy.
+
+      Values smaller than 1000000 are reserved and cannot be used.'
+    schema:
+      type: integer
+      format: int64
+  - name: belowType
+    in: query
+    required: true
+    description: 'Supported values : `STOP_LOSS_LIMIT`, `STOP_LOSS`, `LIMIT_MAKER`'
+    schema:
+      type: string
+  - name: belowClientOrderId
+    in: query
+    description: Arbitrary unique ID among open orders for the below order. Automatically
+      generated if not sent
+    schema:
+      type: string
+  - name: belowIcebergQty
+    in: query
+    description: Note that this can only be used if `belowTimeInForce` is `GTC`.
+    schema:
+      type: number
+      format: double
+  - name: belowPrice
+    in: query
+    description: Can be used if `belowType` is `STOP_LOSS_LIMIT` or `LIMIT_MAKER`
+      to specify the limit price.
+    schema:
+      type: number
+      format: double
+  - name: belowStopPrice
+    in: query
+    description: 'Can be used if `belowType` is `STOP_LOSS` or `STOP_LOSS_LIMIT`.
+
+      Either `belowStopPrice` or `belowTrailingDelta` or both, must be specified.'
+    schema:
+      type: number
+      format: double
+  - name: belowTrailingDelta
+    in: query
+    schema:
+      type: number
+      format: double
+  - name: belowTimeInForce
+    in: query
+    description: Required if the `belowType` is `STOP_LOSS_LIMIT`.
+    schema:
+      type: string
+      enum:
+      - GTC
+      - IOC
+      - FOK
+      example: GTC
+  - name: belowStrategyId
+    in: query
+    description: Arbitrary numeric value identifying the below order within an order
+      strategy.
+    schema:
+      type: number
+      format: double
+  - name: belowStrategyType
+    in: query
+    description: 'Arbitrary numeric value identifying the below order strategy.
+
+      Values smaller than 1000000 are reserved and cannot be used.'
+    schema:
+      type: integer
+      format: int64
+  - $ref: ../components/parameters/newOrderRespType.yaml
+  - $ref: ../components/parameters/selfTradePreventionMode.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/orderList_oco_v3_200.yaml
+    '400':
+      $ref: ../components/responses/orderList_oco_v3_400.yaml
+    '401':
+      $ref: ../components/responses/orderList_oco_v3_401.yaml

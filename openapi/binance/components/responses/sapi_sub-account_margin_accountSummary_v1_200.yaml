@@ -1,0 +1,42 @@
+description: Margin sub-account details
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        totalAssetOfBtc:
+          type: string
+          example: '4.33333333'
+        totalLiabilityOfBtc:
+          type: string
+          example: '2.11111112'
+        totalNetAssetOfBtc:
+          type: string
+          example: '2.22222221'
+        subAccountList:
+          type: array
+          items:
+            type: object
+            properties:
+              email:
+                type: string
+                example: 123@test.com
+              totalAssetOfBtc:
+                type: string
+                example: '2.11111111'
+              totalLiabilityOfBtc:
+                type: string
+                example: '1.11111111'
+              totalNetAssetOfBtc:
+                type: string
+                example: '1.00000000'
+            required:
+            - email
+            - totalAssetOfBtc
+            - totalLiabilityOfBtc
+            - totalNetAssetOfBtc
+      required:
+      - totalAssetOfBtc
+      - totalLiabilityOfBtc
+      - totalNetAssetOfBtc
+      - subAccountList

@@ -1,0 +1,76 @@
+description: List of workers
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int64
+          example: 0
+        msg:
+          type: string
+          example: ''
+        data:
+          type: object
+          properties:
+            workerDatas:
+              type: array
+              items:
+                type: object
+                properties:
+                  workerId:
+                    type: string
+                    example: '1420554439452400131'
+                  workerName:
+                    type: string
+                    example: 2X73
+                  status:
+                    type: integer
+                    format: int64
+                    example: 3
+                    description: Status：1 valid, 2 invalid, 3 no longer valid
+                  hashRate:
+                    type: integer
+                    format: int64
+                    example: 0
+                    description: Real-time rate
+                  dayHashRate:
+                    type: integer
+                    format: int64
+                    example: 0
+                    description: 24H Hashrate
+                  rejectRate:
+                    type: integer
+                    format: int64
+                    example: 0
+                    description: Real-time Rejection Rate
+                  lastShareTime:
+                    type: integer
+                    format: int64
+                    example: 1587712919000
+                    description: Last submission time
+                required:
+                - workerId
+                - workerName
+                - status
+                - hashRate
+                - dayHashRate
+                - rejectRate
+                - lastShareTime
+            totalNum:
+              type: integer
+              format: int64
+              example: 18530
+            pageSize:
+              type: integer
+              format: int64
+              example: 20
+          required:
+          - workerDatas
+          - totalNum
+          - pageSize
+      required:
+      - code
+      - msg
+      - data

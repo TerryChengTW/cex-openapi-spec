@@ -1,0 +1,27 @@
+get:
+  summary: Get NFT Deposit History(USER_DATA)
+  description: '- The max interval between startTime and endTime is 90 days.
+
+    - If startTime and endTime are not sent, the recent 7 days'' data will be returned.
+
+
+    Weight(UID): 3000'
+  tags:
+  - NFT
+  parameters:
+  - $ref: ../components/parameters/startTime.yaml
+  - $ref: ../components/parameters/endTime.yaml
+  - $ref: ../components/parameters/limit50.yaml
+  - $ref: ../components/parameters/page.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_nft_history_deposit_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_nft_history_deposit_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_nft_history_deposit_v1_401.yaml

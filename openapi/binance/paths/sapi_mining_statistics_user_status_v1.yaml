@@ -1,0 +1,20 @@
+get:
+  summary: Statistic List (USER_DATA)
+  description: 'Weight(IP): 5'
+  tags:
+  - Mining
+  parameters:
+  - $ref: ../components/parameters/algo.yaml
+  - $ref: ../components/parameters/userName.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_mining_statistics_user_status_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_mining_statistics_user_status_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_mining_statistics_user_status_v1_401.yaml

@@ -1,0 +1,22 @@
+delete:
+  summary: Delete IP List for a Sub-account API Key (For Master Account)
+  description: 'Weight(UID): 3000'
+  tags:
+  - Sub-Account
+  parameters:
+  - $ref: ../components/parameters/subAccountEmail.yaml
+  - $ref: ../components/parameters/subAccountApiKey.yaml
+  - $ref: ../components/parameters/optionalIpAddress.yaml
+  - $ref: ../components/parameters/thirdPartyName.yaml
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_sub-account_subAccountApi_ipRestriction_ipList_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_sub-account_subAccountApi_ipRestriction_ipList_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_sub-account_subAccountApi_ipRestriction_ipList_v1_401.yaml

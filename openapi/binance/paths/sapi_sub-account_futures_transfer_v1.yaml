@@ -1,0 +1,40 @@
+post:
+  summary: Transfer for Sub-account (For Master Account)
+  description: 'Weight(IP): 1'
+  tags:
+  - Sub-Account
+  parameters:
+  - $ref: ../components/parameters/subAccountEmail.yaml
+  - $ref: ../components/parameters/asset.yaml
+  - $ref: ../components/parameters/amount.yaml
+  - name: type
+    in: query
+    description: '* `1` - transfer from subaccount''s spot account to its USDT-margined
+      futures account
+
+      * `2` - transfer from subaccount''s USDT-margined futures account to its spot
+      account
+
+      * `3` - transfer from subaccount''s spot account to its COIN-margined futures
+      account
+
+      * `4` - transfer from subaccount''s COIN-margined futures account to its spot
+      account'
+    required: true
+    schema:
+      type: integer
+      format: int32
+      minimum: 1
+      maximum: 4
+  - $ref: ../components/parameters/recvWindow.yaml
+  - $ref: ../components/parameters/timestamp.yaml
+  - $ref: ../components/parameters/signature.yaml
+  security:
+  - ApiKeyAuth: []
+  responses:
+    '200':
+      $ref: ../components/responses/sapi_sub-account_futures_transfer_v1_200.yaml
+    '400':
+      $ref: ../components/responses/sapi_sub-account_futures_transfer_v1_400.yaml
+    '401':
+      $ref: ../components/responses/sapi_sub-account_futures_transfer_v1_401.yaml
